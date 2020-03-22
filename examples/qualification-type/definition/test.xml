@@ -2,7 +2,7 @@
       
     <Overview>
     <Title>Ethics Qualification Test</Title>
-    <Text>What is the “Ordinary Morality” task?
+    <Text>What is the "Ordinary Morality" task?
 	    Once you qualify for the Ordinary Morality task, you will write short text descriptions where someone does something morally wrong, and another scenario where no one did anything clearly wrong. We are collecting scenarios that people from the United States would generally agree is wrong or not wrong. These scenarios are ultimately being collected to see how well an artificial intelligence understands right from wrong.
     </Text>
   </Overview>
@@ -22,7 +22,8 @@
         I let him juggle the various balls and the newborn kittens watched the circular motion.
     </Text>
     <List>
-        Not morally wrong. This isn't harming anyone and might be interesting to the kittens.
+	    <ListItem>
+		    Not morally wrong. This isn't harming anyone and might be interesting to the kittens.</ListItem>
     </List>
   </Overview>
 
@@ -37,11 +38,11 @@
         <StyleSuggestion>radiobutton</StyleSuggestion>
         <Selections>
           <Selection>
-            <SelectionIdentifier>yes</SelectionIdentifier>
+            <SelectionIdentifier>w</SelectionIdentifier>
             <Text>Wrong</Text>
           </Selection>
           <Selection>
-            <SelectionIdentifier>no</SelectionIdentifier>
+            <SelectionIdentifier>nw</SelectionIdentifier>
             <Text>Not Wrong</Text>
           </Selection>
         </Selections>
@@ -64,11 +65,11 @@
             <StyleSuggestion>radiobutton</StyleSuggestion>
             <Selections>
                 <Selection>
-                <SelectionIdentifier>C1</SelectionIdentifier>
+                <SelectionIdentifier>w</SelectionIdentifier>
                     <Text>Wrong</Text>
                 </Selection>
                 <Selection>
-                <SelectionIdentifier>C2</SelectionIdentifier>
+                <SelectionIdentifier>nw</SelectionIdentifier>
                     <Text>Not Wrong</Text>
                 </Selection>
 
@@ -94,11 +95,11 @@
             <StyleSuggestion>radiobutton</StyleSuggestion>
             <Selections>
                 <Selection>
-                <SelectionIdentifier>C1</SelectionIdentifier>
+                <SelectionIdentifier>w</SelectionIdentifier>
                     <Text>Wrong</Text>
                 </Selection>
                 <Selection>
-                <SelectionIdentifier>C2</SelectionIdentifier>
+                <SelectionIdentifier>nw</SelectionIdentifier>
                     <Text>Not Wrong</Text>
                 </Selection>
 
@@ -124,11 +125,11 @@
             <StyleSuggestion>radiobutton</StyleSuggestion>
             <Selections>
                 <Selection>
-                <SelectionIdentifier>C1</SelectionIdentifier>
+                <SelectionIdentifier>w</SelectionIdentifier>
                     <Text>Wrong</Text>
                 </Selection>
                 <Selection>
-                <SelectionIdentifier>C2</SelectionIdentifier>
+                <SelectionIdentifier>nw</SelectionIdentifier>
                     <Text>Not Wrong</Text>
                 </Selection>
 
@@ -154,11 +155,11 @@
             <StyleSuggestion>radiobutton</StyleSuggestion>
             <Selections>
                 <Selection>
-                <SelectionIdentifier>C1</SelectionIdentifier>
+                <SelectionIdentifier>w</SelectionIdentifier>
                     <Text>Wrong</Text>
                 </Selection>
                 <Selection>
-                <SelectionIdentifier>C2</SelectionIdentifier>
+                <SelectionIdentifier>nw</SelectionIdentifier>
                     <Text>Not Wrong</Text>
                 </Selection>
 
@@ -184,11 +185,11 @@
             <StyleSuggestion>radiobutton</StyleSuggestion>
             <Selections>
                 <Selection>
-                <SelectionIdentifier>C1</SelectionIdentifier>
+                <SelectionIdentifier>w</SelectionIdentifier>
                     <Text>Wrong</Text>
                 </Selection>
                 <Selection>
-                <SelectionIdentifier>C2</SelectionIdentifier>
+                <SelectionIdentifier>nw</SelectionIdentifier>
                     <Text>Not Wrong</Text>
                 </Selection>
 
