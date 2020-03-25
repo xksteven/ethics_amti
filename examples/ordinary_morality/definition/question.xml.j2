@@ -7,12 +7,13 @@
           <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
           <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
 
-<!-- You must include this JavaScript file -->
-<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
-
+         <!-- You must include this JavaScript file -->
+         <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+        </head>
 <!-- For the full list of available Crowd HTML Elements and their input/output documentation,
       please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
 
+        <body>
 <!-- You must include crowd-form so that your task submits answers to MTurk -->
 <crowd-form answer-format="flatten-objects">
 
@@ -63,38 +64,19 @@
          </negative-example>
     </crowd-instructions>
 
-    <p>Choose two character traits/virtues/vices.<br/>With your chosen traits, write two <i>similarly worded</i> with a person exemplifying the trait.<br/>Last, write in some chracter traits not exemplified in your scenarios.</p>
+    <p>Write what you would say in the given situation:</p>
 
     <!-- Your contexts and intents will be substituted for the "context" and "intent" variables when you 
            publish a batch with an input file containing multiple contexts and intents -->
+    <p><strong>Context: </strong>${context}</p>
+    <p><strong>Intent: </strong>${intent}</p>
 
-    <style type="text/css">
-    
-    #trait1, #trait2, #wrong11, #wrong12, #wrong13, #wrong21, #wrong22, #wrong23 {
-    width: 450px;
-    }
-    </style>
+    <crowd-input name="wrong" placeholder="Type morally wrong action here..." required></crowd-input>
+    <crowd-input name="not_wrong" placeholder="Type a not morally wrong action here..." required></crowd-input>
 
-    <p><strong>Character Trait 1:</strong><crowd-input id="trait1" name="trait1" placeholder="Type a character trait/virtue/vice."  required></crowd-input> [Get Suggestion]</p>
-    <p><strong>Scenario 1:</strong><crowd-input name="scenario1" placeholder="Type a scenario where a person exemplifies Character Trait 1." required></crowd-input></p>
-
-    <p><crowd-input id="wrong11" name="wrong11" width="300px" placeholder="Type a character trait/virtue/vice unrelated to Scenario 1." required style="margin-left: 40px"></crowd-input> [Get Suggestion]</p>
-    <p><crowd-input id="wrong12" name="wrong12" width="300px" placeholder="Type a character trait/virtue/vice unrelated to Scenario 1." required style="margin-left: 40px"></crowd-input> [Get Suggestion]</p>
-    <p><crowd-input id="wrong13" name="wrong13" width="300px" placeholder="Type a character trait/virtue/vice unrelated to Scenario 1." required style="margin-left: 40px"></crowd-input> [Get Suggestion]</p>
-
-
-    <hr/>
-    
-    <p><strong>Character Trait 2:</strong><crowd-input id="trait2" name="trait2" placeholder="Type a new character trait/virtue/vice." required></crowd-input> [Get Suggestion]</p>
-    <p><strong>Scenario 2:</strong><crowd-input name="scenario2" placeholder="Type a scenario where a person exemplifies Character Trait 2." required></crowd-input></p>
-
-    <p><crowd-input id="wrong21" name="wrong21" width="300px" placeholder="Type a character trait/virtue/vice unrelated to Scenario 1." required style="margin-left: 40px"></crowd-input> [Get Suggestion]</p>
-    <p><crowd-input id="wrong22" name="wrong22" width="300px" placeholder="Type a character trait/virtue/vice unrelated to Scenario 1." required style="margin-left: 40px"></crowd-input> [Get Suggestion]</p>
-    <p><crowd-input id="wrong23" name="wrong23" width="300px" placeholder="Type a character trait/virtue/vice unrelated to Scenario 1." required style="margin-left: 40px"></crowd-input> [Get Suggestion]</p>
 
 </crowd-form>
 
-          <script language='Javascript'>turkSetAssignmentID();</script>
         </body>
       </html>
     ]]>
