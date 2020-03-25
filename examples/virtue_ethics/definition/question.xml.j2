@@ -1,0 +1,103 @@
+<HTMLQuestion xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2011-11-11/HTMLQuestion.xsd">
+  <HTMLContent>
+    <![CDATA[
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+          <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects">
+
+    <crowd-instructions link-text="View instructions" link-type="button">
+        <short-summary>
+            <p>Collect utterances for intent</p>
+        </short-summary>
+
+        <detailed-instructions>
+            <h3>Collect utterances for intent</h3>
+            <p>
+              Given a context and an intent, write how you would express the intent using natural language. 
+              Don't try to be overly formal, simply write what you would say if you were in the given situation.
+        </p>
+        </detailed-instructions>
+
+        <positive-example>
+            <h3>Context</h3>
+            <p>You bought a pair of shoes online but they don't fit</p>
+
+            <h3>Intent</h3>
+            <p>You want to try to return the shoes via an online customer service chat bot</p>
+
+            <h3>Response</h3>
+            <p>I would like to return a pair of shoes</p>
+        </positive-example>
+
+        <positive-example>
+            <h3>Context</h3>
+            <p>You bought a pair of shoes online but they don't fit</p>
+
+            <h3>Intent</h3>
+            <p>You want to try to return the shoes via an online customer service chat bot</p>
+
+            <h3>Response</h3>
+            <p>Hi, I'm trying to buy a plane ticket for tomorrow morning and your website isn't working</p>
+        </positive-example>
+
+        <negative-example>
+            <h3>Context</h3>
+            <p>You bought a pair of shoes online but they don't fit</p>
+
+            <h3>Intent</h3>
+            <p>You want to try to return the shoes via an online customer service chat bot</p>
+
+            <h3>Response</h3>
+            <p>Don't fit</p>
+         </negative-example>
+    </crowd-instructions>
+
+    <p>Choose two character traits/virtues/vices.<br/>With your chosen traits, write two <i>similarly worded</i> with a person exemplifying the trait.<br/>Last, write in some chracter traits not exemplified in your scenarios.</p>
+
+    <!-- Your contexts and intents will be substituted for the "context" and "intent" variables when you 
+           publish a batch with an input file containing multiple contexts and intents -->
+
+    <style type="text/css">
+    
+    #trait1, #trait2, #wrong11, #wrong12, #wrong13, #wrong21, #wrong22, #wrong23 {
+    width: 450px;
+    }
+    </style>
+
+    <p><strong>Character Trait 1:</strong><crowd-input id="trait1" name="trait1" placeholder="Type a character trait/virtue/vice."  required></crowd-input> [Get Suggestion]</p>
+    <p><strong>Scenario 1:</strong><crowd-input name="scenario1" placeholder="Type a scenario where a person exemplifies Character Trait 1." required></crowd-input></p>
+
+    <p><crowd-input id="wrong11" name="wrong11" width="300px" placeholder="Type a character trait/virtue/vice unrelated to Scenario 1." required style="margin-left: 40px"></crowd-input> [Get Suggestion]</p>
+    <p><crowd-input id="wrong12" name="wrong12" width="300px" placeholder="Type a character trait/virtue/vice unrelated to Scenario 1." required style="margin-left: 40px"></crowd-input> [Get Suggestion]</p>
+    <p><crowd-input id="wrong13" name="wrong13" width="300px" placeholder="Type a character trait/virtue/vice unrelated to Scenario 1." required style="margin-left: 40px"></crowd-input> [Get Suggestion]</p>
+
+
+    <hr/>
+    
+    <p><strong>Character Trait 2:</strong><crowd-input id="trait2" name="trait2" placeholder="Type a new character trait/virtue/vice." required></crowd-input> [Get Suggestion]</p>
+    <p><strong>Scenario 2:</strong><crowd-input name="scenario2" placeholder="Type a scenario where a person exemplifies Character Trait 2." required></crowd-input></p>
+
+    <p><crowd-input id="wrong21" name="wrong21" width="300px" placeholder="Type a character trait/virtue/vice unrelated to Scenario 1." required style="margin-left: 40px"></crowd-input> [Get Suggestion]</p>
+    <p><crowd-input id="wrong22" name="wrong22" width="300px" placeholder="Type a character trait/virtue/vice unrelated to Scenario 1." required style="margin-left: 40px"></crowd-input> [Get Suggestion]</p>
+    <p><crowd-input id="wrong23" name="wrong23" width="300px" placeholder="Type a character trait/virtue/vice unrelated to Scenario 1." required style="margin-left: 40px"></crowd-input> [Get Suggestion]</p>
+
+</crowd-form>
+
+          <script language='Javascript'>turkSetAssignmentID();</script>
+        </body>
+      </html>
+    ]]>
+  </HTMLContent>
+  <FrameHeight>450</FrameHeight>
+</HTMLQuestion>
