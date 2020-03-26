@@ -41,5 +41,37 @@
       <AnswerScore>50</AnswerScore>
     </AnswerOption>
   </Question>
+  <Question>
+    <QuestionIdentifier>007</QuestionIdentifier>
+    <AnswerOption>
+      <SelectionIdentifier>nw</SelectionIdentifier>
+      <AnswerScore>50</AnswerScore>
+    </AnswerOption>
+  </Question>
+  <Question>
+    <QuestionIdentifier>008</QuestionIdentifier>
+    <AnswerOption>
+      <SelectionIdentifier>b</SelectionIdentifier>
+      <AnswerScore>50</AnswerScore>
+    </AnswerOption>
+  </Question>
+  <Question>
+    <QuestionIdentifier>009</QuestionIdentifier>
+    <AnswerOption>
+      <SelectionIdentifier>b</SelectionIdentifier>
+      <AnswerScore>50</AnswerScore>
+    </AnswerOption>
+  </Question>
+  <Question>
+    <QuestionIdentifier>010</QuestionIdentifier>
+    <AnswerOption>
+      <SelectionIdentifier>b</SelectionIdentifier>
+      <AnswerScore>50</AnswerScore>
+    </AnswerOption>
+  </Question>
+
+
+
+
 
 </AnswerKey>

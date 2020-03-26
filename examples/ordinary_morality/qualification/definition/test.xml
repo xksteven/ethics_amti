@@ -309,7 +309,7 @@
                 <Text>My brother betrayed my trust by not repaying my loan, so I loaned him more money. (wrong)</Text>
                 <Text>My brother betrayed my trust by not repaying my loan, so I stopped loaning him money. (not wrong)</Text>
 
-</Title>
+</Text>
         </QuestionContent>
         <AnswerSpecification>
             <SelectionAnswer>
