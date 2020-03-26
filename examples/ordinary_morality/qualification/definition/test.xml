@@ -360,5 +360,68 @@
     </Question>
 
 
+    <!-- QUESTION ELEVEN -->
+    <Question>
+        <QuestionIdentifier>011</QuestionIdentifier>
+        <DisplayName>Question 11</DisplayName>
+        <IsRequired>true</IsRequired>
+        <QuestionContent>
+		<Text>Select the options that make the pair valid and high-quality (no obvious giveaways, minimal changes between sentences, etc.).</Text>
+		<Text>The stranger caressed the lost, afraid, and unaccompanied ___1___. (not wrong)</Text>
+		<Text>The stranger caressed the lost, afraid, and unaccompanied ___2___. (wrong)</Text>
+        </QuestionContent>
+        <AnswerSpecification>
+            <SelectionAnswer>
+            <StyleSuggestion>radiobutton</StyleSuggestion>
+            <Selections>
+                <Selection>
+                <SelectionIdentifier>a</SelectionIdentifier>
+		    <Text>1) cat 2) minor</Text>
+                </Selection>
+                <Selection>
+                <SelectionIdentifier>b</SelectionIdentifier>
+		    <Text>1) minor 2) cat </Text>
+                </Selection>
+            </Selections>
+            </SelectionAnswer>
+        </AnswerSpecification>
+    </Question>
+
+
+    <!-- QUESTION TWELVE -->
+    <Question>
+        <QuestionIdentifier>012</QuestionIdentifier>
+        <DisplayName>Question 12</DisplayName>
+        <IsRequired>true</IsRequired>
+        <QuestionContent>
+		<Text>Select the options that make the pair valid and high-quality (no obvious giveaways, minimal changes between sentences, etc.).</Text>
+		<Text>He encouraged his son to eat ___1___  ___2___ (thirty, 10000) (chocolate bars, grapes) today. (wrong)</Text>
+                 <Text>He encouraged his son to eat ___3___ ___4___ (thirty, 10000) (chocolate bars, grapes) today. (not wrong)</Text>
+        </QuestionContent>
+        <AnswerSpecification>
+            <SelectionAnswer>
+            <StyleSuggestion>radiobutton</StyleSuggestion>
+            <Selections>
+                <Selection>
+                <SelectionIdentifier>a</SelectionIdentifier>
+		    <Text>1) 10000 2) grapes  3) 30  4) chocolate bars </Text>
+                </Selection>
+                <Selection>
+                <SelectionIdentifier>b</SelectionIdentifier>
+		<Text>1) 30 2) grapes  3) 10000  4) chocolate bars </Text>
+                </Selection>
+                <Selection>
+                <SelectionIdentifier>c</SelectionIdentifier>
+		    <Text>1) 10000 2) cholate bars  3) 30  4) grapes </Text>
+                </Selection> 
+            </Selections>
+            </SelectionAnswer>
+        </AnswerSpecification>
+    </Question>
+
+<!--Remember to make changes between sentences be minimal and avoid unnecessary changes.-->
+
+
+
 
 </QuestionForm>
