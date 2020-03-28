@@ -1,5 +1,6 @@
 <HTMLQuestion xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2011-11-11/HTMLQuestion.xsd">
   <HTMLContent>
+    <![CDATA[
     <!DOCTYPE html>
     <html>
       <head>
@@ -48,7 +49,7 @@
               <detailed-instructions>
                 <h3>Collect utterances for intent</h3>
                 <p>
-                  Given a context and an intent, write how you would express the intent using natural language.
+                  Given a context and an intent, write how you would express the intent using natural language. 
                   Don't try to be overly formal, simply write what you would say if you were in the given situation.
                 </p>
               </detailed-instructions>
@@ -99,7 +100,7 @@
               <strong>
                 Character Trait 1:
               </strong>
-              <crowd-input id="trait1" name="trait1" placeholder="Type a character trait/virtue/vice."  required></crowd-input>
+              <crowd-input id="trait1" name="trait1" placeholder="Type a character trait/virtue/vice."  required></crowd-input> 
               <span class="suggestion">
                 Get Suggestion
               </span>
@@ -109,16 +110,15 @@
               <p>
                 <strong>
                   Scenario 1:
-
                 </strong>
                 <crowd-input name="scenario1" placeholder="Type a scenario where a person exemplifies Character Trait 1." required></crowd-input>
               </p>
 
               <p>
-                <crowd-input id="wrong11" name="wrong11" width="300px" placeholder="Type a character trait/virtue/vice unrelated to Scenario 1." required style="margin-left: 40px"></crowd-input>
+                <crowd-input id="wrong11" name="wrong11" width="300px" placeholder="Type a character trait/virtue/vice unrelated to Scenario 1." required style="margin-left: 40px"></crowd-input> 
               </p>
               <p>
-                <crowd-input id="wrong12" name="wrong12" width="300px" placeholder="Type a character trait/virtue/vice unrelated to Scenario 1." required style="margin-left: 40px"></crowd-input>
+                <crowd-input id="wrong12" name="wrong12" width="300px" placeholder="Type a character trait/virtue/vice unrelated to Scenario 1." required style="margin-left: 40px"></crowd-input> 
               </p>
               <p>
                 <crowd-input id="wrong13" name="wrong13" width="300px" placeholder="Type a character trait/virtue/vice unrelated to Scenario 1." required style="margin-left: 40px"></crowd-input>
@@ -126,12 +126,12 @@
             </section>
 
             <hr/>
- 
+  
             <p>
               <strong>
                 Character Trait 2:
               </strong>
-              <crowd-input id="trait2" name="trait2" placeholder="Type a new character trait/virtue/vice." required></crowd-input>
+              <crowd-input id="trait2" name="trait2" placeholder="Type a new character trait/virtue/vice." required></crowd-input> 
               <span class="suggestion">
                 Get Suggestion
               </span>
@@ -146,14 +146,13 @@
               </p>
 
               <p>
-                <crowd-input id="wrong21" name="wrong21" width="300px" placeholder="Type a character trait/virtue/vice unrelated to Scenario 2." required style="margin-left: 40px"></crowd-input>
+                <crowd-input id="wrong21" name="wrong21" width="300px" placeholder="Type a character trait/virtue/vice unrelated to Scenario 1." required style="margin-left: 40px"></crowd-input>
               </p>
               <p>
-                <crowd-input id="wrong22" name="wrong22" width="300px" placeholder="Type a character trait/virtue/vice unrelated to Scenario 2." required style="margin-left: 40px"></crowd-input>
+                <crowd-input id="wrong22" name="wrong22" width="300px" placeholder="Type a character trait/virtue/vice unrelated to Scenario 1." required style="margin-left: 40px"></crowd-input> 
               </p>
               <p>
-                <crowd-input id="wrong23" name="wrong23" width="300px" placeholder="Type a character trait/virtue/vice unrelated to Scenario 2." required style="margin-left: 40px"></crowd-input>
-
+                <crowd-input id="wrong23" name="wrong23" width="300px" placeholder="Type a character trait/virtue/vice unrelated to Scenario 1." required style="margin-left: 40px"></crowd-input>
               </p>
             </section>
           </div>
@@ -171,7 +170,7 @@
             'temperance',
             'stinginess',
             'generous',
-            'prodigality',
+            'prodigality"',
             'pettiness',
             'meanness',
             'vulgarity',
@@ -219,5 +218,7 @@
         </script>
       </body>
     </html>
+  ]]>
   </HTMLContent>
+  <FrameHeight>450</FrameHeight>
 </HTMLQuestion>
