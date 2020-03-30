@@ -9,6 +9,68 @@
 
          <!-- You must include this JavaScript file -->
          <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+        <script>
+            function damerau_levenshtein(string_1, string_2) {
+              if (string_1 === string_2) {
+                return 0;
+              }
+              len_1 = string_1.length;
+              len_2 = string_2.length;
+              console.log(len_2);
+              if (len_1 === 0) {
+                return len_2;
+              }
+              if (len_2 === 0) {
+                return len_1;
+              }
+              if (len_1 > len_2) {
+                [string_2, string_1] = [string_1, string_2];
+                [len_2, len_1] = [len_1, len_2];
+              }
+            
+              prev_cost = 0
+              //d0 = [i for i in range(len_2 + 1)]          
+            
+              d0 = [...Array(len_2 + 1).keys()];
+              //d1 = [j for j in range(len_2 + 1)]        
+              d1 = [...Array(len_2 + 1).keys()];
+              dprev = d0;
+              s1 = string_1;
+              s2 = string_2;
+            
+              for (i in [...Array(len_1).keys()]) {
+                d1[0] = i + 1;
+                for (j in [...Array(len_2).keys()]) {
+                  cost = d0[j];
+                  if (s1[i] != s2[j]) {
+                    // substitution                           
+                    cost += 1;
+                    // insertion                        
+                    x_cost = d1[j] + 1;
+                    if (x_cost < cost) {
+                      cost = x_cost;
+                    }
+                    // deletion                         
+                    y_cost = d0[j + 1] + 1;
+                    if (y_cost < cost) {
+                      cost = y_cost;
+                    }
+                    // transposition                     
+                    if ((i > 0) && (j > 0) && (s1[i] == s2[j - 1]) && (s1[i - 1] == s2[j])) {
+                      transp_cost = dprev[j - 1] + 1;
+                      if (transp_cost < cost) {
+                        cost = transp_cost;
+                      }
+                    }
+                  }
+                  d1[j + 1] = cost;
+                }
+                [dprev, d0, d1] = [d0, d1, dprev];
+              }
+              return d0[-1];
+            }
+        </script>
         </head>
 <!-- For the full list of available Crowd HTML Elements and their input/output documentation,
       please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
@@ -16,7 +78,7 @@
         <body>
 <!-- You must include crowd-form so that your task submits answers to MTurk -->
 <crowd-form answer-format="flatten-objects">
-
+    <div class="formContainer">
     <crowd-instructions link-text="View instructions" link-type="button">
         <short-summary>
             <p>Collect utterances for intent</p>
@@ -74,8 +136,30 @@
     <crowd-input name="wrong" placeholder="Type morally wrong action here..." required></crowd-input>
     <crowd-input name="not_wrong" placeholder="Type a not morally wrong action here..." required></crowd-input>
 
-
+     <span class="verifyme">
+      Verify
+     </span>
+</div>
 </crowd-form>
+            <script>
+                  function onClick(event) {
+                  var parentElement = event.srcElement.parentNode;
+                  // Amazon adds this field themselves. We have no direct access to it from our code other than traversing the DOM.
+                 //var inputField = event.srcElement.parentNode.childNodes[3].root.childNodes[2].children[2].children[0];
+                 //sent1 = inputField.value;
+                 //sent2 = inputField.value;
+                 console.log("Hello");
+                 //res = damerau_levenshtein(sent1, sent2) / (0.5 * (sent1.length + sent2.length));
+                 
+                 //document.getElementById('verifyme').innerHTML = '<div> Print this </div>';
+                 //alert("Hello");
+                 }
+                 function addEvent(button) {
+                   button.addEventListener('click', onClick);
+                 }
+                 document.querySelectorAll('.verifyme').forEach(addEvent); 
+                 //document.getElementById('verifyme').addEventListener("click", addEvent);
+           </script>
 
         </body>
       </html>
