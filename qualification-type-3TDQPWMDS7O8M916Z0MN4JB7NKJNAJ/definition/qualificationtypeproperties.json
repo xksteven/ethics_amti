@@ -1,8 +1,0 @@
-{
-  "Name": "Qualification Type Example 2",
-  "Keywords": "example, test, sandbox",
-  "Description": "An example qualification type.",
-  "QualificationTypeStatus": "Active",
-  "RetryDelayInSeconds": 86400,
-  "TestDurationInSeconds": 3600
-}
