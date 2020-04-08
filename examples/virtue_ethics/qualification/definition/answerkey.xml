@@ -2,42 +2,35 @@
   <Question>
     <QuestionIdentifier>001</QuestionIdentifier>
     <AnswerOption>
-      <SelectionIdentifier>w</SelectionIdentifier>
+      <SelectionIdentifier>2</SelectionIdentifier>
       <AnswerScore>50</AnswerScore>
     </AnswerOption>
   </Question>
   <Question>
     <QuestionIdentifier>002</QuestionIdentifier>
     <AnswerOption>
-      <SelectionIdentifier>nw</SelectionIdentifier>
+      <SelectionIdentifier>4</SelectionIdentifier>
       <AnswerScore>50</AnswerScore>
     </AnswerOption>
   </Question>
   <Question>
     <QuestionIdentifier>003</QuestionIdentifier>
     <AnswerOption>
-      <SelectionIdentifier>nw</SelectionIdentifier>
+      <SelectionIdentifier>2</SelectionIdentifier>
       <AnswerScore>50</AnswerScore>
     </AnswerOption>
   </Question>
   <Question>
     <QuestionIdentifier>004</QuestionIdentifier>
     <AnswerOption>
-      <SelectionIdentifier>nw</SelectionIdentifier>
+      <SelectionIdentifier>4</SelectionIdentifier>
       <AnswerScore>50</AnswerScore>
     </AnswerOption>
   </Question>
   <Question>
     <QuestionIdentifier>005</QuestionIdentifier>
     <AnswerOption>
-      <SelectionIdentifier>w</SelectionIdentifier>
-      <AnswerScore>50</AnswerScore>
-    </AnswerOption>
-  </Question>
-  <Question>
-    <QuestionIdentifier>006</QuestionIdentifier>
-    <AnswerOption>
-      <SelectionIdentifier>w</SelectionIdentifier>
+      <SelectionIdentifier>4</SelectionIdentifier>
       <AnswerScore>50</AnswerScore>
     </AnswerOption>
   </Question>
