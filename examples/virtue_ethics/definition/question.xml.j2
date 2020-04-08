@@ -264,7 +264,10 @@
             var parentElement = event.srcElement.parentNode;
             // Amazon adds this field themselves. We have no direct access to it from our code other than traversing the DOM.
             var inputField = event.srcElement.parentNode.childNodes[3].root.childNodes[2].children[2].children[0];
-            inputField.value = trait;
+            inputField.value = trait1;
+            //Get second field and set value to second_trait
+            //var inputField
+            // inputField.value = second_trait
           }
           function addEvent(button) {
             button.addEventListener('click', onClick);
