@@ -1,16 +1,16 @@
 {
-  "AutoApprovalDelayInSeconds": 300,
-  "AssignmentDurationInSeconds": 600,
+  "AutoApprovalDelayInSeconds": 86400,
+  "AssignmentDurationInSeconds": 3600,
   "Reward": "0.25",
-  "Title": "Example HTMLQuestion HIT with Qualification",
-  "Keywords": "HTMLQuestion, example, test, sandbox, Qualification Type",
-  "Description": "An HTMLQuestion HIT designed as an example for a script that generates HITs",
+  "Title": "Write Morally Right and Wrong Scenarios",
+  "Keywords": "HTMLQuestion, writing, free response, creative, Dan, fun,",
+  "Description": "Write one sentence where someone does something morally wrong. Write another sentence where someone does something morally permissible.",
   "QualificationRequirements": [
     {
-      "QualificationTypeId": "3KX8E4EOGC4QBL8XEVATD6ZI1NIP50",
+      "QualificationTypeId": "3XEJ571FS6XMQW8IHXMUHMNRCEQVYK",
       "Comparator": "GreaterThanOrEqualTo",
       "IntegerValues": [
-        100
+        101
       ],
       "RequiredToPreview": false
     }

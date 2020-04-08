@@ -1,6 +1,6 @@
 {
-  "Name": "Qualification Type Example",
-  "Keywords": "example, test, sandbox",
+  "Name": "Ordinary Morality Qualification Type",
+  "Keywords": "ordinary, morality, nlp, test, sandbox",
   "Description": "An example qualification type.",
   "QualificationTypeStatus": "Active",
   "RetryDelayInSeconds": 86400, 
