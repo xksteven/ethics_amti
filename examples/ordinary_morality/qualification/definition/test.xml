@@ -82,21 +82,21 @@
         <FormattedContent>
             <![CDATA[
 
-            In the HITs after this qualification round, we will ask you to write one scenario where someone clearly did something morally wrong, and another scenario where no one did anything clearly wrong. Both scenarios should be similarly worded. This means you will write a pair of "wrong" and "not wrong" scenarios. In one scenario in the pair, someone should clearly do something wrong, and in the other scenario, no one should have done anything wrong.<br /><br />
+	    In the HITs after this qualification round, we will ask you to write one scenario where someone clearly did something morally wrong, and another scenario where no one did anything clearly wrong. Both scenarios should be similarly worded. This means you will write a pair of "wrong" and "not wrong" scenarios. In one scenario in the pair, someone should clearly do something wrong, and in the other scenario, no one should have done anything wrong. <br /> <br />  
 
-            For instance,<br />
-            Because the student did a good job on the exam, the teacher told the police. (wrong)<br />
-            Because the student did a good job on the exam, the teacher told the parents. (not wrong)<br />
-            is a valid pair.<br /><br />
+	    For instance, <br /> 
+            &emsp; Because the student did a good job on the exam, the teacher told the police. (wrong)
+            Because the student did a good job on the exam, the teacher told the parents. (not wrong)
+            is a valid pair.
 
-            However,<br />
-            The student made a false excuse for why the homework was late, so the teacher called the police. (wrong)<br />
-            The student made a false excuse for why the homework was late, so the teacher called the parents. (not wrong)<br />
-            is not a valid pair. The student made a false excuse in both scenarios, so someone did something wrong in both scenarios.<br /><br />
+            However,
+            The student made a false excuse for why the homework was late, so the teacher called the police. (wrong)
+            The student made a false excuse for why the homework was late, so the teacher called the parents. (not wrong)
+            is not a valid pair. The student made a false excuse in both scenarios, so someone did something wrong in both scenarios.
 
-            This is another example of an invalid pair, because she cheated in both scenarios, which is wrong.<br />
-            Because she was cheating, I shot her.<br />
-            Because she was cheating, I left her.<br />
+            This is another example of an invalid pair, because she cheated in both scenarios, which is wrong.
+            Because she was cheating, I shot her.
+            Because she was cheating, I left her.
             ]]>
         </FormattedContent>
     </Overview>
@@ -117,12 +117,12 @@
                 <Selections>
                     <Selection>
                         <SelectionIdentifier>w</SelectionIdentifier>
-                        <Text>I voted for the candidate even though he has accepted bribes. (wrong) <br />
+                        <Text>I voted for the candidate even though he has accepted bribes. (wrong) 
                         I did not vote for the candidate because he had accepted bribes. (not wrong)</Text>
                     </Selection>
                     <Selection>
                         <SelectionIdentifier>nw</SelectionIdentifier>
-                        <Text>I voted for the candidate because he paid me money to do so. (wrong)<br />
+                        <Text>I voted for the candidate because he paid me money to do so. (wrong)
                         I voted for the candidate because he would lower our taxes if elected. (not wrong)</Text>
                     </Selection>
                 </Selections>
@@ -134,25 +134,25 @@
         <FormattedContent>
             <![CDATA[
         
-            Good scenarios usually avoid giveaway words, like "torture," "steal," "shot," "bullied," etc.<br />
-            "Jim tortured Pam after much contemplation." and "Jim helped Pam after much contemplation." is not a high-quality pair. The word "torture" is hard to cast in a permissible light, so it gives away that the sentence is morally wrong. In this case, it’s possible not even to read the whole sentence and guess whether the sentence is wrong or permissible.<br /><br />
+            Good scenarios usually avoid giveaway words, like "torture," "steal," "shot," "bullied," etc.
+            "Jim tortured Pam after much contemplation." and "Jim helped Pam after much contemplation." is not a high-quality pair. The word "torture" is hard to cast in a permissible light, so it gives away that the sentence is morally wrong. In this case, it’s possible not even to read the whole sentence and guess whether the sentence is wrong or permissible.
 
-            Good scenarios involve wrong or permissible actions that most people in the US can agree on.<br />
-            For example, "Elizabeth got an abortion" is not clearly permissible nor is it clearly wrong to most US citizens; many US citizens think that this is permissible, and many others think this is morally wrong.<br /><br />
+            Good scenarios involve wrong or permissible actions that most people in the US can agree on.
+            For example, "Elizabeth got an abortion" is not clearly permissible nor is it clearly wrong to most US citizens; many US citizens think that this is permissible, and many others think this is morally wrong.
 
-            Good pairs have similarly worded sentences with minimal changes between sentences.<br />
-            For instance,<br />
-            Because he wanted to get high, the human took illicit drugs. (wrong)<br />
-            Because he was sick, the baseball player took pills. (not wrong)<br />
-            is a low-quality pair, but<br />
-            Because he wanted to perform better, the baseball player took drugs. (wrong)<br />
-            Because he was sick, the baseball player took drugs. (not wrong)<br />
-            is a high-quality pair.<br /><br /><br />
+            Good pairs have similarly worded sentences with minimal changes between sentences.
+            For instance,
+            Because he wanted to get high, the human took illicit drugs. (wrong)
+            Because he was sick, the baseball player took pills. (not wrong)
+            is a low-quality pair, but
+            Because he wanted to perform better, the baseball player took drugs. (wrong)
+            Because he was sick, the baseball player took drugs. (not wrong)
+            is a high-quality pair.
 
-            ------<br />
-            Questions:<br /><br />
+            ------
+            Questions:
 
-            Which of the following pairs invalid or low-quality?<br />
+            Which of the following pairs invalid or low-quality?
 
             ]]>
         </FormattedContent>
