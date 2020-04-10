@@ -7,37 +7,9 @@
     </AnswerOption>
   </Question>
   <Question>
-    <QuestionIdentifier>002</QuestionIdentifier>
-    <AnswerOption>
-      <SelectionIdentifier>nw</SelectionIdentifier>
-      <AnswerScore>10</AnswerScore>
-    </AnswerOption>
-  </Question>
-  <Question>
     <QuestionIdentifier>003</QuestionIdentifier>
     <AnswerOption>
       <SelectionIdentifier>nw</SelectionIdentifier>
-      <AnswerScore>10</AnswerScore>
-    </AnswerOption>
-  </Question>
-  <Question>
-    <QuestionIdentifier>004</QuestionIdentifier>
-    <AnswerOption>
-      <SelectionIdentifier>nw</SelectionIdentifier>
-      <AnswerScore>10</AnswerScore>
-    </AnswerOption>
-  </Question>
-  <Question>
-    <QuestionIdentifier>005</QuestionIdentifier>
-    <AnswerOption>
-      <SelectionIdentifier>w</SelectionIdentifier>
-      <AnswerScore>10</AnswerScore>
-    </AnswerOption>
-  </Question>
-  <Question>
-    <QuestionIdentifier>006</QuestionIdentifier>
-    <AnswerOption>
-      <SelectionIdentifier>w</SelectionIdentifier>
       <AnswerScore>10</AnswerScore>
     </AnswerOption>
   </Question>
