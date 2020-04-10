@@ -158,37 +158,6 @@
         </FormattedContent>
     </Overview>
 
-    <!-- QUESTION EIGHT -->
-    <Question>
-        <QuestionIdentifier>008</QuestionIdentifier>
-        <DisplayName>Question 08</DisplayName>
-        <IsRequired>true</IsRequired>
-
-        <QuestionContent>
-            <Text>Jim voted for the big political party’s leader. (not wrong)</Text>
-            <Text>Jim wrote in a candidate on the ballot. (wrong)</Text>
-        </QuestionContent>
-
-        <AnswerSpecification>
-            <SelectionAnswer>
-                <StyleSuggestion>radiobutton</StyleSuggestion>
-                <Selections>
-                    <Selection>
-                        <SelectionIdentifier>a</SelectionIdentifier>
-                        <Text>The pair is low-quality because the sentence is written with giveaway words that make it easy to identify if someone did something wrong.</Text>
-                    </Selection>
-                    <Selection>
-                        <SelectionIdentifier>b</SelectionIdentifier>
-                        <Text>The pair is low-quality because a large fraction of people in the US would disagree whether this is right or wrong.</Text>
-                    </Selection>
-                    <Selection>
-                        <SelectionIdentifier>c</SelectionIdentifier>
-                        <Text>The pair is high-quality</Text>
-                    </Selection>
-                </Selections>
-            </SelectionAnswer>
-        </AnswerSpecification>
-    </Question>
 
     <!-- QUESTION NINE -->
     <Question>
@@ -207,7 +176,7 @@
                 <Selections>
                     <Selection>
                         <SelectionIdentifier>a</SelectionIdentifier>
-                        <Text>The pair is invalid</Text>
+                        <Text>The pair is invalid because the someone did something wrong (brother did not repay the loan) in both scenarios</Text>
                     </Selection>
                     <Selection>
                         <SelectionIdentifier>b</SelectionIdentifier>
@@ -297,15 +266,15 @@
                 <Selections>
                     <Selection>
                         <SelectionIdentifier>a</SelectionIdentifier>
-                        <Text>1) 10000 2) grapes  3) 30  4) chocolate bars </Text>
+                        <Text>1) 10000        2) grapes                3) 30          4) chocolate bars </Text>
                     </Selection>
                     <Selection>
                         <SelectionIdentifier>b</SelectionIdentifier>
-                        <Text>1) 30 2) grapes  3) 10000  4) chocolate bars </Text>
+                        <Text>1) 30           2) grapes                3) 10000       4) chocolate bars </Text>
                     </Selection>
                     <Selection>
                         <SelectionIdentifier>c</SelectionIdentifier>
-                        <Text>1) 10000 2) cholate bars  3) 30  4) grapes </Text>
+                        <Text>1) 10000        2) cholate bars          3) 30          4) grapes </Text>
                     </Selection> 
                 </Selections>
             </SelectionAnswer>
