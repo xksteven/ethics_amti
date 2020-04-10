@@ -21,13 +21,6 @@
     </AnswerOption>
   </Question>
   <Question>
-    <QuestionIdentifier>008</QuestionIdentifier>
-    <AnswerOption>
-      <SelectionIdentifier>b</SelectionIdentifier>
-      <AnswerScore>10</AnswerScore>
-    </AnswerOption>
-  </Question>
-  <Question>
     <QuestionIdentifier>009</QuestionIdentifier>
     <AnswerOption>
       <SelectionIdentifier>b</SelectionIdentifier>
