@@ -142,11 +142,11 @@
 
             Good pairs have similarly worded sentences with minimal changes between sentences.<br/>
             For instance,<br/>
-            Because he wanted to get high, the human took illicit drugs. (wrong)<br/>
-            Because he was sick, the baseball player took pills. (not wrong)<br/>
+            &emsp;Because he wanted to get high, the human took illicit drugs. (wrong)<br/>
+            &emsp;Because he was sick, the baseball player took pills. (not wrong)<br/>
             is a low-quality pair, but<br/>
-            Because he wanted to perform better, the baseball player took drugs. (wrong)<br/>
-            Because he was sick, the baseball player took drugs. (not wrong)<br/>
+            &emsp;Because he wanted to perform better, the baseball player took drugs. (wrong)<br/>
+            &emsp;Because he was sick, the baseball player took drugs. (not wrong)<br/>
             is a high-quality pair.<br/><br/><br/>
 
             ------<br/>
