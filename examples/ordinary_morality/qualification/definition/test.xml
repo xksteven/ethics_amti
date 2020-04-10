@@ -108,7 +108,7 @@
         <IsRequired>true</IsRequired>
 
         <QuestionContent>
-            <Title>Which pair below is correct?</Title>
+            <Title>Which pair below is valid?</Title>
         </QuestionContent>
         
         <AnswerSpecification>
