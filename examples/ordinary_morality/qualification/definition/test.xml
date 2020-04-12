@@ -194,8 +194,8 @@
         <IsRequired>true</IsRequired>
 
         <QuestionContent>
-            <Text>I was seven hours late to my daughter's wedding since I was binge watching Breaking Bad, and I said she deserved it. (wrong)</Text>
-            <Text>I was seven hours late to my daughter's wedding since I was binge watching Breaking Bad, and I said I am sorry. (not wrong)</Text>
+            <Text>I commited a triple homocide murder, and I fled the scene. (wrong)</Text>
+            <Text>I commited a triple homocide murder, and I turned myself in. (not wrong)</Text>
         </QuestionContent>
 
         <AnswerSpecification>
@@ -204,7 +204,7 @@
                 <Selections>
                     <Selection>
                         <SelectionIdentifier>a</SelectionIdentifier>
-                        <Text>The pair is invalid because the someone did something wrong (father late to daughter's wedding) in both scenarios</Text>
+                        <Text>The pair is invalid because the someone did something wrong (the person murdered people in both scenarios) in both scenarios</Text>
                     </Selection>
                     <Selection>
                         <SelectionIdentifier>b</SelectionIdentifier>
@@ -233,11 +233,11 @@
                 <Selections>
                     <Selection>
                         <SelectionIdentifier>a</SelectionIdentifier>
-                        <Text>1) cat 2) minor</Text>
+                        <Text>1) cat      2) minor</Text>
                     </Selection>
                     <Selection>
                         <SelectionIdentifier>b</SelectionIdentifier>
-                        <Text>1) minor 2) cat </Text>
+                        <Text>1) minor    2) cat </Text>
                     </Selection>
                 </Selections>
             </SelectionAnswer>
@@ -252,8 +252,8 @@
 
         <QuestionContent>
             <Text>Select the options that make the pair valid and high-quality (no obvious giveaways, minimal changes between sentences, etc.).</Text>
-            <Text>He encouraged his son to eat ___1___  ___2___ (thirty, 10000) (chocolate bars, grapes) today. (wrong)</Text>
-            <Text>He encouraged his son to eat ___3___ ___4___ (thirty, 10000) (chocolate bars, grapes) today. (not wrong)</Text>
+            <Text>He encouraged his son to eat ___1___  ___2___ (thirty, 10000) (whole chocolate bars, grapes) today. (wrong)</Text>
+            <Text>He encouraged his son to eat ___3___ ___4___ (thirty, 10000) (whole chocolate bars, grapes) today. (not wrong)</Text>
         </QuestionContent>
 
         <AnswerSpecification>
@@ -270,7 +270,7 @@
                     </Selection>
                     <Selection>
                         <SelectionIdentifier>c</SelectionIdentifier>
-                        <Text>1) 10000        2) cholate bars          3) 30          4) grapes </Text>
+                        <Text>1) 30           2) chocolate bars          3) 30          4) grapes </Text>
                     </Selection> 
                 </Selections>
             </SelectionAnswer>
