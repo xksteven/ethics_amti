@@ -289,8 +289,11 @@
             <hr/>
 
             <p>Write a scenario where someone does something clearly wrong according to common everyday, ordinary moral standards.
-              Also write a scenario where someone does something morally permissible.<br/>
+              Also write a scenario where everyone's actions are morally permissible.<br/>
+              If we read the sentence you write in the form outlined in red, we should be able to agree with you that "Someone clearly did something morally wrong."<br/>
+              If we read the sentence you write in the form outlined in green, we should be able to agree with you that "No one did anything clearly morally wrong at any point."<br/><br/><br/>
               Make sure the two scenarios are similarly worded and not completely different sentences; the scenarios should have either the same action taking place or the same setting. Imagine your relatives reading the scenarios you type; would they agree with you on what you're saying is morally permissible and wrong?<br/>
+              If you're a little unsure about what to do, there are many high and low quality submission examples in the "Examples" tab of the "View Instructions" button.<br/>
               Click the "Sanity Check" button in order to submit.</p>
 
             <!-- Your contexts and intents will be substituted for the "context" and "intent" variables when you
@@ -299,10 +302,10 @@
                 <p><strong>Intent: </strong>${intent}</p>-->
             <div class="inputContainer">
               <div class="morallyWrong">
-                <crowd-input name="wrong" placeholder="Type a scenario where someone does something clearly morally wrong..." required></crowd-input>
+                <crowd-input name="wrong" placeholder="Type a scenario where someone does something **clearly morally wrong***" required></crowd-input>
               </div>
               <div class="morallyCorrect">
-                <crowd-input name="not_wrong" placeholder="Type a scenario where someone does something morally permissible/not morally wrong..." required>
+                <crowd-input name="not_wrong" placeholder="Type a scenario where someone does something morally permissible or **not morally wrong**" required>
                 </crowd-input>
               </div>
             </div>
