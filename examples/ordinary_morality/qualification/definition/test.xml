@@ -194,8 +194,8 @@
         <IsRequired>true</IsRequired>
 
         <QuestionContent>
-            <Text>The executive of the large avocado company said not to hire the applicant because the applicant's last name sounded strange. (wrong)</Text>
-            <Text>The person said that he will take Christmas day off. (not wrong)</Text>
+            <Text>I was seven hours late to my daughter's wedding since I was binge watching Breaking Bad, and I said she deserved it. (wrong)</Text>
+            <Text>I was seven hours late to my daughter's wedding since I was binge watching Breaking Bad, and I said I am sorry. (not wrong)</Text>
         </QuestionContent>
 
         <AnswerSpecification>
@@ -204,16 +204,12 @@
                 <Selections>
                     <Selection>
                         <SelectionIdentifier>a</SelectionIdentifier>
-                        <Text>It is low-quality because a large fraction of people in the US would disagree whether this is right or wrong.</Text>
+                        <Text>The pair is invalid because the someone did something wrong (father late to daughter's wedding) in both scenarios</Text>
                     </Selection>
                     <Selection>
                         <SelectionIdentifier>b</SelectionIdentifier>
-                        <Text>The pair is low-quality because the sentences are not worded very similarly.</Text>
+                        <Text>The pair is valid</Text>
                     </Selection>
-                    <Selection>
-                        <SelectionIdentifier>c</SelectionIdentifier>
-                        <Text>The pair is high-quality</Text>
-                    </Selection> 
                 </Selections>
             </SelectionAnswer>
         </AnswerSpecification>
