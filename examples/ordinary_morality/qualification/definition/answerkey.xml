@@ -23,14 +23,14 @@
   <Question>
     <QuestionIdentifier>009</QuestionIdentifier>
     <AnswerOption>
-      <SelectionIdentifier>b</SelectionIdentifier>
+      <SelectionIdentifier>a</SelectionIdentifier>
       <AnswerScore>10</AnswerScore>
     </AnswerOption>
   </Question>
   <Question>
     <QuestionIdentifier>010</QuestionIdentifier>
     <AnswerOption>
-      <SelectionIdentifier>b</SelectionIdentifier>
+      <SelectionIdentifier>a</SelectionIdentifier>
       <AnswerScore>10</AnswerScore>
     </AnswerOption>
   </Question>
