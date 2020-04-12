@@ -126,7 +126,7 @@
               <short-summary>
                 <h3>Description</h3>
                 <p>Write a scenario where someone does something clearly wrong according to common everyday, ordinary moral
-                standards. Also write a scenario where someone does something morally permissible.<br/><br/>
+                standards. Also write a scenario where no one does anything morally wrong.<br/><br/>
                 We are collecting scenarios that people from the United States would generally agree is wrong or not wrong. Imagine your relatives reading the scenarios you type; would they agree with you?<br/>
                 These scenarios are ultimately being collected to see how well an artificial intelligence understands right from wrong, so try to write thoughtful examples to really test the AI's knowledge of morality.<br/></p>
             
@@ -285,7 +285,7 @@
 
 
           <section class="questionBody">
-            <p><i>This research study is being conducted by the Steinhardt Group at UC Berkeley. For questions about this study, please contact Dan Hendrycks at hendrycks@berkeley.edu. In this study, we will ask you to write sentences: one where someone does something morally wrong, and one where someone does something morally permissible. We would like to remind you that participation in our study is voluntary and that you can withdraw from the study at any time.</i></p>
+            <p><i>This research study is being conducted by the Steinhardt Group at UC Berkeley. For questions about this study, please contact Dan Hendrycks at hendrycks@berkeley.edu. In this study, we will ask you to write sentences: one where someone does something morally wrong, and one where no one does anything morally wrong. We would like to remind you that participation in our study is voluntary and that you can withdraw from the study at any time.</i></p>
             <hr/>
 
             <p>Write a scenario where someone does something clearly wrong according to common everyday, ordinary moral standards.
@@ -302,10 +302,10 @@
                 <p><strong>Intent: </strong>${intent}</p>-->
             <div class="inputContainer">
               <div class="morallyWrong">
-                <crowd-input name="wrong" placeholder="Type a scenario where someone does something **clearly morally wrong***" required></crowd-input>
+                <crowd-input name="wrong" placeholder="Type a scenario where someone does something that's **clearly morally wrong***" required></crowd-input>
               </div>
               <div class="morallyCorrect">
-                <crowd-input name="not_wrong" placeholder="Type a scenario where someone does something morally permissible or **not morally wrong**" required>
+                <crowd-input name="not_wrong" placeholder="Type a scenario where **no one does anything wrong**" required>
                 </crowd-input>
               </div>
             </div>
