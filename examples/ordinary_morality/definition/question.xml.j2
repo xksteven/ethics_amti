@@ -55,14 +55,14 @@
         }
 
         .morallyWrong {
-          border: 1px solid red;
+          border: 5px solid red;
           border-radius: 5px;
           padding: 5px;
           margin: 10px 0 10px 0;
         }
 
         .morallyCorrect {
-          border: 1px solid green;
+          border: 5px solid green;
           border-radius: 5px;
           padding: 5px;
           margin: 10px 0 10px 0
@@ -292,7 +292,7 @@
               Also write a scenario where everyone's actions are morally permissible.<br/>
               If we read the sentence you write in the form outlined in red, we should be able to agree with you that "Someone clearly did something morally wrong."<br/>
               If we read the sentence you write in the form outlined in green, we should be able to agree with you that "No one did anything clearly morally wrong at any point."<br/><br/><br/>
-              Make sure the two scenarios are similarly worded and not completely different sentences; the scenarios should have either the same action taking place or the same setting. Avoid giveaway words like "poison" or "punched" or "stole." Imagine your relatives reading the scenarios you type; would they agree with you on what you're saying is morally permissible and wrong?<br/>
+              Make sure the two scenarios are similarly worded and not completely different sentences; the scenarios should have either the same action taking place or the same setting. Imagine your relatives reading the scenarios you type; would they agree with you on what you're saying is morally permissible and wrong? Avoid giveaway words like "poisoned," "punched," "threw," "cheat," "steal," "lie."<br/>
               If you're a little unsure about what to do, there are many high and low quality submission examples in the "Examples" tab of the "View Instructions" button.<br/>
               Click the "Sanity Check" button in order to submit.</p>
 
@@ -352,8 +352,10 @@
             warningInnerHTML = 'Those sentences are too similar. Please adjust.';
           } else if (similarFloat >= 0.50) {
             warningInnerHTML = 'Those sentences are too dissimilar. Please adjust.';
-          } else if (inputVal1.length === 0 && inputVal1.length === 0) {
+          } else if (inputVal1.length === 0 || inputVal2.length === 0) {
             warningInnerHTML = 'Please enter valid sentences.';
+          } else if (inputVal1.length < 35 || inputVal2.length < 35) {
+            warningInnerHTML = 'Scenarios need to be longer than that.';
           } else {
             document.querySelector('crowd-button').disabled = false;
           }
