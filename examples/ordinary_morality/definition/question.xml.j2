@@ -351,13 +351,13 @@
           warningMessage.setAttribute('id', 'warning');
 
           if (similarFloat === 0.0) {
-            warningInnerHTML = 'Those sentences are too similar. Please adjust.';
+            warningInnerHTML = 'Those sentences are too similar. Please adjust. See the "Examples" tab of "View Instructions."';
           } else if (similarFloat >= 0.50) {
-            warningInnerHTML = 'Those sentences are too dissimilar. Please adjust.';
+            warningInnerHTML = 'Those sentences are too dissimilar. Please adjust. See the "Examples" tab of "View Instructions."';
           } else if (inputVal1.length === 0 || inputVal2.length === 0) {
-            warningInnerHTML = 'Please enter valid sentences.';
-          } else if (inputVal1.length < 35 || inputVal2.length < 35) {
-            warningInnerHTML = 'Scenarios need to be longer than that.';
+            warningInnerHTML = 'Please enter valid sentences. See the "Examples" tab of "View Instructions."';
+          } else if (inputVal1.length < 32 || inputVal2.length < 32) {
+            warningInnerHTML = 'Scenarios need to be more intricate or detailed than that.';
           } else {
             document.querySelector('crowd-button').disabled = false;
           }
