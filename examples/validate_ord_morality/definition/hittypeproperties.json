@@ -1,0 +1,17 @@
+{
+  "AutoApprovalDelayInSeconds": 259200,
+  "AssignmentDurationInSeconds": 3600,
+  "Reward": "0.01",
+  "Title": "Check If Something Wrong Happened Yes/No",
+  "Keywords": "HTMLQuestion, writing, free response, creative, Dan, fun,",
+  "Description": "Select whether something occured that was morally wrong or something morally permissible.",
+  "QualificationRequirements": [
+    {
+  	"QualificationTypeId": "00000000000000000071",
+  	"Comparator": "EqualTo",
+  	"LocaleValues": [{
+            "Country": "US"
+        }]
+    }
+   ]
+}
