@@ -1,49 +1,80 @@
 <HTMLQuestion xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2011-11-11/HTMLQuestion.xsd">
-  <HTMLContent>
+ <HTMLContent>
     <![CDATA[
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
-          <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
-        </head>
-        <body>
-          <form name='mturk_form' method='post' id='mturk_form' action='/mturk/externalSubmit'>
-            <input type='hidden' value='' name='assignmentId' id='assignmentId'/>
-            <h1>This is an example question</h1>
-            <p>The example word is: <b>{{ example_word }}</b>.</p>
-           <div class="radio">
-           <label for="radios-0">
-             <input type="radio" name="radios" id="radios-0" value="1">
-             OK
-           </label>
-         </div>
-         <div class="radio">
-           <label for="radios-1">
-             <input type="radio" name="radios" id="radios-1" value="2">
-             Not OK
-           </label>
+     <!DOCTYPE html>
+     <html>
+       <head>
+         <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+         <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+         <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+       </head>
+
+
+<crowd-form>
+       <body>
+
+          <crowd-instructions link-text="View instructions" link-type="button">
+              <short-summary>
+                  <h3>Description</h3>
+                    <p>Write a scenario where someone does something clearly wrong according to common everyday, ordinary moral </p>
+              </short-summary>
+              <detailed-instructions>
+              </detailed-instructions>
+           </crowd-instructions>
+
+           <p>{{ sample1 }}</p>
+           <div>       
+           <crowd-radio-group id="radios" required onchange="enableButton(0)">
+             <crowd-radio-button name="v1" value="wrong">wrong</crowd-radio-button><br/>
+             <crowd-radio-button name="v2" value="not wrong">not wrong</crowd-radio-button>
+           </crowd-radio-group>
+           </div>
+      
+           <p>{{ sample2 }}</p><br/>
+      
+           <div>
+             <crowd-radio-group id="radios" required onchange="enableButton(1)">
+             <crowd-radio-button name="v3" value="wrong">wrong</crowd-radio-button><br/>
+             <crowd-radio-button name="v4" value="not wrong">not wrong</crowd-radio-button>
+           </crowd-radio-group>
            </div>
 
-       <p>The example word is: <b>{{ example_word2 }}</b>.</p>
-       <div class="radio">
-         <label for="radios-2">
-           <input type="radio" name="radios" id="radios-2" value="3">
-           OK
-         </label>
-        </div>
-       <div class="radio">
-         <label for="radios-3">
-           <input type="radio" name="radios" id="radios-3" value="4">
-           Not OK
-         </label>
-         </div>
-         <p><input type='submit' id='submitButton' value='Submit' /></p>
-          </form>
-          <script language='Javascript'>turkSetAssignmentID();</script>
-        </body>
-      </html>
-    ]]>
-  </HTMLContent>
-  <FrameHeight>450</FrameHeight>
+           <p>{{ sample3 }}</p><br/>
+      
+           <div>
+             <crowd-radio-group id="radios" required onchange="enableButton(2)">
+             <crowd-radio-button name="v5" value="wrong">wrong</crowd-radio-button><br/>
+             <crowd-radio-button name="v6" value="not wrong">not wrong</crowd-radio-button>
+           </crowd-radio-group>
+           </div>
+
+           <p>{{ sample4 }}</p><br/>
+      
+           <div>
+             <crowd-radio-group id="radios" required onchange="enableButton(3)">
+             <crowd-radio-button name="v7" value="wrong">wrong</crowd-radio-button><br/>
+             <crowd-radio-button name="v8" value="not wrong">not wrong</crowd-radio-button>
+           </crowd-radio-group>
+           </div>
+
+
+<crowd-button id="submit" form-action="submit" variant="primary" disabled>Submit</crowd-button>
+   </body>
+</crowd-form>
+
+   <script>
+       var count = [0,0,0,0];
+       function enableButton(i) {
+           count[i] = 1;
+           if (count.reduce((a, b) => a + b, 0) === count.length) {
+               document.getElementById("submit").disabled = false;
+           }
+       }
+   </script>
+
+ </html>
+ ]]>
+ </HTMLContent>
+ <FrameHeight>450</FrameHeight>
 </HTMLQuestion>
+
