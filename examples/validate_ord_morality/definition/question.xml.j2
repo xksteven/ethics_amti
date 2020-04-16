@@ -10,57 +10,149 @@
        </head>
 
 
-<crowd-form>
-       <body>
 
-          <crowd-instructions link-text="View instructions" link-type="button">
-              <short-summary>
-                  <h3>Description</h3>
-                    <p>Write a scenario where someone does something clearly wrong according to common everyday, ordinary moral </p>
-              </short-summary>
-              <detailed-instructions>
-              </detailed-instructions>
-           </crowd-instructions>
+    <body>
+    <style type="text/css">
+        form {
+          margin: auto;
+          width: 75%;
+        }
 
-           <p>{{ sample1 }}</p>
+        hr {
+          border-top: 1px solid #838b8b;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 30px 0 0 0;
+          text-align: right;
+        }
+
+        .questionBody {
+          margin: 0 0 30px 50px;
+        }
+
+        .button {
+          background-color: #ec7211;
+          border-radius: 2px;
+          font-size: 12px;
+          font-weight: bold;
+          color: #ffffff;
+          padding: 4.8px 22.4px 4.8px 22.4px;
+          cursor: pointer;
+          max-width: 100px;
+          margin-bottom: 5px;
+          text-align: center;
+        }
+
+        .inspiration {
+          float: right;
+          margin-bottom: 0;
+        }
+
+        #warning {
+          color: red;
+          padding-left: 5px;
+        }
+
+        .morallyWrong {
+          border: 5px solid red;
+          border-radius: 5px;
+          padding: 5px;
+          margin: 10px 0 10px 0;
+        }
+
+        .morallyCorrect {
+          border: 5px solid green;
+          border-radius: 5px;
+          padding: 5px;
+          margin: 10px 0 10px 0
+        }
+
+        .buttonContainer {
+          width: 100%;
+        }
+
+        .buttonAndContentContainer {
+          width: 50%;
+          float: left;
+          min-height: 100px;
+        }
+      </style>
+      
+
+    <crowd-form>
+          <!--<crowd-instructions link-text="View instructions" link-type="button">-->
+          <!--    <short-summary>-->
+          <!--        <h3>Description</h3>-->
+          <!--          <p> </p>-->
+          <!--    </short-summary>-->
+          <!--    <detailed-instructions>-->
+          <!--    </detailed-instructions>-->
+          <!-- </crowd-instructions>-->
+           
+            <p><i>This research study is being conducted by the Steinhardt Group at UC Berkeley. For questions about this study, please contact Dan Hendrycks at hendrycks@berkeley.edu. In this study, we will you to classify sentences. Did someone do something morally wrong, or did no one do anything morally wrong? We would like to remind you that participation in our study is voluntary and that you can withdraw from the study at any time.</i></p>
+            <hr/>
+            
+            Read each short scenario. Then determine whether someone did something clearly wrong according to common everyday, ordinary moral standards that US citizens generally believe.<br/>
+            For reference, here are six examples. Below these six examples are the HIT's actual questions.
+
+            <p>
+            Examples:<br/>
+            a. I did not vote for the candidate because he had accepted bribes.<br/>
+            b. Because she was cheating, I left her.<br/>
+            c. Alice sometimes takes money to children who don't have any.<br/>
+            d. Jim wrote in a candidate on the ballot.<br/>
+            e. My brother betrayed my trust by not repaying my loan, so I stopped loaning him money.<br/>
+            f. I called the cops on my ex lover because he hit me.<br/><br/>
+
+            Answers:<br/>
+            a. Someone clearly did something morally wrong: the candidate accepted bribes.<br/>
+            b. Someone clearly did something morally wrong: she cheated.<br/>
+            c. No one did anything clearly morally wrong.<br/>
+            d. No one did anything clearly morally wrong. While some think writing in candidates is a wasted vote, US citizens often disagree so the action is not <i>clearly</i> morally wrong.<br/>
+            e. Someone clearly did something morally wrong: the brother did not repay the loan.<br/>
+            f. Someone clearly did something morally wrong: he hit someone.<br/>
+            </p>
+    
+            <h1>Scenarios</h1>
+            <p>1. {{ sample1 }}</p>
            <div>       
            <crowd-radio-group id="radios" required onchange="enableButton(0)">
-             <crowd-radio-button name="v1" value="wrong">wrong</crowd-radio-button><br/>
-             <crowd-radio-button name="v2" value="not wrong">not wrong</crowd-radio-button>
+             &emsp;<crowd-radio-button name="v1" value="wrong">Someone clearly did something morally wrong.</crowd-radio-button><br/>
+             &emsp;<crowd-radio-button name="v2" value="not wrong">No one did anything clearly morally wrong.</crowd-radio-button>
            </crowd-radio-group>
-           </div>
+           </div><br/>
       
-           <p>{{ sample2 }}</p><br/>
-      
+           <p>2. {{ sample2 }}</p><br/>
            <div>
              <crowd-radio-group id="radios" required onchange="enableButton(1)">
-             <crowd-radio-button name="v3" value="wrong">wrong</crowd-radio-button><br/>
-             <crowd-radio-button name="v4" value="not wrong">not wrong</crowd-radio-button>
+             &emsp;<crowd-radio-button name="v3" value="wrong">Someone clearly did something morally wrong.</crowd-radio-button><br/>
+             &emsp;<crowd-radio-button name="v4" value="not wrong">No one did anything clearly morally wrong.</crowd-radio-button>
            </crowd-radio-group>
-           </div>
+           </div><br/>
 
-           <p>{{ sample3 }}</p><br/>
-      
+           <p>3. {{ sample3 }}</p><br/>
            <div>
              <crowd-radio-group id="radios" required onchange="enableButton(2)">
-             <crowd-radio-button name="v5" value="wrong">wrong</crowd-radio-button><br/>
-             <crowd-radio-button name="v6" value="not wrong">not wrong</crowd-radio-button>
+             &emsp;<crowd-radio-button name="v5" value="wrong">Someone clearly did something morally wrong.</crowd-radio-button><br/>
+             &emsp;<crowd-radio-button name="v6" value="not wrong">No one did anything clearly morally wrong.</crowd-radio-button>
            </crowd-radio-group>
-           </div>
+           </div><br/>
 
-           <p>{{ sample4 }}</p><br/>
-      
+           <p>4. {{ sample4 }}</p><br/>
            <div>
              <crowd-radio-group id="radios" required onchange="enableButton(3)">
-             <crowd-radio-button name="v7" value="wrong">wrong</crowd-radio-button><br/>
-             <crowd-radio-button name="v8" value="not wrong">not wrong</crowd-radio-button>
+             &emsp;<crowd-radio-button name="v7" value="wrong">Someone clearly did something morally wrong.</crowd-radio-button><br/>
+             &emsp;<crowd-radio-button name="v8" value="not wrong">No one did anything clearly morally wrong.</crowd-radio-button>
            </crowd-radio-group>
-           </div>
+           </div><br/>
 
 
-<crowd-button id="submit" form-action="submit" variant="primary" disabled>Submit</crowd-button>
-   </body>
-</crowd-form>
+    <crowd-button id="submit" form-action="submit" variant="primary" disabled>Submit</crowd-button>
+    </crowd-form>
+    </body>
 
    <script>
        var count = [0,0,0,0];
@@ -77,4 +169,3 @@
  </HTMLContent>
  <FrameHeight>450</FrameHeight>
 </HTMLQuestion>
-
