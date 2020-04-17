@@ -105,12 +105,12 @@ def save_batch(
                             f'Assignment (ID: {assignment_id}) Status:'
                             f' {assignment_status}.')
 
-                        if assignment_status not in ['Approved', 'Rejected']:
-                            raise ValueError(
-                                f'Assignment (ID: {assignment_id}) has status'
-                                f' "{assignment_status}". In order to save a'
-                                f' batch all assignments must have "Approved"'
-                                f' or "Rejected" status.')
+#                         if assignment_status not in ['Approved', 'Rejected']:
+#                             raise ValueError(
+#                                 f'Assignment (ID: {assignment_id}) has status'
+#                                 f' "{assignment_status}". In order to save a'
+#                                 f' batch all assignments must have "Approved"'
+#                                 f' or "Rejected" status.')
 
                         assignments_file.write(
                             json.dumps(
@@ -123,6 +123,6 @@ def save_batch(
         shutil.copytree(working_dir, results_dir)
 
     # remove the incomplete file since the batch is now complete
-    os.remove(incomplete_file_path)
+#     os.remove(incomplete_file_path)
 
     logger.info(f'Saving batch {batch_id} is complete.')
