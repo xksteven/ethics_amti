@@ -1,4 +1,4 @@
 {
-    "MaxAssignments": 2,
-    "LifetimeInSeconds": 3600
+    "MaxAssignments": 7,
+    "LifetimeInSeconds": 172800
 }
