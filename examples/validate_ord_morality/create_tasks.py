@@ -39,19 +39,27 @@ upto = min(args.hits, len(mturk_data))
 
 my_str = []
 for index in range(0,(upto)):
-    tmp = "{"
+    tmp_str = "{"
     for i in range(args.num_samples):
         if i < 2:
-            sent_to_insert = mturk_data[index*(args.num_samples-1) + i][1]
+            tmp = mturk_data[index*(args.num_samples-1) + i]
+            sent_to_insert = tmp[1]  # sentence
+            assign_id = str(tmp[0]) + str(tmp[3].strip()) # original label, assignmentID
         elif i == 2:
-            sent_to_insert = gt_data[index][1]
+            tmp = gt_data[index]
+            sent_to_insert = tmp[1]
+            assign_id = str(tmp[0]) + str("ADan") + str(args.hits * args.which_batch + index)
         else:
-            sent_to_insert = mturk_data[index*(args.num_samples-1) + i-1][1]
+            tmp = mturk_data[index*(args.num_samples-1) + i-1]
+            sent_to_insert = tmp[1]
+            assign_id = str(tmp[0]) + str(tmp[3].strip())# original label, assignmentID
+        #print(sent_to_insert, assign_id, type(assign_id))
+        #print(tmp_str)
         if i == (args.num_samples - 1):
-            tmp += "\"sample"+str(i)+"\" : \"" + sent_to_insert + "\""
+            tmp_str += "\"sample"+str(i)+"\" : \"" + str(sent_to_insert) + "\", " + "\"v" + str(i) + "\" : \"" + str(assign_id) + "\""
         else:
-            tmp += "\"sample"+str(i)+"\" : \"" + sent_to_insert + "\", "
-    my_str.append(tmp+"}\n")
+            tmp_str += "\"sample"+str(i)+"\" : \"" + str(sent_to_insert) + "\", " + "\"v" + str(i) + "\" : \"" + str(assign_id) + "\", "
+    my_str.append(tmp_str+"}\n")
 
 with open("data.jsonl", "w") as f:
     for i in range(len(my_str)):
