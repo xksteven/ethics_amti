@@ -80,23 +80,23 @@ def review_hit(
                             assignment_id=assignment_id,
                             answers=answers_xml.toprettyxml()))
 
-                    approve = None
-                    while approve is None:
-                        user_input = input('Approve? [y/n]').strip().lower()
-                        if user_input in ['y', 'n']:
-                            approve = user_input == 'y'
-                        else:
-                            print('Please type either "y" or "n".')
+#                     approve = None
+#                     while approve is None:
+#                         user_input = input('Approve? [y/n]').strip().lower()
+#                         if user_input in ['y', 'n']:
+#                             approve = user_input == 'y'
+#                         else:
+#                             print('Please type either "y" or "n".')
 
-                    if approve:
-                        logger.info(f'Approving assignment (ID: {assignment_id}).')
-                        client.approve_assignment(
-                            AssignmentId=assignment_id,
-                            OverrideRejection=False)
-                    else:
-                        logger.info(
-                            f'Did not approve assignment (ID: {assignment_id}).'
-                            f' Please make sure to manually reject it.')
+#                     if approve:
+#                         logger.info(f'Approving assignment (ID: {assignment_id}).')
+#                         client.approve_assignment(
+#                             AssignmentId=assignment_id,
+#                             OverrideRejection=False)
+#                     else:
+#                         logger.info(
+#                             f'Did not approve assignment (ID: {assignment_id}).'
+#                             f' Please make sure to manually reject it.')
 
 
 def review_batch(
