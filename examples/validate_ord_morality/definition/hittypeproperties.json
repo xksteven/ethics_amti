@@ -3,7 +3,7 @@
   "AssignmentDurationInSeconds": 1800,
   "Reward": "0.01",
   "Title": "Check If Something Morally Wrong Happened | Yes/No",
-  "Keywords": "HTMLQuestion, writing, free response, creative, Dan, fun,",
+  "Keywords": "HTMLQuestion, classify, text, read, Dan, fun,",
   "Description": "Classify whether someone did something morally wrong, or whether no one did anything wrong.",
   "QualificationRequirements": [
     {
