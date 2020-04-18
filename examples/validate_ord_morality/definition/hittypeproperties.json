@@ -2,9 +2,9 @@
   "AutoApprovalDelayInSeconds": 259200,
   "AssignmentDurationInSeconds": 1800,
   "Reward": "0.01",
-  "Title": "Check If Something Wrong Happened Yes/No",
+  "Title": "Check If Something Morally Wrong Happened | Yes/No",
   "Keywords": "HTMLQuestion, writing, free response, creative, Dan, fun,",
-  "Description": "Select whether something occured that was morally wrong or something morally permissible.",
+  "Description": "Classify whether someone did something morally wrong, or whether no one did anything wrong.",
   "QualificationRequirements": [
     {
         "QualificationTypeId": "00000000000000000071",
