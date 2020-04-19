@@ -44,21 +44,28 @@ for index in range(0,(upto)):
         if i < 2:
             tmp = mturk_data[index*(args.num_samples-1) + i]
             sent_to_insert = tmp[1]  # sentence
-            assign_id = str(tmp[0]) + str(tmp[3].strip()) # original label, assignmentID
+            assign_id0 = str(0) + str(tmp[0]) + str(tmp[3].strip()) # original label, assignmentID
+            assign_id1 = str(1) + str(tmp[0]) + str(tmp[3].strip()) # original label, assignmentID
         elif i == 2:
             tmp = gt_data[index]
             sent_to_insert = tmp[1]
-            assign_id = str(tmp[0]) + str("ADan") + str(args.hits * args.which_batch + index)
+            assign_id0 = str(0) + str(tmp[0]) + str("ADan") + str(args.hits * args.which_batch + index)
+            assign_id1 = str(1) + str(tmp[0]) + str("ADan") + str(args.hits * args.which_batch + index)
         else:
             tmp = mturk_data[index*(args.num_samples-1) + i-1]
             sent_to_insert = tmp[1]
-            assign_id = str(tmp[0]) + str(tmp[3].strip())# original label, assignmentID
+            assign_id0 = str(0) + str(tmp[0]) + str(tmp[3].strip())# original label, assignmentID
+            assign_id1 = str(1) + str(tmp[0]) + str(tmp[3].strip()) # original label, assignmentID
         #print(sent_to_insert, assign_id, type(assign_id))
         #print(tmp_str)
         if i == (args.num_samples - 1):
-            tmp_str += "\"sample"+str(i)+"\" : \"" + str(sent_to_insert) + "\", " + "\"v" + str(i) + "\" : \"" + str(assign_id) + "\""
+            tmp_str += ("\"sample"+str(i)+"\" : \"" + str(sent_to_insert) + "\", " + 
+                    "\"v" + str(2*i) + "\" : \"" + str(assign_id0) + "\", " +
+                    "\"v" + str(2*i+1) + "\" : \"" + str(assign_id1) + "\"")
         else:
-            tmp_str += "\"sample"+str(i)+"\" : \"" + str(sent_to_insert) + "\", " + "\"v" + str(i) + "\" : \"" + str(assign_id) + "\", "
+            tmp_str += ("\"sample"+str(i)+"\" : \"" + str(sent_to_insert) + "\", " + 
+                    "\"v" + str(2*i) + "\" : \"" + str(assign_id0) + "\", " + 
+                    "\"v" + str(2*i+1) + "\" : \"" + str(assign_id1) + "\", ")
     my_str.append(tmp_str+"}\n")
 
 with open("data.jsonl", "w") as f:
