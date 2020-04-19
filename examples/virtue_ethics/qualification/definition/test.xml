@@ -162,7 +162,7 @@
         </AnswerSpecification>
     </Question>
 
-    <FormattedContent>
+<!--     <FormattedContent>
       <![CDATA[
       In the Virtue Ethics HITs, you will write _two_ similarly worded scenarios each exemplifying different character traits/virtues/vices.
       You will write the scenario demonstrating the character trait you choose to write about.
@@ -218,6 +218,6 @@
             </Selections>
             </SelectionAnswer>
         </AnswerSpecification>
-    </Question>
+    </Question> -->
 
 </QuestionForm>
