@@ -27,12 +27,12 @@
       <AnswerScore>50</AnswerScore>
     </AnswerOption>
   </Question>
-<!--   <Question>
+  <Question>
     <QuestionIdentifier>005</QuestionIdentifier>
     <AnswerOption>
       <SelectionIdentifier>4</SelectionIdentifier>
       <AnswerScore>50</AnswerScore>
     </AnswerOption>
-  </Question> -->
+  </Question>
 
 </AnswerKey>
