@@ -1,5 +1,5 @@
 <HTMLQuestion xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2011-11-11/HTMLQuestion.xsd">
-  <HTMLContent>
+    <HTMLContent>
     <![CDATA[
     <!DOCTYPE html>
     <html>
@@ -26,8 +26,6 @@
               margin: 0 0 30px 50px;
             }
             .suggestion {
-              float: right;
-              margin-top: -33px;
               background-color: #ec7211;
               border-radius: 2px;
               font-size: 12px;
@@ -35,6 +33,23 @@
               color: #ffffff;
               padding: 4.8px 22.4px 4.8px 22.4px;
               cursor: pointer;
+            }
+
+            .suggestionButtonsContainer {
+                display: flex;
+                justify-content: space-between;
+                padding-top: 10px;
+            }
+
+            #messageContainer {
+                height: 80px;
+                text-align: center;
+            }
+
+            .traitContainer {
+                border: 1px solid #ec7211;
+                border-radius: 2px;
+                padding: 10px;
             }
         </style>
       </head>
@@ -95,188 +110,728 @@
             </p>
 
             <!-- Your contexts and intents will be substituted for the "context" and "intent" variables when you publish a batch with an input file containing multiple contexts and intents -->
+            <div class="traitContainer">
+                <p>
+                  <strong>
+                    Character Trait 1:
+                  </strong>
+                  <crowd-input id="trait1" name="trait1" placeholder="Type a character trait/virtue/vice."  required></crowd-input> 
+                </p>
+                <section class="questionBody">
+                    <p>
+                        <strong>
+                            Scenario 1:
+                        </strong>
+                        <crowd-input id="scenario1" name="scenario1" placeholder="Type a scenario where a person exemplifies Character Trait 1."
+                            required></crowd-input>
+                    </p>
+                </section>
+            </div>
 
-            <p>
-              <strong>
-                Character Trait 1:
-              </strong>
-              <crowd-input id="trait1" name="trait1" placeholder="Type a character trait/virtue/vice."  required></crowd-input> 
-              <span class="suggestion">
-                Get Suggestion
-              </span>
-            </p>
-            <p>
-              <strong>
-                Character Trait 2:
-              </strong>
-              <crowd-input id="trait2" name="trait2" placeholder="Type a new character trait/virtue/vice." required></crowd-input> 
-              <span class="suggestion">
-                Get Suggestion
-              </span>
-            </p>
+            <hr />
 
+            <div class="traitContainer">
+                <p>
+                  <strong>
+                    Character Trait 2:
+                  </strong>
+                  <crowd-input id="trait2" name="trait2" placeholder="Type a new character trait/virtue/vice." required></crowd-input> 
+                </p>
+                <section class="questionBody">
+                  <p>
+                    <strong>
+                      Scenario 2:
+                    </strong>
+                    <crowd-input id="scenario2" name="scenario2" placeholder="Modify Scenario 1 so that a person exemplifies Character Trait 2." required></crowd-input>
+                  </p>
+               </section>
+            </div>
 
-            <section class="questionBody">
-              <p>
-                <strong>
-                  Scenario 1:
-                </strong>
-                <crowd-input name="scenario1" placeholder="Type a scenario where a person exemplifies Character Trait 1." required></crowd-input>
-              </p>
-
-           </section>
-
-            <hr/>
-  
-            <section class="questionBody">
-              <p>
-                <strong>
-                  Scenario 2:
-                </strong>
-                <crowd-input name="scenario2" placeholder="Modify Scenario 1 so that a person exemplifies Character Trait 2." required></crowd-input>
-              </p>
-
-           </section>
+            <div class="suggestionButtonsContainer">
+               <span class="suggestion">Sanity Check</span>
+               <span class="suggestion">Get Action</span>
+               <span class="suggestion">Get Character Trait</span>
+               <span class="suggestion">Get Inspiration</span>
+            </div>
+           <div id="messageContainer"></div>
           </div>
         </crowd-form>
 
         <script language='Javascript'>turkSetAssignmentID();</script>
         <script>
-          var traits1 = [
-[["rashness"], ["calculating", "measured", "foresighted", "hesitant", "leisurely", "slow", "dallying", "deliberate", "unhurried"]],
-[["courage"], ["cold feet", "faintheartedness", "fearfulness", "timidity", "hesitation", "indecisiveness", "cowardice", "cowardliness", "spinelessness"]],
-[["cowardice"], ["audacity", "boldness", "having a backbone", "determination", "perseverance", "bravery", "courage", "courageousness", "daring", "fearlessness", "guts", "hardihood", "nerve", "stoutness", "valiance", "valor"]],
-[["licentious"], ["modest", "innocent", "prudish", "monastic"]],
-[["self-indulgence"], ["selfless", "humble", "temperance"]],
-[["over-indulgence"], ["temperance", "self-denial"]],
-[["temperance"], ["self-indulgence", "hedonism", "gluttony", "insobriety"]],
-[["stinginess"], ["extravagant with money", "generosity", "altruistic", "lavish", "overgenerous", "philanthropic", "unthrifty", "kindly", "magnanimous", "compassionate", "charitable"]],
-[["generous"], ["cheap", "selfish", "stingy", "tightfisted", "uncharitable"]],
-[["prodigality"], ["frugal", "penny-pinching", "miserly", "judicious", "prudent", "conserving", "thrifty"]],
-[["pettiness"], ["consequential", "nonpartisan", "objective", "unbiased", "freethinking"]],
-[["meanness"], ["civility", "cordiality", "friendliness", "hospitality", "veneration", "charity", "gentle", "altruistic", "selfless", "righteous", "ethical", "honest", "benevolent", "benign", "admirable"]],
-[["vulgarity"], ["courtliness", "elegance", "grace", "graciousness", "consideration", "sensitivity", "thoughtfulness", "decorum", "purity"]],
-[["tasteless"], ["classy", "tasteful", "appropriate", "proper", "decent"]],
-[["conceit"], ["humbleness", "humility", "modesty", "self-disgust", "self-doubt", "bashfulness", "shyness"]],
-[["timidity"], ["adventuresome", "adventurous", "audacious", "bold", "daring", "dashing", "having guts", "venturesome", "brave", "courageous", "fearless", "confident", "spirited", "unflinching", "determined"]],
-[["ambition"], ["apathy", "halfheartedness", "indifference", "sloth", "laziness"]],
-[["prideful"], ["undue humility", "shy", "cowering", "apologetic", "sheepish", "down-to-earth", "meek", "modest", "humble", "egoless", "defeated", "dispirited"]],
-[["unambitious"], ["driven", "energetic", "confident", "ambitious"]],
-[["ill temper"], ["patient", "careless", "passive"]],
-[["patient"], ["bored", "complaining", "fed up", "impatient", "protesting", "hesitant", "faithless", "fickle"]],
-[["good temper"], ["irritable", "volatile", "moody", "withdrawn", "passive"]],
-[["false modesty"], ["modest", "boastful", "show-off", "braggart"]],
-[["truthful"], ["dishonest", "fibbing", "lying", "deceptive", "devious", "slippery", "sly", "fallacious", "undependable", "unreliable", "untrustworthy", "hypocritical", "insincere", "pretending"]],
-[["boastful"], ["modest", "accurate", "aloof"]],
-[["buffoonery"], ["boring", "witty", "dull", "uninteresting"]],
-[["wittiness"], ["brainless", "lowbrow", "stupid", "witless", "lame"]],
-[["humorless"], ["facetious", "flippant", "humorous", "joking", "playful"]],
-[["boorishness"], ["civil", "courteous", "polite", "polished", "classy"]],
-[["obsequious"], ["domineering", "demanding", "tyrannical"]],
-[["friendly"], ["distant", "aggressive", "aloof", "standoffish", "unfriendly", "unsociable", "withdrawn", "faultfinding", "hypercritical", "belittling"]],
-[["unfriendly"], ["advantageous", "friendly", "affable", "agreeable", "tolerant", "understanding", "harmless", "helpful", "hospitable", "sympathetic"]],
-[["modesty"], ["bold", "dashing", "forceful", "flamboyant", "indecency", "arrogance", "chest-thumping", "self-centeredness", "self-importance", "vanity"]],
-[["shameless"], ["shy", "apologetic", "ashamed", "regretful", "remorseful", "ashamed", "apologetic", "mortified", "fazed"]],
-[["malice"], ["empathy", "affection", "kindness", "charity"]],
-[["envy"], ["benevolence", "goodwill", "kindness", "sympathy"]],
-[["righteous indignation"], ["malicious enjoyment", "malicious", "envious", "spiteful", "careless", "apathetic", "resentful"]],
-[["spiteful"], ["compassionate", "good-hearted", "kind", "benevolent", "benign", "altruistic", "friendly"]],
-[["amiable"], ["disagreeable", "ill-tempered", "ungracious", "unpleasant", "impolite", "crabby", "cranky", "grouchy", "grumpy", "contentious"]],
-[["appreciative"], ["derogatory", "disapproving", "unappreciative", "inhospitable", "rude", "thoughtless"]],
-[["balanced"], ["obsessed", "ballistic", "berserk", "mixed-up", "unreasonable", "senseless", "oddball", "aberrant", "loopy", "crazy", "demented", "deranged", "insane", "lunatic", "mad", "maniacal"]],
-[["benevolent"], ["merciless", "pitiless", "ruthless", "insensitive", "thoughtless", "uncaring", "malevolent", "barbaric", "fiendish", "wanton", "selfish"]],
-[["caring"], ["forgetful", "ignoring", "neglectful", "careless"]],
-[["decent"], ["improper", "indelicate", "informal", "perverted", "offensive", "crude", "wretched"]],
-[["dedicated"], ["irresponsible", "hesitant", "apathetic", "disloyal", "unfaithful"]],
-[["earnest"], ["playful", "frivolousness", "shallowness", "humorous", "flippant", "scatterbrained", "hilarious"]],
-[["empathetic"], ["callous", "coldhearted", "unfeeling", "unsympathetic", "stern", "harsh", "oppressive", "brutal", "grim", "bigoted", "small-minded", "indifferent"]],
-[["faithful"], ["undependable", "traitorous", "careless", "corrupt", "inauthentic", "irresponsible"]],
-[["forgiving"], ["avenging", "revenging", "punishing", "resentful", "unforgiving"]],
-[["unforgiving"], ["forgiving", "lax", "tolerant", "pushover", "forgetful"]],
-[["forthright"], ["long-winded", "wordy", "deceitful", "untruthful", "misleading", "two-faced"]],
-[["heroic"], ["skittish", "timid", "anxious", "wimpy", "gutless", "mediocre", "second-rate"]],
-[["helpful"], ["ineffectual", "unhelpful", "useless", "harmful", "weak", "clueless"]],
-[["honest"], ["undependable", "unreliable", "unscrupulous", "untrustworthy", "hypocritical", "mean", "dishonest", "fake", "pretentious", "cutthroat", "deceptive", "misleading"]],
-[["honorable"], ["dishonorable", "unprincipled", "unworthy", "improper", "naughty", "offensive", "unjust", "dishonest"]],
-[["humble"], ["arrogant", "pompous", "pretentious", "self-asserting", "flamboyant", "ostentatious", "showy", "dominating", "domineering", "boastful", "bombastic", "cocky", "overconfident", "cheeky", "aggressive"]],
-[["independent"], ["helpless", "incompetent", "dependent"]],
-[["loyal"], ["undependable", "unreliable", "untrustworthy", "apathetic", "disloyal", "fickle"]],
-[["masculine"], ["effeminate", "emasculated", "unmanly", "feminine"]],
-[["effeminate"], ["masculine", "manly", "forceful"]],
-[["modest"], ["tasteless", "crude", "obscene", "vulgar", "forceful", "unreserved", "arrogant", "egotistical", "presumptuous", "pretentious", "immodest", "cocky", "haughty"]],
-[["patriotic"], ["treasonous", "faithless", "fickle", "unpatriotic", "disloyal"]],
-[["peaceful"], ["aggressive", "belligerent", "fierce", "hostile", "bloodthirsty", "wild", "crazy", "rowdy", "agitated", "angry", "restless", "jittery", "nervous", "high-strung", "uptight"]],
-[["personable"], ["socially incompetent", "bumbling", "awkward"]],
-[["principled"], ["degenerate", "depraved", "perverted", "unfair", "mean", "unreliable", "untrustworthy", "cutthroat", "dishonest", "dishonorable"]],
-[["prudent"], ["careless", "heedless", "rash", "foolish", "unwise", "brainless", "dumb", "foolish", "slow-witted"]],
-[["reliable"], ["disloyal", "dodgy", "undependable", "unreliable", "unsafe", "untrustworthy", "shady", "dishonest"]],
-[["respectful"], ["abusive", "insulting", "offensive", "disrespectful", "undutiful", "belittling"]],
-[["selfless"], ["selfish", "greedy", "gluttonous", "lazy"]],
-[["sociable"], ["misanthropic", "distant", "aloof", "standoffish", "antisocial", "impolite", "crabby", "grumpy", "inhospitable", "awkward"]],
-[["stoic"], ["bored", "tired", "weary", "disobedient", "unruly", "impatient", "gung ho", "zealous", "sentimental", "dramatic", "fervent", "hot-blooded", "passionate"]],
-[["trusting"], ["oversuspicious", "distrustful", "cynical", "discredit"]],
-[["conservative"], ["extremist", "graceless", "flamboyant", "imprudent", "lax", "neglectful", "absentminded", "careless", "heedless", "incautious", "wasteful"]],
-[["deceptive"], ["candid", "direct", "frank", "outspoken", "honest", "straightforward"]],
-[["domineering"], ["humble", "meek", "modest", "indecisive", "passive", "resigned", "submissive"]],
-[["impersonal"], ["personable", "sociable", "nosy", "obsessive", "dependent"]],
-[["abrasive"], ["calm", "friendly", "gentle"]],
-[["angry"], ["amiable", "easygoing", "serene", "agreeable", "accepting", "tolerant", "understanding", "calm"]],
-[["apathetic"], ["mindful", "attentive", "fiery", "sentimental", "overemotional", "dramatic"]],
-[["callous"], ["charitable", "compassionate", "humane", "tolerant", "understanding", "friendly", "gracious", "lenient", "gentle"]],
-[["childish"], ["smart", "mature"]],
-[["complacent"], ["attentive", "caring", "sensitive", "humble", "modest", "energetic", "ambitious"]],
-[["cynical"], ["trustful", "cheerful", "innocent", "idealistic", "sappy", "humble"]],
-[["delicate"], ["tough", "lenient", "forgiving", "uncritical", "lax", "happy-go-lucky", "lackadaisical", "mighty", "abrasive", "steadfast"]],
-[["egocentric"], ["altruistic", "magnanimous", "self-sacrificing", "self-denying", "self-reflective"]],
-[["foolish"], ["clever", "intelligent", "smart", "decisive"]],
-[["gloomy"], ["lighthearted", "optimistic", "merry", "cheery", "inspiring"]],
-[["hedonistic"], ["sober", "disciplined", "self-denying", "no fun"]],
-[["lazy"], ["ambitious", "diligent", "lively", "industrious", "watchful", "vigilant"]],
-[["narcissistic"], ["altruistic", "generous", "selfless", "impartial", "objective", "detached"]],
-[["pretentious"], ["down-to-earth", "meek", "lowly", "passive", "reserved", "humble"]],
-[["selfish"], ["charitable", "benevolent", "selfless", "altruistic", "generous"]],
-[["just"], ["biased", "one-sided", "unreliable", "unprincipled", "subjective", "arbitrary", "unfair", "inappropriate"]],
-[["humane"], ["ironhearted", "ruthless", "inconsiderate", "thoughtless", "uncaring", "brutal", "brute", "cold-blooded", "brutal", "grim", "inhumane"]],
-[["coward"], ["heroic", "vigilant", "brave"]],
-[["lustful"], ["decent", "modest", "innocent"]],
-[["gluttonous"], ["satisfied", "anorexic", "healthy"]],
-[["furious"], ["calm", "reasonable", "friendly", "cordial", "serene", "easygoing", "sweet", "unaggressive", "peaceful"]],
-[["merciful"], ["merciless"]],
-[["grateful"], ["rude", "ungrateful", "unappreciative", "thankless", "unpleasant", "gloomy", "joyless"]],
-[["trustworthy"], ["disloyal", "traitorous", "treacherous", "deceitful", "dishonest", "risky", "unreliable", "untrustworthy"]],
-[["volatile"], ["dependable", "reliable"]],
-[["prejudiced"], ["reasonable", "just", "detached", "indifferent", "impartial", "objective", "tolerant"]],
-[["resentful"], ["caring", "forgiving", "gentle", "kind", "kindhearted", "loving", "sweet", "sympathetic", "tender", "warm", "warmhearted", "well-meaning", "unenvious"]],
-]
-          var traits2 = [
-'charismatic', 'charming', 'cheerful', 'clear-headed', 'clever', 'colorful', 'compassionate', 'confident', 'conscientious', 'considerate', 'constant', 'contemplative', 'cooperative', 'courageous', 'courteous', 'creative', 'cultured', 'curious', 'daring', 'decisive', 'deep', 'disciplined', 'discreet', 'dramatic', 'dutiful', 'dynamic', 'educated', 'efficient', 'elegant', 'eloquent', 'energetic', 'enthusiastic', 'exciting', 'extraordinary', 'fair', 'farsighted', 'firm', 'flexible', 'focused', 'forceful', 'freethinking', 'fun-loving', 'gallant', 'gentle', 'genuine', 'gracious', 'hardworking', 'healthy', 'hearty', 'high-minded', 'humorous', 'idealistic', 'imaginative', 'impressive', 'incisive', 'incorruptible', 'individualistic', 'innovative', 'inoffensive', 'insightful', 'insouciant', 'intelligent', 'invulnerable', 'kind', 'leadership', 'leisurely', 'logical', 'lovable', 'magnanimous', 'many-sided', 'mature', 'methodical', 'meticulous', 'moderate', 'multi-leveled', 'neat', 'objective', 'observant', 'open', 'optimistic', 'orderly', 'organized', 'original', 'painstaking', 'passionate', 'perceptive', 'perfectionist', 'persuasive', 'playful', 'polished', 'popular', 'practical', 'precise', 'protective', 'providential', 'punctual', 'purposeful', 'pragmatic', 'reflective', 'relaxed', 'resourceful', 'responsible', 'responsive', 'reverential', 'romantic', 'scrupulous', 'secure', 'self-critical', 'self-denying', 'self-reliant', 'self-sufficient', 'sensitive', 'sentimental', 'serious', 'sexy', 'sharing', 'shrewd', 'skillful', 'sober', 'sophisticated', 'spontaneous', 'sporting', 'steady', 'strong', 'studious', 'suave', 'subtle', 'sweet', 'sympathetic', 'tasteful', 'thorough', 'tidy', 'tolerant', 'tractable', 'understanding', 'warm', 'well-rounded', 'wise', 'witty', 'absentminded', 'aggressive', 'ambitious', 'amusing', 'ascetic', 'authoritarian', 'busybody', 'casual', 'chummy', 'competitive', 'confidential', 'contradictory', 'determined', 'dry', 'emotional', 'familial', 'folksy', 'formal', 'freewheeling', 'frugal', 'high-spirited', 'hurried', 'impressionable', 'intense', 'irreverent', 'maternal', 'mellow', 'modern', 'obedient', 'old-fashioned', 'outspoken', 'paternalistic', 'preoccupied', 'progressive', 'proud', 'quiet', 'self-conscious', 'skeptical', 'solemn', 'solitary', 'stern', 'strict', 'stubborn', 'unceremonious', 'unchanging', 'unpatriotic', 'abrupt', 'agonizing', 'aimless', 'aloof', 'amoral', 'anxious', 'arbitrary', 'argumentative', 'arrogant', 'assertive', 'barbaric', 'bland', 'blunt', 'boisterous', 'brutal', 'calculating', 'cantankerous', 'careless', 'cautious', 'charmless', 'clumsy', 'cold', 'compulsive', 'conceited', 'condemnatory', 'conformist', 'confused', 'contemptible', 'contentious', 'conventional', 'cowardly', 'crass', 'crazy', 'critical', 'crude', 'cruel', 'decadent', 'deceitful', 'demanding', 'desperate', 'devious', 'dirty', 'dishonest', 'disobedient', 'disorderly', 'disorganized', 'disputatious', 'disrespectful', 'disruptive', 'disturbing', 'dull', 'easily discouraged', 'envious', 'erratic', 'escapist', 'excitable', 'expedient', 'extravagant', 'false', 'fearful', 'fickle', 'fiery', 'forgetful', 'fraudulent', 'frightening', 'graceless', 'grand', 'greedy', 'gullible', 'hateful', 'haughty', 'hostile', 'ignorant', 'impatient', 'impractical', 'imprudent', 'impulsive', 'inconsiderate', 'indecisive', 'indulgent', 'inert', 'inhibited', 'insecure', 'insensitive', 'insincere', 'insulting', 'intolerant', 'irrational', 'irresponsible', 'irritable', 'libidinous', 'malicious', 'mannerless', 'mealy mouthed', 'melancholic', 'messy', 'miserable', 'mistaken', 'moody', 'morbid', 'naive', 'neglectful', 'neurotic', 'nihilistic', 'noisy', 'obnoxious', 'obsessive', 'one-sided', 'opportunistic', 'oppressed', 'outrageous', 'paranoid', 'pedantic', 'perverse', 'pompous', 'possessive', 'power-hungry', 'predatory', 'presumptuous', 'procrastinating', 'provocative', 'push over', 'reactionary', 'reactive', 'regimental', 'regretful', 'repressed', 'ridiculous', 'rigid', 'rowdy', 'sadistic', 'sanctimonious', 'scheming', 'scornful', 'sedentary', 'self-indulgent', 'shallow', 'shortsighted', 'silly', 'single-minded', 'sloppy', 'sly', 'submissive', 'superficial', 'superstitious', 'tactless', 'thoughtless', 'timid', 'treacherous', 'troublesome', 'unappreciative', 'uncaring', 'uncharitable', 'uncooperative', 'undisciplined', 'ungrateful', 'unhealthy', 'unimaginative', 'unimpressive', 'unprincipled', 'unrealistic', 'unreflective', 'unreliable', 'unrestrained', 'vindictive', 'vulnerable', 'weak-willed', 'fidelity', 'integrity', 'disingenuous', 'shady', 'humorlessness', 'wet blanket', 'righteously indignant', 'annoyed', 'making a fuss over nothing', 'gone back on his word', 'servile', 'credulous', 'innocent', 'temperate', 'silent', 'diligent', 'industrious', 'sincere', 'clean', 'tranquil', 'humility', 'has his act together', 'has her act together', 'open-minded', 'book-smart', 'persistent', 'zealous', 'showing integrity', 'lovely', 'socially intelligent', 'leader', 'exhibiting self-control', 'showing gratitude', 'hopeful', 'spiritual', 'flying off the handle', 'meek', 'not arrogant', 'not prideful', 'possessing courage', 'unflinching', 'adroit', 'tenacious', 'unwilling to yield', 'steadfast', 'easily deceived or tricked', 'willing to share', 'showing poise', 'high self-esteem', 'independent mind', 'inventive', 'autonomous', 'carefree', 'rational', 'reasonable', 'mischievous', 'foolhardy', 'delightful', 'endearing', 'eccentric', 'successful', 'eminent', 'useful', 'prescient', 'polite', 'deferential', 'bossy', 'bombastic', 'over the top', 'not stern', 'not harsh', 'loving', 'affectionate', 'mysterious', 'eager', 'having optimism', 'lucky', 'fortunate', 'not agitated', 'without losing self-possession', 'mannerly', 'rude', 'lacking good sense or judgment', 'grumpy', 'very unhappy', 'talented', 'showing aptitude', 'thoughtful', 'lenient', 'weak', 'jealous', 'suspicious', 'lacking companions', 'lacking in courage', 'extroverted', 'withdrawn', 'coolness', 'industriousness', 'intelligence', 'wit', 'good manners', 'eloquence', 'artistic', 'adaptable', 'admirable', 'adventurous', 'agreeable', 'alert', 'articulate', 'athletic', 'attractive', 'brilliant', 'calm', 'capable', 'captivating', 'adamant', 'bashful', 'bold', 'brave', 'careful', 'docile', 'hardy', 'hasty', 'impish', 'jolly', 'lax', 'lonely', 'mild', 'naughty', 'quirky', 'rash', 'sassy'];
-          function onClick(event) {
-            // Get random trait from list
+            /* Arrays of suggestions and avoid words */
+            var traits1 = [
+                [["rashness"], ["calculating", "measured", "foresighted", "hesitant", "leisurely", "slow", "dallying", "deliberate", "unhurried"]],
+                [["courage"], ["cold feet", "faintheartedness", "fearfulness", "timidity", "hesitation", "indecisiveness", "cowardice", "cowardliness", "spinelessness"]],
+                [["cowardice"], ["audacity", "boldness", "having a backbone", "determination", "perseverance", "bravery", "courage", "courageousness", "daring", "fearlessness", "guts", "hardihood", "nerve", "stoutness", "valiance", "valor"]],
+                [["licentious"], ["modest", "innocent", "prudish", "monastic"]],
+                [["self-indulgence"], ["selfless", "humble", "temperance"]],
+                [["over-indulgence"], ["temperance", "self-denial"]],
+                [["temperance"], ["self-indulgence", "hedonism", "gluttony", "insobriety"]],
+                [["stinginess"], ["extravagant with money", "generosity", "altruistic", "lavish", "overgenerous", "philanthropic", "unthrifty", "kindly", "magnanimous", "compassionate", "charitable"]],
+                [["generous"], ["cheap", "selfish", "stingy", "tightfisted", "uncharitable"]],
+                [["prodigality"], ["frugal", "penny-pinching", "miserly", "judicious", "prudent", "conserving", "thrifty"]],
+                [["pettiness"], ["consequential", "nonpartisan", "objective", "unbiased", "freethinking"]],
+                [["meanness"], ["civility", "cordiality", "friendliness", "hospitality", "veneration", "charity", "gentle", "altruistic", "selfless", "righteous", "ethical", "honest", "benevolent", "benign", "admirable"]],
+                [["vulgarity"], ["courtliness", "elegance", "grace", "graciousness", "consideration", "sensitivity", "thoughtfulness", "decorum", "purity"]],
+                [["tasteless"], ["classy", "tasteful", "appropriate", "proper", "decent"]],
+                [["conceit"], ["humbleness", "humility", "modesty", "self-disgust", "self-doubt", "bashfulness", "shyness"]],
+                [["timidity"], ["adventuresome", "adventurous", "audacious", "bold", "daring", "dashing", "having guts", "venturesome", "brave", "courageous", "fearless", "confident", "spirited", "unflinching", "determined"]],
+                [["ambition"], ["apathy", "halfheartedness", "indifference", "sloth", "laziness"]],
+                [["prideful"], ["undue humility", "shy", "cowering", "apologetic", "sheepish", "down-to-earth", "meek", "modest", "humble", "egoless", "defeated", "dispirited"]],
+                [["unambitious"], ["driven", "energetic", "confident", "ambitious"]],
+                [["ill temper"], ["patient", "careless", "passive"]],
+                [["patient"], ["bored", "complaining", "fed up", "impatient", "protesting", "hesitant", "faithless", "fickle"]],
+                [["good temper"], ["irritable", "volatile", "moody", "withdrawn", "passive"]],
+                [["false modesty"], ["modest", "boastful", "show-off", "braggart"]],
+                [["truthful"], ["dishonest", "fibbing", "lying", "deceptive", "devious", "slippery", "sly", "fallacious", "undependable", "unreliable", "untrustworthy", "hypocritical", "insincere", "pretending"]],
+                [["boastful"], ["modest", "accurate", "aloof"]],
+                [["buffoonery"], ["boring", "witty", "dull", "uninteresting"]],
+                [["wittiness"], ["brainless", "lowbrow", "stupid", "witless", "lame"]],
+                [["humorless"], ["facetious", "flippant", "humorous", "joking", "playful"]],
+                [["boorishness"], ["civil", "courteous", "polite", "polished", "classy"]],
+                [["obsequious"], ["domineering", "demanding", "tyrannical"]],
+                [["friendly"], ["distant", "aggressive", "aloof", "standoffish", "unfriendly", "unsociable", "withdrawn", "faultfinding", "hypercritical", "belittling"]],
+                [["unfriendly"], ["advantageous", "friendly", "affable", "agreeable", "tolerant", "understanding", "harmless", "helpful", "hospitable", "sympathetic"]],
+                [["modesty"], ["bold", "dashing", "forceful", "flamboyant", "indecency", "arrogance", "chest-thumping", "self-centeredness", "self-importance", "vanity"]],
+                [["shameless"], ["shy", "apologetic", "ashamed", "regretful", "remorseful", "ashamed", "apologetic", "mortified", "fazed"]],
+                [["malice"], ["empathy", "affection", "kindness", "charity"]],
+                [["envy"], ["benevolence", "goodwill", "kindness", "sympathy"]],
+                [["righteous indignation"], ["malicious enjoyment", "malicious", "envious", "spiteful", "careless", "apathetic", "resentful"]],
+                [["spiteful"], ["compassionate", "good-hearted", "kind", "benevolent", "benign", "altruistic", "friendly"]],
+                [["amiable"], ["disagreeable", "ill-tempered", "ungracious", "unpleasant", "impolite", "crabby", "cranky", "grouchy", "grumpy", "contentious"]],
+                [["appreciative"], ["derogatory", "disapproving", "unappreciative", "inhospitable", "rude", "thoughtless"]],
+                [["balanced"], ["obsessed", "ballistic", "berserk", "mixed-up", "unreasonable", "senseless", "oddball", "aberrant", "loopy", "crazy", "demented", "deranged", "insane", "lunatic", "mad", "maniacal"]],
+                [["benevolent"], ["merciless", "pitiless", "ruthless", "insensitive", "thoughtless", "uncaring", "malevolent", "barbaric", "fiendish", "wanton", "selfish"]],
+                [["caring"], ["forgetful", "ignoring", "neglectful", "careless"]],
+                [["decent"], ["improper", "indelicate", "informal", "perverted", "offensive", "crude", "wretched"]],
+                [["dedicated"], ["irresponsible", "hesitant", "apathetic", "disloyal", "unfaithful"]],
+                [["earnest"], ["playful", "frivolousness", "shallowness", "humorous", "flippant", "scatterbrained", "hilarious"]],
+                [["empathetic"], ["callous", "coldhearted", "unfeeling", "unsympathetic", "stern", "harsh", "oppressive", "brutal", "grim", "bigoted", "small-minded", "indifferent"]],
+                [["faithful"], ["undependable", "traitorous", "careless", "corrupt", "inauthentic", "irresponsible"]],
+                [["forgiving"], ["avenging", "revenging", "punishing", "resentful", "unforgiving"]],
+                [["unforgiving"], ["forgiving", "lax", "tolerant", "pushover", "forgetful"]],
+                [["forthright"], ["long-winded", "wordy", "deceitful", "untruthful", "misleading", "two-faced"]],
+                [["heroic"], ["skittish", "timid", "anxious", "wimpy", "gutless", "mediocre", "second-rate"]],
+                [["helpful"], ["ineffectual", "unhelpful", "useless", "harmful", "weak", "clueless"]],
+                [["honest"], ["undependable", "unreliable", "unscrupulous", "untrustworthy", "hypocritical", "mean", "dishonest", "fake", "pretentious", "cutthroat", "deceptive", "misleading"]],
+                [["honorable"], ["dishonorable", "unprincipled", "unworthy", "improper", "naughty", "offensive", "unjust", "dishonest"]],
+                [["humble"], ["arrogant", "pompous", "pretentious", "self-asserting", "flamboyant", "ostentatious", "showy", "dominating", "domineering", "boastful", "bombastic", "cocky", "overconfident", "cheeky", "aggressive"]],
+                [["independent"], ["helpless", "incompetent", "dependent"]],
+                [["loyal"], ["undependable", "unreliable", "untrustworthy", "apathetic", "disloyal", "fickle"]],
+                [["masculine"], ["effeminate", "emasculated", "unmanly", "feminine"]],
+                [["effeminate"], ["masculine", "manly", "forceful"]],
+                [["modest"], ["tasteless", "crude", "obscene", "vulgar", "forceful", "unreserved", "arrogant", "egotistical", "presumptuous", "pretentious", "immodest", "cocky", "haughty"]],
+                [["patriotic"], ["treasonous", "faithless", "fickle", "unpatriotic", "disloyal"]],
+                [["peaceful"], ["aggressive", "belligerent", "fierce", "hostile", "bloodthirsty", "wild", "crazy", "rowdy", "agitated", "angry", "restless", "jittery", "nervous", "high-strung", "uptight"]],
+                [["personable"], ["socially incompetent", "bumbling", "awkward"]],
+                [["principled"], ["degenerate", "depraved", "perverted", "unfair", "mean", "unreliable", "untrustworthy", "cutthroat", "dishonest", "dishonorable"]],
+                [["prudent"], ["careless", "heedless", "rash", "foolish", "unwise", "brainless", "dumb", "foolish", "slow-witted"]],
+                [["reliable"], ["disloyal", "dodgy", "undependable", "unreliable", "unsafe", "untrustworthy", "shady", "dishonest"]],
+                [["respectful"], ["abusive", "insulting", "offensive", "disrespectful", "undutiful", "belittling"]],
+                [["selfless"], ["selfish", "greedy", "gluttonous", "lazy"]],
+                [["sociable"], ["misanthropic", "distant", "aloof", "standoffish", "antisocial", "impolite", "crabby", "grumpy", "inhospitable", "awkward"]],
+                [["stoic"], ["bored", "tired", "weary", "disobedient", "unruly", "impatient", "gung ho", "zealous", "sentimental", "dramatic", "fervent", "hot-blooded", "passionate"]],
+                [["trusting"], ["oversuspicious", "distrustful", "cynical", "discredit"]],
+                [["conservative"], ["extremist", "graceless", "flamboyant", "imprudent", "lax", "neglectful", "absentminded", "careless", "heedless", "incautious", "wasteful"]],
+                [["deceptive"], ["candid", "direct", "frank", "outspoken", "honest", "straightforward"]],
+                [["domineering"], ["humble", "meek", "modest", "indecisive", "passive", "resigned", "submissive"]],
+                [["impersonal"], ["personable", "sociable", "nosy", "obsessive", "dependent"]],
+                [["abrasive"], ["calm", "friendly", "gentle"]],
+                [["angry"], ["amiable", "easygoing", "serene", "agreeable", "accepting", "tolerant", "understanding", "calm"]],
+                [["apathetic"], ["mindful", "attentive", "fiery", "sentimental", "overemotional", "dramatic"]],
+                [["callous"], ["charitable", "compassionate", "humane", "tolerant", "understanding", "friendly", "gracious", "lenient", "gentle"]],
+                [["childish"], ["smart", "mature"]],
+                [["complacent"], ["attentive", "caring", "sensitive", "humble", "modest", "energetic", "ambitious"]],
+                [["cynical"], ["trustful", "cheerful", "innocent", "idealistic", "sappy", "humble"]],
+                [["delicate"], ["tough", "lenient", "forgiving", "uncritical", "lax", "happy-go-lucky", "lackadaisical", "mighty", "abrasive", "steadfast"]],
+                [["egocentric"], ["altruistic", "magnanimous", "self-sacrificing", "self-denying", "self-reflective"]],
+                [["foolish"], ["clever", "intelligent", "smart", "decisive"]],
+                [["gloomy"], ["lighthearted", "optimistic", "merry", "cheery", "inspiring"]],
+                [["hedonistic"], ["sober", "disciplined", "self-denying", "no fun"]],
+                [["lazy"], ["ambitious", "diligent", "lively", "industrious", "watchful", "vigilant"]],
+                [["narcissistic"], ["altruistic", "generous", "selfless", "impartial", "objective", "detached"]],
+                [["pretentious"], ["down-to-earth", "meek", "lowly", "passive", "reserved", "humble"]],
+                [["selfish"], ["charitable", "benevolent", "selfless", "altruistic", "generous"]],
+                [["just"], ["biased", "one-sided", "unreliable", "unprincipled", "subjective", "arbitrary", "unfair", "inappropriate"]],
+                [["humane"], ["ironhearted", "ruthless", "inconsiderate", "thoughtless", "uncaring", "brutal", "brute", "cold-blooded", "brutal", "grim", "inhumane"]],
+                [["coward"], ["heroic", "vigilant", "brave"]],
+                [["lustful"], ["decent", "modest", "innocent"]],
+                [["gluttonous"], ["satisfied", "anorexic", "healthy"]],
+                [["furious"], ["calm", "reasonable", "friendly", "cordial", "serene", "easygoing", "sweet", "unaggressive", "peaceful"]],
+                [["merciful"], ["merciless"]],
+                [["grateful"], ["rude", "ungrateful", "unappreciative", "thankless", "unpleasant", "gloomy", "joyless"]],
+                [["trustworthy"], ["disloyal", "traitorous", "treacherous", "deceitful", "dishonest", "risky", "unreliable", "untrustworthy"]],
+                [["volatile"], ["dependable", "reliable"]],
+                [["prejudiced"], ["reasonable", "just", "detached", "indifferent", "impartial", "objective", "tolerant"]],
+                [["resentful"], ["caring", "forgiving", "gentle", "kind", "kindhearted", "loving", "sweet", "sympathetic", "tender", "warm", "warmhearted", "well-meaning", "unenvious"]],
+            ]
+            var traits2 = [
+                'charismatic', 'charming', 'cheerful', 
+                'clear-headed', 'clever', 'colorful', 
+                'compassionate', 'confident', 'conscientious', 
+                'considerate', 'constant', 'contemplative', 
+                'cooperative', 'courageous', 'courteous', 
+                'creative', 'cultured', 'curious', 'daring', 
+                'decisive', 'deep', 'disciplined', 'discreet', 
+                'dramatic', 'dutiful', 'dynamic', 'educated', 
+                'efficient', 'elegant', 'eloquent', 'energetic', 
+                'enthusiastic', 'exciting', 'extraordinary', 'fair', 
+                'farsighted', 'firm', 'flexible', 'focused', 
+                'forceful', 'freethinking', 'fun-loving', 'gallant', 
+                'gentle', 'genuine', 'gracious', 'hardworking', 
+                'healthy', 'hearty', 'high-minded', 'humorous', 
+                'idealistic', 'imaginative', 'impressive', 'incisive', 
+                'incorruptible', 'individualistic', 'innovative', 
+                'inoffensive', 'insightful', 'insouciant', 'intelligent', 
+                'invulnerable', 'kind', 'leadership', 'leisurely', 
+                'logical', 'lovable', 'magnanimous', 'many-sided', 
+                'mature', 'methodical', 'meticulous', 'moderate', 
+                'multi-leveled', 'neat', 'objective', 'observant', 
+                'open', 'optimistic', 'orderly', 'organized', 'original', 
+                'painstaking', 'passionate', 'perceptive', 'perfectionist', 
+                'persuasive', 'playful', 'polished', 'popular', 'practical', 
+                'precise', 'protective', 'providential', 'punctual', 
+                'purposeful', 'pragmatic', 'reflective', 'relaxed', 
+                'resourceful', 'responsible', 'responsive', 'reverential', 
+                'romantic', 'scrupulous', 'secure', 'self-critical', 
+                'self-denying', 'self-reliant', 'self-sufficient', 
+                'sensitive', 'sentimental', 'serious', 'sexy', 'sharing', 
+                'shrewd', 'skillful', 'sober', 'sophisticated', 'spontaneous', 
+                'sporting', 'steady', 'strong', 'studious', 'suave', 'subtle', 
+                'sweet', 'sympathetic', 'tasteful', 'thorough', 'tidy', 
+                'tolerant', 'tractable', 'understanding', 'warm', 
+                'well-rounded', 'wise', 'witty', 'absentminded', 'aggressive', 
+                'ambitious', 'amusing', 'ascetic', 'authoritarian', 'busybody',
+                'casual', 'chummy', 'competitive', 'confidential', 
+                'contradictory', 'determined', 'dry', 'emotional', 'familial', 
+                'folksy', 'formal', 'freewheeling', 'frugal', 'high-spirited', 
+                'hurried', 'impressionable', 'intense', 'irreverent', 
+                'maternal', 'mellow', 'modern', 'obedient', 'old-fashioned', 
+                'outspoken', 'paternalistic', 'preoccupied', 'progressive', 
+                'proud', 'quiet', 'self-conscious', 'skeptical', 'solemn', 
+                'solitary', 'stern', 'strict', 'stubborn', 'unceremonious', 
+                'unchanging', 'unpatriotic', 'abrupt', 'agonizing', 'aimless', 
+                'aloof', 'amoral', 'anxious', 'arbitrary', 'argumentative', 
+                'arrogant', 'assertive', 'barbaric', 'bland', 'blunt', 
+                'boisterous', 'brutal', 'calculating', 'cantankerous', 
+                'careless', 'cautious', 'charmless', 'clumsy', 'cold', 
+                'compulsive', 'conceited', 'condemnatory', 'conformist', 
+                'confused', 'contemptible', 'contentious', 'conventional', 
+                'cowardly', 'crass', 'crazy', 'critical', 'crude', 'cruel', 
+                'decadent', 'deceitful', 'demanding', 'desperate', 'devious', 
+                'dirty', 'dishonest', 'disobedient', 'disorderly', 
+                'disorganized', 'disputatious', 'disrespectful', 'disruptive',
+                'disturbing', 'dull', 'easily discouraged', 'envious', 
+                'erratic', 'escapist', 'excitable', 'expedient', 
+                'extravagant', 'false', 'fearful', 'fickle', 'fiery', 
+                'forgetful', 'fraudulent', 'frightening', 'graceless', 
+                'grand', 'greedy', 'gullible', 'hateful', 'haughty', 
+                'hostile', 'ignorant', 'impatient', 'impractical', 
+                'imprudent', 'impulsive', 'inconsiderate', 'indecisive', 
+                'indulgent', 'inert', 'inhibited', 'insecure', 'insensitive', 
+                'insincere', 'insulting', 'intolerant', 'irrational', 
+                'irresponsible', 'irritable', 'libidinous', 'malicious', 
+                'mannerless', 'mealy mouthed', 'melancholic', 'messy', 
+                'miserable', 'mistaken', 'moody', 'morbid', 'naive', 
+                'neglectful', 'neurotic', 'nihilistic', 'noisy', 'obnoxious', 
+                'obsessive', 'one-sided', 'opportunistic', 'oppressed', 
+                'outrageous', 'paranoid', 'pedantic', 'perverse', 'pompous', 
+                'possessive', 'power-hungry', 'predatory', 'presumptuous', 
+                'procrastinating', 'provocative', 'push over', 'reactionary', 
+                'reactive', 'regimental', 'regretful', 'repressed', 
+                'ridiculous', 'rigid', 'rowdy', 'sadistic', 'sanctimonious', 
+                'scheming', 'scornful', 'sedentary', 'self-indulgent', 
+                'shallow', 'shortsighted', 'silly', 'single-minded', 
+                'sloppy', 'sly', 'submissive', 'superficial', 'superstitious', 
+                'tactless', 'thoughtless', 'timid', 'treacherous', 
+                'troublesome', 'unappreciative', 'uncaring', 'uncharitable', 
+                'uncooperative', 'undisciplined', 'ungrateful', 'unhealthy', 
+                'unimaginative', 'unimpressive', 'unprincipled', 
+                'unrealistic', 'unreflective', 'unreliable', 'unrestrained', 
+                'vindictive', 'vulnerable', 'weak-willed', 'fidelity', 
+                'integrity', 'disingenuous', 'shady', 'humorlessness', 
+                'wet blanket', 'righteously indignant', 'annoyed', 
+                'making a fuss over nothing', 'gone back on his word', 
+                'servile', 'credulous', 'innocent', 'temperate', 'silent', 
+                'diligent', 'industrious', 'sincere', 'clean', 'tranquil', 
+                'humility', 'has his act together', 'has her act together', 
+                'open-minded', 'book-smart', 'persistent', 'zealous', 
+                'showing integrity', 'lovely', 'socially intelligent', 
+                'leader', 'exhibiting self-control', 'showing gratitude', 
+                'hopeful', 'spiritual', 'flying off the handle', 'meek', 
+                'not arrogant', 'not prideful', 'possessing courage', 
+                'unflinching', 'adroit', 'tenacious', 'unwilling to yield', 
+                'steadfast', 'easily deceived or tricked', 'willing to share', 
+                'showing poise', 'high self-esteem', 'independent mind', 
+                'inventive', 'autonomous', 'carefree', 'rational', 
+                'reasonable', 'mischievous', 'foolhardy', 'delightful', 
+                'endearing', 'eccentric', 'successful', 'eminent', 'useful', 
+                'prescient', 'polite', 'deferential', 'bossy', 'bombastic', 
+                'over the top', 'not stern', 'not harsh', 'loving', 
+                'affectionate', 'mysterious', 'eager', 'having optimism', 
+                'lucky', 'fortunate', 'not agitated', 
+                'without losing self-possession', 'mannerly', 'rude', 
+                'lacking good sense or judgment', 'grumpy', 'very unhappy', 
+                'talented', 'showing aptitude', 'thoughtful', 'lenient', 
+                'weak', 'jealous', 'suspicious', 'lacking companions', 
+                'lacking in courage', 'extroverted', 'withdrawn', 'coolness', 
+                'industriousness', 'intelligence', 'wit', 'good manners', 
+                'eloquence', 'artistic', 'adaptable', 'admirable', 
+                'adventurous', 'agreeable', 'alert', 'articulate', 'athletic', 
+                'attractive', 'brilliant', 'calm', 'capable', 'captivating', 
+                'adamant', 'bashful', 'bold', 'brave', 'careful', 'docile', 
+                'hardy', 'hasty', 'impish', 'jolly', 'lax', 'lonely', 'mild', 
+                'naughty', 'quirky', 'rash', 'sassy'
+            ];
+            var avoid = new Set([
+                'poisoned', 'punched', 'killed', 'shot', 'cocaine', 
+                'bomb', 'cheat', 'steal', 'lie', 'puzzled', 'inhospitable', 
+                'having optimism', 'two-faced', 'principled', 'skillful', 
+                'shy', 'curious', 'understanding', 'self-asserting', 
+                'thoughtfulness', 'helpful', 'brutal', 'crowded', 'sadistic', 
+                'black', 'lavish', 'maniacal', 'hypercritical', 'compulsive', 
+                'unfaithful', 'wandering', 'doubtful', 'humbleness', 
+                'pretending', 'agitated', 'good manners', 'inventive', 
+                'derogatory', 'untrustworthy', 'forgiving', 'dependable', 
+                'gleaming', 'reserved', 'submissive', 'unhealthy', 
+                'malicious enjoyment', 'shallow', 'reflective', 'brainy', 
+                'prudent', 'insensitive', 'harmless', 'untruthful', 'obsessive', 
+                'measured', 'effeminate', 'has her act together', 'reverential', 
+                'overconfident', 'classy', 'perfect', 'gluttony', 'difficult', 
+                'busybody', 'degenerate', 'tranquil', 'autonomous', 
+                'sympathetic', 'odd', 'sensitivity', 'dynamic', 'decent', 
+                'watchful', 'creative', 'improper', 'embarrassed', 'buffoonery', 
+                'spinelessness', 'stormy', 'fazed', 'innovative', 'rashness', 
+                'boorishness', 'lacking in courage', 'exuberant', 'reasonable', 
+                'outrageous', 'remorseful', 'uninterested', 'comfortable', 
+                'frantic', 'sloppy', 'satisfied', 'stoutness', 'arbitrary', 
+                'cooperative', 'meek', 'attractive', 'combative', 'charmless', 
+                'unimaginative', 'altruistic', 'insincere', 'prickly', 
+                'confident', 'intense', 'conserving', 'irresponsible', 
+                'sophisticated', 'harsh', 'bad', 'clean', 
+                'socially intelligent', 'unbiased', 'passionate', 'folksy', 
+                'mortified', 'capable', 'cruel', 'passive', 'fiendish', 
+                'considerate', 'pompous', 'indelicate', 'traitorous', 
+                'beautiful', 'eminent', 'dishonorable', 'shrewd', 'obedient', 
+                'belittling', 'indecency', 'mealy mouthed', 'protective', 
+                'gutless', 'fickle', 'secure', 'inoffensive', 'bossy', 'insane', 
+                'frank', 'bombastic', 'provocative', 'unmanly', 'ridiculous', 
+                'apathetic', 'unreserved', 'multi-leveled', 'lowly', 
+                'bloodthirsty', 'intolerant', 'lax', 'leisurely', 'second-rate', 
+                'bland', 'showing aptitude', 'dispirited', 'friendliness', 
+                'adventuresome', 'cocky', 'absentminded', 'contradictory', 
+                'awful', 'tenacious', 'charity', 'socially incompetent', 
+                'unforgiving', 'uninteresting', 'original', 'anorexic', 
+                'dramatic', 'cordial', 'mushy', 'mellow', 'useful', 'callous', 
+                'indifference', 'false', 'depressed', 'shiny', 'familial', 
+                'inspiring', 'boastful', 'hedonistic', 'modern', 'hospitable', 
+                'farsighted', 'sparkling', 'showing poise', 'hostile', 
+                'erratic', 'fantastic', 'dishonest', 'self-critical', 
+                'carefree', 'forgetful', 'trustful', 'meticulous', 'lonely', 
+                'flexible', 'unwilling to yield', 'rash', 'excited', 'blunt', 
+                'methodical', 'unjust', 'righteous indignation', 'trustworthy', 
+                'kind', 'perfectionist', 'civil', 'ashamed', 'sociable', 
+                'brave', 'appropriate', 'flippant', 'depraved', 'malevolent', 
+                'lacking companions', 'impartial', 'self-disgust', 'anxious', 
+                'bigoted', 'self-conscious', 'persistent', 'thoughtful', 
+                'hardihood', 'malice', 'leader', 'predatory', 'unusual', 
+                'glorious', 'childish', 'annoying', 'noisy', 'unreflective', 
+                'articulate', 'cantankerous', 'nonpartisan', 'senseless', 
+                'adorable', 'cheeky', 'tasteless', 'belligerent', 
+                'false modesty', 'imaginative', 'detached', 'objective', 
+                'fraudulent', 'affable', 'coldhearted', 'famous', 'tasteful', 
+                'unthrifty', 'talented', 'empathetic', 'greedy', 'charitable', 
+                'repulsive', 'cultured', 'opportunistic', 'withdrawn', 
+                'annoyed', 'regretful', 'deranged', 'wittiness', 'respectful', 
+                'disobedient', 'pragmatic', 'diligent', 'ill-tempered', 
+                'ethical', 'discreet', 'dry', 'wit', 'stubborn', 'very unhappy', 
+                'caring', 'busy', 'hilarious', 'vindictive', 'sensitive', 
+                'desperate', 'stoic', 'easygoing', 'insightful', 'honest', 
+                'grim', 'serene', 'average', 'mysterious', 'adamant', 
+                'disrespectful', 'tactless', 'thankful', 'chest-thumping', 
+                'impressive', 'invulnerable', 'impulsive', 'gorgeous', 
+                'thankless', 'ballistic', 'cheap', 'not harsh', 'contemplative', 
+                'careful', 'unsociable', 'innocent', 'studious', 'amiable', 
+                'moderate', 'deceitful', 'paranoid', 'casual', 'abrupt', 
+                'not stern', 'purity', 'disagreeable', 'gracious', 'evil', 
+                'formal', 'chummy', 'temperate', 'immodest', 'frightened', 
+                'prudish', 'purposeful', 'hospitality', 'courtliness', 'loving', 
+                'friendly', 'repressed', 'apologetic', 'down-to-earth', 
+                'healthy', 'horrible', 'berserk', 'outspoken', 'irritable', 
+                'high self-esteem', 'egotistical', 'lowbrow', 'important', 
+                'impatient', 'graceless', 'foresighted', 'integrity', 'sloth', 
+                'benevolence', 'self-denial', 'wicked', 'possessing courage', 
+                'aloof', 'contemptible', 'not arrogant', 'hardworking', 
+                'thorough', 'many-sided', 'antisocial', 'fearfulness', 
+                'preoccupied', 'small-minded', 'foolish', 'tyrannical', 
+                'weak', 'arrogance', 'elated', 'consideration', 'polite', 
+                'timid', 'guts', 'benign', 'extravagant', 'bold', 'mannerly', 
+                'ungracious', 'orderly', 'clumsy', 'faintheartedness', 'sly', 
+                'manly', 'colorful', 'spirited', 'discredit', 'witless', 
+                'naughty', 'humorless', 'timidity', 'halfheartedness', 
+                'faithful', 'responsible', 'elegance', 'showy', 'different', 
+                'terrible', 'unworthy', 'fervent', 'modest', 'playful', 
+                'well-meaning', 'prodigality', 'good', 'ostentatious', 
+                'handsome', 'offensive', 'disapproving', 'incautious', 
+                'vigilant', 'obnoxious', 'mindful', 'exhibiting self-control',
+                'panicky', 'putrid', 'steady', 'advantageous', 'skittish', 
+                'stupid', 'real', 'open', 'heedless', 'irreverent', 'sedentary', 
+                'boldness', 'having a backbone', 'painstaking', 'reactive', 
+                'enchanting', 'kindhearted', 'oppressed', 'humble', 'tasty', 
+                'bloody', 'unimpressive', 'focused', 'self-importance', 
+                'providential', 'hurt', 'temperance', 'warm', 'ill', 
+                'well-rounded', 'regimental', 'shallowness', 'bumbling', 
+                'resigned', 'conventional', 'candid', 'dizzy', 'firm', 'hasty', 
+                'blue-eyed', 'feminine', 'loyal', 'outstanding', 'strong', 
+                'shady', 'trusting', 'restless', 'logical', 'self-denying', 
+                'unrealistic', 'kindness', 'demented', 'coward', 'itchy', 
+                'vivacious', 'lovely', 'unfriendly', 'better', 'adventurous', 
+                'muddy', 'hot-blooded', 'balanced', 'captivating', 'agreeable', 
+                'neglectful', 'fallacious', 'grateful', 'disruptive', 
+                'eccentric', 'oddball', 'unsightly', 'assertive', 
+                'unreasonable', 'crude', 'imprudent', 'inappropriate', 
+                'condemned', 'magnanimous', 'ill temper', 'brilliant', 
+                'vulgarity', 'long', 'not prideful', 'dark', 'incorruptible', 
+                'informal', 'emotional', 'merciful', 'homely', 'indecisive', 
+                'distant', 'super', 'cloudy', 'determined', 'careless', 
+                'humility', 'powerful', 'argumentative', 'artistic', 
+                'lighthearted', 'impersonal', 'uncharitable', 'avenging', 
+                'patient', 'sanctimonious', 'penny-pinching', 'mean', 
+                'venturesome', 'peaceful', 'distrustful', 'good-hearted', 
+                'perverse', 'thoughtless', 'audacious', 'cautious', 'valor', 
+                'thrifty', 'apathy', 'wordy', 'nervous', 'sappy', 
+                'unscrupulous', 'complacent', 'bright', 'cowering', 'inert', 
+                'grotesque', 'confused', 'righteously indignant', 'eager', 
+                'humorlessness', 'risky', 'popular', 'generous', 'ruthless', 
+                'high-strung', 'miserly', 'cowardice', 'happy-go-lucky', 
+                'joyless', 'nice', 'amusing', 'ironhearted', 'undue humility', 
+                'lucky', 'pushover', 'conservative', 'judicious', 'insulting', 
+                'cold feet', 'mistaken', 'malicious', 'contentious', 'courage', 
+                'charismatic', 'selfless', 'prideful', 'tough', 
+                'over-indulgence', 'lovable', 'nosy', 'sharing', 'bored', 
+                'accepting', 'dodgy', 'neat', 'precise', 'decisive', 'abusive', 
+                'stern', 'furious', 'flamboyant', 'barbaric', 'adroit', 
+                'modesty', 'fair', 'hypocritical', 'reliable', 'dashing', 
+                'insobriety', 'clear-headed', 'fearless', 
+                'making a fuss over nothing', 'dumb', 'uncooperative', 'proper', 
+                'ignoring', 'blue', 'audacity', 'cynical', 'brute', 'dirty', 
+                'freewheeling', 'adaptable', 'bashfulness', 'unprincipled', 
+                'rational', 'dependent', 'unchanging', 'observant', 'light', 
+                'self-doubt', 'showing integrity', 'useless', 'worrisome', 
+                'superficial', 'oversuspicious', 'generosity', 'crabby', 
+                'endearing', 'self-reflective', 'scary', 'smoggy', 'cold', 
+                'dedicated', 'fragile', 'intelligent', 'paternalistic', 
+                'courageousness', 'flying off the handle', 'condemnatory', 
+                'ignorant', 'willing to share', 'unhurried', 'quaint', 
+                'motionless', 'lenient', 'disorderly', 'distinct', 'blushing', 
+                'perverted', 'fancy', 'quiet', 'hesitation', 'loopy', 'sweet', 
+                'righteous', 'power-hungry', 'long-winded', 'lively', 
+                'calculating', 'neurotic', 'unflinching', 'selfish', 'escapist', 
+                'pitiless', 'cowardly', 'unreliable', 'tame', 'benevolent', 
+                'graceful', 'glamorous', 'suspicious', 'good temper', 
+                'undutiful', 'egoless', 'unfair', 'empathy', 'deep', 
+                'magnificent', 'tightfisted', 'unruly', 'charming', 'funny', 
+                'unceremonious', 'indifferent', 'perceptive', 'agonizing', 
+                'emasculated', 'tolerant', 'old-fashioned', 'procrastinating', 
+                'shortsighted', 'forceful', 'disturbed', 'meanness', 'wise', 
+                'dull', 'without losing self-possession', 'rowdy', 
+                'extraordinary', 'earnest', 'sore', 'high-spirited', 'vulgar', 
+                'merry', 'open-minded', 'monastic', 'inconsiderate', 'impolite', 
+                'appreciative', 'slow-witted', 'obsequious', 'foolhardy', 
+                'solitary', 'envy', 'laziness', 'concerned', 'driven', 
+                'accurate', 'excitable', 'industriousness', 'mannerless', 
+                'eloquence', 'straightforward', 'humorous', 'rigid', 'splendid', 
+                'poised', 'impish', 'poor', 'attentive', 'vast', 'responsive', 
+                'sexy', 'conformist', 'devious', 'wretched', 'insecure', 
+                'unambitious', 'misty', 'independent mind', 'spiteful', 
+                'pedantic', 'frail', 'courageous', 'hopeful', 'slow', 
+                'volatile', 'persuasive', 'cranky', 'obsessed', 'harmful', 
+                'undisciplined', 'kindly', 'naive', 'having guts', 'biased', 
+                'eloquent', 'disingenuous', 'perseverance', 'resentful', 
+                'homeless', 'courteous', 'awkward', 'ambition', 'faultfinding', 
+                'crass', 'encouraging', 'unwise', 'educated', 'clear', 
+                'superstitious', 'ugliest', 'standoffish', 'consequential', 
+                'steadfast', 'bewildered', 'has his act together', 'boring', 
+                'easy', 'unrestrained', 'joyous', 'practical', 'lunatic', 
+                'hedonism', 'impractical', 'mixed-up', 'incompetent', 'smart', 
+                'cutthroat', 'unenvious', 'arrogant', 'athletic', 
+                'philanthropic', 'grace', 'spiritual', 'frivolousness', 
+                'punctual', 'servile', 'fun-loving', 'prescient', 'coolness', 
+                'messy', 'unfeeling', 'conceit', 'decadent', 'libidinous', 
+                'wild', 'unaggressive', 'personable', 'unpatriotic', 
+                'cowardliness', 'patriotic', 'tender', 'fidelity', 'deceptive', 
+                'direct', 'egocentric', 'unappreciative', 'pleasant', 'mature', 
+                'self-indulgence', 'punishing', 'creepy', 'clever', 
+                'treacherous', 'mild', 'happy', 'corrupt', 'suave', 
+                'uncritical', 'troublesome', 'jealous', 'self-indulgent', 
+                'licentious', 'credulous', 'worried', 'hesitant', 'fierce', 
+                'disciplined', 'defeated', 'compassionate', 'gentle', 
+                'romantic', 'heroic', 'nerve', 'self-sacrificing', 'breakable', 
+                'gone back on his word', 'treasonous', 'disorganized', 
+                'resourceful', 'deferential', 'inauthentic', 'fine', 'troubled', 
+                'precious', 'nutty', 'scornful', 'pettiness', 'hardy', 
+                'wasteful', 'grand', 'jolly', 'ugly', 'unsafe', 'lackadaisical', 
+                'proud', 'determination', 'disturbing', 'extroverted', 'sassy', 
+                'cold-blooded', 'ascetic', 'abrasive', 'valiance', 
+                'weak-willed', 'competitive', 'envious', 
+                'extravagant with money', 'fearlessness', 'pretentious', 
+                'bashful', 'boisterous', 'sincere', 'narcissistic', 
+                'subjective', 'crazy', 'maternal', 'inquisitive', 
+                'progressive', 'mediocre', 'wanton', 'lazy', 'humane', 
+                'warmhearted', 'critical', 'scheming', 'uptight', 'subtle', 
+                'self-reliant', 'expensive', 'victorious', 'oppressive', 
+                'facetious', 'wet blanket', 'no fun', 'confidential', 
+                'mischievous', 'intelligence', 'enthusiastic', 'misleading', 
+                'impressionable', 'dangerous', 'vanity', 'hurried', 
+                'domineering', 'lame', 'polished', 'admirable', 'honorable', 
+                'upset', 'calm', 'grouchy', 'veneration', 'extremist', 
+                'independent', 'scrupulous', 'sympathy', 'high-minded', 
+                'fearful', 'vulnerable', 'mad', 'incisive', 'strict', 'sleepy', 
+                'relieved', 'hearty', 'protesting', 'forthright', 'shyness', 
+                'inhumane', 'impossible', 'showing gratitude', 'mighty', 
+                'sober', 'truthful', 'moody', 'one-sided', 'inhibited', 
+                'frugal', 'goodwill', 'presumptuous', 'book-smart', 'gloomy', 
+                'just', 'slippery', 'leadership', 'cordiality', 'affectionate', 
+                'sentimental', 'uncaring', 'complaining', 'unhelpful', 'drab', 
+                'brainless', 'demanding', 'jittery', 'civility', 'grieving', 
+                'miserable', 'gullible', 'graciousness', 'fake', 'relaxed', 
+                'wimpy', 'zany', 'exciting', 'clueless', 'expedient', 'stingy', 
+                'delightful', 'gung ho', 'skeptical', 'nihilistic', 'cheerful', 
+                'elegant', 'dutiful', 'tidy', 'conceited', 'silly', 'angry', 
+                'smiling', 'gifted', 'authoritarian', 'dead', 'individualistic', 
+                'unpleasant', 'rich', 'amused', 'successful', 'not agitated', 
+                'aberrant', 'prejudiced', 'deliberate', 'frightening', 
+                'spontaneous', 'revenging', 'morbid', 'dallying', 'daring', 
+                'disgusted', 'aggressive', 'stinginess', 'filthy', 'zealous', 
+                'alert', 'joking', 'fibbing', 'over the top', 'hateful', 
+                'wrong', 'idealistic', 'gallant', 'easily deceived or tricked', 
+                'helpless', 'amoral', 'unsympathetic', 'scatterbrained', 
+                'defiant', 'shameless', 'grumpy', 'hungry', 
+                'easily discouraged', 'energetic', 'indulgent', 'sporting', 
+                'reactionary', 'fed up', 'disputatious', 'single-minded', 
+                'undependable', 'misanthropic', 'inexpensive', 'faithless', 
+                'fiery', 'disloyal', 'constant', 'push over', 'haughty', 
+                'bravery', 'ambitious', 'solemn', 'nasty', 'optimistic', 
+                'gluttonous', 'tense', 'plain', 'tractable', 'self-sufficient', 
+                'tired', 'serious', 'fortunate', 'rude', 'possessive', 
+                'indecisiveness', 'genuine', 'affection', 'lustful', 
+                'self-centeredness', 'braggart', 'freethinking', 'cheery', 
+                'sheepish', 'weary', 'aimless', 'insouciant', 'melancholic', 
+                'cute', 'masculine', 'quirky', 'industrious', 'organized', 
+                'ineffectual', 'efficient', 'spotless', 'overemotional', 
+                'show-off', 'conscientious', 'merciless', 'irrational', 
+                'decorum', 'obscene', 'delicate', 'strange', 'wide-eyed', 
+                'overgenerous', 'silent', 'lying', 'dominating', 'dominate', 
+                'ungrateful', 'witty', 'docile', 'alive', 
+                'lacking good sense or judgment', 'angrily', 'anxiously', 
+                'badly', 'boastfully', 'foolishly', 'hopelessly', 'irritably', 
+                'jealously', 'lazily', 'obnoxiously', 'poorly', 'rudely', 
+                'selfishly', 'wearily', 'boldly', 'bravely', 'brightly', 
+                'cheerfully', 'deftly', 'devotedly', 'eagerly', 'elegantly', 
+                'faithfully', 'fortunately', 'gleefully', 'gracefully', 
+                'happily', 'honestly', 'innocently', 'justly', 'kindly', 
+                'merrily', 'obediently', 'perfectly', 'politely', 'powerfully', 
+                'safely', 'victoriously', 'warmly', 'vivaciously', 'angrily', 
+                'anxiously', 'badly', 'boastfully', 'foolishly', 'hopelessly', 
+                'irritably', 'jealously', 'lazily', 'obnoxiously', 'poorly', 
+                'rudely', 'selfishly', 'wearily', 'promptly', 'quickly', 
+                'rapidly', 'slowly', 'speedily', 'tediously', 'accidentally', 
+                'awkwardly', 'blindly', 'coyly', 'crazily', 'defiantly', 
+                'deliberately', 'doubtfully', 'dramatically', 'dutifully', 
+                'enormously', 'evenly', 'exactly', 'hastily', 'hungrily', 
+                'inquisitively', 'loosely', 'madly', 'mortally', 'mysteriously', 
+                'nervously', 'seriously', 'shakily', 'sharply', 'silently', 
+                'solemnly', 'sternly', 'unexpectedly', 'wildly',
+            ]);
+            var verbs = ["dance", "sing", "run", "draw", "write stories", "listen to music", "ski", "talk on the phone", "go to school", "play video games", "read magazines", "ride a bicycle", "skateboard", "swim", "spend time with", "friends", "skate", "play sports", "play the guitar", "work", "use the computer", "watch television", "teach", "study", "chat", "eat", "drink", "share", "walk", "take pictures", "exercise", "go shopping", "see a movie", "stay at home", "go to a piano lesson", "to go to a/the (library, gym, countryside, etc.)", "go camping", "go fishing", "play basketball", "open", "celebrate", "decorate", "videotape", "prepare", "break", "be sleepy", "be warm", "be cold", "straighten up", "the room", "help", "cook", "cut the lawn", "give", "feed the dog", "put on makeup", "make the bed", "wash (the car, the dishes, the clothes)", "clean the bathroom", "vacuum", "to put/place", "set the table", "dust", "take out the trash", "look for", "dig", "buy", "enter", "look", "pay", "sell", "learn", "play cards", "scuba dive / snorkel", "buy souvenirs", "rest/relax", "ride horseback", "go boating", "sunbathe", "visit", "go on vacation", "take", "carry", "collect/gather", "separate", "show", "to end", "to begin", "to bore", "to hurt, to ache", "to please very", "much, to love", "to be missing", "to interest", "to fit", "download", "search for", "send an e-mail", "to be online", "burn a CD", "surf the Web", "memorize", "answer", "give a speech", "discuss", "explain", "ask a question", "listen to the radio", "get a good grade", "turn in", "arrive late", "pay attention", "read the newspaper", "plant flowers", "respect", "to bowl", "to attend", "to win, to earn", "to record", "to participate", "to take lessons", "to return", "to visit chat rooms", "go to bed", "shave", "fix (one’s hair)", "take a bath", "brush (one’s teeth)", "cut one’s hair", "hang the clothes", "iron the clothes", "wake up", "take a shower", "get up", "wash (one’s face)", "borrow (from)", "paint", "polish one’s nails", "put on", "get ready", "dry", "get dressed", "to spend", "try on", "to announce", "to find", "to mail a letter", "to close", "to cash a check", "to take care of", "to go on foot", "to fill", "to take out", "to check out", "to cross", "to turn", "to drive", "to stop", "to pass", "to follow", "to collect", "to bother", "to fight", "to jump", "to condone", "to permit", "to hug", "to kiss", "to shake hands", "to say good-bye", "manners", "to greet", "to smile", "to tell jokes", "to tell the authorities about", "to cry", "to laugh", "to have a birthday", "to forget", "to destroy", "to hide", "to burn", "to scream", "to call", "to overhear", "to hurt", "to cut oneself", "to trip", "to twist", "to yell", "to charge", "to catch", "to cower", "devour", "escort", "frown", "grip", "ignite", "moan", "peek", "poison", "prickle", "recite", "retreat", "rush", "sprinkle", "stretch", "travel", "trim", "yank"];
+            var inspo = ['with the computer', 'on the ship', 'beneath the tower']; 
 
-            var index = Math.floor(Math.random() * traits1.length);
-            var trait1 = traits1[index][0];
-            var trait_selector = Math.random();
-            if (trait_selector < 0.05) {
-               var second_trait = traits2[Math.floor(Math.random() * traits2.length)] 
-            } else {
-                var second_trait = traits1[index][Math.floor(Math.random() * traits1[index].length)];
+            /* Methods to fetch suggestions */
+            function insertMessage() {
+                var messageContainer = document.getElementById('messageContainer');
+                var messageContent = document.getElementById('messageContent');
+                if (messageContent) {
+                    messageContent.remove();
+                }
+                if (arguments[0]) {
+                    // Arguments is a default value encompassing all params
+                    // This ensures no matter how many values are passed in,
+                    // we will append all of them
+                    // If nothing is passed, the first 'argument' is undefined
+                    messageContent = document.createElement('div');
+                    messageContent.setAttribute('id', 'messageContent');
+                    for (var i = 0; i < arguments.length; i++) {
+                        var newMsg = document.createElement('p');
+                        if (typeof arguments[i] === 'object') {
+                            // Parameter is an HTML object
+                            newMsg.appendChild(arguments[i]);
+                        } else {
+                            newMsg.innerHTML = arguments[i];
+                        }
+                        messageContent.appendChild(newMsg);
+                    }
+                    messageContainer.appendChild(messageContent);
+                }
             }
-            var parentElement = event.srcElement.parentNode;
-            // Amazon adds this field themselves. We have no direct access to it from our code other than traversing the DOM.
-            var inputField = event.srcElement.parentNode.childNodes[3].root.childNodes[2].children[2].children[0];
-            inputField.value = trait1;
-            //Get second field and set value to second_trait
-            //var inputField
-            // inputField.value = second_trait
-          }
-          function addEvent(button) {
-            button.addEventListener('click', onClick);
-          }
-          document.querySelectorAll('.suggestion').forEach(addEvent);
+            function getVerbs() {
+                // Get random verb from list
+                var verb_index = Math.floor(Math.random() * verbs.length);
+                var verb = verbs[verb_index];
+                var t1 = document.getElementById('scenario1');
+                var t2 = document.getElementById('scenario2');
+                if (!t1.value || !t1.value.trim()) {
+                    t1.value = verb;
+                }
+                if (!t2.value || !t2.value.trim()) {
+                    t2.value = verb; 
+                }
+                insertMessage(verb);
+            }
+            function getTraits() {
+                // Get random traits
+                var index = Math.floor(Math.random() * traits1.length);
+                var trait1 = traits1[index][0][0];
+                var trait2 = traits1[index][1][Math.floor(Math.random() * traits1[index].length)];
+                var trait_selector = Math.random();
+                if (trait_selector < 0.1) {
+                    trait2 = traits2[Math.floor(Math.random() * traits2.length)]
+                }
+                var scenario1 = document.getElementById('trait1');
+                var scenario2 = document.getElementById('trait2');
+                if (!scenario1.value || !scenario1.value.trim()) {
+                    scenario1.value = trait1;
+                }
+                if (!scenario2.value || !scenario2.value.trim()) {
+                    scenario2.value = trait2;
+                }
+                insertMessage(trait1, trait2);
+            }
+            function getInspo() {
+                // Get random inspiration
+                var inspo_index = Math.floor(Math.random() * inspo.length);
+                var randInspo = inspo[inspo_index];
+                insertMessage(randInspo);
+            }
+
+            /* Sanity Check */
+            function damerau_levenshtein(source, target) {
+                if (!source) return target ? target.length : 0;
+                else if (!target) return source.length;
+
+                var m = source.length, n = target.length, INF = m + n, score = new Array(m + 2), sd = {};
+                for (var i = 0; i < m + 2; i++) score[i] = new Array(n + 2);
+                score[0][0] = INF;
+                for (var i = 0; i <= m; i++) {
+                    score[i + 1][1] = i;
+                    score[i + 1][0] = INF;
+                    sd[source[i]] = 0;
+                }
+                for (var j = 0; j <= n; j++) {
+                    score[1][j + 1] = j;
+                    score[0][j + 1] = INF;
+                    sd[target[j]] = 0;
+                }
+
+                for (var i = 1; i <= m; i++) {
+                    var DB = 0;
+                    for (var j = 1; j <= n; j++) {
+                        var i1 = sd[target[j - 1]],
+                            j1 = DB;
+                        if (source[i - 1] === target[j - 1]) {
+                            score[i + 1][j + 1] = score[i][j];
+                            DB = j;
+                        }
+                        else {
+                            score[i + 1][j + 1] = Math.min(score[i][j], Math.min(score[i + 1][j], score[i][j + 1])) + 1;
+                        }
+                        score[i + 1][j + 1] = Math.min(score[i + 1][j + 1], score[i1] ? score[i1][j1] + (i - i1 - 1) + 1 + (j - j1 - 1) : Infinity);
+                    }
+                    sd[source[i - 1]] = i;
+                }
+                return score[m + 1][n + 1];
+            }
+            function getAvoidWords(s1, s2) {
+                var proofOfLaziness = '';
+                var s1Arr = s1.replace(/[^\w\s]|_/g, '').split(' ');
+                var s2Arr = s2.replace(/[^\w\s]|_/g, '').split(' ');
+                for (var i = 0; i < s1Arr.length; i++) {
+                    if (avoid.has(s1Arr[i])) {
+                        proofOfLaziness += s1Arr[i] + ', ';
+                    }
+                }
+                for (var i = 0; i < s2Arr.length; i++) {
+                    if (avoid.has(s2Arr[i])) {
+                        proofOfLaziness += s2Arr[i] + ', ';
+                    }
+                }
+                return proofOfLaziness;
+            }
+            function verify() {
+                var scenario1 = document.getElementById('scenario1').value;
+                var scenario2 = document.getElementById('scenario2').value;
+                var similarFloat = damerau_levenshtein(scenario1, scenario2) / (0.5 * (scenario1.length + scenario2.length));
+                var trait1 = document.getElementById('trait1').value;
+                var trait2 = document.getElementById('trait2').value;
+                let message;
+                if (similarFloat === 0.0) {
+                    message = 'Those scenarios are too similar. Please adjust. See the "Examples" tab of "View Instructions."';
+                } else if (similarFloat >= 0.50) {
+                    message = 'Those scenarios are too dissimilar. Please adjust. See the "Examples" tab of "View Instructions."';
+                } else if (scenario1.length === 0 || scenario2.length === 0) {
+                    message = 'Please enter valid scenarios. See the "Examples" tab of "View Instructions."';
+                } else if (scenario1.length < 40 || scenario2.length < 40) {
+                    message = 'Scenarios need to be more intricate or detailed than that. See the "Examples" tab of "View Instructions."';
+                } else if (!trait1 || !trait1.trim() || !trait2 || !trait2.trim()) {
+                    message = 'Please enter valid traits. See the "Examples" tab of "View Instructions."';
+                } else if (trait1.trim() === trait2.trim()) {
+                    message = 'Those traits are too similar. Please adjust.';
+                } else {
+                    var avoidWords = getAvoidWords(scenario1, scenario2);
+                    if (avoidWords) {
+                        var newMessageContainer = document.createElement('span');
+                        var link = document.createElement('a');
+                        link.setAttribute('href', 'https://en.wikipedia.org/wiki/Show,_don\'t_tell');
+                        link.appendChild(document.createTextNode('Show, don\'t tell.'));
+                        var warning = document.createTextNode(' Avoid giveaway words, including: ' + avoidWords.slice(0, avoidWords.length - 2));
+                        newMessageContainer.appendChild(link);
+                        newMessageContainer.appendChild(warning);
+                        message = newMessageContainer;
+                    } else {
+                        document.querySelector('crowd-button').disabled = false;
+                    }
+                }
+                if (message) {
+                    document.querySelector('crowd-button').disabled = true;
+                }
+                insertMessage(message);
+            }
+
+            var buttons = {
+                'Sanity Check': verify,
+                'Get Action': getVerbs,
+                'Get Character Trait': getTraits,
+                'Get Inspiration': getInspo,
+            }
+            
+            function onClick(event) {
+                var buttonType = event.srcElement.textContent;
+                buttons[buttonType]();
+            }
+            function addEvent(button) {
+                button.addEventListener('click', onClick);
+            }
+            document.querySelectorAll('.suggestion').forEach(addEvent);
+            
+            // Traverse DOM for dynamically inserted Submit button to disable
+            function disable() {
+                document.querySelector('crowd-button').disabled = true;
+            }
+            setTimeout(disable, 3000);
         </script>
       </body>
     </html>
   ]]>
-  </HTMLContent>
-  <FrameHeight>450</FrameHeight>
+    </HTMLContent>
+    <FrameHeight>450</FrameHeight>
 </HTMLQuestion>
