@@ -1,8 +1,35 @@
 {
-    "AutoApprovalDelayInSeconds": 300,
-    "AssignmentDurationInSeconds": 600,
-    "Reward": "0.25",
-    "Title": "Example HTMLQuestion HIT",
-    "Keywords": "HTMLQuestion, example, test, sandbox",
-    "Description": "An HTMLQuestion HIT designed as an example for a script that generates HITs"
+  "AutoApprovalDelayInSeconds": 259200,
+  "AssignmentDurationInSeconds": 1200,
+  "Reward": "0.25",
+  "Title": "Write Scenarios Demonstrating Different Virtues and Vices",
+  "Keywords": "HTMLQuestion, writing, free response, creative, Dan, fun,",
+  "Description": "Write similarly worded scenarios that each demonstrate a different virtue or vice or character trait.",
+  "QualificationRequirements": [
+    {
+      "QualificationTypeId": "3HWVT555HR2G88QF2K9GRMKD6C2IAX",
+      "Comparator": "GreaterThanOrEqualTo",
+      "IntegerValues": [
+        51
+      ],
+      "RequiredToPreview": false
+    },
+    {
+  	"QualificationTypeId": "00000000000000000051",
+  	"Comparator": "EqualTo",
+  	"LocaleValues": [{
+            "Country": "US", "UK", "CA"
+        }]
+    },
+    {
+         "QualificationTypeId":"000000000000000000L0",
+         "Comparator":"GreaterThan",
+         "IntegerValues":[95]
+    },
+    {
+         "QualificationTypeId":"00000000000000000040",
+         "Comparator":"GreaterThan",
+         "IntegerValues":[499]    
+    }
+   ]
 }
