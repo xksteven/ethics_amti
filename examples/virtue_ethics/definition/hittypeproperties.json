@@ -16,10 +16,18 @@
     },
     {
   	"QualificationTypeId": "00000000000000000051",
-  	"Comparator": "EqualTo",
-  	"LocaleValues": [{
-            "Country": "US", "UK", "CA"
-        }]
+  	"Comparator": "IN",
+  	"LocaleValues": [
+      {
+        "Country": "US"
+      },
+      {
+        "Country": "CA"
+      },
+      {
+        "Country": "GB"
+      },
+    ]
     },
     {
          "QualificationTypeId":"000000000000000000L0",
