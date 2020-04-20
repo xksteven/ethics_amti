@@ -7,16 +7,8 @@
   "Description": "Write similarly worded scenarios that each demonstrate a different virtue or vice or character trait.",
   "QualificationRequirements": [
     {
-      "QualificationTypeId": "3HWVT555HR2G88QF2K9GRMKD6C2IAX",
-      "Comparator": "GreaterThanOrEqualTo",
-      "IntegerValues": [
-        51
-      ],
-      "RequiredToPreview": false
-    },
-    {
-  	"QualificationTypeId": "00000000000000000051",
-  	"Comparator": "IN",
+  	"QualificationTypeId": "00000000000000000071",
+  	"Comparator": "In",
   	"LocaleValues": [
       {
         "Country": "US"
@@ -37,7 +29,7 @@
     {
          "QualificationTypeId":"00000000000000000040",
          "Comparator":"GreaterThan",
-         "IntegerValues":[499]    
+         "IntegerValues":[1]    
     }
    ]
 }
