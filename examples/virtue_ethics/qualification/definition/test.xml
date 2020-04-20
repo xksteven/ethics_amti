@@ -7,9 +7,20 @@
     </Text> -->
   </Overview>
   <Overview>
-    <FormattedContent>
+     <FormattedContent>
       <![CDATA[
-      First, select the correct character trait/virtue/vice in the following scenarios.
+      In the Virtue Ethics HITs, you will write _two_ similarly worded scenarios each exemplifying different character traits/virtues/vices.<br/>
+      You will write the scenario demonstrating the character trait you choose to write about.<br/><br/>
+
+      Example:<br/>
+         a. Fred found out his friend Alice had taken a job he was trying to get, so he decided to slash the tires on her car.<br/>
+         b. Fred found out his friend Alice had taken a job he was trying to get, but he still invited her on his car trip.<br/><br/>
+
+      Answer:<br/>
+	 a. Related Character Trait/Virtue/Vice: vengeful; Unrelated Character Traits/Virtues/Vices: arrogant, boastful, pushy<br/>
+         b. Related Character Trait/Virtue/Vice: forgiving; Unrelated Character Traits/Virtues/Vices: clever, extravagant, arrogant<br/><br/>
+
+      Select the correct character trait in the following scenarios.
       ]]>
     </FormattedContent>
   </Overview>
@@ -161,31 +172,6 @@
             </SelectionAnswer>
         </AnswerSpecification>
     </Question>
-
-    <FormattedContent>
-      <![CDATA[
-      In the Virtue Ethics HITs, you will write _two_ similarly worded scenarios each exemplifying different character traits/virtues/vices.
-      You will write the scenario demonstrating the character trait you choose to write about.
-
-      Why would the following submission be invalid?
-      Example Submission:
-
-         Fred found out his friend Alice had taken a job he was trying to get, so he decided to slash the tires on her car.
-
-	 > vengeful
-	 envious
-	 boastful
-	 pushy
-
-	 Fred found out his friend Alice had taken a job he was trying to get, but he still invited her on his car trip.
-
-	 clever
-	 > forgiving
-	 extravagant
-         arrogant
-
-      ]]>
-    </FormattedContent>
  
     <!-- QUESTION FIVE -->
     <Question>
@@ -193,27 +179,67 @@
         <DisplayName>Question 05</DisplayName>
         <IsRequired>true</IsRequired>
         <QuestionContent>
-            <Title>Why is the submission above invalid?</Title>
+            <Title>Despite being only 12, Johnny punched his grandmother after losing a chess match to her.</Title>
         </QuestionContent>
-        <AnswerSpecification>
+	<AnswerSpecification>
             <SelectionAnswer>
             <StyleSuggestion>radiobutton</StyleSuggestion>
             <Selections>
                 <Selection>
                 <SelectionIdentifier>1</SelectionIdentifier>
-		    <Text>This is an invalid submission because the two scenarios are not similarly worded</Text>
+                    <Text>unrealistic</Text>
                 </Selection>
                 <Selection>
                 <SelectionIdentifier>2</SelectionIdentifier>
-		    <Text>This is an invalid submission because the scenarios don't exemplify different character traits or virtues or vices.</Text>
+                    <Text>lazy</Text>
                 </Selection>
-                <Selection>
+                 <Selection>
                 <SelectionIdentifier>3</SelectionIdentifier>
-		    <Text>This is a valid submission.</Text>
+                    <Text>immature</Text>
+                </Selection>
+                 <Selection>
+                <SelectionIdentifier>4</SelectionIdentifier>
+                    <Text>considerate</Text>
+                </Selection>
+                 <Selection>
+                <SelectionIdentifier>5</SelectionIdentifier>
+                    <Text>modest</Text>
+                </Selection>
+            </Selections>
+            </SelectionAnswer>
+        </AnswerSpecification>
+    </Question>
+
+    <Question>
+        <QuestionIdentifier>006</QuestionIdentifier>
+        <DisplayName>Question 06</DisplayName>
+        <IsRequired>true</IsRequired>
+        <QuestionContent>
+            <Title>Despite being only 12, Johnny served his grandmother punch after losing a chess match to her.</Title>
+        </QuestionContent>
+	<AnswerSpecification>
+            <SelectionAnswer>
+            <StyleSuggestion>radiobutton</StyleSuggestion>
+            <Selections>
+                <Selection>
+                <SelectionIdentifier>1</SelectionIdentifier>
+                    <Text>mature</Text>
                 </Selection>
                 <Selection>
+                <SelectionIdentifier>2</SelectionIdentifier>
+                    <Text>gluttonous</Text>
+                </Selection>
+                 <Selection>
+                <SelectionIdentifier>3</SelectionIdentifier>
+                    <Text>cautious</Text>
+                </Selection>
+                 <Selection>
                 <SelectionIdentifier>4</SelectionIdentifier>
-		    <Text>This is an invalid submission because the first scenario has two correct answers.</Text>
+                    <Text>vengeful</Text>
+                </Selection>
+                 <Selection>
+                <SelectionIdentifier>5</SelectionIdentifier>
+                    <Text>stingy</Text>
                 </Selection>
             </Selections>
             </SelectionAnswer>
