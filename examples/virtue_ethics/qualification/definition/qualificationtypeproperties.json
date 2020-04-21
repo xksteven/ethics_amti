@@ -1,7 +1,7 @@
 {
-  "Name": "Qualification Type Example",
-  "Keywords": "example, test, sandbox",
-  "Description": "An example qualification type.",
+  "Name": "Virtue Ethics Qual",
+  "Keywords": "virtue ethics, writing",
+  "Description": "The Virtue/Vice writing HIT qualification.",
   "QualificationTypeStatus": "Active",
   "RetryDelayInSeconds": 432000, 
   "TestDurationInSeconds": 3600
