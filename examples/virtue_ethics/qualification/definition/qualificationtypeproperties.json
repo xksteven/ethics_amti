@@ -3,6 +3,6 @@
   "Keywords": "example, test, sandbox",
   "Description": "An example qualification type.",
   "QualificationTypeStatus": "Active",
-  "RetryDelayInSeconds": 86400, 
+  "RetryDelayInSeconds": 432000, 
   "TestDurationInSeconds": 3600
 }

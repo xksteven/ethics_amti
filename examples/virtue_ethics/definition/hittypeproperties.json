@@ -6,7 +6,15 @@
   "Keywords": "HTMLQuestion, writing, free response, creative, Dan, fun,",
   "Description": "Write similarly worded scenarios that each demonstrate a different virtue or vice or character trait.",
   "QualificationRequirements": [
-    {
+     {
+       "QualificationTypeId": "3P3HAQ0W8GDK7VSXAICN2G80XQSI08",
+       "Comparator": "GreaterThanOrEqualTo",
+       "IntegerValues": [
+          51
+       ],
+       "RequiredToPreview": false
+     },
+     {
   	"QualificationTypeId": "00000000000000000071",
   	"Comparator": "In",
   	"LocaleValues": [
@@ -29,7 +37,7 @@
     {
          "QualificationTypeId":"00000000000000000040",
          "Comparator":"GreaterThan",
-         "IntegerValues":[1]    
+         "IntegerValues":[499]
     }
    ]
 }
