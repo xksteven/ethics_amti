@@ -1,0 +1,8 @@
+{
+  "Name": "Obligations Qualification Type",
+  "Keywords": "ordinary, morality, nlp, test, fun, typing, sentences, dan",
+  "Description": "Qualification exam for the the Obligations task.",
+  "QualificationTypeStatus": "Active",
+  "RetryDelayInSeconds": 86400, 
+  "TestDurationInSeconds": 3600
+}
