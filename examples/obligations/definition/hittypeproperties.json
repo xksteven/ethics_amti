@@ -7,7 +7,7 @@
   "Description": "Write a reasonable request or command. Then write excuses that are reasonable and unreasonable.",
   "QualificationRequirements": [
     {
-      "QualificationTypeId": "34WWG8JUK45XOTGGNQHBJ7UZJ9Y0QW",
+      "QualificationTypeId": "3ASQQ0AAXITALWY3DA35YO5JS1GBSI",
       "Comparator": "GreaterThanOrEqualTo",
       "IntegerValues": [
         31
