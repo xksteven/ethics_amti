@@ -58,12 +58,12 @@ Could you please take a shower?
 
         <QuestionContent>
             <Text>Could you show me your report card?</Text>
-            <Text>&emsp;1. But report cards come out next week.</Text>
-            <Text>&emsp;2. But it will make you disappointed.</Text>
-            <Text>&emsp;3. But although you are my parent, the report card has my name on it not yours.</Text>
-            <Text>&emsp;4. But I have not first shown it to my friends.</Text>
-            <Text>&emsp;5. But two school years ago I got an A in art class.</Text>
-            <Text><br/>R = Reasonable, U = Unreasonable.</Text>
+            <Text>1. But report cards come out next week.</Text>
+            <Text>2. But it will make you disappointed.</Text>
+            <Text>3. But although you are my parent, the report card has my name on it not yours.</Text>
+            <Text>4. But I have not first shown it to my friends.</Text>
+            <Text>5. But two school years ago I got an A in art class.</Text>
+            <Text>R = Reasonable, U = Unreasonable.</Text>
         </QuestionContent>
 
         <AnswerSpecification>
@@ -72,19 +72,19 @@ Could you please take a shower?
                 <Selections>
                     <Selection>
                         <SelectionIdentifier>a</SelectionIdentifier>
-                        <Text>1) R&emsp;2) U&emsp;3) U&emsp;4) R&emsp;5) U</Text>
+                        <Text>1) R 2) U 3) U 4) R 5) U</Text>
                     </Selection>
                     <Selection>
                         <SelectionIdentifier>b</SelectionIdentifier>
-                        <Text>1) R&emsp;2) R&emsp;3) U&emsp;4) U&emsp;5) U</Text>
+                        <Text>1) R 2) R 3) U 4) U 5) U</Text>
                     </Selection>
                     <Selection>
                         <SelectionIdentifier>c</SelectionIdentifier>
-                        <Text>1) R&emsp;2) U&emsp;3) U&emsp;4) U&emsp;5) U</Text>
+                        <Text>1) R 2) U 3) U 4) U 5) U</Text>
                     </Selection>
                     <Selection>
                         <SelectionIdentifier>d</SelectionIdentifier>
-                        <Text>1) R&emsp;2) U&emsp;3) U&emsp;4) U&emsp;5) R</Text>
+                        <Text>1) R 2) U 3) U 4) U 5) R</Text>
                     </Selection>
                 </Selections>
             </SelectionAnswer>
@@ -99,13 +99,13 @@ Could you please take a shower?
 
         <QuestionContent>
             <Text>Could you show me your report card?</Text>
-            <Text>&emsp;1. But grades are irrelevant.</Text>
-            <Text>&emsp;2. But I have to go to sports practice in two hours.</Text>
-            <Text>&emsp;3. But you are not my legal guardian.</Text>
-            <Text>&emsp;4. But today was the first day of school.</Text>
-            <Text>&emsp;5. But I lost it and will ask for another tomorrow.</Text>
-            <Text>&emsp;6. But I did not get a good grade.</Text>
-            <Text><br/>R = Reasonable, U = Unreasonable.</Text>
+            <Text>1. But grades are irrelevant.</Text>
+            <Text>2. But I have to go to sports practice in two hours.</Text>
+            <Text>3. But you are not my legal guardian.</Text>
+            <Text>4. But today was the first day of school.</Text>
+            <Text>5. But I lost it and will ask for another tomorrow.</Text>
+            <Text>6. But I did not get a good grade.</Text>
+            <Text>R = Reasonable, U = Unreasonable.</Text>
         </QuestionContent>
 
         <AnswerSpecification>
@@ -114,19 +114,19 @@ Could you please take a shower?
                 <Selections>
                     <Selection>
                         <SelectionIdentifier>a</SelectionIdentifier>
-                        <Text>1) U&emsp;2) R&emsp;3) R&emsp;4) R&emsp;5) R&emsp;6) U</Text>
+                        <Text>1) U 2) R 3) R 4) R 5) R 6) U</Text>
                     </Selection>
                     <Selection>
                         <SelectionIdentifier>b</SelectionIdentifier>
-                        <Text>1) U&emsp;2) U&emsp;3) R&emsp;4) R&emsp;5) R&emsp;6) U</Text>
+                        <Text>1) U 2) U 3) R 4) R 5) R 6) U</Text>
                     </Selection>
                     <Selection>
                         <SelectionIdentifier>c</SelectionIdentifier>
-                        <Text>1) U&emsp;2) U&emsp;3) U&emsp;4) R&emsp;5) R&emsp;6) U</Text>
+                        <Text>1) U 2) U 3) U 4) R 5) R 6) U</Text>
                     </Selection>
                     <Selection>
                         <SelectionIdentifier>d</SelectionIdentifier>
-                        <Text>1) U&emsp;2) U&emsp;3) R&emsp;4) R&emsp;5) R&emsp;6) R</Text>
+                        <Text>1) U 2) U 3) R 4) R 5) R 6) R</Text>
                     </Selection>
                 </Selections>
             </SelectionAnswer>
@@ -142,12 +142,12 @@ Could you please take a shower?
 
         <QuestionContent>
             <Text>Could you please take a shower?</Text>
-            <Text>&emsp;1. But we took a bath two hours ago.</Text>
-            <Text>&emsp;2. But I'm wearing deodorant.</Text>
-            <Text>&emsp;3. But I took a shower two weeks ago.</Text>
-            <Text>&emsp;4. But the water is cold now and will heat up again in 30 minutes.</Text>
-            <Text>&emsp;5. But I just came home from sports practice.</Text>
-            <Text><br/>R = Reasonable, U = Unreasonable.</Text>
+            <Text>1. But we took a bath two hours ago.</Text>
+            <Text>2. But I'm wearing deodorant.</Text>
+            <Text>3. But I took a shower two weeks ago.</Text>
+            <Text>4. But the water is cold now and will heat up again in 30 minutes.</Text>
+            <Text>5. But I just came home from sports practice.</Text>
+            <Text>R = Reasonable, U = Unreasonable.</Text>
         </QuestionContent>
 
         <AnswerSpecification>
@@ -156,19 +156,19 @@ Could you please take a shower?
                 <Selections>
                     <Selection>
                         <SelectionIdentifier>a</SelectionIdentifier>
-                        <Text>1) U&emsp;2) U&emsp;3) U&emsp;4) R&emsp;5) U</Text>
+                        <Text>1) U 2) U 3) U 4) R 5) U</Text>
                     </Selection>
                     <Selection>
                         <SelectionIdentifier>b</SelectionIdentifier>
-                        <Text>1) U&emsp;2) U&emsp;3) U&emsp;4) R&emsp;5) U</Text>
+                        <Text>1) U 2) U 3) U 4) R 5) U</Text>
                     </Selection>
                     <Selection>
                         <SelectionIdentifier>c</SelectionIdentifier>
-                        <Text>1) R&emsp;2) U&emsp;3) R&emsp;4) R&emsp;5) U</Text>
+                        <Text>1) R 2) U 3) R 4) R 5) U</Text>
                     </Selection>
                     <Selection>
                         <SelectionIdentifier>d</SelectionIdentifier>
-                        <Text>1) R&emsp;2) U&emsp;3) U&emsp;4) R&emsp;5) U</Text>
+                        <Text>1) R 2) U 3) U 4) R 5) U</Text>
                     </Selection>
                 </Selections>
             </SelectionAnswer>
