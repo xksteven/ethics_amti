@@ -1,7 +1,7 @@
 <QuestionForm xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2017-11-06/QuestionForm.xsd">
     <Overview>
         <Title>Obligations/Duties Qualification Test</Title>
-        <Text>In the HITs, we will ask you to write a request or command. Then you will write excuses that override or violate the request or command. Some excuses are reasonable, and some are unreasonable.</Text>
+        <Text>In the HITs, we will ask you to write a request or command. Some excuses are reasonable, and some are unreasonable.</Text>
 	<Text>Alternatively, in the HITs you can write down a role or duty and then write reasonable and unreasonable responsibilities related to the role or duty.</Text>
 	<Text>Below are examples:
         </Text>
