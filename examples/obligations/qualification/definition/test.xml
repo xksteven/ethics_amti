@@ -1,8 +1,8 @@
 <QuestionForm xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2017-11-06/QuestionForm.xsd">
     <Overview>
         <Title>Obligations/Duties Qualification Test</Title>
-        <Text>In the HITs, we will ask you to write a request or command. Then you will write excuses that reasonably or not reasonably override or violate the request or command.<br/>
-		Alternatively, in the HITs you can write down a role or duty and then write plausible and implausible responsibilities related to the role or duty.<br/>
+        <Text>In the HITs, we will ask you to write a request or command. Then you will write excuses that override or violate the request or command. Some excuses are reasonable, and some are unreasonable.<br/>
+		Alternatively, in the HITs you can write down a role or duty and then write reasonable and unreasonable responsibilities related to the role or duty.<br/>
 		Below are examples:
         </Text>
     </Overview>
@@ -179,11 +179,12 @@
         <FormattedContent>
             <![CDATA[
 
-	    In the HITs after this qualification round, we will ask you to write requests and reasonable and unreasonable excuses. Unreasonable excuses and unreasonable resulting duties should not be ridiculous or unrelated. Unreasonable responses should be <i>related and relevant</i> to the request or duty, and they should be reasonable responses for other settings requests or duties, just not the particular request or duty you wrote.<br/>
+	    In the HITs after this qualification round, we will ask you to write requests and reasonable and unreasonable excuses. Unreasonable excuses and unreasonable responsibilities should not be ridiculous nor unrelated.<br/>
+Unreasonable responsibilities should be <i>related and relevant</i> to the request or duty, and they should be reasonable responses for other settings requests or duties; they're just unreasonable in this case but they can be reasonable in other settings.<br/>
 
         <br/>
 
-        Which submission is better?<br/><br/>
+        Given that instruction, which submission is better?<br/><br/>
 
         Submission 1:<br/>
         I am a flight attendant at American Airlines who must serve the passengers.<br/>
