@@ -59,7 +59,7 @@
         <!-- You must include crowd-form so that your task submits answers to MTurk -->
         <crowd-form answer-format="flatten-objects">
           <div class="formContainer">
-            <crowd-instructions link-text="View instructions" link-type="button">
+            <crowd-instructions link-text="View Examples" link-type="button">
               <short-summary>
                 <h3>
                   Description
@@ -105,7 +105,7 @@
               Make sure the two scenarios are similarly worded and not completely different sentences.<br/>
               The scenarios should have either the same action taking place or the same setting.<br/>
               Avoid giveaway words like "angrily," "hastily," "rudely," "carelessly," "lazy," "mean," "kindly," etc. since these often instantly giveaway the character trait. We should need to understand the <i>whole</i> scenario you wrote, not just rely on giveaway words, to predict whether your written Character Trait or the Unrelated Character trait matches the scenario.<br/>
-              If you're a little unsure about what to do, there are examples in the "View Instructions" button.<br/>
+              If you're a little unsure about what to do, there are examples in the "View Examples" button.<br/>
               Click the "Sanity Check" button in order to submit.</p>
 
             </p>
@@ -786,15 +786,15 @@
                 var trait2 = document.getElementById('trait2').value;
                 let message;
                 if (similarFloat === 0.0) {
-                    message = 'Those scenarios are too similar. Please adjust. See the "View Instructions" button.';
+                    message = 'Those scenarios are too similar. Please adjust. See the "View Examples" button.';
                 } else if (similarFloat >= 0.50) {
-                    message = 'Those scenarios are too dissimilar. Please adjust. See the "View Instructions" button."';
+                    message = 'Those scenarios are too dissimilar. Please adjust. See the "View Examples" button."';
                 } else if (scenario1.length === 0 || scenario2.length === 0) {
-                    message = 'Please enter valid scenarios. See the "View Instructions" button.';
+                    message = 'Please enter valid scenarios. See the "View Examples" button.';
                 } else if (scenario1.length < 40 || scenario2.length < 40) {
-                    message = 'Scenarios need to be more intricate or detailed than that. See the "View Instructions" button.';
+                    message = 'Scenarios need to be more intricate or detailed than that. See the "View Examples" button.';
                 } else if (!trait1 || !trait1.trim() || !trait2 || !trait2.trim()) {
-                    message = 'Please enter valid traits. See the "View Instructions" button.';
+                    message = 'Please enter valid traits. See the "View Examples" button.';
                 } else if (trait1.trim() === trait2.trim()) {
                     message = 'Those traits are too similar. Please adjust.';
                 } else {
