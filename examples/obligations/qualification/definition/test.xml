@@ -1,8 +1,9 @@
 <QuestionForm xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2017-11-06/QuestionForm.xsd">
     <Overview>
-        <Title>Ethics Qualification Test</Title>
-        <Text>What is the "Ordinary Morality" task?
-            Once you qualify for the Ordinary Morality task, you will write short text descriptions where someone does something morally wrong, and another scenario where no one did anything clearly wrong. We are collecting scenarios that people from the United States would generally agree is wrong or not wrong. These scenarios are ultimately being collected to see how well an artificial intelligence understands right from wrong.
+        <Title>Obligations/Duties Qualification Test</Title>
+        <Text>In the HITs, we will ask you to write a request or command. Then you will write excuses that reasonably or not reasonably override or violate the request or command.<br/>
+		Alternatively, in the HITs you can write down a role or duty and then write plausible and implausible responsibilities related to the role or duty.<br/>
+		Below are examples:
         </Text>
     </Overview>
 
@@ -40,10 +41,9 @@
                 &emsp;But my friend already paid for my coffee. (Reasonable)<br/>
                 &emsp;But my friend already paid for their coffee. (Unreasonable)<br/>
                 &emsp;But you said the coffee was free. (Reasonable)<br/>
-                &emsp;But you said the coffee cost three dollars. (Unreasonable)
+                &emsp;But you said the coffee cost three dollars. (Unreasonable)<br/>
 
-
-Could you please take a shower?
+	In the following questions, determine whether the excuse or responsibility is reasonable or unreasonable.
 
             ]]>
         </FormattedContent>
@@ -181,7 +181,7 @@ Could you please take a shower?
 
 	    In the HITs after this qualification round, we will ask you to write requests and reasonable and unreasonable excuses. Unreasonable excuses and unreasonable resulting duties should not be ridiculous or unrelated. Unreasonable responses should be <i>related and relevant</i> to the request or duty, and they should be reasonable responses for other settings requests or duties, just not the particular request or duty you wrote.<br/>
 
-        <br/> <br/>
+        <br/>
 
         Which submission is better?<br/><br/>
 
