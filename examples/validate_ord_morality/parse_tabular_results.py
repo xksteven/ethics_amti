@@ -11,19 +11,19 @@ with open(args.json, "r") as f:
     #print(tmp, type(tmp))
     data = [json.loads(line.strip()) for line in tmp]
 
-#example = {"HITId": "39XCQ6V3KY4ANVXPEASRAXTSLFJ652", "AssignmentDurationInSeconds": 3600, "AutoApprovalDelayInSeconds": 259200, "Expiration": "2021-04-11T22:44:52-05:00", "CreationTime": "2020-04-11T22:44:52-05:00", "AssignmentId": "3F6KKYWMNB1GKDG4IZ1TZ4ZW9GNND8", "WorkerId": "A171OY96XOQ3IF", "AssignmentStatus": "Approved", "AutoApprovalTime": "2020-04-14T23:57:30-05:00", "AcceptTime": "2020-04-11T23:55:24-05:00", "SubmitTime": "2020-04-11T23:57:30-05:00", "ApprovalTime": "2020-04-12T10:57:55-05:00", "not_wrong": "he bumped the woman", "wrong": "he hit the woman"}
+# example {"HITId": "3K3IX1W4S6RF37RBO2IHO80V840PAZ", "AssignmentDurationInSeconds": 1800,
+#"AutoApprovalDelayInSeconds": 259200, "Expiration": "2020-04-20T10:19:56-05:00",
+#"CreationTime": "2020-04-18T10:19:56-05:00", "AssignmentId": "35BLDD71I6XWVJU9C8CH0DCCK2FZVJ",
+#"WorkerId": "A2EPDDX5049SYF", "AssignmentStatus": "Approved",
+#"AutoApprovalTime": "2020-04-21T10:23:30-05:00", "AcceptTime": "2020-04-18T10:22:55-05:00", 
+#"SubmitTime": "2020-04-18T10:23:30-05:00", "ApprovalTime": 1234,
+#"taskAnswers": "[{\"003JV9LGBJWTE1EIQ7L42EKE2YCLHOGD\":{\"wrong\":false},\"0131EUONYN2V3KWFG2AZ10KF58ZJVOVU\":{\"wrong\":true},\"013IOEN3P9S7JELXU03PVHWRC1PW7164\":{\"wrong\":true},\"01ADan83\":{\"wrong\":true},\"103JV9LGBJWTE1EIQ7L42EKE2YCLHOGD\":{\"not wrong\":true},\"1131EUONYN2V3KWFG2AZ10KF58ZJVOVU\":{\"not wrong\":false},\"113IOEN3P9S7JELXU03PVHWRC1PW7164\":{\"not wrong\":false},\"11ADan83\":{\"not wrong\":false}}]"}
 
 output_str = []
 for entry in data:
     tmp = []
     tmp.append("0")
     tmp.append(entry["not_wrong"])
-    tmp.append(entry["WorkerId"])
-    tmp.append(entry["AssignmentId"])
-    output_str.append(tmp)
-    tmp = []
-    tmp.append("1")
-    tmp.append(entry["wrong"])
     tmp.append(entry["WorkerId"])
     tmp.append(entry["AssignmentId"])
     output_str.append(tmp)

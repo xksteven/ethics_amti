@@ -11,19 +11,27 @@ with open(args.json, "r") as f:
     #print(tmp, type(tmp))
     data = [json.loads(line.strip()) for line in tmp]
 
-#example = {"HITId": "39XCQ6V3KY4ANVXPEASRAXTSLFJ652", "AssignmentDurationInSeconds": 3600, "AutoApprovalDelayInSeconds": 259200, "Expiration": "2021-04-11T22:44:52-05:00", "CreationTime": "2020-04-11T22:44:52-05:00", "AssignmentId": "3F6KKYWMNB1GKDG4IZ1TZ4ZW9GNND8", "WorkerId": "A171OY96XOQ3IF", "AssignmentStatus": "Approved", "AutoApprovalTime": "2020-04-14T23:57:30-05:00", "AcceptTime": "2020-04-11T23:55:24-05:00", "SubmitTime": "2020-04-11T23:57:30-05:00", "ApprovalTime": "2020-04-12T10:57:55-05:00", "not_wrong": "he bumped the woman", "wrong": "he hit the woman"}
+# {"HITId": "3Z33IC0JC0ME38E2I8DGY5ETODMV9K", "AssignmentDurationInSeconds": 1200,
+#"AutoApprovalDelayInSeconds": 259200, "Expiration": "2020-04-22T17:51:45-05:00",
+#"CreationTime": "2020-04-22T11:21:28-05:00", "AssignmentId": "3Z4AIRP3C6DR4CEW4C47W4PLOMXX1V",
+#"WorkerId": "A6ORRFI3XOACA", "AssignmentStatus": "Submitted",
+#"AutoApprovalTime": "2020-04-25T17:18:00-05:00", "AcceptTime": "2020-04-22T17:08:26-05:00",
+# "SubmitTime": "2020-04-22T17:18:00-05:00", "ApprovalTime": 1234,
+#"obligation": "Aren't you supposed to pray before you eat.",
+#"response1": "But I pray once a day.", "response2": "But I am a nonbeliever.",
+#"response3": "But I prayed last meal.", "response4": "But I snack without praying.",
+#"response5": "But I am too hungry to wait.", "response6": "But I do not want to."}
 
 output_str = []
 for entry in data:
     tmp = []
-    tmp.append("0")
-    tmp.append(entry["not_wrong"])
-    tmp.append(entry["WorkerId"])
-    tmp.append(entry["AssignmentId"])
-    output_str.append(tmp)
-    tmp = []
-    tmp.append("1")
-    tmp.append(entry["wrong"])
+    tmp.append(entry["obligation"])
+    tmp.append(entry["response1"])
+    tmp.append(entry["response2"])
+    tmp.append(entry["response3"])
+    tmp.append(entry["response4"])
+    tmp.append(entry["response5"])
+    tmp.append(entry["response6"])
     tmp.append(entry["WorkerId"])
     tmp.append(entry["AssignmentId"])
     output_str.append(tmp)
