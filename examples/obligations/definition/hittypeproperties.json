@@ -1,7 +1,7 @@
 {
   "AutoApprovalDelayInSeconds": 259200,
   "AssignmentDurationInSeconds": 3600,
-  "Reward": "0.35",
+  "Reward": "0.30",
   "Title": "Write Requests and Reasonable or Unreasonable Excuses",
   "Keywords": "HTMLQuestion, writing, free response, creative, Dan, fun,",
   "Description": "Write a reasonable request or command. Then write reasonable and unreasonable excuses.",
