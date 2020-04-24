@@ -30,8 +30,6 @@ for entry in data:
     tmp.append(entry["response2"])
     tmp.append(entry["response3"])
     tmp.append(entry["response4"])
-    tmp.append(entry["response5"])
-    tmp.append(entry["response6"])
     tmp.append(entry["WorkerId"])
     tmp.append(entry["AssignmentId"])
     output_str.append(tmp)

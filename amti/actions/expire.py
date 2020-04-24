@@ -65,6 +65,7 @@ def expire_batch(
                 ExpireAt=datetime.datetime.now())
         except:
             print("Could not expire hit id = ", hit_id, ". did you mean to try live \"-l\"?")
+            raise
 
     logger.info(f'All HITs in batch {batch_id} are now expired.')
 

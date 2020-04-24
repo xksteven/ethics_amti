@@ -28,8 +28,6 @@ for entry in data:
     tmp.append(entry["scenario2"])
     tmp.append(entry["trait1"])
     tmp.append(entry["trait2"])
-    tmp.append(entry["untrait1"])
-    tmp.append(entry["untrait1"])
     tmp.append(entry["WorkerId"])
     tmp.append(entry["AssignmentId"])
     output_str.append(tmp)
