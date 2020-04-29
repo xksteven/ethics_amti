@@ -59,13 +59,9 @@ def expire_batch(
     logger.info(f'Expiring HITs in batch {batch_id}.')
 
     for hit_id in hit_ids:
-        try:
-            hit = client.update_expiration_for_hit(
-                HITId=hit_id,
-                ExpireAt=datetime.datetime.now())
-        except:
-            print("Could not expire hit id = ", hit_id, ". did you mean to try live \"-l\"?")
-            raise
+        hit = client.update_expiration_for_hit(
+            HITId=hit_id,
+            ExpireAt=datetime.datetime.now())
 
     logger.info(f'All HITs in batch {batch_id} are now expired.')
 
