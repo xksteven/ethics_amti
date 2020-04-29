@@ -7,7 +7,7 @@
   "Description": "An HTMLQuestion HIT designed as an example for a script that generates HITs",
   "QualificationRequirements": [
     {
-      "QualificationTypeId": "3BERVBF4P829LCBMVLDVBUY9QQNPYR",
+      "QualificationTypeId": "$QUALIFICATION_TYPE_ID",
       "Comparator": "GreaterThanOrEqualTo",
       "IntegerValues": [
         100

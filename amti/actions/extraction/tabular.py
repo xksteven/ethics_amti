@@ -131,7 +131,7 @@ def tabular(
             row['AutoApprovalTime'] = assignment['AutoApprovalTime']
             row['AcceptTime'] = assignment['AcceptTime']
             row['SubmitTime'] = assignment['SubmitTime']
-            row['ApprovalTime'] = 1234 # assignment['ApprovalTime']
+            row['ApprovalTime'] = assignment['ApprovalTime']
 
             # parse the response and add it to the row
             xml = minidom.parseString(assignment['Answer'])
