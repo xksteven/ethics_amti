@@ -162,39 +162,42 @@
 
 
           <section class="questionBody">
-            <p><i>This research study is being conducted by the Steinhardt Group at UC Berkeley. For questions about this study, please contact Dan Hendrycks at hendrycks@berkeley.edu. In this study, we will ask you to write requests and excuses, or duties and consequent responsibilities. We would like to remind you that participation in our study is voluntary and that you can withdraw from the study at any time.</i></p>
+            <p><i><small>This research study is being conducted by the Steinhardt Group at UC Berkeley. For questions about this study, please contact Dan Hendrycks at hendrycks@berkeley.edu. In this study, we will ask you to write requests and excuses, or duties and consequent responsibilities. We would like to remind you that participation in our study is voluntary and that you can withdraw from the study at any time.</small></i></p>
             <hr/>
 
             <p>
-              Write a reasonable request or command (e.g., "Could you take a shower?"). Then write excuses that are reasonable ("But I just took a bath") and unreasonable ("But I'm wearing deodorant"). Reasonable excuses should override the request or command, while unreasonable excuses should be related to the request but not enough to justify ignoring the request or command.<br/>
-              Alternatively, write a role or duty (e.g., "I am a parent of five kids.") and then write write reasonable and unreasonable secondary/indirect/consequent/resulting duties (e.g., "I need to monitor my 10 month old son when asleep" vs "I need to monitor my 10 year old son when asleep").<br/>
-              See examples by clicking the "View Examples" button.</br><br/>
+              Summary: Write a request. Write good and bad excuses. Submit.<br/><br/>
 
-              Unreasonable excuses and unreasonable resulting duties should not be unrelated nor always unreasonable. Unreasonable responses should be <i>related and relevant</i> to the request or duty, and they should be reasonable responses for other settings requests or duties; they're just unreasonable in this case but they can be reasonable in other settings.</br>The "Get Suggestion" button can help you get started.<hr/><br/>
+              Write a reasonable request or command (e.g., "Could you take a shower?"). Then write excuses that are reasonable ("But I just took a bath") and unreasonable ("But I'm wearing deodorant"). Reasonable excuses should override the request or command, while unreasonable excuses should be related to the request but not enough to justify ignoring the request or command.<br/><br/>
+
+              Alternatively, write a role or duty (e.g., "I am a parent of five kids.") and then write write reasonable and unreasonable secondary/resulting duties (e.g., "I need to monitor my 10 month old son when asleep" vs "I need to monitor my 10 year old son when asleep").<br/><br/>
+
+              Unreasonable excuses and unreasonable resulting duties should not be unrelated nor always unreasonable. Unreasonable responses should be <i>related and relevant</i> to the request or duty, and they should be reasonable responses for other settings requests or duties; they're just unreasonable in this case but they can be reasonable in other settings.<br/></br>
+
+              The "Get Suggestion" button can help you get started. The submit button only works when the text you write is long enough. See examples by clicking the "View Examples" button.<hr/><br/>
             </p>
 
             <p>
             <span class="suggestion">Get Suggestion (Replaces Text)</span>
-            Write a reasonable request/command or write a role or duty:
-            <crowd-input id="obligation" name="obligation" placeholder="Write a reasonable request/command or write a role or duty." pattern=".{30,}" required/>
+            Write a reasonable request/command or write a role/duty:
+            <crowd-input id="obligation" name="obligation" placeholder="Write a reasonable request/command or write a role/duty." pattern=".{30,}" required/>
             </p>
-            <!-- make 30, rest 20 -->
 
             <div class="reasonable">
                 Reasonable Excuses or Reasonable Resulting Responsibilities:
                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
                     <!-- <label for="response1">Reasonable:</label> -->
-                    <crowd-input id="response1" name="response1" pattern=".{20,}" size="100" placeholder="Write a reasonable excuse or resulting responsibility here." required/>
+                    <crowd-input id="response1" name="response1" pattern=".{24,}" size="100" placeholder="Write a reasonable excuse or resulting responsibility here." required/>
                 </div>
                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
                     <!-- <label for="response2">Reasonable:</label> -->
-                    <crowd-input id="response2" name="response2" pattern=".{20,}" size="100" placeholder="Write a reasonable excuse or resulting responsibility here." required/>
+                    <crowd-input id="response2" name="response2" pattern=".{24,}" size="100" placeholder="Write a reasonable excuse or resulting responsibility here." required/>
                 </div>
                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
-                    <crowd-input id="response3" name="response3" pattern=".{20,}" size="100" placeholder="Write a reasonable excuse or resulting responsibility here." required/>
+                    <crowd-input id="response3" name="response3" pattern=".{24,}" size="100" placeholder="Write a reasonable excuse or resulting responsibility here." required/>
                 </div>
 <!--                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
-                    <crowd-input id="response4" name="response4" pattern=".{20,}" size="100" placeholder="Write a reasonable excuse or resulting responsibility here." required/>
+                    <crowd-input id="response4" name="response4" pattern=".{24,}" size="100" placeholder="Write a reasonable excuse or resulting responsibility here." required/>
                 </div> -->
             </div>
 
@@ -202,7 +205,7 @@
                 Unreasonable Excuses or Unreasonable Resulting Responsibilities:
                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
                     <!-- <label for="response4">Unreasonable Excuses or Unreasonable Resulting Responsibilities:</label> -->
-                    <crowd-input id="response4" name="response4" pattern=".{20,}" size="100" placeholder="Write an unreasonable (but related and not always ridiculous) excuse or an unreasonable subresponsibility here." required/>
+                    <crowd-input id="response4" name="response4" pattern=".{24,}" size="100" placeholder="Write an unreasonable (but related and not always ridiculous) excuse or an unreasonable subresponsibility here." required/>
                 </div>
             </div>
 

@@ -298,7 +298,7 @@ def upload_batch(
     with open(incomplete_file_path, 'w') as incomplete_file:
         json.dump(ids, incomplete_file)
 
-    logger.info(f'Created {i+1} HITs.')
+    logger.info(f'Created {len(hit_ids)} HITs.')
 
     return ids
 

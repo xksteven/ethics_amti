@@ -2,106 +2,30 @@
       
     <Overview>
     <Title>Virtue Ethics Test</Title>
-    <!--<Text>What is the "Ordinary Morality" task?
-	    Once you qualify for the Ordinary Morality task, you will write short text descriptions where someone does something morally wrong, and another scenario where no one did anything clearly wrong. We are collecting scenarios that people from the United States would generally agree is wrong or not wrong. These scenarios are ultimately being collected to see how well an artificial intelligence understands right from wrong.
-    </Text> -->
   </Overview>
   <Overview>
      <FormattedContent>
       <![CDATA[
-      In the Virtue Ethics HITs, you will write _two_ similarly worded scenarios each exemplifying different character traits/virtues/vices.<br/>
+      In the Virtue Ethics HITs, you will write two similarly worded scenarios each demonstrating different character traits/virtues/vices (e.g., courage, envy, careless, easy to make angry).<br/>
       You will write the scenario demonstrating the character trait you choose to write about.<br/><br/>
 
       Example:<br/>
-         a. Fred found out his friend Alice had taken a job he was trying to get, so he decided to slash the tires on her car.<br/>
-         b. Fred found out his friend Alice had taken a job he was trying to get, but he still invited her on his car trip.<br/><br/>
+         a. While the family was walking in their neighborhood, they stayed on the sidewalk.<br/>
+         b. While the family was walking in their neighborhood, they walked across people's yards.<br/><br/>
 
       Answer:<br/>
-	 a. Related Character Trait/Virtue/Vice: vengeful; Unrelated Character Traits/Virtues/Vices: arrogant, boastful, pushy<br/>
-         b. Related Character Trait/Virtue/Vice: forgiving; Unrelated Character Traits/Virtues/Vices: clever, extravagant, arrogant<br/><br/>
+    	 a. Related Character Trait/Virtue/Vice: law abiding<br/>
+         b. Related Character Trait/Virtue/Vice: disrepsectful<br/><br/>
 
       Select the correct character trait in the following scenarios.
       ]]>
     </FormattedContent>
   </Overview>
 
-  <Question>
-    <QuestionIdentifier>001</QuestionIdentifier>
-    <IsRequired>true</IsRequired>
-    <QuestionContent>
-      <Title>At the restaurant when Alice saw that her baby was choking, she shrieked loudly.</Title>
-    </QuestionContent>
-    <AnswerSpecification>
-      <SelectionAnswer>
-        <StyleSuggestion>radiobutton</StyleSuggestion>
-        <Selections>
-          <Selection>
-            <SelectionIdentifier>1</SelectionIdentifier>
-            <Text>appropriately angry</Text>
-          </Selection>
-          <Selection>
-            <SelectionIdentifier>2</SelectionIdentifier>
-            <Text>appropriately scared</Text>
-          </Selection>
-           <Selection>
-            <SelectionIdentifier>3</SelectionIdentifier>
-            <Text>humorless</Text>
-          </Selection>
-           <Selection>
-            <SelectionIdentifier>4</SelectionIdentifier>
-            <Text>lustful</Text>
-          </Selection>
-           <Selection>
-            <SelectionIdentifier>5</SelectionIdentifier>
-            <Text>stingy</Text>
-          </Selection>
-        </Selections>
-      </SelectionAnswer>
-    </AnswerSpecification>
-  </Question>
-
-    <!-- QUESTION TWO -->
-    <Question>
-        <QuestionIdentifier>002</QuestionIdentifier>
-        <DisplayName>Question 02</DisplayName>
-        <IsRequired>true</IsRequired>
-        <QuestionContent>
-            <Title>At the restaurant when Alice saw that her baby was wearing a sweater, she shrieked loudly.</Title>
-        </QuestionContent>
-        <AnswerSpecification>
-            <SelectionAnswer>
-            <StyleSuggestion>radiobutton</StyleSuggestion>
-            <Selections>
-                <Selection>
-                <SelectionIdentifier>1</SelectionIdentifier>
-                    <Text>underreacting</Text>
-                </Selection>
-                <Selection>
-                <SelectionIdentifier>2</SelectionIdentifier>
-                    <Text>ambitious</Text>
-                </Selection>
-                 <Selection>
-                <SelectionIdentifier>3</SelectionIdentifier>
-                    <Text>generous</Text>
-                </Selection>
-                 <Selection>
-                <SelectionIdentifier>4</SelectionIdentifier>
-                    <Text>overreacting</Text>
-                </Selection>
-                 <Selection>
-                <SelectionIdentifier>5</SelectionIdentifier>
-                    <Text>being extravagant with her wealth</Text>
-                </Selection>
-            </Selections>
-            </SelectionAnswer>
-        </AnswerSpecification>
-    </Question>
-
-
     <!-- QUESTION THREE -->
     <Question>
         <QuestionIdentifier>003</QuestionIdentifier>
-        <DisplayName>Question 03</DisplayName>
+        <DisplayName>Question 01</DisplayName>
         <IsRequired>true</IsRequired>
         <QuestionContent>
             <Title>When Charlie saw that his friend was struggling to breathe on their bike ride in the park, he just started to ride faster.</Title>
@@ -139,7 +63,7 @@
     <!-- QUESTION FOUR -->
     <Question>
         <QuestionIdentifier>004</QuestionIdentifier>
-        <DisplayName>Question 04</DisplayName>
+        <DisplayName>Question 02</DisplayName>
         <IsRequired>true</IsRequired>
         <QuestionContent>
             <Title>When Charlie saw that his friend was struggling to breathe on their bike ride in the park, he decided to slow down.</Title>
@@ -172,47 +96,10 @@
             </SelectionAnswer>
         </AnswerSpecification>
     </Question>
- 
-    <!-- QUESTION FIVE -->
-    <Question>
-        <QuestionIdentifier>005</QuestionIdentifier>
-        <DisplayName>Question 05</DisplayName>
-        <IsRequired>true</IsRequired>
-        <QuestionContent>
-            <Title>Despite being only 12, Johnny punched his grandmother after losing a chess match to her.</Title>
-        </QuestionContent>
-	<AnswerSpecification>
-            <SelectionAnswer>
-            <StyleSuggestion>radiobutton</StyleSuggestion>
-            <Selections>
-                <Selection>
-                <SelectionIdentifier>1</SelectionIdentifier>
-                    <Text>unrealistic</Text>
-                </Selection>
-                <Selection>
-                <SelectionIdentifier>2</SelectionIdentifier>
-                    <Text>lazy</Text>
-                </Selection>
-                 <Selection>
-                <SelectionIdentifier>3</SelectionIdentifier>
-                    <Text>immature</Text>
-                </Selection>
-                 <Selection>
-                <SelectionIdentifier>4</SelectionIdentifier>
-                    <Text>considerate</Text>
-                </Selection>
-                 <Selection>
-                <SelectionIdentifier>5</SelectionIdentifier>
-                    <Text>modest</Text>
-                </Selection>
-            </Selections>
-            </SelectionAnswer>
-        </AnswerSpecification>
-    </Question>
 
     <Question>
         <QuestionIdentifier>006</QuestionIdentifier>
-        <DisplayName>Question 06</DisplayName>
+        <DisplayName>Question 03</DisplayName>
         <IsRequired>true</IsRequired>
         <QuestionContent>
             <Title>Despite being only 12, Johnny served his grandmother punch after losing a chess match to her.</Title>
@@ -240,6 +127,92 @@
                  <Selection>
                 <SelectionIdentifier>5</SelectionIdentifier>
                     <Text>stingy</Text>
+                </Selection>
+            </Selections>
+            </SelectionAnswer>
+        </AnswerSpecification>
+    </Question>
+
+    <Overview>
+        <FormattedContent>
+        <![CDATA[
+
+        In the scenarios you write in your HITs, we shouldn't be able to just look at the action you wrote (without context) to guess the character trait/virtue/vice. For instance, imagine you had a character trait like "petty" and wrote "I gossiped with Marry while we got our nails done." The word "gossip" is in the scenario, which is nearly always "petty." We should not be able to use one word in the scenario to predict the character trait/virtue/vice. We want your scenarios to be trickier.<br/><br/>
+
+        This means avoid obvious words like "gossip" for petty, "brag" for arrogant, "scream" for childish, "slap" for aggressive, "studied" for diligent, "smile"/"hug" for friendly, "ignored" for apathetic, "assist" for helpful, "gave money"/"donated" for generous, etc.
+        Avoid giveaway words like "angrily," "hastily," "rude," "carelessly," "lazy," "mean," "kindly," etc. since these often instantly giveaway the character trait. We should need to understand the whole scenario you wrote, not just rely on giveaway words, to predict whether your written Character Trait matches the scenario.<br/><br/>
+
+        In the remaining two questions, select whether the scenario is too obvious (2 of the 3 questions below are too obvious).<br/>
+        ]]>
+        </FormattedContent>
+    </Overview>
+
+    <Question>
+        <QuestionIdentifier>007</QuestionIdentifier>
+        <DisplayName>Question 04</DisplayName>
+        <IsRequired>true</IsRequired>
+        <QuestionContent>
+            <Title>Scenario: Despite being only 12, Johnny punched his grandmother after losing a chess match to her. Related Character Trait: violent.</Title>
+        </QuestionContent>
+    <AnswerSpecification>
+            <SelectionAnswer>
+            <StyleSuggestion>radiobutton</StyleSuggestion>
+            <Selections>
+                <Selection>
+                <SelectionIdentifier>1</SelectionIdentifier>
+                    <Text>Too obvious (punched for violent)</Text>
+                </Selection>
+                <Selection>
+                <SelectionIdentifier>2</SelectionIdentifier>
+                    <Text>Good</Text>
+                </Selection>
+            </Selections>
+            </SelectionAnswer>
+        </AnswerSpecification>
+    </Question>
+
+    <Question>
+        <QuestionIdentifier>008</QuestionIdentifier>
+        <DisplayName>Question 05</DisplayName>
+        <IsRequired>true</IsRequired>
+        <QuestionContent>
+            <Title>Scenario: Everyone visited him at his birthday party but he kept a straight face. Related Character Trait: gloomy.</Title>
+        </QuestionContent>
+    <AnswerSpecification>
+            <SelectionAnswer>
+            <StyleSuggestion>radiobutton</StyleSuggestion>
+            <Selections>
+                <Selection>
+                <SelectionIdentifier>1</SelectionIdentifier>
+                    <Text>Too obvious (straight face for gloomy)</Text>
+                </Selection>
+                <Selection>
+                <SelectionIdentifier>2</SelectionIdentifier>
+                    <Text>Good</Text>
+                </Selection>
+            </Selections>
+            </SelectionAnswer>
+        </AnswerSpecification>
+    </Question>
+
+    <Question>
+        <QuestionIdentifier>009</QuestionIdentifier>
+        <DisplayName>Question 06</DisplayName>
+        <IsRequired>true</IsRequired>
+        <QuestionContent>
+            <Title>Scenario: Jason assisted the elderly man who was struggling to put the groceries in his car. Related Character Trait: helpfulness.</Title>
+        </QuestionContent>
+    <AnswerSpecification>
+            <SelectionAnswer>
+            <StyleSuggestion>radiobutton</StyleSuggestion>
+            <Selections>
+                <Selection>
+                <SelectionIdentifier>1</SelectionIdentifier>
+                    <Text>Too obvious (assist for helpfulness)</Text>
+                </Selection>
+                <Selection>
+                <SelectionIdentifier>2</SelectionIdentifier>
+                    <Text>Good</Text>
                 </Selection>
             </Selections>
             </SelectionAnswer>

@@ -1,0 +1,103 @@
+Steps I take:
+
+For all examples below  replace batch-* with the appropriate batch folder that we've created.
+
+
+Create the batch:
+
+cd examples/ordinary_morality/
+python3 create_tasks.py  NUMBER_OF_HITS
+#replace number of hits with appropriate quantity
+amti create-batch definition/ data.jsonl ../../ --live
+
+
+View the status:
+
+amti status-batch --live batch-* 
+
+
+Stop what's in progress:
+
+#Necessary to save the results if all are not done
+amti expire-batch --live batch-*
+
+
+Approve all:
+#amti review-batch -a --live batch-*
+#Note -a autoapproves the whole batch
+Preview batch (with modified scripts):
+amti review-batch --live batch-*
+
+
+Retrieve data:
+amti save-batch --live batch-*
+
+
+Extract data:
+
+#Necessary to convert to tsv
+amti extract tabular batch-*  batch-*/save_file_name.jsonl
+
+
+Convert to tsv:
+
+cd examples/ordinary_morality/
+python3 parse_tabular_results.py ../../batch-*/save_file_name.jsonl 
+
+#It saves the output as second argument or default to current directory
+
+That's the whole process :)
+
+
+
+To create a qualification type:
+
+amti create-qualificationtype definition_folder/  ../..
+
+the first argument is the definition folder and the second argument is where to save the qualification type to and finally add "-l" to submit it live (or --live) as opposed to sandbox.
+
+If it throws an error about already in use go into the definition/qualificationtypeproperties.json  and change the name of the qualification.
+Alternatively you can go into sandbox or requester.mturk.com and remove the previous qualification with the same name there.
+
+Finally last important step.  The command above will output some ID such as "3HWVT555HR2G88QF2K9GRMKD6C2IAX" copy and paste that ID into the hittypeproperties.json in the appropriate field.
+ 
+Let me know if you have any questions or any of it doesn't make sense,
+
+
+
+
+
+To save results without approving (letting autoapprove do it)
+in save.py
+                            # if assignment_status not in ['Approved', 'Rejected']:
+                            #     raise ValueError(
+                            #         f'Assignment (ID: {assignment_id}) has status'
+                            #         f' "{assignment_status}". In order to save a'
+                            #         f' batch all assignments must have "Approved"'
+                            #         f' or "Rejected" status.')
+
+    # os.remove(incomplete_file_path)
+
+in tabular.py
+            row['ApprovalTime'] = 1234  # assignment['ApprovalTime']
+
+in review.py
+                    # approve = None
+                    # while approve is None:
+                    #     user_input = input('Approve? [y/n]').strip().lower()
+                    #     if user_input in ['y', 'n']:
+                    #         approve = user_input == 'y'
+                    #     else:
+                    #         print('Please type either "y" or "n".')
+
+                    # if approve:
+                    #     logger.info(f'Approving assignment (ID: {assignment_id}).')
+                    #     client.approve_assignment(
+                    #         AssignmentId=assignment_id,
+                    #         OverrideRejection=False)
+                    # else:
+                    #     logger.info(
+                    #         f'Did not approve assignment (ID: {assignment_id}).'
+                    #         f' Please make sure to manually reject it.')
+
+pip install .

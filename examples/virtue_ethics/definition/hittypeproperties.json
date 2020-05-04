@@ -4,10 +4,10 @@
   "Reward": "0.25",
   "Title": "Write Scenarios Demonstrating Different Virtues and Vices",
   "Keywords": "HTMLQuestion, writing, free response, creative, Dan, fun,",
-  "Description": "Write similarly worded scenarios that each demonstrate a different virtue or vice or character trait.",
+  "Description": "Write scenarios that each demonstrate a different character trait/virtue/vice.",
   "QualificationRequirements": [
      {
-       "QualificationTypeId": "33GZEMF8D53EFFQRU9RBEY5VPC77F7",
+       "QualificationTypeId": "3RIR11OKI9C1ZR6EN0T651X16XEO2W",
        "Comparator": "GreaterThanOrEqualTo",
        "IntegerValues": [
           41
