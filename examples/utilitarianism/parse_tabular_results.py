@@ -25,12 +25,12 @@ with open(args.json, "r") as f:
 output_str = []
 for entry in data:
     tmp = []
-    tmp.append(entry["sentence1"])
-    tmp.append(entry["response1"])
-    tmp.append(entry["response2"])
-    tmp.append(entry["response3"])
-    tmp.append(entry["response4"])
-    tmp.append(entry["response5"])
+    # tmp.append(entry["sentence1"])
+    for i in range(1,6):
+        if 'response' + str(i) in entry.keys():
+            tmp.append(entry["sentence1"] + " " + entry["response"+str(i)])
+        else:
+            tmp.append(entry["sentence1"])
     tmp.append(entry["WorkerId"])
     tmp.append(entry["AssignmentId"])
     output_str.append(tmp)
