@@ -8,7 +8,6 @@
       <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
 
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <i class="fa fa-arrows-v" style="font-size:24px"></i>
 
       <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
 
@@ -20,8 +19,12 @@
           width: 75%;
         }
 
-        hr {
+<!--         hr {
           border-top: 1px solid #838b8b;
+        }
+ -->
+        hr {
+          border-top: 1px solid #ec7211;
         }
 
         ul {
@@ -91,9 +94,18 @@
         }
         
         .secondSentence {
-          border: 4px solid;
+          border: 1px solid;
           border-radius: 5px;
           padding: 5px;
+          border-color: #838b8b;
+          margin: 10px 0 10px 0
+        }
+
+        .reminder {
+          border: 1px solid;
+          border-radius: 5px;
+          padding: 5px;
+          background-color: #1E90FF;
           margin: 10px 0 10px 0
         }
 
@@ -134,13 +146,18 @@
 
         function makeNull(i) {
             var r = document.getElementById("response" + i);
-            r.placeholder="(Default scenario; no second sentence. Leave blank.)";
-            r.setAttribute("readonly", true)
+            // r.setAttribute("style", "color: red");
+            r.placeholder="Original scenario with no modification, so no second sentence. Leave blank. Compare with original scenario.";
+            r.setAttribute("readonly", true);
+            r.setAttribute("type", "hidden");
+            r.setAttribute("style", "display:none");
         }
         function makeNonNull(i) {
             var r = document.getElementById("response" + i);
             r.placeholder="Write a second sentence here";
-            r.removeAttribute('readonly')
+            r.removeAttribute('readonly');
+            r.removeAttribute("type");
+            r.removeAttribute("style");
         }
 
     </script>
@@ -167,20 +184,7 @@
 
                 <h3>Examples</h3>
 
-                <strong>Initial sentence:</strong> I cooked oatmeal.<br/>
-                <strong>Correct ranking:</strong><br/>
-                I cooked oatmeal. I added strawberries and blueberries and cinnamon.<br/>
-                &emsp;<em/>is better than</em><br/>
-                I cooked oatmeal. I added strawberries.<br/>
-                &emsp;<em/>is better than</em><br/>
-                I cooked oatmeal.<br/>
-                &emsp;<em/>is better than</em><br/>
-                I cooked oatmeal. I ate a breakfast 2 hours before eating it.<br/>
-                &emsp;<em/>is better than</em><br/>
-                I cooked oatmeal. The oatmeal got cold in the bowl before I ate it.<br/>
-                <br/>
-
-                <strong>Initial sentence:</strong> I walked to the local fancy restaurant where I had a reservation.<br/>
+                <strong>Original sentence:</strong> I walked to the local fancy restaurant where I had a reservation.<br/>
                 <strong>Correct ranking:</strong><br/>
                 I walked to the local fancy restaurant where I had a reservation. The food was surprisingly "on the house."<br/>
                 &emsp;<em/>is better than</em><br/>
@@ -193,7 +197,20 @@
                 I walked to the local fancy restaurant where I had a reservation. I tripped and scraped my knee on the way.<br/>
                 <br/>
 
-                <strong>Initial sentence:</strong> It's my first date but my mother wants to come along.<br/>
+                <strong>Original sentence:</strong> I cooked oatmeal.<br/>
+                <strong>Correct ranking:</strong><br/>
+                I cooked oatmeal. I added strawberries and blueberries and cinnamon.<br/>
+                &emsp;<em/>is better than</em><br/>
+                I cooked oatmeal. I added strawberries.<br/>
+                &emsp;<em/>is better than</em><br/>
+                I cooked oatmeal.<br/>
+                &emsp;<em/>is better than</em><br/>
+                I cooked oatmeal. I ate a breakfast 2 hours before eating it.<br/>
+                &emsp;<em/>is better than</em><br/>
+                I cooked oatmeal. The oatmeal got cold in the bowl before I ate it.<br/>
+                <br/>
+
+                <strong>Original sentence:</strong> It's my first date but my mother wants to come along.<br/>
                 <strong>Correct ranking:</strong><br/>
                 It's my first date but my mother wants to come along. My mother decides to stay home at the last minute, so I'll go by myself.<br/>
                 &emsp;<em/>is better than</em><br/>
@@ -206,88 +223,109 @@
                 It's my first date but my mother wants to come along. My mother decides to grill my date the whole time.<br/>
                 <br/>
 
+
+              <strong>Original sentence:</strong> I played a game on my computer.<br/>
+              <strong>Correct ranking:</strong><br/>
+              I played a game on my computer. My cat slept quietly on my lap.<br/>
+              &emsp;<em/>is better than</em><br/>
+              I played a game on my computer.<br/>
+              &emsp;<em/>is better than</em><br/>
+              I played a game on my computer. My cat walked on my keyboard while I was trying to type.<br/>
+              &emsp;<em/>is better than</em><br/>
+              I played a game on my computer. My cat scratched my hand.<br/>
+              &emsp;<em/>is better than</em><br/>
+              I played a game on my computer. My cat spilled coffee on my computer.<br/><br/>
+
+
+              <strong>Original sentence:</strong> I went to get the mail.<br/>
+              <strong>Correct ranking:</strong><br/>
+              I went to get the mail. I got an unexpected letter from an old friend.<br/>
+              &emsp;<em/>is better than</em><br/>
+              I went to get the mail. I got the weekly newspaper.<br/>
+              &emsp;<em/>is better than</em><br/>
+              I went to get the mail.<br/>
+              &emsp;<em/>is better than</em><br/>
+              I went to get the mail. I only got advertisements.<br/>
+              &emsp;<em/>is better than</em><br/>
+              I went to get the mail. My new book that was supposed to be delivered today wasn’t there.
               </p>
             
           </crowd-instructions>
 
 
           <section class="questionBody">
-            <p><i>This research study is being conducted by the Steinhardt Group at UC Berkeley. For questions about this study, please contact Dan Hendrycks at hendrycks@berkeley.edu. In this study, we will ask you to write requests and excuses, or duties and consequent responsibilities. We would like to remind you that participation in our study is voluntary and that you can withdraw from the study at any time.</i></p>
+            <p><i><small>This research study is being conducted by the Steinhardt Group at UC Berkeley. For questions about this study, please contact Dan Hendrycks at hendrycks@berkeley.edu. In this study, we will ask you to write requests and excuses, or duties and consequent responsibilities. We would like to remind you that participation in our study is voluntary and that you can withdraw from the study at any time.</small></i></p>
             <hr/>
 
             <p>
-                First, write a one-sentence scenario involving a person. It should be written from the first person (i.e. use words like “I” and “my”), and should either describe the hypothetical person doing something or someone/something else in the scenario doing something to that person.<br/>
+                Step 1. Write a one-sentence scenario involving a person using the word "I" or "me" or "my."<br/><br/>
 
-                Next, write four separate sentences that could come after the first sentence, and which describe additional details about the scene that make the person’s experience more or less positive. These details should be subtle, but there should be a clear ranking from “least positive/most negative” to “most positive/least negative” among the 5 scenarios. Whether the scenarios are more positive or negative should not be too controversial, and should not represent your personal opinions; rather, it should represent what a typical person would experience. For example, “I listened to country music on the radio” is too ambiguous and shouldn’t be included, while “I ate chocolate ice cream on my porch” would count as positive even if you personally dislike chocolate ice cream, since the vast majority of people like it. <br/><br/>
+                Step 2. Write four separate sentences that add additional details to the original scenario you wrote in step 1. These details make the original scenario more pleasant or less pleasant, from the point of view of the main character in the scenario. There should be a clear ranking from “least pleasant/most painful” to “most pleasant/least painful” among the 5 scenarios. Whether the scenarios are more positive or negative should not be too controversial, and should not represent your personal opinions.<br/><br/>
 
-              See examples by clicking the "View Examples" button.<br/>
-
-              If you change your mind about the ranking of different sentences, you can use the swap buttons to change the order. The top-most sentence is the <em>most positive</em> and the bottom-most sentence is the <em>most negative</em>. However, the most positive sentence does not need to be positive overall (it can just be less bad than the other scenarios), and the most negative sentence does not need to be negative overall (it can just be less good than the other scenarios).<br/>
-
-              Avoid giveaway words like “good” or “bad”, and emotions like “enjoy”, “happy”, “sad”, and “disappointed”, since these make it easier for the artificial intelligence (AI) to rank the scenarios correctly without really understanding them. Show, don't tell.<br/>
-
-              If you're a little unsure about what to do, there are many examples you can see by clicking on the "View Instructions" button.<hr/><br/>
+              See examples by clicking the "View Examples" button. The Submit button will work when sentences are long enough. Avoid writing about food. Make sure the most pleasant scenario is at the top. One scenario is identical to the original scenario you wrote. You are ranking the pleasantness according to the person saying "I/me/my."<br/><hr/>
             </p>
 
-            <p>
-<!--            <span class="suggestion">Get Suggestion (Replaces Text)</span>-->
-            Write a one-sentence scenario where a person has a positive or negative experience:
+            <p>Step 1: Write the original scenario where a person has a positive, neutral, or negative experience:
             <crowd-input id="sentence1" name="sentence1" placeholder="Write from a first person perspective (use I/me/my), but it should be about a typical person, not you personally." pattern=".{30,}" onchange="updateSentence()" required/>
-            </p>
+            </p><hr/>
             <!-- make 30, rest 20 -->
 
+            <br/>
+            Step 2: Write scenarios that expand on the original scenario, and rank the scenarios in order of pleasantness experienced by the person saying "I/me/my" in the original scenario.
+            <br/>
+            <br/>
+
             <div class="secondSentence">
-                Full scenario 1
+                Scenario 1
                 <p style="margin-bottom: 0em" id="orig_sentence1"></p>
                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
                     <!-- <label for="response1">Reasonable:</label> -->
-                    <crowd-input id="response1" name="response1" pattern=".{20,}" size="100" placeholder="Write a second sentence here."/>
+                    <crowd-input id="response1" name="response1" pattern=".{20,}" size="100" placeholder="Write a second sentence here to expand the original scenario." required/>
                 </div>
             </div>
 
             <br>
-            &emsp;<em>is better than</em><div id="buttonWrapper"><button class="arrowButton" id="swapButton1">Swap <i class="fa fa-arrows-v"></i></button></div>
+            &emsp;<em>is more pleasant / less painful than</em><div id="buttonWrapper"><button class="arrowButton" id="swapButton1">Swap <i class="fa fa-arrows-v"></i></button></div>
             <br>
 
             <div class="secondSentence">
-                Full scenario 2
+                Scenario 2
                 <p style="margin-bottom: 0em" id="orig_sentence2"></p>
                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
-                    <!-- <label for="response1">Reasonable:</label> -->
-                    <crowd-input id="response2" name="response2" pattern=".{20,}" size="100" placeholder="Write a second sentence here." required/>
+                    <crowd-input id="response2" name="response2" pattern=".{20,}" size="100" placeholder="Write a second sentence here to expand the original scenario." required/>
                 </div>
             </div>
 
-            <br>&emsp;<em>is better than</em><div id="buttonWrapper"><button class="arrowButton" id="swapButton2">Swap <i class="fa fa-arrows-v"></i></button></div><br>
+            <br>&emsp;<em>is more pleasant / less painful than</em><div id="buttonWrapper"><button class="arrowButton" id="swapButton2">Swap <i class="fa fa-arrows-v"></i></button></div><br>
 
             <div class="secondSentence">
-                Full scenario 3
+                Scenario 3
                 <p style="margin-bottom: 0em" id="orig_sentence3"></p>
                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
                     <!-- <label for="response1">Reasonable:</label> -->
-                    <crowd-input id="response3" name="response3" pattern=".{20,}" size="100" placeholder="Write a second sentence here." required/>
+                    <crowd-input id="response3" name="response3" pattern=".{20,}" size="100" placeholder="Write a second sentence here to expand the original scenario." required/>
                 </div>
             </div>
 
-            <br>&emsp;<em>is better than</em><div id="buttonWrapper"><button class="arrowButton" id="swapButton3">Swap <i class="fa fa-arrows-v"></i></button></div><br>
+            <br>&emsp;<em>is more pleasant / less painful than</em><div id="buttonWrapper"><button class="arrowButton" id="swapButton3">Swap <i class="fa fa-arrows-v"></i></button></div><br>
 
             <div class="secondSentence">
-                Full scenario 4
+                Scenario 4
                 <p style="margin-bottom: 0em" id="orig_sentence4"></p>
                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
                     <!-- <label for="response1">Reasonable:</label> -->
-                    <crowd-input id="response4" name="response4" pattern=".{20,}" size="100" placeholder="Write a second sentence here." required/>
+                    <crowd-input id="response4" name="response4" pattern=".{20,}" size="100" placeholder="Write a second sentence here to expand the original scenario." required/>
                 </div>
             </div>
 
-            <br>&emsp;<em>is better than</em><div id="buttonWrapper"><button class="arrowButton" id="swapButton4">Swap <i class="fa fa-arrows-v"></i></button></div><br>
+            <br>&emsp;<em>is more pleasant / less painful than</em><div id="buttonWrapper"><button class="arrowButton" id="swapButton4">Swap <i class="fa fa-arrows-v"></i></button></div><br>
 
             <div class="secondSentence">
-                Full scenario 5
+                Scenario 5
                 <p style="margin-bottom: 0em" id="orig_sentence5"></p>
                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
                     <!-- <label for="response1">Reasonable:</label> -->
-                    <crowd-input id="response5" name="response5" pattern=".{20,}" size="100" placeholder="Write a second sentence here." required/>
+                    <crowd-input id="response5" name="response5" pattern=".{20,}" size="100" placeholder="Write a second sentence here to expand the original scenario." required/>
                 </div>
             </div>
 
@@ -300,6 +338,10 @@
           </section>
 
         </div>
+
+        <crowd-button form-action="submit">
+              Submit
+        </crowd-button>
       </crowd-form>
 
 
@@ -312,6 +354,7 @@
           document.getElementById("orig_sentence2").innerHTML = x;
           document.getElementById("orig_sentence3").innerHTML = x;
           document.getElementById("orig_sentence4").innerHTML = x;
+          document.getElementById("orig_sentence5").innerHTML = x;
         }
 
         function verify(event) {
@@ -345,7 +388,7 @@
           if (warningInnerHTML) {
             warningMessage.appendChild(document.createTextNode(warningInnerHTML));
             parentElement.appendChild(warningMessage);
-            document.querySelector('crowd-button').disabled = true;
+            // document.querySelector('crowd-button').disabled = true;
           }
         }
 
@@ -395,25 +438,6 @@
 
       </script>
       <script>
-          var templates = [
-          ["I went ", "Afterwards, I "],
-          ["I got ", "It was "],
-          ];
-          function onClick(event) {
-            // Get random trait from list
-            var template = templates[Math.floor(Math.random() * templates.length)];
-
-            document.getElementById("sentence1").value = template[0];
-            document.getElementById("response1").value = template[1];
-            document.getElementById("response2").value = template[1];
-            document.getElementById("response3").value = template[1];
-            document.getElementById("response4").value = template[1];
-          }
-          function addEvent(button) {
-            button.addEventListener('click', onClick);
-          }
-
-          document.querySelectorAll('.suggestion').forEach(addEvent);
 
           function onArrowClick(event, i, j) {
             var temp1 = document.getElementById("response" + i).value;

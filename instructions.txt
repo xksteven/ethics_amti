@@ -49,10 +49,15 @@ python3 parse_tabular_results.py ../../batch-*/save_file_name.jsonl
 That's the whole process :)
 
 
+amti save-batch --live batch-* ; amti extract tabular batch-*  batch-*/save_file_name.jsonl ; cd examples/* ; python3 parse_tabular_results.py ../../batch-*/save_file_name.jsonl
+
+
+
+
 
 To create a qualification type:
 
-amti create-qualificationtype definition_folder/  ../..
+amti create-qualificationtype definition/  ../..
 
 the first argument is the definition folder and the second argument is where to save the qualification type to and finally add "-l" to submit it live (or --live) as opposed to sandbox.
 
@@ -65,6 +70,9 @@ Let me know if you have any questions or any of it doesn't make sense,
 
 
 
+Do //9 in create_hits.py
+and change     "MaxAssignments": 1, to     "MaxAssignments": 9,
+in hitproperties.json
 
 
 To save results without approving (letting autoapprove do it)
