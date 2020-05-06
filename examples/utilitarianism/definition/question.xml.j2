@@ -19,10 +19,6 @@
           width: 75%;
         }
 
-<!--         hr {
-          border-top: 1px solid #838b8b;
-        }
- -->
         hr {
           border-top: 1px solid #ec7211;
         }
@@ -106,7 +102,8 @@
           border-radius: 5px;
           padding: 5px;
           background-color: #1E90FF;
-          margin: 10px 0 10px 0
+          margin: 10px 0 10px 0;
+          float: left;
         }
 
         .buttonContainer {
@@ -141,28 +138,7 @@
       </style>
     </head>
 
-    <script>
-        var nullScenario = 1 + Math.floor(Math.random() * 5);
-
-        function makeNull(i) {
-            var r = document.getElementById("response" + i);
-            // r.setAttribute("style", "color: red");
-            r.placeholder="Original scenario with no modification, so no second sentence. Leave blank. Compare with original scenario.";
-            r.setAttribute("readonly", true);
-            r.setAttribute("type", "hidden");
-            r.setAttribute("style", "display:none");
-        }
-        function makeNonNull(i) {
-            var r = document.getElementById("response" + i);
-            r.placeholder="Write a second sentence here";
-            r.removeAttribute('readonly');
-            r.removeAttribute("type");
-            r.removeAttribute("style");
-        }
-
-    </script>
-
-    <body onload="makeNull(nullScenario)">
+    <body>
       <!-- You must include crowd-form so that your task submits answers to MTurk -->
       <crowd-form answer-format="flatten-objects">
         <div class="formContainer">
@@ -295,7 +271,7 @@
             </div>
 
             <br>
-            &emsp;<em>is more pleasant than</em><div id="buttonWrapper"><button class="arrowButton" id="swapButton1">Swap <i class="fa fa-arrows-v"></i></button></div>
+            &emsp;<em>is more pleasant than</em><div id="buttonWrapper"><div class="arrowButton" id="swapButton1">Swap <i class="fa fa-arrows-v"></i></button></div>
             <br>
 
             <div class="secondSentence">
@@ -306,7 +282,7 @@
                 </div>
             </div>
 
-            <br>&emsp;<em>is more pleasant than</em><div id="buttonWrapper"><button class="arrowButton" id="swapButton2">Swap <i class="fa fa-arrows-v"></i></button></div><br>
+            <br>&emsp;<em>is more pleasant than</em><div id="buttonWrapper"><div class="arrowButton" id="swapButton2">Swap <i class="fa fa-arrows-v"></i></button></div><br>
 
             <div class="secondSentence">
                 Full Scenario 3
@@ -317,7 +293,7 @@
                 </div>
             </div>
 
-            <br>&emsp;<em>is more pleasant than</em><div id="buttonWrapper"><button class="arrowButton" id="swapButton3">Swap <i class="fa fa-arrows-v"></i></button></div><br>
+            <br>&emsp;<em>is more pleasant than</em><div id="buttonWrapper"><div class="arrowButton" id="swapButton3">Swap <i class="fa fa-arrows-v"></i></button></div><br>
 
             <div class="secondSentence">
                 Full Scenario 4
@@ -328,7 +304,7 @@
                 </div>
             </div>
 
-            <br>&emsp;<em>is more pleasant than</em><div id="buttonWrapper"><button class="arrowButton" id="swapButton4">Swap <i class="fa fa-arrows-v"></i></button></div><br>
+            <br>&emsp;<em>is more pleasant than</em><div id="buttonWrapper"><div class="arrowButton" id="swapButton4">Swap <i class="fa fa-arrows-v"></i></button></div><br>
 
             <div class="secondSentence">
                 Full Scenario 5
@@ -349,21 +325,18 @@
 
         </div>
 
-        <br/>
+        <!-- <br/> -->
         <div class="reminder">
           The most pleasant example should be at the top. The least pleasant example should be at the bottom.<br/>
           Use the "Swap" button if you need to correct/adjust the ranking before submitting.
         </div>
 
 
-        <crowd-button form-action="submit">
-              Submit
-        </crowd-button>
+        <!-- <crowd-button form-action="submit">Submit</crowd-button> -->
       </crowd-form>
 
 
       <script>
-        var inputContainer = document.querySelector('.inputContainer');
 
         function updateSentence() {
           var x = document.getElementById("sentence1").value;
@@ -376,11 +349,6 @@
 
         function verify(event) {
           var parentElement = event.srcElement.parentNode;
-          // Amazon adds this field themselves. We have no direct access to it from our code other than traversing the DOM.
-          // One can also do 'document.querySelector('crowd-input'), however there may be 
-          // more than two for some forms, so this approach is more scalable.
-          var input1 = inputContainer.children[0].children[0];
-        //   var inputVal2 = inputContainer.children[1].children[0].value;
 
 
           let warningInnerHTML;
@@ -391,21 +359,10 @@
           warningMessage = document.createElement('span');
           warningMessage.setAttribute('id', 'warning');
 
-          // if (similarFloat === 0.0) {
-          //   warningInnerHTML = 'Those sentences are too similar. Please adjust. See the "Examples" tab of "View Instructions."';
-          // } else if (similarFloat >= 0.50) {
-          //   warningInnerHTML = 'Those sentences are too dissimilar. Please adjust. See the "Examples" tab of "View Instructions."';
-          // } else if (inputVal1.length === 0 || inputVal2.length === 0) {
-          //   warningInnerHTML = 'Please enter valid sentences. See the "Examples" tab of "View Instructions."';
-          // } else if (inputVal1.length < 35 || inputVal2.length < 35) {
-          //   warningInnerHTML = 'Scenarios need to be more intricate or detailed than that. See the "Examples" tab of "View Instructions."';
-          // } else {
-          //   document.querySelector('crowd-button').disabled = false;
-          // }
+
           if (warningInnerHTML) {
             warningMessage.appendChild(document.createTextNode(warningInnerHTML));
             parentElement.appendChild(warningMessage);
-            // document.querySelector('crowd-button').disabled = true;
           }
         }
 
@@ -436,77 +393,86 @@
           parentElement.appendChild(ul);
         }
 
-        // Add listeners to "Verify" button
-        // document.querySelector('.verifyme').addEventListener('click', verify);
-
         // Add listeners to "Inspiration" button
         document.querySelector('.inspiration').addEventListener('click', getInspiration);
 
-        // // Shuffle Right and Wrong Inputs
-        // for (var i = inputContainer.children.length; i >= 0; i--) {
-        //   inputContainer.appendChild(inputContainer.children[Math.random() * i | 0]);
-        // }
 
-        // // Traverse DOM for dynamically inserted Submit button to disable
-        // function disable() {
-        //   document.querySelector('crowd-button').disabled = true;
-        // }
-        // setTimeout(disable, 3000);
+        var nullScenario = 1 + Math.floor(Math.random() * 5);
+
+        function onArrowClick(event, i, j) {
+          var temp1 = document.getElementById("response" + i).value;
+          var temp2 = document.getElementById("response" + j).value;
+          document.getElementById("response" + i).value = temp2;
+          document.getElementById("response" + j).value = temp1;
+          var changed = false;
+
+          if (nullScenario == i) {
+              makeNonNull(i);
+              makeNull(j);
+              nullScenario = j;
+              changed = true;
+          }
+
+          if (nullScenario == j && !changed) {
+              makeNonNull(j);
+              makeNull(i);
+              nullScenario = i;
+          }
+        }
+        function onArrowClick1(event) {
+          onArrowClick(event, 1, 2);
+        }
+        function onArrowClick2(event) {
+          onArrowClick(event, 2, 3);
+        }
+        function onArrowClick3(event) {
+          onArrowClick(event, 3, 4);
+        }
+        function onArrowClick4(event) {
+            onArrowClick(event, 4, 5);
+        }
+
+        function addArrowEvent1(button_tmp) {
+          button_tmp.addEventListener('click', onArrowClick1);
+        }
+        function addArrowEvent2(button_tmp) {
+          button_tmp.addEventListener('click', onArrowClick2);
+        }
+        function addArrowEvent3(button_tmp) {
+          button_tmp.addEventListener('click', onArrowClick3);
+        }
+        function addArrowEvent4(button_tmp) {
+          button_tmp.addEventListener('click', onArrowClick4);
+        }
+        addArrowEvent1(document.getElementById("swapButton1"));
+        addArrowEvent2(document.getElementById("swapButton2"));
+        addArrowEvent3(document.getElementById("swapButton3"));
+        addArrowEvent4(document.getElementById("swapButton4"));
+        /*document.querySelectorAll('.suggestion').forEach(addEvent);*/
+
+
+        function makeNull(i) {
+            var r = document.getElementById("response" + i);
+            // r.setAttribute("style", "color: red");
+            r.placeholder="Original scenario with no modification, so no second sentence. Leave blank. Compare with original scenario.";
+            r.setAttribute("readonly", true);
+            r.setAttribute("type", "hidden");
+            r.setAttribute("style", "display:none");
+        }
+        function makeNonNull(i) {
+            var r = document.getElementById("response" + i);
+            r.placeholder="Write a second sentence here";
+            r.removeAttribute('readonly');
+            r.removeAttribute("type");
+            r.removeAttribute("style");
+        }
+
+        function disable() {
+          makeNull(nullScenario);
+        }
+        setTimeout(disable, 2000);
 
       </script>
-      <script>
-
-          function onArrowClick(event, i, j) {
-            var temp1 = document.getElementById("response" + i).value;
-            var temp2 = document.getElementById("response" + j).value;
-            document.getElementById("response" + i).value = temp2;
-            document.getElementById("response" + j).value = temp1;
-            var changed = false
-
-            if (nullScenario == i) {
-                makeNonNull(i)
-                makeNull(j)
-                nullScenario = j
-                changed = true
-            }
-
-            if (nullScenario == j && !changed) {
-                makeNonNull(j)
-                makeNull(i)
-                nullScenario = i
-            }
-          }
-          function onArrowClick1(event) {
-            onArrowClick(event, 1, 2)
-          }
-          function onArrowClick2(event) {
-            onArrowClick(event, 2, 3)
-          }
-          function onArrowClick3(event) {
-            onArrowClick(event, 3, 4)
-          }
-          function onArrowClick4(event) {
-              onArrowClick(event, 4, 5)
-          }
-
-          function addArrowEvent1(button) {
-            button.addEventListener('click', onArrowClick1);
-          }
-          function addArrowEvent2(button) {
-            button.addEventListener('click', onArrowClick2);
-          }
-          function addArrowEvent3(button) {
-            button.addEventListener('click', onArrowClick3);
-          }
-          function addArrowEvent4(button) {
-              button.addEventListener('click', onArrowClick4);
-          }
-          addArrowEvent1(document.getElementById("swapButton1"))
-          addArrowEvent2(document.getElementById("swapButton2"))
-          addArrowEvent3(document.getElementById("swapButton3"))
-          addArrowEvent4(document.getElementById("swapButton4"))
-          /*document.querySelectorAll('.suggestion').forEach(addEvent);*/
-        </script>
     </body>
     </html>
   ]]>
