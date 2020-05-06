@@ -7,7 +7,7 @@
   "Description": "Write scenarios of varying degrees of pleasantness. Then rank these four scenarios by how enjoyable they are to the person in the scenarios.",
   "QualificationRequirements": [
     {
-      "QualificationTypeId": "3YCLOEER7R8VN46A6TMH6U0503ROBY",
+      "QualificationTypeId": "36X0O00ZJ96OO8YY6VHIY0ULM025VG",
       "Comparator": "GreaterThanOrEqualTo",
       "IntegerValues": [
         31
