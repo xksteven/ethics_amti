@@ -248,11 +248,11 @@
 
                 Step 2. Write four separate sentences that add additional details to the original scenario you wrote in step 1. These details make the original scenario more pleasant or less pleasant, from the point of view of the main character in the scenario. There should be a clear ranking from “least pleasant/most painful” to “most pleasant/least painful” among the 5 scenarios. Whether the scenarios are more positive or negative should not be too controversial, and should not represent your personal opinions.<br/><br/>
 
-              See examples by clicking the "View Examples" button. The Submit button will work when sentences are long enough. Avoid comparing numbers, and avoid writing things like "it was enjoyable" or "it was annoying." Make sure the most pleasant scenario is at the top. One scenario is identical to the original scenario you wrote. You are ranking the pleasantness according to the person saying "I/me/my."<br/><hr/>
+              See examples by clicking the "View Examples" button. The Submit button will work only when sentences are long enough. Avoid comparing numbers, and avoid writing things like "it was enjoyable" or "it was annoying." Make sure the most pleasant scenario is at the top. One scenario is identical to the original scenario you wrote. You are ranking the pleasantness according to the person saying "I/me/my."<br/><hr/>
             </p>
 
             <p>Step 1: Write the original scenario where a person has a positive, neutral, or negative experience:
-            <crowd-input id="sentence1" name="sentence1" placeholder="Write from a first person perspective (use I/me/my), but it should be about a typical person, not you personally." pattern=".{30,}" onchange="updateSentence()" required/>
+            <crowd-input id="sentence1" name="sentence1" placeholder="Write from a first person perspective (use I/me/my), but it should be about a typical person, not you personally." pattern=".{15,}" onchange="updateSentence()" required/>
             </p><hr/>
             <!-- make 30, rest 20 -->
 
@@ -266,7 +266,7 @@
                 <p style="margin-bottom: 0em" id="orig_sentence1"></p>
                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
                     <!-- <label for="response1">Reasonable:</label> -->
-                    <crowd-input id="response1" name="response1" pattern=".{20,}" size="100" placeholder="Write a second sentence here to expand the original scenario." required/>
+                    <crowd-input id="response1" name="response1" pattern=".{15,}" size="100" placeholder="Write a second sentence here to expand the original scenario." required/>
                 </div>
             </div>
 
@@ -278,7 +278,7 @@
                 Full Scenario 2
                 <p style="margin-bottom: 0em" id="orig_sentence2"></p>
                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
-                    <crowd-input id="response2" name="response2" pattern=".{20,}" size="100" placeholder="Write a second sentence here to expand the original scenario." required/>
+                    <crowd-input id="response2" name="response2" pattern=".{15,}" size="100" placeholder="Write a second sentence here to expand the original scenario." required/>
                 </div>
             </div>
 
@@ -288,8 +288,7 @@
                 Full Scenario 3
                 <p style="margin-bottom: 0em" id="orig_sentence3"></p>
                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
-                    <!-- <label for="response1">Reasonable:</label> -->
-                    <crowd-input id="response3" name="response3" pattern=".{20,}" size="100" placeholder="Write a second sentence here to expand the original scenario." required/>
+                    <crowd-input id="response3" name="response3" pattern=".{15,}" size="100" placeholder="Write a second sentence here to expand the original scenario." required/>
                 </div>
             </div>
 
@@ -299,8 +298,7 @@
                 Full Scenario 4
                 <p style="margin-bottom: 0em" id="orig_sentence4"></p>
                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
-                    <!-- <label for="response1">Reasonable:</label> -->
-                    <crowd-input id="response4" name="response4" pattern=".{20,}" size="100" placeholder="Write a second sentence here to expand the original scenario." required/>
+                    <crowd-input id="response4" name="response4" pattern=".{15,}" size="100" placeholder="Write a second sentence here to expand the original scenario." required/>
                 </div>
             </div>
 
@@ -311,7 +309,7 @@
                 <p style="margin-bottom: 0em" id="orig_sentence5"></p>
                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
                     <!-- <label for="response1">Reasonable:</label> -->
-                    <crowd-input id="response5" name="response5" pattern=".{20,}" size="100" placeholder="Write a second sentence here to expand the original scenario." required/>
+                    <crowd-input id="response5" name="response5" pattern=".{15,}" size="100" placeholder="Write a second sentence here to expand the original scenario." required/>
                 </div>
             </div>
 
@@ -322,15 +320,12 @@
               </div>
             </div>
           </section>
-
         </div>
 
-        <!-- <br/> -->
         <div class="reminder">
           The most pleasant example should be at the top. The least pleasant example should be at the bottom.<br/>
           Use the "Swap" button if you need to correct/adjust the ranking before submitting.
         </div>
-
 
         <!-- <crowd-button form-action="submit">Submit</crowd-button> -->
       </crowd-form>
@@ -345,25 +340,6 @@
           document.getElementById("orig_sentence3").innerHTML = x;
           document.getElementById("orig_sentence4").innerHTML = x;
           document.getElementById("orig_sentence5").innerHTML = x;
-        }
-
-        function verify(event) {
-          var parentElement = event.srcElement.parentNode;
-
-
-          let warningInnerHTML;
-          let warningMessage = document.getElementById('warning');
-          if (warningMessage) {
-            warningMessage.remove();
-          }
-          warningMessage = document.createElement('span');
-          warningMessage.setAttribute('id', 'warning');
-
-
-          if (warningInnerHTML) {
-            warningMessage.appendChild(document.createTextNode(warningInnerHTML));
-            parentElement.appendChild(warningMessage);
-          }
         }
 
         function getInspiration(event) {
