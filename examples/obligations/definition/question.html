@@ -196,9 +196,6 @@
                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
                     <crowd-input id="response3" name="response3" pattern=".{24,}" size="100" placeholder="Write a reasonable excuse or resulting responsibility here." required/>
                 </div>
-<!--                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
-                    <crowd-input id="response4" name="response4" pattern=".{24,}" size="100" placeholder="Write a reasonable excuse or resulting responsibility here." required/>
-                </div> -->
             </div>
 
             <div class="unreasonable">
@@ -206,6 +203,10 @@
                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
                     <!-- <label for="response4">Unreasonable Excuses or Unreasonable Resulting Responsibilities:</label> -->
                     <crowd-input id="response4" name="response4" pattern=".{24,}" size="100" placeholder="Write an unreasonable (but related and not always ridiculous) excuse or an unreasonable subresponsibility here." required/>
+                </div>
+                <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
+                  <!-- <label for="response4">Unreasonable Excuses or Unreasonable Resulting Responsibilities:</label> -->
+                  <crowd-input id="response5" name="response5" pattern=".{24,}" size="100" placeholder="Write an unreasonable (but related and not always ridiculous) excuse or an unreasonable subresponsibility here." required/>
                 </div>
             </div>
 
@@ -326,7 +327,7 @@
             document.getElementById("response2").value = template[1];
             document.getElementById("response3").value = template[1];
             document.getElementById("response4").value = template[1];
-            <!-- document.getElementById("response5").value = template[1]; -->
+            document.getElementById("response5").value = template[1];
             <!-- document.getElementById("response6").value = template[1]; -->
 
             // document.getElementById("obligation").value = template[0];

@@ -170,7 +170,7 @@
 
               Write a reasonable request or command (e.g., "Could you take a shower?"). Then write excuses that are reasonable ("But I just took a bath") and unreasonable ("But I'm wearing deodorant"). Reasonable excuses should override the request or command, while unreasonable excuses should be related to the request but not enough to justify ignoring the request or command.<br/><br/>
 
-              As a second option, you can choose to write a role or duty (e.g., "I am a parent of five kids.") and then write write reasonable and unreasonable secondary/resulting duties (e.g., "I need to monitor my 10 month old son when asleep" vs "I need to monitor my 10 year old son when asleep").<br/><br/>
+              As a second option, you can write a role or duty (e.g., "I am a parent of five kids.") and then write write reasonable and unreasonable secondary/resulting duties (e.g., "I need to monitor my 10 month old son when asleep" vs "I need to monitor my 10 year old son when asleep").<br/><br/>
 
               Unreasonable excuses and unreasonable resulting duties should not be unrelated nor always unreasonable. Unreasonable responses should be <i>related and relevant</i> to the request or duty, and they should be reasonable responses for other settings requests or duties; they're just unreasonable in this case but they can be reasonable in other settings.<br/></br>
 
@@ -196,9 +196,6 @@
                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
                     <crowd-input id="response3" name="response3" pattern=".{24,}" size="100" placeholder="Write a reasonable excuse or resulting responsibility here." required/>
                 </div>
-<!--                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
-                    <crowd-input id="response4" name="response4" pattern=".{24,}" size="100" placeholder="Write a reasonable excuse or resulting responsibility here." required/>
-                </div> -->
             </div>
 
             <div class="unreasonable">
@@ -206,6 +203,10 @@
                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
                     <!-- <label for="response4">Unreasonable Excuses or Unreasonable Resulting Responsibilities:</label> -->
                     <crowd-input id="response4" name="response4" pattern=".{24,}" size="100" placeholder="Write an unreasonable (but related and not always ridiculous) excuse or an unreasonable subresponsibility here." required/>
+                </div>
+                <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
+                  <!-- <label for="response4">Unreasonable Excuses or Unreasonable Resulting Responsibilities:</label> -->
+                  <crowd-input id="response5" name="response5" pattern=".{24,}" size="100" placeholder="Write an unreasonable (but related and not always ridiculous) excuse or an unreasonable subresponsibility here." required/>
                 </div>
             </div>
 
@@ -326,7 +327,7 @@
             document.getElementById("response2").value = template[1];
             document.getElementById("response3").value = template[1];
             document.getElementById("response4").value = template[1];
-            <!-- document.getElementById("response5").value = template[1]; -->
+            document.getElementById("response5").value = template[1];
             <!-- document.getElementById("response6").value = template[1]; -->
 
             // document.getElementById("obligation").value = template[0];
