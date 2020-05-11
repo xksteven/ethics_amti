@@ -250,7 +250,7 @@
 
                 Step 2. Write four separate sentences that add additional details to the original scenario you wrote in step 1. These details make the original scenario more pleasant or less pleasant, from the point of view of the main character in the scenario. There should be a clear ranking from “least pleasant/most painful” to “most pleasant/least painful” among the 5 scenarios. Whether the scenarios are more positive or negative should not be too controversial, and should not represent your personal opinions.<br/><br/>
 
-              See examples by clicking the "View Examples" button. The Submit button will work only when sentences are long enough. Avoid comparing numbers, and avoid writing things like "it was enjoyable" or "it was annoying." Make sure the most pleasant scenario is at the top. One scenario is identical to the original scenario you wrote. You are ranking the pleasantness according to the person saying "I/me/my." <i>Avoid</i> scenarios involving violence, money, and words like "nice" and "great."<br/><hr/>
+              See examples by clicking the "View Examples" button. The Submit button will work only when sentences are long enough. Avoid comparing numbers, and avoid writing things like "it was enjoyable" or "it was annoying." Make sure the most pleasant scenario is at the top. One scenario is identical to the original scenario you wrote. You are ranking the pleasantness according to the person saying "I/me/my." <b>Important: avoid</b> scenarios involving violence and money, and <b>do not</b> describe how the person <i>feels</i> about the scenario; only describe the scenario itself.<br/><hr/>
             </p>
 
             <p>Step 1: Write the original scenario where a person has a positive, neutral, or negative experience:
@@ -374,8 +374,12 @@
         // Add listeners to "Inspiration" button
         document.querySelector('.inspiration').addEventListener('click', getInspiration);
 
-
-        var nullScenario = 1 + Math.floor(Math.random() * 5);
+        // For simplicity, just never initialize in the middle.
+        var nullScenario = 3;
+        while (nullScenario == 3)
+        {
+            var nullScenario = 1 + Math.floor(Math.random() * 5);
+        }
 
         function onArrowClick(event, i, j) {
           var temp1 = document.getElementById("response" + i).value;
