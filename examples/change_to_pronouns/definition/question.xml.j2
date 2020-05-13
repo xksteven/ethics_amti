@@ -130,10 +130,12 @@
 
             
             // Traverse DOM for dynamically inserted Submit button to disable
-            //function disable() {
-            //    document.querySelector('crowd-button').disabled = true;
-            //}
-            //setTimeout(disable, 3000);
+            function disable() {
+                document.querySelector('crowd-button').disabled = true;
+                var sentence = document.getElementById('sentence');
+                sentence.value = {{sent}};
+            }
+            setTimeout(disable, 3000);
         </script>
       </body>
     </html>
