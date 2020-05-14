@@ -84,7 +84,7 @@
                   Description
                 </h3>
                 <p> Modify the subject of the sentence to "I/me/my" and 
-Please write similarly worded scenarios that each demonstrate a different virtue or vice.<br/>
+Please write similarly worded scenarios that each demonstrate a different virtue or vice.<br/></p>
 
               </short-summary>
 
@@ -104,11 +104,131 @@ Please write similarly worded scenarios that each demonstrate a different virtue
                 <p>
                   <strong>
                     Change the subject of the sentence throughout to "I/my/me" without changeing the meaning.
-                  </strong>
-                    Original Sentence: {{sent}}
-                  <crowd-input id="sentence" name="sentence" placeholder="Example sentence here."  required></crowd-input> 
+                  </strong><br/>
+                    Original Sentence: {{sent0}}
+                  <crowd-input id="orig_sentence0" name="orig_sentence0" placeholder="Example sentence here."></crowd-input> 
+ 
+                  <crowd-input id="sentence0" name="sentence0" placeholder="Example sentence here."  required></crowd-input> 
                 </p>
             </div>
+
+            <div class="Sentence">
+                <p>
+                  <strong>
+
+                    Change the subject of the sentence throughout to "I/my/me" without changeing the meaning.
+                  </strong><br/>
+
+                    Original Sentence: {{sent1}}
+                  <crowd-input id="orig_sentence1" name="orig_sentence1" placeholder="Example sentence here."></crowd-input>
+                  <crowd-input id="sentence1" name="sentence1" placeholder="Example sentence here."  required></crowd-input>
+                </p>
+            </div>
+
+            <div class="Sentence">
+                <p>
+                  <strong>
+                    Change the subject of the sentence throughout to "I/my/me" without changeing the meaning.
+                  </strong><br/>
+
+                    Original Sentence: {{sent2}}
+                  <crowd-input id="orig_sentence2" name="orig_sentence2" placeholder="Example sentence here."></crowd-input>
+                  <crowd-input id="sentence2" name="sentence2" placeholder="Example sentence here."  required></crowd-input>
+ 
+                </p>
+            </div>
+
+            <div class="Sentence">
+                <p>
+                  <strong>
+                    Change the subject of the sentence throughout to "I/my/me" without changeing the meaning.
+                  </strong><br/>
+
+                    Original Sentence: {{sent3}}
+                  <crowd-input id="orig_sentence3" name="orig_sentence3" placeholder="Example sentence here."></crowd-input>
+                  <crowd-input id="sentence3" name="sentence3" placeholder="Example sentence here."  required></crowd-input>
+ 
+                </p>
+            </div>
+
+            <div class="Sentence">
+                <p>
+                  <strong>
+                    Change the subject of the sentence throughout to "I/my/me" without changeing the meaning.
+                  </strong><br/>
+
+                    Original Sentence: {{sent4}}
+                  <crowd-input id="orig_sentence4" name="orig_sentence4" placeholder="Example sentence here."></crowd-input>
+                  <crowd-input id="sentence4" name="sentence4" placeholder="Example sentence here."  required></crowd-input>
+ 
+                </p>
+            </div>
+
+            <div class="Sentence">
+                <p>
+                  <strong>
+                    Change the subject of the sentence throughout to "I/my/me" without changeing the meaning.
+                  </strong><br/>
+
+                    Original Sentence: {{sent5}}
+                  <crowd-input id="orig_sentence5" name="orig_sentence5" placeholder="Example sentence here."></crowd-input>
+                  <crowd-input id="sentence5" name="sentence5" placeholder="Example sentence here."  required></crowd-input>
+ 
+                </p>
+            </div>
+
+            <div class="Sentence">
+                <p>
+                  <strong>
+                    Change the subject of the sentence throughout to "I/my/me" without changeing the meaning.
+                  </strong><br/>
+
+                    Original Sentence: {{sent6}}
+                  <crowd-input id="orig_sentence6" name="orig_sentence6" placeholder="Example sentence here."></crowd-input>
+                  <crowd-input id="sentence6" name="sentence6" placeholder="Example sentence here."  required></crowd-input>
+ 
+                </p>
+            </div>
+
+            <div class="Sentence">
+                <p>
+                  <strong>
+                    Change the subject of the sentence throughout to "I/my/me" without changeing the meaning.
+                  </strong><br/>
+
+                    Original Sentence: {{sent7}}
+                  <crowd-input id="orig_sentence7" name="orig_sentence7" placeholder="Example sentence here."></crowd-input>
+                  <crowd-input id="sentence7" name="sentence7" placeholder="Example sentence here."  required></crowd-input>
+ 
+                </p>
+            </div>
+
+            <div class="Sentence">
+                <p>
+                  <strong>
+                    Change the subject of the sentence throughout to "I/my/me" without changeing the meaning.
+                  </strong><br/>
+
+                    Original Sentence: {{sent8}}
+                  <crowd-input id="orig_sentence8" name="orig_sentence8" placeholder="Example sentence here."></crowd-input>
+                  <crowd-input id="sentence8" name="sentence8" placeholder="Example sentence here."  required></crowd-input>
+ 
+                </p>
+            </div>
+
+            <div class="Sentence">
+                <p>
+                  <strong>
+                    Change the subject of the sentence throughout to "I/my/me" without changeing the meaning.
+                  </strong><br/>
+
+                    Original Sentence: {{sent9}}
+                  <crowd-input id="orig_sentence9" name="orig_sentence9" placeholder="Example sentence here."></crowd-input>
+                  <crowd-input id="sentence9" name="sentence9" placeholder="Example sentence here."  required></crowd-input>
+ 
+                </p>
+            </div>
+
 
             <br/>
             <br/>
@@ -125,19 +245,37 @@ Please write similarly worded scenarios that each demonstrate a different virtue
         <script language='Javascript'>turkSetAssignmentID();</script>
         <script>
 
+           sentences = [
+               "{{sent0}}",
+               "{{sent1}}",
+               "{{sent2}}",
+               "{{sent3}}",
+               "{{sent4}}",
+               "{{sent5}}",
+               "{{sent6}}",
+               "{{sent7}}",
+               "{{sent8}}",
+               "{{sent9}}", 
+           ]
 
            function debug() {
-                console.log("{{sent}}");
-                var sentence = document.getElementById('sentence');
-                sentence.value = "{{sent}}";
+                
+                var sentence = document.getElementById('sentence1');
+                sentence.value = "{{sent1}}";
                 
            }
            function sanity() {
-                var sentence = document.getElementById('sentence');
-                my_str = sentence.value;
-                if (my_str.toLowerCase().includes("i ") || my_str.toLowerCase().includes("me ") || my_str.toLowerCase().includes("my "))
+                allTrue = 1
+                for (i = 0; i < sentences.length; i++) {
+                    which_sent = "sentence".concat(i.toString());
+                    var sentence = document.getElementById(which_sent);
+                    my_str = sentence.value;
+                    if (my_str.toLowerCase().includes("i ") || my_str.toLowerCase().includes("me ") || my_str.toLowerCase().includes("my "))
                 {
-                    document.querySelector('crowd-button').disabled = false;
+                    allTrue += 1
+                }
+                if (allTrue === sentences.length) {
+                     document.querySelector('crowd-button').disabled = false;
                 }
            }            
  
@@ -158,8 +296,14 @@ Please write similarly worded scenarios that each demonstrate a different virtue
             // Traverse DOM for dynamically inserted Submit button to disable
             function disable() {
                 document.querySelector('crowd-button').disabled = true;
-                var sentence = document.getElementById('sentence');
-                sentence.value = "{{sent}}";
+                for (i = 0; i < sentences.length; i++){
+                    which_sent = "sentence".concat(i.toString());
+                    var sentence = document.getElementById(which_sent);
+                    sentence.value = sentences[i];
+                    which_sent = "orig_sentence".concat(i.toString());
+                    var sentence = document.getElementById(which_sent);
+                    sentence.value = sentences[i];
+                }
             }
             setTimeout(disable, 3000);
         </script>
