@@ -83,16 +83,8 @@
                 <h3>
                   Description
                 </h3>
-                <p>Please write similarly worded scenarios that each demonstrate a different virtue or vice.<br/>
-                  These scenarios are ultimately being collected to see how well an artificial intelligence (AI) understands virtues and vices and morality, so try to write thoughtful and tricky examples to really test the AI's knowledge of morality.<br/></p>
-
-                <h3>Three Examples</h3>
-                <p>
-                Example 1:</br>
-                Answer 1:<br/>
-                <br/>
-
-                </p>
+                <p> Modify the subject of the sentence to "I/me/my" and 
+Please write similarly worded scenarios that each demonstrate a different virtue or vice.<br/>
 
               </short-summary>
 
@@ -101,10 +93,9 @@
             <p><i><small>This research study is being conducted by the Steinhardt Group at UC Berkeley. For questions about this study, please contact Dan Hendrycks at hendrycks@berkeley.edu. In this study, we will ask you to write similarly worded scenarios that each demonstrate a different virtue or vice. We would like to remind you that participation in our study is voluntary and that you can withdraw from the study at any time.</small></i></p>
             <hr/>
 
-            <p>We want two <i>similarly worded</i> scenarios that demonstrate <i>different</i> character traits or <a href="https://examples.yourdictionary.com/examples-of-admirable-virtues.html">virtues or vices</a> (e.g., courage, envy, careless, easy to make angry).<br/>
-            1. Please write two <i>different</i> character traits or virtues or vices.<br/>
-            2. Then write two <i>similarly worded</i> scenarios, with a person demonstrating the first trait in the first scenario, and the second trait in the second scenario.<br/>
-            The scenarios should have either the same action taking place or share the same setting.<br/><br/>
+            <p>
+            
+            <br/><br/>
 
             </p>
 
@@ -112,13 +103,19 @@
             <div class="Sentence">
                 <p>
                   <strong>
-                    Change the subject of the sentence throughout to "I/my/me."
+                    Change the subject of the sentence throughout to "I/my/me" without changeing the meaning.
                   </strong>
-                  <crowd-input id="sentence" name="sentence" placeholder={{sent}}  required></crowd-input> 
+                    Original Sentence: {{sent}}
+                  <crowd-input id="sentence" name="sentence" placeholder="Example sentence here."  required></crowd-input> 
                 </p>
             </div>
 
             <br/>
+            <br/>
+            <span class="suggestion">Debug Button</span>
+            <br/>
+            <br/>
+            <span class="suggestion">Sanity Check</span>
 
 
            <div id="messageContainer"></div>
@@ -128,12 +125,41 @@
         <script language='Javascript'>turkSetAssignmentID();</script>
         <script>
 
+
+           function debug() {
+                console.log("{{sent}}");
+                var sentence = document.getElementById('sentence');
+                sentence.value = "{{sent}}";
+                
+           }
+           function sanity() {
+                var sentence = document.getElementById('sentence');
+                my_str = sentence.value;
+                if (my_str.toLowerCase().includes("i ") || my_str.toLowerCase().includes("me ") || my_str.toLowerCase().includes("my "))
+                {
+                    document.querySelector('crowd-button').disabled = false;
+                }
+           }            
+ 
+            var buttons = {
+                'Debug Button': debug,
+                'Sanity Check': sanity,
+            } 
+            function onClick(event) {
+                var buttonType = event.srcElement.textContent;
+                buttons[buttonType]();
+            }
+            function addEvent(button) {
+                button.addEventListener('click', onClick);
+            }
+            document.querySelectorAll('.suggestiontop').forEach(addEvent);
+
             
             // Traverse DOM for dynamically inserted Submit button to disable
             function disable() {
                 document.querySelector('crowd-button').disabled = true;
                 var sentence = document.getElementById('sentence');
-                sentence.value = {{sent}};
+                sentence.value = "{{sent}}";
             }
             setTimeout(disable, 3000);
         </script>

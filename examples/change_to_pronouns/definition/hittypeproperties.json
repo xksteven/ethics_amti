@@ -1,10 +1,10 @@
 {
   "AutoApprovalDelayInSeconds": 259200,
   "AssignmentDurationInSeconds": 1800,
-  "Reward": "0.30",
-  "Title": "Write Scenarios Demonstrating Different Virtues and Vices",
-  "Keywords": "HTMLQuestion, writing, free response, creative, Dan, fun,",
-  "Description": "Write scenarios that each demonstrate a different character trait/virtue/vice.",
+  "Reward": "0.02",
+  "Title": "Edit a Sentence to be in first person (I/Me/My).",
+  "Keywords": "HTMLQuestion, writing, slight modification, creative, Dan, fun,",
+  "Description": "Edit a sentence to be in first person (I/Me/My).",
   "QualificationRequirements": [
      {
   	"QualificationTypeId": "00000000000000000071",
