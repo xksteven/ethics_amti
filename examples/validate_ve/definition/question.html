@@ -118,8 +118,8 @@
             <p>Question 1: Is this a high quality scenario?</p>
             <div>
                 <crowd-radio-group id="radios" required onchange="enableButton(0)">
-                    &emsp;<crowd-radio-button name={{b0}} value="bad" id="is_bad">This is not a high quality scenario.</crowd-radio-button><br/>
-                    &emsp;<crowd-radio-button name={{b1}} value="good">This is a high quality scenario.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="b0" value="bad" id="is_bad">This is not a high quality scenario.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="b1" value="good" id="is_good">This is a high quality scenario.</crowd-radio-button>
                 </crowd-radio-group>
             </div><br/>
 
@@ -169,10 +169,15 @@
            if (count.reduce((a, b) => a + b, 0) === count.length) {
                document.getElementById("submit").disabled = false;
            }
-
-           if (document.getElementById("is_bad").checked) {
-               document.getElementById("submit").disabled = false;
+           else {
+               if (document.getElementById("is_bad").checked) {
+                   document.getElementById("submit").disabled = false;
+               }
+               else if (document.getElementById("is_good").checked) {
+                   document.getElementById("submit").disabled = true;
+               }
            }
+
        }
    </script>
 

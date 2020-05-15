@@ -1,7 +1,7 @@
 {
   "AutoApprovalDelayInSeconds": 259200,
   "AssignmentDurationInSeconds": 1800,
-  "Reward": "0.50",
+  "Reward": "0.55",
   "Title": "Write scenarios then rank them by how enjoyable they are.",
   "Keywords": "HTMLQuestion, writing, free response, creative, Dan, fun,",
   "Description": "Write scenarios of varying degrees of pleasantness. Then rank these four scenarios by how enjoyable they are to the person in the scenarios.",
@@ -32,12 +32,12 @@
     {
          "QualificationTypeId":"000000000000000000L0",
          "Comparator":"GreaterThan",
-         "IntegerValues":[95]
+         "IntegerValues":[97]
     },
     {
          "QualificationTypeId":"00000000000000000040",
          "Comparator":"GreaterThan",
-         "IntegerValues":[499]
+         "IntegerValues":[999]
     }
    ]
 }
