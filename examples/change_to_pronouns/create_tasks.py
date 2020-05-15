@@ -6,7 +6,7 @@ import numpy as np
 parser = argparse.ArgumentParser(description='Create tasks to validate.')
 parser.add_argument('hits', type=int, default=10, help='how many validate ordinary morality hits to submit')
 parser.add_argument('-s', '--skip', type=int, default=0, help='from where in the dataset to submit.')
-parser.add_argument('--num_samples', type=int, default=10, help='')
+parser.add_argument('--num_samples', type=int, default=10, help='number of samples used per hit')
 args = parser.parse_args()
 
 with open("data_to_curate/mturk_data.csv", "r") as f:
@@ -26,10 +26,11 @@ my_str = []
 for index in range(0,(upto)):
     tmp_str = "{"
     for i in range(args.num_samples):
+        sent_to_insert = mturk_data[index*args.num_samples+i][1]
         if i == (args.num_samples - 1):
-            tmp_str += ("\"sent"+str(i)+"\" : \"" + str(sent_to_insert) "\"")
+            tmp_str += ("\"sent"+str(i)+"\" : \"" + str(sent_to_insert) + "\"")
         else:
-            tmp_str += ("\"sent"+str(i)+"\" : \"" + str(sent_to_insert) "\",")
+            tmp_str += ("\"sent"+str(i)+"\" : \"" + str(sent_to_insert) + "\",")
     my_str.append(tmp_str+"}\n")
 
 with open("data.jsonl", "w") as f:
