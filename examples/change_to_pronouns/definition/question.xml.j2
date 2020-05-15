@@ -245,7 +245,7 @@ Please write similarly worded scenarios that each demonstrate a different virtue
         <script language='Javascript'>turkSetAssignmentID();</script>
         <script>
 
-           sentences = [
+           var sentences = [
                "{{sent0}}",
                "{{sent1}}",
                "{{sent2}}",
@@ -255,28 +255,29 @@ Please write similarly worded scenarios that each demonstrate a different virtue
                "{{sent6}}",
                "{{sent7}}",
                "{{sent8}}",
-               "{{sent9}}", 
+               "{{sent9}}"
            ];
 
            function debug() {
                 
-                var sentence = document.getElementById('sentence1');
-                sentence.value = "{{sent1}}";
+                var sentence = document.getElementById('sentence0');
+                sentence.value = "{{sent0}}";
                 
            }
            function sanity() {
                 var allTrue = 1;
                 var i;
                 for (i = 0; i < sentences.length; i++) {
-                    which_sent = "sentence".concat(i.toString());
+                    var which_sent = "sentence".concat(i.toString());
                     var sentence = document.getElementById(which_sent);
-                    my_str = sentence.value;
+                    var my_str = sentence.value;
                     if (my_str.toLowerCase().includes("i ") || my_str.toLowerCase().includes("me ") || my_str.toLowerCase().includes("my "))
-                {
-                    allTrue += 1;
-                }
-                if (allTrue === sentences.length) {
-                     document.querySelector('crowd-button').disabled = false;
+                    {
+                        allTrue += 1;
+                    }
+                    if (allTrue === sentences.length) {
+                       document.querySelector('crowd-button').disabled = false;
+                    }
                 }
            }            
  
@@ -291,18 +292,21 @@ Please write similarly worded scenarios that each demonstrate a different virtue
             function addEvent(button) {
                 button.addEventListener('click', onClick);
             }
-            document.querySelectorAll('.suggestiontop').forEach(addEvent);
+            document.querySelectorAll('.suggestion').forEach(addEvent);
 
             
             // Traverse DOM for dynamically inserted Submit button to disable
             function disable() {
                 document.querySelector('crowd-button').disabled = true;
+                // var which_sent = "sentence0"
+                // var sentence = document.getElementById(which_sent);
+                // sentence.value = sentences[0];
                 var i;
                 for (i = 0; i < sentences.length; i++) {
-                    which_sent = "sentence".concat(i.toString());
+                    var which_sent = "sentence".concat(i.toString());
                     var sentence = document.getElementById(which_sent);
                     sentence.value = sentences[i];
-                    which_sent = "orig_sentence".concat(i.toString());
+                    var which_sent = "orig_sentence".concat(i.toString());
                     var sentence = document.getElementById(which_sent);
                     sentence.value = sentences[i];
                 }
