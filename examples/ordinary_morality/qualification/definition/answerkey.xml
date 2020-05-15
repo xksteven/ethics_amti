@@ -26,8 +26,8 @@
       <SelectionIdentifier>a</SelectionIdentifier>
       <AnswerScore>10</AnswerScore>
     </AnswerOption>
-  </Question>
-  <Question> -->
+  </Question> --->
+  <Question>
     <QuestionIdentifier>010</QuestionIdentifier>
     <AnswerOption>
       <SelectionIdentifier>a</SelectionIdentifier>
