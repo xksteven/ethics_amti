@@ -250,7 +250,9 @@
 
                 Step 2. Write four separate sentences that add additional details to the original scenario you wrote in step 1. These details make the original scenario more pleasant or less pleasant, from the point of view of the main character in the scenario. There should be a clear ranking from “least pleasant/most painful” to “most pleasant/least painful” among the 5 scenarios. Whether the scenarios are more positive or negative should not be too controversial, and should not represent your personal opinions.<br/><br/>
 
-              See examples by clicking the "View Examples" button. The Submit button will work only when sentences are long enough. Avoid comparing numbers, and avoid writing things like "it was enjoyable" or "it was annoying." Make sure the most pleasant scenario is at the top. One scenario is identical to the original scenario you wrote. You are ranking the pleasantness according to the person saying "I/me/my." <b>Important: avoid</b> very extreme scenarios or scenarios involving violence and money, and <b>do not</b> describe how the person <i>feels</i> about the scenario; only describe the scenario itself.<br/><hr/>
+              See examples by clicking the "View Examples" button. The Submit button will work only when sentences are long enough. Avoid comparing numbers, and avoid writing things like "it was enjoyable" or "it was annoying." Make sure the most pleasant scenario is at the top. One scenario is identical to the original scenario you wrote. You are ranking the pleasantness according to the person saying "I/me/my." <b>Important: avoid</b> very extreme scenarios or scenarios involving violence and money, and <b>do not</b> describe how the person <i>feels</i> about the scenario; only describe the scenario itself.<br/>
+
+              To make sure the scenarios are not <i>wildly</i> different in how good they are, we now require that the single-sentence scenario is at either the top or the bottom (more pleasant or least pleasant), so you will not be able to swap the single sentence Full Scenario.<br/><hr/>
             </p>
 
             <p>Step 1: Write the original scenario where a person has a positive, neutral, or negative experience:
@@ -326,7 +328,8 @@
 
         <div class="reminder">
           The most pleasant example should be at the top. The least pleasant example should be at the bottom.<br/>
-          Use the "Swap" button if you need to correct/adjust the ranking before submitting.
+          Use the "Swap" button if you need to correct/adjust the ranking before submitting.<br/>
+          However, you cannot swap the single-sentence Full Scenario, which will be at the top or bottom.
         </div>
 
         <!-- <crowd-button form-action="submit">Submit</crowd-button> -->
@@ -375,31 +378,47 @@
         document.querySelector('.inspiration').addEventListener('click', getInspiration);
 
         // For simplicity, just never initialize in the middle.
-        var nullScenario = 3;
-        while (nullScenario == 3)
-        {
-            var nullScenario = 1 + Math.floor(Math.random() * 5);
+        if (Math.random() > 0.5) {
+            nullScenario = 1;
         }
+        else {
+            nullScenario = 5;
+        }
+        // var nullScenario = 3;
+        // while (nullScenario == 3)
+        // {
+        //     var nullScenario = 1 + Math.floor(Math.random() * 5);
+        // }
 
+        // function onArrowClick(event, i, j) {
+        //   var temp1 = document.getElementById("response" + i).value;
+        //   var temp2 = document.getElementById("response" + j).value;
+        //   document.getElementById("response" + i).value = temp2;
+        //   document.getElementById("response" + j).value = temp1;
+        //   var changed = false;
+        //
+        //   if (nullScenario == i) {
+        //       makeNonNull(i);
+        //       makeNull(j);
+        //       nullScenario = j;
+        //       changed = true;
+        //   }
+        //
+        //   if (nullScenario == j && !changed) {
+        //       makeNonNull(j);
+        //       makeNull(i);
+        //       nullScenario = i;
+        //   }
+        // }
         function onArrowClick(event, i, j) {
-          var temp1 = document.getElementById("response" + i).value;
-          var temp2 = document.getElementById("response" + j).value;
-          document.getElementById("response" + i).value = temp2;
-          document.getElementById("response" + j).value = temp1;
-          var changed = false;
-
-          if (nullScenario == i) {
-              makeNonNull(i);
-              makeNull(j);
-              nullScenario = j;
-              changed = true;
+            // Don't swap the null
+          if (nullScenario != i && nullScenario != j) {
+              var temp1 = document.getElementById("response" + i).value;
+              var temp2 = document.getElementById("response" + j).value;
+              document.getElementById("response" + i).value = temp2;
+              document.getElementById("response" + j).value = temp1;
           }
 
-          if (nullScenario == j && !changed) {
-              makeNonNull(j);
-              makeNull(i);
-              nullScenario = i;
-          }
         }
         function onArrowClick1(event) {
           onArrowClick(event, 1, 2);
