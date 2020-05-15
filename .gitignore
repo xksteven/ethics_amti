@@ -5,6 +5,7 @@ qualification-type*
 # dev tools
 .envrc
 .python-version
+.DS_Store
 
 # editors
 *~
