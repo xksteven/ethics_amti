@@ -37,6 +37,11 @@
               cursor: pointer;
             }
 
+            #warning {
+              color: red;
+              padding-left: 5px;
+            }
+
             .suggestiontop {
             float: right;
             margin-top: -33px;
@@ -305,27 +310,73 @@
            }
 
            function sanity() {
-                var allTrue = 1;
-                var i;
-                for (i = 0; i < sentences.length; i++) {
-                    var which_sent = "sentence".concat(i.toString());
-                    var sentence = document.getElementById(which_sent);
-                    var new_str = sentence.value;
-                    new_str = new_str.toLowerCase()
-                    if (new_str.includes("i ") || new_str.includes("me ") || new_str.includes("my "))
-                    {
-                        var which_sent = "orig_sentence".concat(i.toString());
-                        var orig_sentence = document.getElementById(which_sent);
-                        var old_str = orig_sentence.value.toLowerCase();
-                        var similarFloat = damerau_levenshtein(new_str, old_str) / (0.5 * (new_str.length + old_str.length));
-                        if (similarFloat > 0.5) {
-                            allTrue += 1;
-                        }
-                    }
-                    if (allTrue === sentences.length) {
-                       document.querySelector('crowd-button').disabled = false;
-                    }
-                }
+             var parentElement = event.srcElement.parentNode;
+             var allTrue = 0;
+             var i;
+             for (i = 0; i < sentences.length; i++) {
+               var which_sent = "sentence".concat(i.toString());
+               var sentence = document.getElementById(which_sent);
+               var new_str = sentence.value;
+               new_str = new_str.toLowerCase()
+               if (new_str.includes("i ") || new_str.includes(" me ") || new_str.includes(" my ")) {
+                   allTrue += 1;
+               }
+             }
+             console.log(allTrue);
+             if (allTrue === sentences.length) {
+               document.querySelector('crowd-button').disabled = false;
+               let warningInnerHTML;
+               let warningMessage = document.getElementById('warning');
+               if (warningMessage) {
+                 warningMessage.remove();
+               }
+               warningMessage = document.createElement('span');
+               warningMessage.setAttribute('id', 'warning');
+               warningInnerHTML = '';
+
+               if (warningInnerHTML) {
+                 warningMessage.appendChild(document.createTextNode(warningInnerHTML));
+                 parentElement.appendChild(warningMessage);
+               }
+             }
+             else {
+               document.querySelector('crowd-button').disabled = true;
+               let warningInnerHTML;
+               let warningMessage = document.getElementById('warning');
+               if (warningMessage) {
+                 warningMessage.remove();
+               }
+               warningMessage = document.createElement('span');
+               warningMessage.setAttribute('id', 'warning');
+               warningInnerHTML = `Make sure you changed every sentence to include I, me, or my appropriately. ${allTrue}/10 sentences are ok.`;
+
+               if (warningInnerHTML) {
+                 warningMessage.appendChild(document.createTextNode(warningInnerHTML));
+                 parentElement.appendChild(warningMessage);
+               }
+             }
+
+                // var allTrue = 1;
+                // var i;
+                // for (i = 0; i < sentences.length; i++) {
+                //     var which_sent = "sentence".concat(i.toString());
+                //     var sentence = document.getElementById(which_sent);
+                //     var new_str = sentence.value;
+                //     new_str = new_str.toLowerCase()
+                //     if (new_str.includes("i ") || new_str.includes("me ") || new_str.includes("my "))
+                //     {
+                //         var which_sent = "orig_sentence".concat(i.toString());
+                //         var orig_sentence = document.getElementById(which_sent);
+                //         var old_str = orig_sentence.value.toLowerCase();
+                //         var similarFloat = damerau_levenshtein(new_str, old_str) / (0.5 * (new_str.length + old_str.length));
+                //         if (similarFloat > 0.5) {
+                //             allTrue += 1;
+                //         }
+                //     }
+                //     if (allTrue === sentences.length) {
+                //        document.querySelector('crowd-button').disabled = false;
+                //     }
+                // }
            }            
  
             var buttons = {
