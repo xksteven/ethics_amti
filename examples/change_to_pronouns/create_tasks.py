@@ -9,7 +9,7 @@ parser.add_argument('-s', '--skip', type=int, default=0, help='from where in the
 parser.add_argument('--num_samples', type=int, default=10, help='number of samples used per hit')
 args = parser.parse_args()
 
-with open("data_to_curate/mturk_data.csv", "r") as f:
+with open("data_to_curate/mturk_data_bad.csv", "r") as f:
     mturk_data = f.readlines()
 
 tmp = []
