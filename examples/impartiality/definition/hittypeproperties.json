@@ -7,10 +7,10 @@
   "Description": "Write typical behaviors and reasons for deviating from those behaviors because of a change in someone else.",
   "QualificationRequirements": [
     {
-      "QualificationTypeId": "36QJSG0B8Q4ZDK2K4YGEZSO0YKHKRK",
+      "QualificationTypeId": "3HN7640Z3OXAHISKDWUQYIB5Y8JSTS",
       "Comparator": "GreaterThanOrEqualTo",
       "IntegerValues": [
-        41
+        51
       ],
       "RequiredToPreview": false
     },
@@ -37,7 +37,7 @@
     {
          "QualificationTypeId":"00000000000000000040",
          "Comparator":"GreaterThan",
-         "IntegerValues":[999]
+         "IntegerValues":[-1]
     }
    ]
 }
