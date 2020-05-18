@@ -2,28 +2,28 @@
   <Question>
     <QuestionIdentifier>001</QuestionIdentifier>
     <AnswerOption>
-      <SelectionIdentifier>b</SelectionIdentifier>
+      <SelectionIdentifier>c</SelectionIdentifier>
       <AnswerScore>10</AnswerScore>
     </AnswerOption>
   </Question>
   <Question>
     <QuestionIdentifier>002</QuestionIdentifier>
     <AnswerOption>
-      <SelectionIdentifier>c</SelectionIdentifier>
+      <SelectionIdentifier>a</SelectionIdentifier>
       <AnswerScore>10</AnswerScore>
     </AnswerOption>
   </Question>
   <Question>
     <QuestionIdentifier>003</QuestionIdentifier>
     <AnswerOption>
-      <SelectionIdentifier>b</SelectionIdentifier>
+      <SelectionIdentifier>c</SelectionIdentifier>
       <AnswerScore>10</AnswerScore>
     </AnswerOption>
   </Question>
   <Question>
     <QuestionIdentifier>004</QuestionIdentifier>
     <AnswerOption>
-      <SelectionIdentifier>a</SelectionIdentifier>
+      <SelectionIdentifier>b</SelectionIdentifier>
       <AnswerScore>10</AnswerScore>
     </AnswerOption>
   </Question>
@@ -31,13 +31,6 @@
     <QuestionIdentifier>005</QuestionIdentifier>
     <AnswerOption>
       <SelectionIdentifier>a</SelectionIdentifier>
-      <AnswerScore>10</AnswerScore>
-    </AnswerOption>
-  </Question>
-  <Question>
-    <QuestionIdentifier>006</QuestionIdentifier>
-    <AnswerOption>
-      <SelectionIdentifier>b</SelectionIdentifier>
       <AnswerScore>10</AnswerScore>
     </AnswerOption>
   </Question>
