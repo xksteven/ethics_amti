@@ -2,9 +2,9 @@
   "AutoApprovalDelayInSeconds": 259200,
   "AssignmentDurationInSeconds": 3600,
   "Reward": "0.45",
-  "Title": "Write Requests and Reasonable or Unreasonable Excuses",
+  "Title": "Write About Things That People Deserve or Don't Deserve",
   "Keywords": "HTMLQuestion, writing, free response, creative, Dan, fun,",
-  "Description": "Write a reasonable request or command. Then write reasonable and unreasonable excuses.",
+  "Description": "Write sentences about deserving or being entitled to something. The sentences should say what the person thinks they deserve, from whom they deserve it, and why they deserve it.",
   "QualificationRequirements": [
     {
       "QualificationTypeId": "36QJSG0B8Q4ZDK2K4YGEZSO0YKHKRK",
