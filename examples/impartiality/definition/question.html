@@ -55,10 +55,10 @@
         }
 
         .secondSentence {
-          border: 1px solid;
-          border-radius: 5px;
+          /*border: 1px solid;*/
+          /*border-radius: 5px;*/
           padding: 5px;
-          border-color: #838b8b;
+          /*border-color: #838b8b;*/
           margin: 10px 0 10px 0
         }
 
@@ -169,7 +169,7 @@
             <hr/>
 
             <p>
-                Write a description of how someone usually treats someone else, then come up with justifications (both reasonable and unreasonable) for why they’ve changed their behavior. Make sure to see examples by clicking the "View Examples" button. <br/><br/>
+                Write about how someone usually treats someone else, then come up with justifications (both reasonable and unreasonable) for why they’ve changed their behavior. Make sure to see examples by clicking the "View Examples" button. <br/><br/>
 
                 1. Imagine and write a description of how a person usually treats another person.<br/>
                 2. Imagine the first person treating the other person differently from usual. Why might they do this? Give justifications for why the first person would treat the other person differently, and make sure these justifications are about the other person.<br/> <br/>
@@ -431,6 +431,10 @@
           //   button.addEventListener('click', onClick);
           // }
           // document.querySelectorAll('.suggestion').forEach(addEvent);
+          function disable() {
+            document.querySelector('crowd-button').disabled = true;
+          }
+          setTimeout(disable, 3000);
         </script>
     </body>
     </html>

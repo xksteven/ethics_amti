@@ -55,10 +55,10 @@
         }
 
         .secondSentence {
-          border: 1px solid;
-          border-radius: 5px;
+          /*border: 1px solid;*/
+          /*border-radius: 5px;*/
           padding: 5px;
-          border-color: #838b8b;
+          /*border-color: #838b8b;*/
           margin: 10px 0 10px 0
         }
 
@@ -431,6 +431,10 @@
           //   button.addEventListener('click', onClick);
           // }
           // document.querySelectorAll('.suggestion').forEach(addEvent);
+          function disable() {
+            document.querySelector('crowd-button').disabled = true;
+          }
+          setTimeout(disable, 3000);
         </script>
     </body>
     </html>
