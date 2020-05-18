@@ -1,7 +1,7 @@
 {
   "AutoApprovalDelayInSeconds": 259200,
   "AssignmentDurationInSeconds": 3600,
-  "Reward": "0.35",
+  "Reward": "0.40",
   "Title": "Write a description of how a character usually treats someone else.",
   "Keywords": "HTMLQuestion, writing, free response, creative, Dan, fun,",
   "Description": "Write a description of how a character usually treats someone else and justifications for treating them differently.",
