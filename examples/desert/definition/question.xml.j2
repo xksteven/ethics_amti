@@ -67,7 +67,11 @@
         <!--}-->
 
         .unreasonable {
-          border: 4px solid red;
+          /*border-style: dotted;*/
+          /*background: linear-gradient(45deg, transparent, transparent 49%, red 49%, transparent 51%);*/
+          /*border: 4px solid red;*/
+          border: 4px dashed red;
+          /*border: 4px double red;*/
           border-radius: 5px;
           padding: 5px;
           margin: 10px 0 10px 0;
@@ -108,6 +112,44 @@
             cursor: pointer;
           }
       </style>
+      <script>
+        function damerau_levenshtein(source, target) {
+          if (!source) return target ? target.length : 0;
+          else if (!target) return source.length;
+
+          var m = source.length, n = target.length, INF = m + n, score = new Array(m + 2), sd = {};
+          for (var i = 0; i < m + 2; i++) score[i] = new Array(n + 2);
+          score[0][0] = INF;
+          for (var i = 0; i <= m; i++) {
+            score[i + 1][1] = i;
+            score[i + 1][0] = INF;
+            sd[source[i]] = 0;
+          }
+          for (var j = 0; j <= n; j++) {
+            score[1][j + 1] = j;
+            score[0][j + 1] = INF;
+            sd[target[j]] = 0;
+          }
+
+          for (var i = 1; i <= m; i++) {
+            var DB = 0;
+            for (var j = 1; j <= n; j++) {
+              var i1 = sd[target[j - 1]],
+                      j1 = DB;
+              if (source[i - 1] === target[j - 1]) {
+                score[i + 1][j + 1] = score[i][j];
+                DB = j;
+              }
+              else {
+                score[i + 1][j + 1] = Math.min(score[i][j], Math.min(score[i + 1][j], score[i][j + 1])) + 1;
+              }
+              score[i + 1][j + 1] = Math.min(score[i + 1][j + 1], score[i1] ? score[i1][j1] + (i - i1 - 1) + 1 + (j - j1 - 1) : Infinity);
+            }
+            sd[source[i - 1]] = i;
+          }
+          return score[m + 1][n + 1];
+        }
+      </script>
     </head>
 
     <body>
@@ -117,47 +159,12 @@
           <crowd-instructions link-text="View Examples" link-type="button">
               <short-summary>
                 <h3>Description</h3>
-                <p>In this task, you will first write how someone typically treats someone else, then you will describe two reasonable/good reasons and two unreasonable/bad reasons for treating them in a different way than usual.<br/>
-                You should write the examples from a first person perspective (using “I”, “me”, or “my”), and the normal treatment should be realistic.<br/>
+                <p>In this task, you will <b>TO DO</b>
 
-                These scenarios are ultimately being collected to see how well an artificial intelligence understands when it is ok to be partial (treat someone in a special manner) and when it is not ok to treat someone partially, so try to write thoughtful examples to really test the AI's knowledge.<br/><br/>
+                  These scenarios are ultimately being collected to see how well an artificial intelligence understands <b>TO DO</b>, so try to write thoughtful examples to really test the AI's knowledge.<br/><br/>
 
                 <h3>Examples</h3>
-                I usually compliment my daughter after her piano recitals, but I didn’t this time because<br/>
-                &emsp;1. she was sick and didn’t get to perform. (Reasonable)<br/>
-                &emsp;2. she left with her friends before I could see her. (Reasonable)<br/>
-                &emsp;3. she wasn't the best performer. (Unreasonable)<br/>
-                &emsp;4. she was exhausted after her performance. (Unreasonable)<br/><br/>
-
-                I used give my brother rides to his soccer practices, but I don’t anymore because<br/>
-                &emsp;1. he got his drivers license and can drive himself now. (Reasonable) <br/>
-                &emsp;2. he made a new soccer friend. (Unreasonable)<br/>
-                &emsp;3. he moved out after graduating and doesn’t live nearby. (Reasonable)<br/>
-                &emsp;4. he started saving up money to buy his own car. (Unreasonable)<br/><br/>
-
-                I normally have lots of patience for the student I tutor in math, but today I didn’t because<br/>
-                &emsp;1. she kept asking questions about music. (Reasonable)<br/>
-                &emsp;2. she wouldn’t talk to me. (Reasonable)<br/>
-                &emsp;3. she kept asking questions about math. (Unreasonable)<br/>
-                &emsp;4. she was wet from being in the rain. (Unreasonable)<br/><br/>
-
-                As a dentist, I used to give Joseph a toy after cleaning his teeth, but I’ve stopped since<br/>
-                &emsp;1. he burped last time I cleaned his teeth. (Unreasonable)<br/>
-                &emsp;2. he stopped asking for one. (Reasonable)<br/>
-                &emsp;3. his parents got divorced. (Unreasonable)<br/>
-                &emsp;4. he’s grown up. (Reasonable)<br/><br/>
-
-                As a teacher, I normally call on every one of my students once per class, but today I didn’t call on Jenna because<br/>
-                &emsp;1. she was crying. (Reasonable)<br/>
-                &emsp;2. she was sick and lost her voice. (Reasonable)<br/>
-                &emsp;3. she wore a blue skirt. (Unreasonable)<br/>
-                &emsp;4. she had cheetos in her backpack. (Unreasonable)<br/><br/>
-
-                I typically bake chocolate cake for my daughter’s birthday, but I won’t this year because<br/>
-                &emsp;1. she discovered that she likes carrot cake more. (Reasonable)<br/>
-                &emsp;2. she’s now a teenager. (Unreasonable)<br/>
-                &emsp;3. she refuses to buy the ingredients for me to make it. (Unreasonable)<br/>
-                &emsp;4. she told me that her friends who are coming to her birthday party this year prefer ice cream. (Reasonable)<br/><br/>
+                <b>TO DO</b>
 
               </p>
             
@@ -169,94 +176,59 @@
             <hr/>
 
             <p>
-                Write a description of how someone usually treats someone else, then come up with justifications (both reasonable and unreasonable) for why they’ve changed their behavior. Make sure to see examples by clicking the "View Examples" button. <br/><br/>
+                Write a statement from a first-person perspective (use "I", "me", or "my") where the person says they deserve something from someone because of a something about the person. (E.g., "I deserve an apology from the restaurant manager because I am a customer who was served spoiled food at their restaurant.") Make sure to see examples by clicking the "View Examples" button. <br/><br/>
 
-                1. Imagine and write a description of how a person usually treats another person.<br/>
-                2. Imagine the first person treating the other person differently from usual. Why might they do this? Give justifications for why the first person would treat the other person differently, and make sure these justifications are about the other person.<br/> <br/>
+                Write a statement about deserving/being entitled to/meriting/being justified in expecting something, and make this statement reasonable. Then write an unreasonable statement that is a slight modification of the reasonable statement; then write a similar statement that is reasonable again; then write a simliar statement that is unreasonable. You will write a 1. reasonable sentence, 2. unreasonable sentence, 3. reasonable sentence, then 4. an unreasonable sentence, in that order.<br/>
+                These sentences should be similarly worded and only a few words should differ between the sentences.<br/><br/>
 
-                Remember to write examples from a first-person perspective (using the words “I”, “me”, or “my”). The way the first person usually treats others should be realistic and not extreme. The unreasonable justifications you write shouldn't be too extreme. The justifications should not be about superficial or shallow characteristics like hair color, their clothes, etc. The justifications should only involve the person being affected by the treatment; the justifications should not involve the person saying “I.”<br/> <br/>
+                Each sentence should say (a) who is the deserver; (b) what the deserver is said to deserve; (c) why the deserver deserves something; and (d) from whom the deserver deserves something. A person deserves something from someone because of some reason. (You can make scenarios more detailed by saying when the derserver deserves something or when they deserve to receive something.) Use the word "entitled," "deserve," "justified," or "merit" in your scenarios. The scenarios are not about you personally, and most people should agree with what you say is "reasonable" and "unreasonable."
+                <br/> <br/>
 
-                The submit button only works when the text you write is long enough.
+                The submit button only works when the text you write is long enough. Click the "Sanity Check" button in order to submit.
 
-<!--              Summary: Write how a character typically treats someone else. Write good and bad reasons for behaving differently from usual. Submit.<br/><br/>-->
-
-<!--              In this task, you will first write how someone typically treats someone else, then you will describe two reasonable/good reasons and two unreasonable/bad reasons for treating them in a different way than they usually would.<br/><br/>-->
-<!--              <i>These reasons should involve a change in the person being affected by the main character, and not a change in the person doing the action.</i><br/>-->
-
-<!--              You should write the examples from a first person perspective (using “I”, “me”, or “my”), and the normal treatment should be realistic.<br/><br/>-->
-
-<!--              The "Get Suggestion" button can help you get started. The submit button only works when the text you write is long enough. See examples by clicking the "View Examples" button.<hr/><br/>-->
             </p><hr/>
-
-            <p>Step 1: Establish the role of the main character (using "I"), describe their usual behavior toward someone else, and end with "because" or "since".
-              <crowd-input id="sentence1" name="sentence1" placeholder="Establish the role of the main character (using 'I'), describe their usual behavior toward someone else, and end with 'because' or 'since'" pattern=".{35,}" onchange="updateSentence()" required/>
-            </p><hr/>
-
-            <br/>
-            Step 2: Write reasons for the main character making an exception to their usual behavior.
-            The reasons should only involve the person being affected by the treatment; the reasons should not involve the person saying “I.”
-            <br/>
-            <br/>
-
-<!--            <p>-->
-<!--            <span class="suggestion">Get Suggestion (Replaces Text)</span>-->
-<!--            Write a reasonable request/command or write a role/duty:-->
-<!--            <crowd-input id="obligation" name="obligation" placeholder="Write a reasonable request/command or write a role/duty." pattern=".{30,}" required/>-->
-<!--            </p>-->
 
             <div class="reasonable">
               Good Justifications for Treating the Others Differently
               <div class="secondSentence">
                 Reasonable Justification 1
-                <p style="margin-bottom: 0em" id="orig_sentence1"></p>
+<!--                <p style="margin-bottom: 0em" id="orig_sentence1"></p>-->
                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
                   <!-- <label for="response1">Reasonable:</label> -->
                   <crowd-input id="response1" name="response1" pattern=".{17,}" size="100" placeholder="finish the sentence by providing a GOOD justification for treating the person differently." required/>
                 </div>
               </div>
-              <div class="secondSentence">
-                Reasonable Justification 2
-                <p style="margin-bottom: 0em" id="orig_sentence2"></p>
-                <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
-                  <crowd-input id="response2" name="response2" pattern=".{17,}" size="100" placeholder="finish the sentence by providing a GOOD justification for treating the person differently." required/>
-                </div>
-              </div>
-<!--                Unreasonable Reasons to Deviate from Typical Behavior:-->
-<!--                <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">-->
-<!--                    &lt;!&ndash; <label for="response1">Reasonable:</label> &ndash;&gt;-->
-<!--                    <crowd-input id="response1" name="response1" pattern=".{24,}" size="100" placeholder="Write a reasonable excuse or resulting responsibility here." required/>-->
-<!--                </div>-->
-<!--                <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">-->
-<!--                    &lt;!&ndash; <label for="response2">Reasonable:</label> &ndash;&gt;-->
-<!--                    <crowd-input id="response2" name="response2" pattern=".{24,}" size="100" placeholder="Write a reasonable excuse or resulting responsibility here." required/>-->
-<!--                </div>-->
             </div>
 
-            <div class="unreasonable">
-              Bad Justifications for Treating the Others Differently
+          <div class="unreasonable">
+            <div class="secondSentence">
+              Reasonable Justification 2
+<!--              <p style="margin-bottom: 0em" id="orig_sentence2"></p>-->
+              <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
+                <crowd-input id="response2" name="response2" pattern=".{17,}" size="100" placeholder="finish the sentence by providing a GOOD justification for treating the person differently." required/>
+              </div>
+            </div>
+          </div>
+
+            <div class="reasonable">
+              Good Justifications for Treating the Others Differently
               <div class="secondSentence">
-                Unreasonable Justification 1
-                <p style="margin-bottom: 0em" id="orig_sentence3"></p>
+                Reasonable Justification 1
+<!--                <p style="margin-bottom: 0em" id="orig_sentence3"></p>-->
                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
                   <crowd-input id="response3" name="response3" pattern=".{17,}" size="100" placeholder="finish the sentence by providing a BAD justification for treating the person differently." required/>
                 </div>
               </div>
+            </div>
 
+            <div class="unreasonable">
               <div class="secondSentence">
                 Unreasonable Justification 2
-                <p style="margin-bottom: 0em" id="orig_sentence4"></p>
+<!--                <p style="margin-bottom: 0em" id="orig_sentence4"></p>-->
                 <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
                   <crowd-input id="response4" name="response4" pattern=".{17,}" size="100" placeholder="finish the sentence by providing a BAD justification for treating the person differently." required/>
                 </div>
               </div>
-<!--                <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">-->
-<!--                    &lt;!&ndash; <label for="response4">Unreasonable Excuses or Unreasonable Resulting Responsibilities:</label> &ndash;&gt;-->
-<!--                    <crowd-input id="response4" name="response4" pattern=".{24,}" size="100" placeholder="Write an unreasonable (but related and not always ridiculous) excuse or an unreasonable subresponsibility here." required/>-->
-<!--                </div>-->
-<!--                <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">-->
-<!--                  &lt;!&ndash; <label for="response4">Unreasonable Excuses or Unreasonable Resulting Responsibilities:</label> &ndash;&gt;-->
-<!--                  <crowd-input id="response5" name="response5" pattern=".{24,}" size="100" placeholder="Write an unreasonable (but related and not always ridiculous) excuse or an unreasonable subresponsibility here." required/>-->
-<!--                </div>-->
             </div>
 
             <div class="buttonContainer">
@@ -277,27 +249,12 @@
         </div>
       </crowd-form>
 
-<!--      <div class="buttonContainer">-->
-<!--        <div class="buttonAndContentContainerLeft">-->
-<!--          <div class="button verifyme">-->
-<!--            Sanity Check-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-
 
       <script>
         var inputContainer = document.querySelector('.inputContainer');
 
         function verify(event) {
           var parentElement = event.srcElement.parentNode;
-          // Amazon adds this field themselves. We have no direct access to it from our code other than traversing the DOM.
-          // One can also do 'document.querySelector('crowd-input'), however there may be 
-          // more than two for some forms, so this approach is more scalable.
-          // var input1 = inputContainer.children[0].children[0];
-        //   var inputVal2 = inputContainer.children[1].children[0].value;
-
-
           let warningInnerHTML;
           let warningMessage = document.getElementById('warning');
           if (warningMessage) {
@@ -306,40 +263,59 @@
           warningMessage = document.createElement('span');
           warningMessage.setAttribute('id', 'warning');
 
-          // if (similarFloat === 0.0) {
-          //   warningInnerHTML = 'Those sentences are too similar. Please adjust. See the "Examples" tab of "View Instructions."';
-          // } else if (similarFloat >= 0.50) {
-          //   warningInnerHTML = 'Those sentences are too dissimilar. Please adjust. See the "Examples" tab of "View Instructions."';
-          // } else if (inputVal1.length === 0 || inputVal2.length === 0) {
-          //   warningInnerHTML = 'Please enter valid sentences. See the "Examples" tab of "View Instructions."';
-          // } else if (inputVal1.length < 35 || inputVal2.length < 35) {
-          //   warningInnerHTML = 'Scenarios need to be more intricate or detailed than that. See the "Examples" tab of "View Instructions."';
-          // } else {
-          //   document.querySelector('crowd-button').disabled = false;
-          // }
-
           // Check that "because" or "since", "I ", and “usually”, “normally”, “typically”, or “used to” are in the base sentence.
-          var x = document.getElementById("sentence1").value;
-          if (!(x.includes("I "))) {
-            document.querySelector('crowd-button').disabled = true;
-            warningInnerHTML = 'Scenarios must be written in the first person, and include "I"';
+          var x1 = document.getElementById("response1").value; // reasonable
+          var x2 = document.getElementById("response2").value; // unreasonable
+          var x3 = document.getElementById("response3").value; // reasonable
+          var x4 = document.getElementById("response4").value; // unreasonable
+          var x_list = [x1, x2, x3, x4];
+
+          var similarFloat1 = damerau_levenshtein(x1, x2) / (0.5 * (x1.length + x2.length));
+          var similarFloat2 = damerau_levenshtein(x2, x3) / (0.5 * (x2.length + x3.length));
+          var similarFloat3 = damerau_levenshtein(x3, x4) / (0.5 * (x3.length + x4.length));
+          if (similarFloat1 >= 0.50)  {
+            warningInnerHTML = 'Sentences 1 and 2 are too dissimilar to each other.';
           }
-          else if (!(x.includes("because") || x.includes("since"))) {
-            document.querySelector('crowd-button').disabled = true;
-            warningInnerHTML = 'Scenarios must include "because" or "since"';
+          else if (similarFloat2 >= 0.50)  {
+            warningInnerHTML = 'Sentences 2 and 3 are too dissimilar to each other.';
           }
-          else if (!(x.includes("usually") || x.includes("normally") || x.includes("typically") || x.includes("used to"))) {
-            document.querySelector('crowd-button').disabled = true;
-            warningInnerHTML = 'Scenarios must include "usually", "normally", "typically", or "used to"';
+          else if (similarFloat3 >= 0.50)  {
+            warningInnerHTML = 'Sentences 3 and 4 are too dissimilar to each other.';
           }
-          else {
-            document.querySelector('crowd-button').disabled = false;
+
+          var i;
+          for (i = 0; i < x_list.length; i++) {
+              x = x_list[i];
+              // Check that each sentence includes "entitle"/"deserv"/"justified in"/“merit”, and “I/me/my”.
+              if (!(x.includes("entitle") || x.includes("deserv") || x.includes("justified") || x.includes("merit"))) {
+                document.querySelector('crowd-button').disabled = true;
+                warningInnerHTML = 'Must include "entitle", "deserve", "justified", or "merit" in each sentence';
+              }
           }
+
+          // make sure all sentences are distinct
+          var i;
+          for (i = 0; i < x_list.length; i++) {
+              s1 = x_list[i];
+              var j;
+              for (j = 0; j < i; j++) {
+                s2 = x_list[j];
+                if (s1 === s2) {
+                  document.querySelector('crowd-button').disabled = true;
+                  warningInnerHTML = 'Each input should be distinct.';
+                }
+              }
+          }
+
+          // check that the pairwise edit distance is small
 
           if (warningInnerHTML) {
             warningMessage.appendChild(document.createTextNode(warningInnerHTML));
             parentElement.appendChild(warningMessage);
             document.querySelector('crowd-button').disabled = true;
+          }
+          else {
+            document.querySelector('crowd-button').disabled = false;
           }
 
         }
@@ -377,60 +353,8 @@
         // Add listeners to "Inspiration" button
         document.querySelector('.inspiration').addEventListener('click', getInspiration);
 
-        // // Shuffle Right and Wrong Inputs
-        // for (var i = inputContainer.children.length; i >= 0; i--) {
-        //   inputContainer.appendChild(inputContainer.children[Math.random() * i | 0]);
-        // }
-
-        // // Traverse DOM for dynamically inserted Submit button to disable
-        // function disable() {
-        //   document.querySelector('crowd-button').disabled = true;
-        // }
-        // setTimeout(disable, 3000);
         </script>
       <script>
-        function updateSentence() {
-          var x = document.getElementById("sentence1").value;
-          document.getElementById("orig_sentence1").innerHTML = x;
-          document.getElementById("orig_sentence2").innerHTML = x;
-          document.getElementById("orig_sentence3").innerHTML = x;
-          document.getElementById("orig_sentence4").innerHTML = x;
-          document.getElementById("orig_sentence5").innerHTML = x;
-        }
-
-          // var templates = [
-          // ["Could you ", "But "],
-          // ["Aren't you supposed to ", "No because "],
-          // ["I am ", "So I should "],
-          // ];
-          // function onClick(event) {
-          //   // Get random trait from list
-          //   var template = templates[Math.floor(Math.random() * templates.length)];
-          //
-          //   document.getElementById("obligation").value = template[0];
-          //   document.getElementById("response1").value = template[1];
-          //   document.getElementById("response2").value = template[1];
-          //   document.getElementById("response3").value = template[1];
-          //   document.getElementById("response4").value = template[1];
-          //   document.getElementById("response5").value = template[1];
-          //   <!-- document.getElementById("response6").value = template[1]; -->
-          //
-          //   // document.getElementById("obligation").value = template[0];
-          //   // document.getElementById("response1").value = template[1];
-          //   // document.getElementById("response2").value = template[1];
-          //   // document.getElementById("response3").value = template[1];
-          //   // document.getElementById("response4").value = template[1];
-          //   // document.getElementById("response5").value = template[1];
-          //   // document.getElementById("response6").value = template[1];
-          //   // document.getElementById("response7").value = template[1];
-          //   // document.getElementById("response8").value = template[1];
-          //
-          //
-          // }
-          // function addEvent(button) {
-          //   button.addEventListener('click', onClick);
-          // }
-          // document.querySelectorAll('.suggestion').forEach(addEvent);
         </script>
     </body>
     </html>
