@@ -1,10 +1,10 @@
 {
   "AutoApprovalDelayInSeconds": 259200,
   "AssignmentDurationInSeconds": 3600,
-  "Reward": "0.45",
-  "Title": "Write Typical Behaviors and Reasons for Deviating from those Behaviors",
+  "Reward": "0.40",
+  "Title": "Write a description of how a character usually treats someone else.",
   "Keywords": "HTMLQuestion, writing, free response, creative, Dan, fun,",
-  "Description": "Write typical behaviors and reasons for deviating from those behaviors because of a change in someone else.",
+  "Description": "Write a description of how a character usually treats someone else and justifications for treating them differently.",
   "QualificationRequirements": [
     {
       "QualificationTypeId": "3NIXU43KF1DPUAW9IRU5Z0ZQVTZSV8",
