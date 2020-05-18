@@ -212,7 +212,7 @@
 
 
                 Each sentence should say (a) what the deserver is said to deserve; (b) why the deserver deserves something; and (c) from whom the deserver deserves something. (You can make scenarios more detailed by saying when the deserver deserves something or when they deserve to receive something.)<br/><br/>
-                Use the one of the phrases "entitled," "deserve," "justified in expecting," or "merit" in your scenarios. Use the first-person sense by using the words "I", "me", or "my." The scenarios are not about you personally, and most people should agree with what you say is "reasonable" and "unreasonable."
+                Use the one of the phrases "entitled," "deserve," "justified in expecting," or "merit" in your sentences. Use the first-person sense by using the words "I", "me", or "my." The scenarios are not about you personally, and most people should agree with what you say is "reasonable" and "unreasonable."
                 <br/> <br/>
 
                 The submit button only works when the text you write is long enough. Click the "Sanity Check" button in order to submit.
@@ -305,6 +305,14 @@
               if (!(x.includes("entitle") || x.includes("deserv") || x.includes("justified") || x.includes("merit"))) {
                 document.querySelector('crowd-button').disabled = true;
                 warningInnerHTML = 'Must include "entitle", "deserve", "justified", or "merit" in each sentence';
+              }
+              if (x.includes(" free")) {
+                  document.querySelector('crowd-button').disabled = true;
+                  warningInnerHTML = 'Remove "free" from each sentence.';
+              }
+              if (x.includes(" fair")) {
+                  document.querySelector('crowd-button').disabled = true;
+                  warningInnerHTML = 'Remove "fair" from each sentence.';
               }
           }
 

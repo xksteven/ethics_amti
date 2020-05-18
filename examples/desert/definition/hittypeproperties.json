@@ -7,10 +7,10 @@
   "Description": "Write sentences about deserving or being entitled to something. The sentences should say what the person thinks they deserve, from whom they deserve it, and why they deserve it.",
   "QualificationRequirements": [
     {
-      "QualificationTypeId": "3NIXU43KF1DPUAW9IRU5Z0ZQVTZSV8",
+      "QualificationTypeId": "3SLCM7XLWH85UKUN6JRNXDFDGJN6TL",
       "Comparator": "GreaterThanOrEqualTo",
       "IntegerValues": [
-        51
+        41
       ],
       "RequiredToPreview": false
     },
