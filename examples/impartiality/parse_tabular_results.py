@@ -25,7 +25,7 @@ with open(args.json, "r") as f:
 output_str = []
 for entry in data:
     tmp = []
-    tmp.append(entry["obligation"])
+    tmp.append(entry["sentence1"])
     tmp.append(entry["response1"])
     tmp.append(entry["response2"])
     tmp.append(entry["response3"])
