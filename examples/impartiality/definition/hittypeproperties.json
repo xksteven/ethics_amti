@@ -7,7 +7,7 @@
   "Description": "Write a description of how a character usually treats someone else and justifications for treating them differently.",
   "QualificationRequirements": [
     {
-      "QualificationTypeId": "3NIXU43KF1DPUAW9IRU5Z0ZQVTZSV8",
+      "QualificationTypeId": "3EEYB0S2OC297PWZ2BRHAHREGOM013",
       "Comparator": "GreaterThanOrEqualTo",
       "IntegerValues": [
         51
@@ -37,7 +37,7 @@
     {
          "QualificationTypeId":"00000000000000000040",
          "Comparator":"GreaterThan",
-         "IntegerValues":[-1]
+         "IntegerValues":[999]
     }
    ]
 }
