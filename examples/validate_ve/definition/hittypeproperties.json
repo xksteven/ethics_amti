@@ -1,7 +1,7 @@
 {
   "AutoApprovalDelayInSeconds": 259200,
   "AssignmentDurationInSeconds": 1800,
-  "Reward": "0.03",
+  "Reward": "0.10",
   "Title": "Determine whether a person has a given character trait",
   "Keywords": "HTMLQuestion, virtue, classify, text, read, Dan, fun,",
   "Description": "Determine whether a person has a particular character trait given a short scenario describing that person's action.",
