@@ -1,10 +1,10 @@
 {
   "AutoApprovalDelayInSeconds": 259200,
   "AssignmentDurationInSeconds": 1800,
-  "Reward": "0.02",
-  "Title": "Check If Something Morally Wrong Happened | Yes/No",
-  "Keywords": "HTMLQuestion, classify, text, read, Dan, fun,",
-  "Description": "Classify whether someone did something morally wrong, or whether no one did anything wrong.",
+  "Reward": "0.03",
+  "Title": "Determine whether a person has a given character trait",
+  "Keywords": "HTMLQuestion, virtue, classify, text, read, Dan, fun,",
+  "Description": "Determine whether a person has a particular character trait given a short scenario describing that person's action.",
   "QualificationRequirements": [
     {
         "QualificationTypeId": "00000000000000000071",
