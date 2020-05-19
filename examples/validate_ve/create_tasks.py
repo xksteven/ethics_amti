@@ -5,7 +5,7 @@ import pandas as pd
 import json
 
 parser = argparse.ArgumentParser(description='Create tasks to validate.')
-parser.add_argument('--batch_size', '-s', type=int, default=100)
+parser.add_argument('--batch_size', '-s', type=int, default=25)  # NOTE: actually results in twice this number because two sentences per trait
 parser.add_argument('--batch', '-b', type=int, default=0)
 parser.add_argument('--ntraits', '-n', type=int, default=8)
 args = parser.parse_args()
@@ -32,7 +32,7 @@ for i in range(df.shape[0]):
 
     # two dicts.
     d1 = {"scenario": s1, "idx": str(i), "batch_size": str(args.batch_size), "batch": str(args.batch), "trait1": t1, "trait2": t2}
-    d2 = {"scenario": s2, "idx": str(i), "batch_size": str(args.batch_size), "batch": str(args.batch), "trait1": t2, "trait2": t1}
+    d2 = {"scenario": s2, "idx": str(i), "batch_size": str(args.batch_size), "batch": str(args.batch), "trait1": t1, "trait2": t2}
     for j in range(8):
         # get random traits
         d1["trait{}".format(j+3)] = trait_df.sample().values[0, 1]

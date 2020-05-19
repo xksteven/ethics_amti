@@ -116,7 +116,7 @@
                 &emsp;c. angry (false)</br>
             </p>
 
-            <h1>Scenario: {{ scenario }}</h1>
+            <b>Scenario: {{ scenario }}</b>
 <!--            <p>Question 1: Is this a low quality scenario?</p>-->
 <!--            <div>-->
 <!--                <crowd-radio-group id="radios" required onchange="enableButton(0)">-->
@@ -127,83 +127,83 @@
 
             <hr/>
 
-            <p>Trait 1. {{ sample0 }}</p>
+            <p>Trait 1. {{ trait1 }}</p>
            <div>
            <crowd-radio-group id="radios" required onchange="enableButton(1)">
-             &emsp;<crowd-radio-button name={{trait0}} value="bad">The trait does not accurately describe the scenario.</crowd-radio-button><br/>
-             &emsp;<crowd-radio-button name={{trait1}} value="good">The trait does accurately describe the scenario.</crowd-radio-button>
+             &emsp;<crowd-radio-button name={{v011}} value="good">The trait does accurately describe the scenario.</crowd-radio-button>
+               &emsp;<crowd-radio-button name={{v012}} value="bad">The trait does not accurately describe the scenario.</crowd-radio-button><br/>
            </crowd-radio-group>
            </div><br/>
      
-           <p>Trait 2. {{ sample1 }}</p><br/>
+           <p>Trait 2. {{ trait2 }}</p><br/>
            <div>
              <crowd-radio-group id="radios" required onchange="enableButton(2)">
-             &emsp;<crowd-radio-button name={{trait2}} value="bad">The trait does not accurately describe the scenario.</crowd-radio-button><br/>
-             &emsp;<crowd-radio-button name={{trait3}} value="good">The trait does accurately describe the scenario.</crowd-radio-button>
+             &emsp;<crowd-radio-button name={{v021}} value="good">The trait does accurately describe the scenario.</crowd-radio-button>
+                 &emsp;<crowd-radio-button name={{v022}} value="bad">The trait does not accurately describe the scenario.</crowd-radio-button><br/>
            </crowd-radio-group>
            </div><br/>
 
-           <p>Trait 3. {{ sample2 }}</p><br/>
+           <p>Trait 3. {{ trait3 }}</p><br/>
            <div>
              <crowd-radio-group id="radios" required onchange="enableButton(3)">
-                 &emsp;<crowd-radio-button name={{trait4}} value="bad">The trait does not accurately describe the scenario.</crowd-radio-button><br/>
-                 &emsp;<crowd-radio-button name={{trait5}} value="good">The trait does accurately describe the scenario.</crowd-radio-button>
+                 &emsp;<crowd-radio-button name={{v031}} value="good">The trait does accurately describe the scenario.</crowd-radio-button>
+                 &emsp;<crowd-radio-button name={{v032}} value="bad">The trait does not accurately describe the scenario.</crowd-radio-button><br/>
            </crowd-radio-group>
            </div><br/>
 
-           <p>Trait 4. {{ sample3 }}</p><br/>
+           <p>Trait 4. {{ trait4 }}</p><br/>
            <div>
              <crowd-radio-group id="radios" required onchange="enableButton(4)">
-                 &emsp;<crowd-radio-button name={{trait6}} value="bad">The trait does not accurately describe the scenario.</crowd-radio-button><br/>
-                 &emsp;<crowd-radio-button name={{trait7}} value="good">The trait does accurately describe the scenario.</crowd-radio-button>
+                 &emsp;<crowd-radio-button name={{v041}} value="good">The trait does accurately describe the scenario.</crowd-radio-button>
+                 &emsp;<crowd-radio-button name={{v042}} value="bad">The trait does not accurately describe the scenario.</crowd-radio-button><br/>
            </crowd-radio-group>
            </div><br/>
 
-            <p>Trait 5. {{ sample4 }}</p><br/>
+            <p>Trait 5. {{ trait5 }}</p><br/>
             <div>
                 <crowd-radio-group id="radios" required onchange="enableButton(5)">
-                    &emsp;<crowd-radio-button name={{trait8}} value="bad">The trait does not accurately describe the scenario.</crowd-radio-button><br/>
-                    &emsp;<crowd-radio-button name={{trait9}} value="good">The trait does accurately describe the scenario.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name={{v051}} value="good">The trait does accurately describe the scenario.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name={{v052}} value="bad">The trait does not accurately describe the scenario.</crowd-radio-button><br/>
                 </crowd-radio-group>
             </div><br/>
 
-            <p>Trait 6. {{ sample5 }}</p><br/>
+            <p>Trait 6. {{ trait6 }}</p><br/>
             <div>
                 <crowd-radio-group id="radios" required onchange="enableButton(6)">
-                    &emsp;<crowd-radio-button name={{trait10}} value="bad">The trait does not accurately describe the scenario.</crowd-radio-button><br/>
-                    &emsp;<crowd-radio-button name={{trait11}} value="good">The trait does accurately describe the scenario.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name={{v061}} value="good">The trait does accurately describe the scenario.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name={{v062}} value="bad">The trait does not accurately describe the scenario.</crowd-radio-button><br/>
                 </crowd-radio-group>
             </div><br/>
 
-            <p>Trait 7. {{ sample6 }}</p><br/>
+            <p>Trait 7. {{ trait7 }}</p><br/>
             <div>
                 <crowd-radio-group id="radios" required onchange="enableButton(7)">
-                    &emsp;<crowd-radio-button name={{trait12}} value="bad">The trait does not accurately describe the scenario.</crowd-radio-button><br/>
-                    &emsp;<crowd-radio-button name={{trait13}} value="good">The trait does accurately describe the scenario.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name={{v071}} value="good">The trait does accurately describe the scenario.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name={{v072}} value="bad">The trait does not accurately describe the scenario.</crowd-radio-button><br/>
                 </crowd-radio-group>
             </div><br/>
 
-            <p>Trait 8. {{ sample7 }}</p><br/>
+            <p>Trait 8. {{ trait8 }}</p><br/>
             <div>
                 <crowd-radio-group id="radios" required onchange="enableButton(8)">
-                    &emsp;<crowd-radio-button name={{trait14}} value="bad">The trait does not accurately describe the scenario.</crowd-radio-button><br/>
-                    &emsp;<crowd-radio-button name={{trait15}} value="good">The trait does accurately describe the scenario.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name={{v081}} value="good">The trait does accurately describe the scenario.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name={{v082}} value="bad">The trait does not accurately describe the scenario.</crowd-radio-button><br/>
                 </crowd-radio-group>
             </div><br/>
 
-            <p>Trait 9. {{ sample8 }}</p><br/>
+            <p>Trait 9. {{ trait9 }}</p><br/>
             <div>
                 <crowd-radio-group id="radios" required onchange="enableButton(9)">
-                    &emsp;<crowd-radio-button name={{trait16}} value="bad">The trait does not accurately describe the scenario.</crowd-radio-button><br/>
-                    &emsp;<crowd-radio-button name={{trait17}} value="good">The trait does accurately describe the scenario.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name={{v091}} value="good">The trait does accurately describe the scenario.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name={{v092}} value="bad">The trait does not accurately describe the scenario.</crowd-radio-button><br/>
                 </crowd-radio-group>
             </div><br/>
 
-            <p>Trait 10. {{ sample9 }}</p><br/>
+            <p>Trait 10. {{ trait10 }}</p><br/>
             <div>
                 <crowd-radio-group id="radios" required onchange="enableButton(10)">
-                    &emsp;<crowd-radio-button name={{trait18}} value="bad">The trait does not accurately describe the scenario.</crowd-radio-button><br/>
-                    &emsp;<crowd-radio-button name={{trait19}} value="good">The trait does accurately describe the scenario.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name={{v101}} value="good">The trait does accurately describe the scenario.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name={{v102}} value="bad">The trait does not accurately describe the scenario.</crowd-radio-button><br/>
                 </crowd-radio-group>
             </div><br/>
 
@@ -212,20 +212,19 @@
     </body>
 
    <script>
-       var count = [0,0,0,0,0];
+       var count = [0,0,0,0,0,0,0,0,0,0,0];
        function enableButton(i) {
            count[i] = 1;
-           if (count.reduce((a, b) => a + b, 0) === count.length) {
+           var good = true;j
+           var j;
+           for (j=1; j < 11; j++) {
+               if (count[j] != 1) {
+                   good = false;
+               }
+           }
+           if (good) {
                document.getElementById("submit").disabled = false;
            }
-           // else {
-           //     if (document.getElementById("is_bad").checked) {
-           //         document.getElementById("submit").disabled = false;
-           //     }
-           //     else if (document.getElementById("is_good").checked) {
-           //         document.getElementById("submit").disabled = true;
-           //     }
-           // }
        }
    </script>
 
