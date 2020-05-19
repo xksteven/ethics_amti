@@ -7,6 +7,14 @@
   "Description": "Determine whether a person has a particular character trait given a short scenario describing that person's action.",
   "QualificationRequirements": [
     {
+      "QualificationTypeId": "3RIR11OKI9C1ZR6EN0T651X16XEO2W",
+      "Comparator": "GreaterThanOrEqualTo",
+      "IntegerValues": [
+        41
+      ],
+      "RequiredToPreview": false
+    },
+    {
         "QualificationTypeId": "00000000000000000071",
         "Comparator": "EqualTo",
         "LocaleValues": [{
@@ -21,7 +29,7 @@
     {
          "QualificationTypeId":"00000000000000000040",
          "Comparator":"GreaterThan",
-         "IntegerValues":[-1]    
+         "IntegerValues":[999]    
     }
    ]
 }
