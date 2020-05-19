@@ -4,7 +4,7 @@ import numpy as np
 
 
 parser = argparse.ArgumentParser(description='Create tasks to validate.')
-parser.add_argument('hits', type=int, default=10, help='how many validate ordinary morality hits to submit')
+parser.add_argument('hits', type=int, default=561, help='how many validate ordinary morality hits to submit')
 parser.add_argument('-s', '--skip', type=int, default=0, help='from where in the dataset to submit.')
 parser.add_argument('--num_samples', type=int, default=10, help='number of samples used per hit')
 args = parser.parse_args()

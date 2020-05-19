@@ -1,10 +1,10 @@
 {
   "AutoApprovalDelayInSeconds": 259200,
   "AssignmentDurationInSeconds": 1800,
-  "Reward": "0.15",
-  "Title": "Edit sentences to be in first person (I/Me/My).",
+  "Reward": "0.04",
+  "Title": "Edit sentences to be written from a first person perspective (I/Me/My).",
   "Keywords": "HTMLQuestion, writing, slight modification, creative, Dan, fun,",
-  "Description": "Edit sentence to be in first person (I/Me/My).",
+  "Description": "Edit sentence to be written form a first person perspective (I/Me/My).",
   "QualificationRequirements": [
      {
   	"QualificationTypeId": "00000000000000000071",
@@ -24,12 +24,12 @@
     {
          "QualificationTypeId":"000000000000000000L0",
          "Comparator":"GreaterThan",
-         "IntegerValues":[95]
+         "IntegerValues":[97]
     },
     {
          "QualificationTypeId":"00000000000000000040",
          "Comparator":"GreaterThan",
-         "IntegerValues":[0]
+         "IntegerValues":[495]
     }
    ]
 }
