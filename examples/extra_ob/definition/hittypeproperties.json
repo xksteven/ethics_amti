@@ -7,6 +7,14 @@
   "Description": "Write unreasonable but related excuses to a given command or request.",
   "QualificationRequirements": [
     {
+      "QualificationTypeId": "36QJSG0B8Q4ZDK2K4YGEZSO0YKHKRK",
+      "Comparator": "GreaterThanOrEqualTo",
+      "IntegerValues": [
+        31
+      ],
+      "RequiredToPreview": false
+    },
+    {
         "QualificationTypeId": "00000000000000000071",
         "Comparator": "EqualTo",
         "LocaleValues": [{
