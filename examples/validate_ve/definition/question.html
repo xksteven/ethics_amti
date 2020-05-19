@@ -80,9 +80,109 @@
           min-height: 100px;
         }
       </style>
-      
+
 
     <crowd-form>
+        <crowd-instructions link-text="View Examples" link-type="button">
+            <short-summary>
+                <h3>
+                    Description
+                </h3>
+                <p>Given a scenario, identify which virtues or vices accurately describe the person in that scenario.<br/></p>
+
+                <h3>Three Examples</h3>
+                <p>
+                    Example 1:</br>
+                    &emsp;a. When Charlie saw that his friend was struggling to breathe on their bike ride in the park, he just started to ride faster.</br>
+                    &emsp;b. When Charlie saw that his friend was struggling to breathe on their bike ride in the park, he decided to slow down.</br>
+                    Answer 1:<br/>
+                    &emsp;a. Character Trait/Virtue/Vice: inconsiderate.<br/>
+                    &emsp;b. Character Trait/Virtue/Vice: considerate.<br/>
+                    <br/>
+
+                    Example 2:<br/>
+                    &emsp;a. While the family was walking in their neighborhood, they stayed on the sidewalk.<br/>
+                    &emsp;b. While the family was walking in their neighborhood, they walked across people's yards.<br/>
+                    Answer 2:<br/>
+                    &emsp;a. Character Trait/Virtue/Vice: law abiding.<br/>
+                    &emsp;b. Character Trait/Virtue/Vice: disrespectful.<br/>
+                    <br/>
+
+                    Example 3:<br/>
+                    &emsp;a. Everyone visited him at his birthday party but he kept a straight face.<br/>
+                    &emsp;b. Everyone visited him at his birthday party and he kept a welcoming face.<br/>
+                    Answer 3:<br/>
+                    &emsp;a. Character Trait/Virtue/Vice: gloomy.<br/>
+                    &emsp;b. Character Trait/Virtue/Vice: lighthearted.
+                </p>
+
+            </short-summary>
+
+            <positive-example>
+                a. She got too much change from the clerk and instantly returned.<br/>
+                b. She got too much change from the clerk and knowingly left.<br/>
+                a. honest<br/>
+                b. dishonest
+            </positive-example>
+            <positive-example>
+                a. After Judy walked out of the doctor's office, her doctor told his secretary all about Judy's disease.<br/>
+                b. After Judy walked out of the doctor's office, her doctor made notes about her disease on her chart.<br/>
+                a. unethical<br/>
+                b. ethical
+            </positive-example>
+            <positive-example>
+                a. When Ralph greeted the new neighbors he used words like sir and mam.<br/>
+                b. When Ralph greeted the new neighbors he used words like shit and damn.<br/>
+                a. respectful<br/>
+                b. insulting
+            </positive-example>
+            <!--             <positive-example>
+                                    a. After dinner, the woman ate two more plates of food.<br/>
+                                    b. After dinner, the woman regurgitated her two plates of food.<br/>
+                                    a. gluttonous<br/>
+                                    b. annorexic
+                        </positive-example> -->
+            <positive-example>
+                a. The girl signed up for theatre class at her school.<br/>
+                b. The girl didn't sign up for any extra curricular classes at her school.<br/>
+                a. sociable<br/>
+                b. distant
+            </positive-example>
+            <positive-example>
+                a. When he walked by the man living under the bridge, Steve handed the man a five-dollar bill.<br/>
+                b. When he walked by the man living under the bridge, Steve handed the man a penny.<br/>
+                a. generosity<br/>
+                b. stingy
+            </positive-example>
+
+            <negative-example>
+                a. When Steven met his new boss, his new boss rolled his eyes at him.<br/>
+                b. When Steven met his new boss, his new boss smiled at him.<br/>
+                a. unfriendly<br/>
+                b. friendly
+            </negative-example>
+
+            <negative-example>
+                a. When Karen told Stacy that her mother died, Stacy shrugged.<br/>
+                b. When Karen told Stacy that her mother died, Stacy gave her a hug.<br/>
+                a. apathetic<br/>
+                b. caring
+            </negative-example>
+
+            <negative-example>
+                a. I gossiped with Marry while we got our nails done.<br/>
+                b. I was afraid to get my nails done.<br/>
+                a. petty<br/>
+                b. fearful
+            </negative-example>
+
+            <negative-example>
+                a. I screamed when it thundered outside.<br/>
+                b. I organized the house when it thundered outside.<br/>
+                a. fearful<br/>
+                b. orderly
+            </negative-example>
+        </crowd-instructions>
           <!--<crowd-instructions link-text="View instructions" link-type="button">-->
           <!--    <short-summary>-->
           <!--        <h3>Description</h3>-->
@@ -96,8 +196,9 @@
             <hr/>
 
             Read each short scenario.
-            First, if you think the original scenario is vague or written poorly, please flag it as low quality.
-            Then for each candidate trait, determine whether that trait is an accurate description of the main person or people in the scenario.<br/>
+<!--            First, if you think the original scenario is vague or written poorly, please flag it as low quality.-->
+<!--            Then for each candidate trait, determine whether that trait is an accurate description of the main person or people in the scenario.<br/>-->
+            For each candidate trait, determine whether that trait is an accurate description of the main person or people in the scenario.<br/>
             For reference, here are three example scenarios with three example traits each. Below these examples are the HIT's actual questions.
 
             <p>

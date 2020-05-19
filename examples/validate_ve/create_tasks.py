@@ -5,7 +5,7 @@ import pandas as pd
 import json
 
 parser = argparse.ArgumentParser(description='Create tasks to validate.')
-parser.add_argument('--batch_size', '-s', type=int, default=25)  # NOTE: actually results in twice this number because two sentences per trait
+parser.add_argument('--batch_size', '-s', type=int, default=100)  # NOTE: actually results in twice this number because two sentences per trait
 parser.add_argument('--batch', '-b', type=int, default=0)
 parser.add_argument('--ntraits', '-n', type=int, default=8)
 args = parser.parse_args()
@@ -37,6 +37,13 @@ for i in range(df.shape[0]):
         # get random traits
         d1["trait{}".format(j+3)] = trait_df.sample().values[0, 1]
         d2["trait{}".format(j+3)] = trait_df.sample().values[0, 1]
+
+    # also save v011, v012, v021, v022, etc. to identify the batch.
+    for j in range(10):
+        d1["v{:02d}1".format(j+1)] = "idx{}_{}_ans1_d1".format(begin + i, j)
+        d1["v{:02d}2".format(j+1)] = "idx{}_{}_ans2_d1".format(begin + i, j)
+        d2["v{:02d}1".format(j+1)] = "idx{}_{}_ans1_d2".format(begin + i, j)
+        d2["v{:02d}2".format(j+1)] = "idx{}_{}_ans2_d2".format(begin + i, j)
 
     list_of_dicts.append(d1)
     list_of_dicts.append(d2)
