@@ -33,9 +33,9 @@ for i in range(nbatches):
 
             # half the time swap the order
             if np.random.random() < 0.5:
-                new_d = {"left{}".format(k): s1, "right{}".format(k): s2, "idx{}".format(k): str(idx), "swapped{}".format(k): "false", "v0_{}".format(k): "idx{:04d}_j{}_ex1".format(idx, j), "v1_{}".format(k): "idx{:04d}_j{}_ex2".format(idx, j+1), "v2_{}".format(k): "idx{:04d}_j{}_amb".format(idx, j)}
+                new_d = {"left{}".format(k): s1, "right{}".format(k): s2, "idx{}".format(k): str(idx), "swapped{}".format(k): "false", "v0_{}".format(k): "idx{:04d}_j{}_ex1".format(idx, j), "v1_{}".format(k): "idx{:04d}_j{}_ex2".format(idx, j+1), "v2_{}".format(k): "idx{:04d}_j{}_j{}_amb".format(idx, j, j+1)}
             else:
-                new_d = {"left{}".format(k): s2, "right{}".format(k): s1, "idx{}".format(k): str(idx), "swapped{}".format(k): "true", "v0_{}".format(k): "idx{:04d}_j{}_ex2".format(idx, j+1), "v1_{}".format(k): "idx{:04d}_j{}_ex1".format(idx, j), "v2_{}".format(k): "idx{:04d}_j{}_amb".format(idx, j)}
+                new_d = {"left{}".format(k): s2, "right{}".format(k): s1, "idx{}".format(k): str(idx), "swapped{}".format(k): "true", "v0_{}".format(k): "idx{:04d}_j{}_ex2".format(idx, j+1), "v1_{}".format(k): "idx{:04d}_j{}_ex1".format(idx, j), "v2_{}".format(k): "idx{:04d}_j{}_j{}_amb".format(idx, j, j+1)}
 
             d.update(new_d)
         list_of_dicts.append(d)
