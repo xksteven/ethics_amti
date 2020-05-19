@@ -1,7 +1,7 @@
 {
   "AutoApprovalDelayInSeconds": 259200,
   "AssignmentDurationInSeconds": 1800,
-  "Reward": "0.01",
+  "Reward": "0.10",
   "Title": "Write unreasonable excuses.",
   "Keywords": "HTMLQuestion, classify, text, read, Dan, fun,",
   "Description": "Write unreasonable but related excuses to a given command or request.",
@@ -21,7 +21,7 @@
     {
          "QualificationTypeId":"00000000000000000040",
          "Comparator":"GreaterThan",
-         "IntegerValues":[-1]
+         "IntegerValues":[999]
     }
    ]
 }
