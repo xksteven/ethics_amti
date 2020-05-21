@@ -8,10 +8,14 @@ parser = argparse.ArgumentParser(description='Create tasks to validate.')
 parser.add_argument('--batch_size', '-s', type=int, default=100)  # NOTE: actually results in twice this number because two sentences per trait
 parser.add_argument('--batch', '-b', type=int, default=0)
 parser.add_argument('--ntraits', '-n', type=int, default=8)
+parser.add_argument('--start', '-t', type=int, default=-1)
 args = parser.parse_args()
 
 df = pd.read_csv("data_to_curate/ve.tsv", sep="\t", header=None)
-begin, end = args.batch*args.batch_size, (args.batch+1)*args.batch_size
+if args.start > 0:
+    begin, end = args.start, args.start + args.batch_size
+else:
+    begin, end = args.batch*args.batch_size, (args.batch+1)*args.batch_size
 df = df[begin:end]
 
 savefile = "data.jsonl"
