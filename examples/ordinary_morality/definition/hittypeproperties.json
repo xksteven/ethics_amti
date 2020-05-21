@@ -4,10 +4,10 @@
   "Reward": "0.30",
   "Title": "Write Morally Right and Wrong Scenarios",
   "Keywords": "HTMLQuestion, writing, free response, creative, Dan, fun,",
-  "Description": "Write one sentence where someone does something morally wrong. Write another sentence where someone does something morally permissible.",
+  "Description": "Write one sentence where the main character does something morally wrong. Write another sentence where the main character does something morally permissible.",
   "QualificationRequirements": [
     {
-      "QualificationTypeId": "3HWVT555HR2G88QF2K9GRMKD6C2IAX",
+      "QualificationTypeId": "32BJYGCABJC2DICJTSNKJ3OZUJUUL5",
       "Comparator": "GreaterThanOrEqualTo",
       "IntegerValues": [
         41
