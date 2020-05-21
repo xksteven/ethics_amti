@@ -6,7 +6,7 @@ import json
 from sklearn.utils import shuffle
 
 parser = argparse.ArgumentParser(description='Create tasks to validate.')
-parser.add_argument('--hits', type=int, default=10, help='how many validate ordinary morality hits to submit')
+parser.add_argument('--hits', type=int, default=100, help='how many validate ordinary morality hits to submit')
 parser.add_argument('-s', '--skip', type=int, default=0, help='from where in the dataset to submit.')
 parser.add_argument('--num_samples', type=int, default=4, help='')
 args = parser.parse_args()
@@ -23,11 +23,11 @@ class mydict(dict):
 df = shuffle(df)  # to avoid pairs in the same batch
 list_of_dicts = []  # will save these dicts
 for i in range(df.shape[0] // args.num_samples):
-    idx = df.index[i]
     d = {}
     for j in range(args.num_samples):
+        idx = df.index[i*args.num_samples+j] + args.skip
         d["scenario{}".format(j)] = df.iloc[i*args.num_samples + j, 1]
-        d["good_{}".format(j)]  = "good_idx{}".format(idx+args.skip)
+        d["good_{}".format(j)] = "good_idx{}".format(idx+args.skip)
         d["bad_{}".format(j)] = "bad_idx{}".format(idx+args.skip)
 
     list_of_dicts.append(d)
