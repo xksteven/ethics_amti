@@ -1,5 +1,7 @@
 import argparse
 import json
+import numpy as np
+import pickle
 
 parser = argparse.ArgumentParser(description="Parse the tabular data from Mturk and save to csv.")
 parser.add_argument("json", type=str, help="path to json file")
@@ -10,40 +12,57 @@ with open(args.json, "r") as f:
     tmp = f.readlines()
     data = [json.loads(line.strip()) for line in tmp]
 
-key_to_index = {"wrong": 0, "not wrong": 1}
-output = {}
-for i, entry in enumerate(data):
-    tmp = json.loads(entry["taskAnswers"])
-    #print(tmp, type(tmp))
-    for index, assignment in enumerate(tmp[0]):
-        #print(assignment, tmp[0])
-        wrong_id, ass_id = (assignment[1], assignment[2:])
-        wrong_or_not = list(tmp[0][assignment].keys())[0]
-        wrong_or_not_index = key_to_index[wrong_or_not]
-        wrong_or_not_sel = int(tmp[0][assignment][wrong_or_not])
-        tmp_ass = output.get(ass_id)
-        #if i > 2:
-        #    exit()
-        #print("\n\n", tmp[0], assignment)
-        #print(wrong_id, wrong_or_not, wrong_or_not_index, wrong_or_not_sel)
-        if not tmp_ass:
-            output[ass_id] = {wrong_id: [0,0]}
-        if not output[ass_id].get(wrong_id):
-            output[ass_id].update({wrong_id: [0,0]})
-        output[ass_id][wrong_id][wrong_or_not_index] += wrong_or_not_sel
+nidxs = 100
+results = {}
 
-#TODO worker success rate
+KEY = {"ex1_better": -1, "unclear": 0, "ex2_better": 1}
 
-save_name = args.save_path + args.json.split("/")[-2] + ".tsv"
+for d in data:
+    answers = eval(d["taskAnswers"].replace("false", "False").replace("true", "True"))[0]
+    print(answers)
+    print("")
+    for key in answers.keys():
+        # print(key)
+        idx = int(key.split("_")[0][3:])
+        j = int(key.split("_")[1][1:])
+        if "ex2" in key:
+            j -= 1
 
-print(f"save_name = {save_name}")
-with open(save_name, "w") as f:
-    for index, entry in enumerate(output):
-        for wr_or_not in output[entry]:
-            tmp = ""
-            tmp += entry + "\t"
-            tmp += (wr_or_not + "\t" + 
-                    str(output[entry][wr_or_not][0]) + "\t" +  str(output[entry][wr_or_not][1]))
-            tmp = tmp + "\n"
-            f.write(tmp)
-            #print(tmp,  "\n\n", output[entry])
+        # get answer
+        subdict = answers[key]
+        if "unclear" in subdict and True in subdict.values():  # only one item
+            ans = KEY["unclear"]
+        elif "ex1" in key and True in subdict.values():
+            ans = KEY["ex1_better"]
+        elif "ex2" in key and True in subdict.values():
+            ans = KEY["ex2_better"]
+        else:
+            continue
+
+        if (idx, j) in results.keys():
+            results[(idx, j)].append(ans)
+        else:
+            results[(idx, j)] = [ans]
+
+        # print(idx, j, ans)
+
+good_idxs = []
+for idx in range(nidxs):
+    good = True
+    r = []
+    for j in range(4):
+        key = (idx, j)
+        assert key in results
+        r += results[key]
+        if np.sum(np.array(results[key]) > -1) > 0:
+        # if np.sum(results[key]) > -2:
+        # if np.sum(results[key] == -1) < 2:
+            good = False
+    if idx in [0, 1, 2, 3, 4]:
+        print(r)
+
+    if good:
+        good_idxs.append(idx)
+
+# print(results)
+print(good_idxs)

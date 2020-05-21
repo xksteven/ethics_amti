@@ -16,12 +16,12 @@
     {
          "QualificationTypeId":"000000000000000000L0",
          "Comparator":"GreaterThan",
-         "IntegerValues":[95]
+         "IntegerValues":[97]
     },
     {
          "QualificationTypeId":"00000000000000000040",
          "Comparator":"GreaterThan",
-         "IntegerValues":[-1]
+         "IntegerValues":[999]
     }
    ]
 }
