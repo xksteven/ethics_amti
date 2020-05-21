@@ -9,7 +9,7 @@ args = parser.parse_args()
 my_str = []
 # 9 is hard coded but it stands for the MAX_ASSIGNMENTS variable make sure it's less than 10
 # otherwise we take an additional 20% loss in fees
-for i in range(1,(1+args.hits)//9): 
+for i in range(1,(1+args.hits)//1):
     my_str.append("{\"a\": \""+str(i)+"\"}\n")
 with open("data.jsonl", "w") as f:
     for i in range(len(my_str)):
