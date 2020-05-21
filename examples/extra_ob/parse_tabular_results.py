@@ -1,42 +1,36 @@
 import argparse
 import json
+import pandas as pd
+import numpy as np
 
 parser = argparse.ArgumentParser(description="Parse the tabular data from Mturk and save to csv.")
 parser.add_argument("json", type=str, help="path to json file")
 parser.add_argument("--save_path", type=str, default="./")
 args = parser.parse_args()
 
+results = {}
 with open(args.json, "r") as f:
-    tmp = f.readlines()
-    #print(tmp, type(tmp))
-    data = [json.loads(line.strip()) for line in tmp]
+    for line in f:
+        if len(line) < 3:
+            break
+        elif line[-1] != "\n":  # for final line
+            line += "\n"
 
-# {"HITId": "3Z33IC0JC0ME38E2I8DGY5ETODMV9K", "AssignmentDurationInSeconds": 1200,
-#"AutoApprovalDelayInSeconds": 259200, "Expiration": "2020-04-22T17:51:45-05:00",
-#"CreationTime": "2020-04-22T11:21:28-05:00", "AssignmentId": "3Z4AIRP3C6DR4CEW4C47W4PLOMXX1V",
-#"WorkerId": "A6ORRFI3XOACA", "AssignmentStatus": "Submitted",
-#"AutoApprovalTime": "2020-04-25T17:18:00-05:00", "AcceptTime": "2020-04-22T17:08:26-05:00",
-# "SubmitTime": "2020-04-22T17:18:00-05:00", "ApprovalTime": 1234,
-#"obligation": "Aren't you supposed to pray before you eat.",
-#"response1": "But I pray once a day.", "response2": "But I am a nonbeliever.",
-#"response3": "But I prayed last meal.", "response4": "But I snack without praying.",
-#"response5": "But I am too hungry to wait.", "response6": "But I do not want to."}
-
-output_str = []
-for entry in data:
-    tmp = []
-    tmp.append(entry["response1"])
-    tmp.append(entry["response2"])
-    tmp.append(entry["WorkerId"])
-    tmp.append(entry["AssignmentId"])
-    output_str.append(tmp)
+        dict = eval(line[:-1])
+        excuses = []
+        for key in dict:
+            if "idx" in key:
+                excuse = dict[key]
+                idx = int(key.split("_")[0][3:])
+                d = int(key[-1])
+                print(excuse)
+                excuses.append(excuse)
+        results[idx] = excuses
 
 save_name = args.save_path + args.json.split("/")[-2] + ".tsv"
+print(results)
 
-print(f"save_name = {save_name}")
-with open(save_name, "w") as f:
-    for entry in output_str:
-        tmp = "\t".join(entry)
-        tmp = tmp + "\n"
-        f.write(tmp)
+df = pd.DataFrame({"results": results})
+df.to_csv(save_name, sep="\t", header=None)
+
 

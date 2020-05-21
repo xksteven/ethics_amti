@@ -5,12 +5,13 @@ import pandas as pd
 import json
 
 parser = argparse.ArgumentParser(description='Create tasks to validate.')
-parser.add_argument('--batch_size', '-s', type=int, default=200, help='how many validate ordinary morality hits to submit')
-parser.add_argument('--batch', '-b', type=int, default=0)
+parser.add_argument('--batch_size', '-b', type=int, default=400, help='how many extra ob hits to submit')
+parser.add_argument('--skip', '-s', type=int, default=0)
 args = parser.parse_args()
 
 df = pd.read_csv("data_to_curate/ob.tsv", sep="\t", header=None)
-begin, end = args.batch*args.batch_size, (args.batch+1)*args.batch_size
+begin = args.skip
+end = args.skip + args.batch_size
 df = df[begin:end]
 
 savefile = "data.jsonl"
