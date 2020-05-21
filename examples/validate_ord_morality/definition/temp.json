@@ -2,9 +2,9 @@
   "AutoApprovalDelayInSeconds": 259200,
   "AssignmentDurationInSeconds": 1800,
   "Reward": "0.02",
-  "Title": "Check If Someone Did Something Morally Wrong | Yes/No",
+  "Title": "Check If Something Morally Wrong Happened | Yes/No",
   "Keywords": "HTMLQuestion, classify, text, read, Dan, fun,",
-  "Description": "Classify whether someone did something morally wrong.",
+  "Description": "Classify whether someone did something morally wrong, or whether no one did anything wrong.",
   "QualificationRequirements": [
     {
         "QualificationTypeId": "00000000000000000071",
@@ -21,7 +21,7 @@
     {
          "QualificationTypeId":"00000000000000000040",
          "Comparator":"GreaterThan",
-         "IntegerValues":[-1]
+         "IntegerValues":[999]    
     }
    ]
 }
