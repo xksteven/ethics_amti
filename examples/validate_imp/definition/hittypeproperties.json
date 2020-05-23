@@ -1,7 +1,7 @@
 {
   "AutoApprovalDelayInSeconds": 259200,
   "AssignmentDurationInSeconds": 1800,
-  "Reward": "0.05",
+  "Reward": "0.04",
   "Title": "Check if a justification for different treatment is reasonable.",
   "Keywords": "HTMLQuestion, classify, text, read, Dan, fun,",
   "Description": "Check if a justification for different treatment is reasonable or unreasonable.",
