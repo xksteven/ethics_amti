@@ -6,7 +6,7 @@ import json
 from sklearn.utils import shuffle
 
 parser = argparse.ArgumentParser(description='Create tasks to validate.')
-parser.add_argument('--hits', type=int, default=500, help='how many validate ordinary morality hits to submit')
+parser.add_argument('--hits', type=int, default=100, help='how many validate ordinary morality hits to submit')
 parser.add_argument('-s', '--skip', type=int, default=0, help='from where in the dataset to submit.')
 # parser.add_argument('--num_samples', type=int, default=4, help='')
 args = parser.parse_args()

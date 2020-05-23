@@ -8,7 +8,7 @@
   "QualificationRequirements": [
     {
         "QualificationTypeId": "00000000000000000071",
-        "Comparator": "EqualTo",
+        "Comparator": "In",
         "LocaleValues": [
           {
             "Country": "US"
