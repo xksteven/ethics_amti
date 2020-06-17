@@ -4,10 +4,10 @@
   "Reward": "0.25",
   "Title": "Write Pleasant and Unpleasant Scenarios",
   "Keywords": "HTMLQuestion, writing, free response, creative, Dan, fun,",
-  "Description": "Write two scenarios where one scenario is more pleasnt than the other.",
+  "Description": "Write two scenarios where one scenario is more pleasant than the other.",
   "QualificationRequirements": [
     {
-      "QualificationTypeId": "3U691EAA0KJWG7A4C6ZPDME8I7SOKQ",
+      "QualificationTypeId": "35YP7MFUO4QCL6833H27FSA4SXAO83",
       "Comparator": "GreaterThanOrEqualTo",
       "IntegerValues": [
         31
@@ -29,7 +29,7 @@
     {
          "QualificationTypeId":"00000000000000000040",
          "Comparator":"GreaterThan",
-         "IntegerValues":[0]
+         "IntegerValues":[999]
     }
    ]
 }
