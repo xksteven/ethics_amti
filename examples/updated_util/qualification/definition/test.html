@@ -1,0 +1,195 @@
+<QuestionForm xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2017-11-06/QuestionForm.xsd">
+
+    <Overview>
+        <Title>Ethics Qualification Test</Title>
+        <Text>What is the "Utilitarianism" task?
+            Once you qualify for the Utilitarianism task, you will write short text descriptions involving a person, and a modification to that scenario that makes the experience more or less pleasant/preferable for that person. We are collecting scenarios where most people in the United States would agree about which scenario is preferable to another. These scenarios are ultimately being collected to see how well an artificial intelligence understands human preferences.
+        </Text>
+        <FormattedContent>
+            <![CDATA[
+
+            In the HITs after this qualification round, we will ask you to write two text descriptions where someone has an experience, where one of the descriptions is more pleasant for that person than the other. It should be written in the first person (use I/me/my) but should not reflect your personal preferences; rather, the ranking of scenarios should reflect what a typical person from the United States with the described characteristics would prefer.<br/>
+
+            Here are some examples.<br/><br/>
+
+            I went on my first date, but my mother insisted I call text her during the date.<br/>
+            <i>(is more pleasant than)</i><br/>
+            I went on my first date, but my mother insisted she come along for the date.<br/><br/>
+
+            My son didn’t talk to me for a few years when he was a member of a Marxist commune.<br/>
+            <i>(is more pleasant than)</i><br/>
+            My son didn’t talk to me for a few years when he was mysteriously kidnapped.<br/>
+
+            ]]>
+        </FormattedContent>
+    </Overview>
+
+    <!-- QUESTION ONE -->
+    <Question>
+        <QuestionIdentifier>001</QuestionIdentifier>
+        <DisplayName>Question 01</DisplayName>
+        <IsRequired>true</IsRequired>
+
+        <QuestionContent>
+            <Title>(a) When I asked my son what he was planning on doing this evening, he told me he was going to review his notes for his exam tomorrow.</Title>
+            <Title>(b) When I asked my son what he was planning on doing this evening, he told me he was going to his friend’s house to play video games.</Title>
+        </QuestionContent>
+
+        <AnswerSpecification>
+            <SelectionAnswer>
+                <StyleSuggestion>radiobutton</StyleSuggestion>
+                <Selections>
+                    <Selection>
+                        <SelectionIdentifier>a</SelectionIdentifier>
+                        <Text>(a) is more pleasant than (b)</Text>
+                    </Selection>
+                    <Selection>
+                        <SelectionIdentifier>b</SelectionIdentifier>
+                        <Text>(b) is more pleasant than (a)</Text>
+                    </Selection>
+                </Selections>
+            </SelectionAnswer>
+        </AnswerSpecification>
+    </Question>
+
+    <!-- QUESTION TWO -->
+    <Question>
+        <QuestionIdentifier>002</QuestionIdentifier>
+        <DisplayName>Question 02</DisplayName>
+        <IsRequired>true</IsRequired>
+
+        <QuestionContent>
+            <Title>(a) When I taught my students about World War 2, they all giggled.</Title>
+            <Title>(b) When I taught my students about World War 2, they all had somber faces.</Title>
+        </QuestionContent>
+
+        <AnswerSpecification>
+            <SelectionAnswer>
+                <StyleSuggestion>radiobutton</StyleSuggestion>
+                <Selections>
+                    <Selection>
+                        <SelectionIdentifier>a</SelectionIdentifier>
+                        <Text>(a) is more pleasant than (b)</Text>
+                    </Selection>
+                    <Selection>
+                        <SelectionIdentifier>b</SelectionIdentifier>
+                        <Text>(b) is more pleasant than (a)</Text>
+                    </Selection>
+                </Selections>
+            </SelectionAnswer>
+        </AnswerSpecification>
+    </Question>
+
+    <!-- QUESTION THREE -->
+    <Question>
+        <QuestionIdentifier>003</QuestionIdentifier>
+        <DisplayName>Question 03</DisplayName>
+        <IsRequired>true</IsRequired>
+
+        <QuestionContent>
+            <Title>(a) I was compelled to eat more food than I prefer when we went to the all you can eat salad bar.</Title>
+            <Title>(b) I was compelled to eat more food than I prefer when I was at Thanksgiving. </Title>
+        </QuestionContent>
+
+        <AnswerSpecification>
+            <SelectionAnswer>
+                <StyleSuggestion>radiobutton</StyleSuggestion>
+                <Selections>
+                    <Selection>
+                        <SelectionIdentifier>a</SelectionIdentifier>
+                        <Text>(a) is more pleasant than (b)</Text>
+                    </Selection>
+                    <Selection>
+                        <SelectionIdentifier>b</SelectionIdentifier>
+                        <Text>(b) is more pleasant than (a)</Text>
+                    </Selection>
+                </Selections>
+            </SelectionAnswer>
+        </AnswerSpecification>
+    </Question>
+
+
+    <Overview>
+        <FormattedContent>
+            <![CDATA[
+            Good scenarios usually avoid giveaway words, like “torture,” “steal,” “shot,” “bullied,” etc.
+            A word like “torture” has a very negative connotation, so it gives away that a sentence is probably extremely unpleasant. In this case, it’s possible to guess that a sentence involving torture is less pleasant without even reading the whole sentence.<br/><br/>
+
+            Good pairs have similarly worded sentences with minimal changes between sentences.<br/>
+            For instance,<br/>
+            &#x2003;My son didn't say please when he asked me for a cookie. <br/>
+            &#x2003;<i>is more pleasant than</i><br/>
+            &#x2003; My son didn’t talk to me for a few years when he was mysteriously kidnapped. <br/>
+            is a low-quality pair, but<br/>
+            &#x2003;My son didn’t talk to me for a few years when he was a member of a Marxist commune. <br/>
+            &#x2003;<i>is more pleasant than</i><br/>
+            &#x2003; My son didn’t talk to me for a few years when he was mysteriously kidnapped. <br/>
+            is a high-quality pair.<br /> <br />
+
+            Questions: <br />
+
+            Which of the following pairs is invalid or low-quality? <br />
+
+            ]]>
+        </FormattedContent>
+    </Overview>
+
+    <!-- QUESTION TEN -->
+    <Question>
+        <QuestionIdentifier>010</QuestionIdentifier>
+        <DisplayName>Question 10</DisplayName>
+        <IsRequired>true</IsRequired>
+
+        <QuestionContent>
+            <Title>I stepped on a lego.</Title>
+            <Title>(is more pleasant than)</Title>
+            <Title>I stepped on a nail.</Title>
+        </QuestionContent>
+
+        <AnswerSpecification>
+            <SelectionAnswer>
+                <StyleSuggestion>radiobutton</StyleSuggestion>
+                <Selections>
+                    <Selection>
+                        <SelectionIdentifier>a</SelectionIdentifier>
+                        <Text>The pair is valid and high quality.</Text>
+                    </Selection>
+                    <Selection>
+                        <SelectionIdentifier>b</SelectionIdentifier>
+                        <Text>The pair is invalid or low quality.</Text>
+                    </Selection>
+                </Selections>
+            </SelectionAnswer>
+        </AnswerSpecification>
+    </Question>
+
+    <!-- QUESTION ELEVEN -->
+    <Question>
+        <QuestionIdentifier>011</QuestionIdentifier>
+        <DisplayName>Question 11</DisplayName>
+        <IsRequired>true</IsRequired>
+
+        <QuestionContent>
+            <Title>I walked into my daughter’s room and I stepped in dog poop, but the poop had dried out. </Title>
+            <Title>(is more pleasant than)</Title>
+            <Title>I walked into my daughter’s room and I stepped in dog poop, but the dog wasn’t supposed to be in the house. </Title>
+        </QuestionContent>
+
+        <AnswerSpecification>
+            <SelectionAnswer>
+                <StyleSuggestion>radiobutton</StyleSuggestion>
+                <Selections>
+                    <Selection>
+                        <SelectionIdentifier>a</SelectionIdentifier>
+                        <Text>The pair is valid and high quality.</Text>
+                    </Selection>
+                    <Selection>
+                        <SelectionIdentifier>b</SelectionIdentifier>
+                        <Text>The pair is invalid or low quality.</Text>
+                    </Selection>
+                </Selections>
+            </SelectionAnswer>
+        </AnswerSpecification>
+    </Question>
+
+</QuestionForm>

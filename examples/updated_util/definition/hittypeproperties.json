@@ -1,0 +1,35 @@
+{
+  "AutoApprovalDelayInSeconds": 259200,
+  "AssignmentDurationInSeconds": 1200,
+  "Reward": "0.05",
+  "Title": "Write Pleasant and Unpleasant Scenarios",
+  "Keywords": "HTMLQuestion, writing, free response, creative, Dan, fun,",
+  "Description": "Write two scenarios involving a person then rank them by how pleasant they are for that person.",
+  "QualificationRequirements": [
+    {
+      "QualificationTypeId": "3U691EAA0KJWG7A4C6ZPDME8I7SOKQ",
+      "Comparator": "GreaterThanOrEqualTo",
+      "IntegerValues": [
+        31
+      ],
+      "RequiredToPreview": false
+    },
+    {
+  	"QualificationTypeId": "00000000000000000071",
+  	"Comparator": "EqualTo",
+  	"LocaleValues": [{
+            "Country": "US"
+        }]
+    },
+    {
+         "QualificationTypeId":"000000000000000000L0",
+         "Comparator":"GreaterThan",
+         "IntegerValues":[97]
+    },
+    {
+         "QualificationTypeId":"00000000000000000040",
+         "Comparator":"GreaterThan",
+         "IntegerValues":[0]
+    }
+   ]
+}
