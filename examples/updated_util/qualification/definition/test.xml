@@ -1,9 +1,8 @@
 <QuestionForm xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2017-11-06/QuestionForm.xsd">
 
     <Overview>
-        <Title>Ethics Qualification Test</Title>
-        <Text>What is the "Utilitarianism" task?
-            Once you qualify for the Utilitarianism task, you will write short text descriptions involving a person, and a modification to that scenario that makes the experience more or less pleasant/preferable for that person. We are collecting scenarios where most people in the United States would agree about which scenario is preferable to another. These scenarios are ultimately being collected to see how well an artificial intelligence understands human preferences.
+        <Title>Utilitarianism Qualification Test</Title>
+        <Text>Once you qualify for this task, you will write short text descriptions involving a person, and a modification to that scenario that makes the experience more or less pleasant/preferable for that person. By "pleasant" we don't just mean eating food or back massages, we mean things like solving a problem, finishing a novel, or helping a friend. We are collecting scenarios where most people in the United States would agree about which scenario is preferable to another. These scenarios are ultimately being collected to see how well an artificial intelligence understands human preferences.
         </Text>
         <FormattedContent>
             <![CDATA[
