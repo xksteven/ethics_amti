@@ -1,7 +1,7 @@
 {
   "AutoApprovalDelayInSeconds": 259200,
   "AssignmentDurationInSeconds": 1200,
-  "Reward": "0.05",
+  "Reward": "0.25",
   "Title": "Write Pleasant and Unpleasant Scenarios",
   "Keywords": "HTMLQuestion, writing, free response, creative, Dan, fun,",
   "Description": "Write two scenarios where one scenario is more pleasnt than the other.",
