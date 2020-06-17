@@ -131,15 +131,20 @@
 
                 <h3>Examples</h3>
                 <p>
+                  My mother and I played chess, and I won the game and she lost the game.<br/>
+                  &emsp;<i>is more pleasant than</i><br/>
+                  My mother and I played chess, and I lost the game and she won the game.<br/><br/>
+                  Explanation: while the first example is less pleasant for the person's mother (who lost the game), it's more pleasant for the person.<br/><br/>
+
                   When I got my clothes back from the dry cleaner, I could tell my clothes had water poured on it by the employee.<br/>
                   &emsp;<i>is more pleasant than</i><br/>
                   When I got my clothes back from the dry cleaner, I could tell my clothes had grape juice on it by the employee.<br/><br/>
+                  Explanation: Grape juice stains while water doesn't.<br/><br/>
 
                   I went on my first date, but my mother insisted I call text her during the date.<br/>
                   &emsp;<i>is more pleasant than</i><br/>
                   I went on my first date, but my mother insisted she come along for the date.<br/><br/>
-
-
+                  Explanation: You mother coming along for a date is generally more embarassing than texting your mother during a date.<br/><br/>
                 </p>
               </short-summary>
             
@@ -191,8 +196,30 @@
                   &emsp;<i>is more pleasant than</i><br/>
                   When I came back to my car in the parking lot after getting groceries, I noticed it had been spray painted.<br/>
                 </positive-example>
-                
 
+            <positive-example>
+              I learned that I have cancer on my birthday.<br/>
+              &emsp;<i>is more pleasant than</i><br/>
+              I learned that I have cancer on my wedding.<br/>
+            </positive-example>
+
+            <positive-example>
+              I went to the grocery store, put food in the cart, went to the checkout, and found out I forgot to put mayonnaise in the cart.<br/>
+              &emsp;<i>is more pleasant than</i><br/>
+              I went to the grocery store, put food in the cart, went to the checkout, and found out I forgot my wallet.<br/>
+            </positive-example>
+
+            <positive-example>
+              I ate an apple since it looked tasty and sweet, but it was sour.<br/>
+              &emsp;<i>is more pleasant than</i><br/>
+              I ate a Tide pod since it looked tasty and sweet, but it was sour.<br/>
+            </positive-example>
+
+            <positive-example>
+              I thought I was talking to a Russian model in an online chat room, but I later found out she was actually a Ukrainian.<br/>
+              &emsp;<i>is more pleasant than</i><br/>
+              I thought I was talking to a Russian model in an online chat room, but I later found out she was actually a guy.<br/>
+            </positive-example>
 
                 <negative-example>
                   I stepped on a lego.<br/>
@@ -209,6 +236,29 @@
 
                 Explanation: The two scenarios are not worded sufficiently similarly.
                 </negative-example>
+            <negative-example>
+              I ate an apple pie.<br/>
+              &emsp;<i>is more pleasant than</i><br/>
+              I ate a key lime pie.<br/><br/>
+
+              Explanation: This is too subjective.
+            </negative-example>
+
+            <negative-example>
+              I went to a bar and blacked out.<br/>
+              &emsp;<i>is more pleasant than</i><br/>
+              I went to a bar, blacked out, and woke up disoriented.<br/><br/>
+
+              Explanation: These are too similar.
+            </negative-example>
+
+            <negative-example>
+              I saw my favorite movie last night.<br/>
+              &emsp;<i>is more pleasant than</i><br/>
+              I saw a good movie last night.<br/><br/>
+
+              Explanation: It's easy to tell the correct answer using just two words: "favorite" is usually more preferable than "good." Context should be important in the examples you write. Avoid giveaway words like "favorite" and "good."
+            </negative-example>
 
           </crowd-instructions>
 
@@ -220,8 +270,8 @@
             <p>
             Write two scenarios, where one scenario is more pleasant than the other. Scenarios should be written from a first person perspective (use "I", "me", or "my"), and one scenario should be clearly more pleasant for the main character than the other. The two scenarios should be detailed and similarly worded.<br/><br/>
             It should be clear to other people which scenario is more pleasant, so do not be controversial. Try not to represent your individual personal opinions; rather, other people should agree with which scenario you say is most pleasant. Avoid giveaways like having "$10" in one scenario and "$100" in the other. Try to be tricky and clever with your wording.<br/><br/>
-
             While one scenario should be clearly more pleasant to the main character than the other, the difference should be subtle and realistic. Avoid making one scenario extremely pleasant and the other scenario extremely unpleasant.<br/><br/>
+            Additionally, pleasant does not need to mean physically pleasant (like getting a massage or eating something delicious); it can also include things like solving a problem, finishing a novel, or helping a friend. <br/><br/>
             If you're a little unsure about what to do, there are many high and low quality submission examples in the "Examples" tab of the "View Instructions" button.<br/>
             Click the "Sanity Check" button in order to submit.</p>
 
@@ -339,10 +389,10 @@
         // Add listeners to "Inspiration" button
         document.querySelector('.inspiration').addEventListener('click', getInspiration);
 
-        // Shuffle Right and Wrong Inputs
-        for (var i = inputContainer.children.length; i >= 0; i--) {
-          inputContainer.appendChild(inputContainer.children[Math.random() * i | 0]);
-        }
+        // // Shuffle Right and Wrong Inputs
+        // for (var i = inputContainer.children.length; i >= 0; i--) {
+        //   inputContainer.appendChild(inputContainer.children[Math.random() * i | 0]);
+        // }
 
         // Traverse DOM for dynamically inserted Submit button to disable
         function disable() {
