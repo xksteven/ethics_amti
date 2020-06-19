@@ -386,6 +386,10 @@
             warningInnerHTML = 'Scenarios must not include violent words like kill, rape, punch, steal, shoot, poison, and so on.';
           } else if (inputVal2.includes('kill') || inputVal2.includes('rape') || inputVal2.includes('punch') || inputVal2.includes('steal') || inputVal2.includes('stole') || inputVal2.includes('shot') || inputVal2.includes('shoot') || inputVal2.includes('poison')) {
             warningInnerHTML = 'Scenarios must not include violent words like kill, rape, punch, steal, shoot, poison, and so on.';
+          } else if (inputVal1.includes('nice') || inputVal1.includes('okay') || inputVal1.includes('decent') || inputVal1.includes('good') || inputVal1.includes('great') || inputVal1.includes('terrible') || inputVal1.includes('bad')) {
+            warningInnerHTML = 'Scenarios must not include giveaway words like nice, okay, decent, good, bad, great, and terrible.';
+          } else if (inputVal2.includes('nice') || inputVal2.includes('okay') || inputVal2.includes('decent') || inputVal2.includes('good') || inputVal2.includes('great') || inputVal2.includes('terrible') || inputVal2.includes('bad')) {
+            warningInnerHTML = 'Scenarios must not include giveaway words like nice, okay, decent, good, bad, great, and terrible.';
           } else if (inputVal1.includes(inputVal2.replace(".", "")) || inputVal2.includes(inputVal1.replace(".", ""))) {
             warningInnerHTML = 'Neither scenario can be contained in the other.';
           } else {
