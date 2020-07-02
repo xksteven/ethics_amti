@@ -10,13 +10,15 @@ parser.add_argument('--num_samples', type=int, default=10, help='number of sampl
 args = parser.parse_args()
 
 #with open("data_to_curate/mturk_data_bad.csv", "r") as f:
-with open("data_to_curate/all_remaining_to_clean.tsv", "r") as f:
+with open("data_to_curate/om_af_arxiv_test_short.tsv", "r") as f:  # start with test.
     mturk_data = f.readlines()
 
 tmp = []
 for i in range(len(mturk_data)):
-    tmp.append(mturk_data[i].strip().replace("\"","").split("\t"))
+    tmp.append(mturk_data[i].strip().replace("\"","").split("\t")[4])
 mturk_data = np.array(tmp)
+print(mturk_data)
+print(len(mturk_data))
 
 skip_amount = (args.num_samples) * args.skip
 mturk_data = mturk_data[skip_amount:]
@@ -27,7 +29,8 @@ my_str = []
 for index in range(0,(upto)):
     tmp_str = "{"
     for i in range(args.num_samples):
-        sent_to_insert = mturk_data[index*args.num_samples+i][1]
+        # sent_to_insert = mturk_data[index*args.num_samples+i][1]
+        sent_to_insert = mturk_data[index*args.num_samples+i]
         if i == (args.num_samples - 1):
             tmp_str += ("\"sent"+str(i)+"\" : \"" + str(sent_to_insert) + "\"")
         else:
@@ -38,4 +41,3 @@ with open("data.jsonl", "w") as f:
     for i in range(len(my_str)):
         f.write(my_str[i])
 
-#sandbox qual ID = 3N5C8MI2ZB0D7EPGZHGD8HJCAK82GM

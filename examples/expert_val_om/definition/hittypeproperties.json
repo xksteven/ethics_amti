@@ -1,10 +1,10 @@
 {
   "AutoApprovalDelayInSeconds": 259200,
-  "AssignmentDurationInSeconds": 1800,
-  "Reward": "0.04",
-  "Title": "Edit sentences to be written from a first person perspective (I/Me/My).",
+  "AssignmentDurationInSeconds": 7200,
+  "Reward": "0.10",
+  "Title": "Validate whether something is right or wrong.",
   "Keywords": "HTMLQuestion, writing, slight modification, creative, Dan, fun,",
-  "Description": "Edit sentence to be written form a first person perspective (I/Me/My).",
+  "Description": "Validate and edit scenarios of people doing things that are right or wrong according to ordinary, everyday morality.",
   "QualificationRequirements": [
      {
   	"QualificationTypeId": "00000000000000000071",
@@ -20,6 +20,14 @@
         "Country": "GB"
       }
     ]
+    },
+    {
+      "QualificationTypeId": "3TSO6UD8GDSQWJH1GXAHID8QP5XWQ0",
+      "Comparator": "GreaterThanOrEqualTo",
+      "IntegerValues": [
+        100
+      ],
+      "RequiredToPreview": true
     },
     {
          "QualificationTypeId":"000000000000000000L0",
