@@ -30,11 +30,16 @@ for index in range(0,(upto)):
     tmp_str = "{"
     for i in range(args.num_samples):
         # sent_to_insert = mturk_data[index*args.num_samples+i][1]
-        sent_to_insert = mturk_data[index*args.num_samples+i]
+        ex_idx = index*args.num_samples+i
+        sent_to_insert = mturk_data[ex_idx]
+        tmp_str += ("\"sent" + str(i) + "_idx\" : \"" + str(ex_idx) + "\",")
         if i == (args.num_samples - 1):
             tmp_str += ("\"sent"+str(i)+"\" : \"" + str(sent_to_insert) + "\"")
         else:
             tmp_str += ("\"sent"+str(i)+"\" : \"" + str(sent_to_insert) + "\",")
+        # tmp_str += ("\"good_" + str(i) + "\" : \"good_" + str(ex_idx) + "\",")
+        # tmp_str += ("\"bad_" + str(i) + "\" : \"bad_" + str(ex_idx) + "\",")
+        # tmp_str += ("\"low_quality_" + str(i) + "\" : \"low_quality_" + str(ex_idx) + "\",")
     my_str.append(tmp_str+"}\n")
 
 with open("data.jsonl", "w") as f:
