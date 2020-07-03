@@ -1,0 +1,35 @@
+{
+  "AutoApprovalDelayInSeconds": 259200,
+  "AssignmentDurationInSeconds": 7200,
+  "Reward": "0.10",
+  "Title": "Validate whether something is right or wrong.",
+  "Keywords": "HTMLQuestion, writing, slight modification, creative, Dan, fun,",
+  "Description": "Validate and edit scenarios of people doing things that are right or wrong according to ordinary, everyday morality.",
+  "QualificationRequirements": [
+     {
+  	"QualificationTypeId": "00000000000000000071",
+  	"Comparator": "In",
+  	"LocaleValues": [
+      {
+        "Country": "US"
+      },
+      {
+        "Country": "CA"
+      },
+      {
+        "Country": "GB"
+      }
+    ]
+    },
+    {
+         "QualificationTypeId":"000000000000000000L0",
+         "Comparator":"GreaterThan",
+         "IntegerValues":[97]
+    },
+    {
+         "QualificationTypeId":"00000000000000000040",
+         "Comparator":"GreaterThan",
+         "IntegerValues":[0]
+    }
+   ]
+}

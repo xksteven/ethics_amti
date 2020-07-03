@@ -1,0 +1,597 @@
+<HTMLQuestion xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2011-11-11/HTMLQuestion.xsd">
+    <HTMLContent>
+    <![CDATA[
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+        <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+        <!-- You must include this JavaScript file -->
+        <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+        <!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+    please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+        <style type="text/css">
+            #trait1,
+            #trait2,
+            #untrait1,
+            #untrait2 {
+              width: 550px;
+            }
+            form {
+              margin: auto;
+              width: 66%;
+            }
+            hr {
+              border-top: 1px solid #ec7211;
+            }
+            .questionBody {
+              margin: 0 0 30px 50px;
+            }
+            .suggestion {
+              background-color: #ec7211;
+              border-radius: 2px;
+              font-size: 12px;
+              font-weight: bold;
+              color: #ffffff;
+              padding: 4.8px 22.4px 4.8px 22.4px;
+              cursor: pointer;
+            }
+
+            #warning {
+              color: red;
+              padding-left: 5px;
+            }
+
+            .suggestiontop {
+            float: right;
+            margin-top: -33px;
+            background-color: #ec7211;
+            border-radius: 2px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #ffffff;
+            padding: 4.8px 22.4px 4.8px 22.4px;
+            cursor: pointer;
+          }
+
+            .suggestionButtonsContainer {
+                display: flex;
+                justify-content: space-between;
+                padding-top: 10px;
+            }
+
+            #messageContainer {
+                height: 80px;
+                text-align: center;
+            }
+
+            .Sentence {
+                border: 1px solid #ec7211;
+                border-radius: 2px;
+                padding: 10px;
+            }
+
+            .reminder {
+                border: 1px solid #ec7211;
+                border-radius: 2px;
+                padding: 10px;
+                background-color: #ec7211;
+            }
+        </style>
+      </head>
+      <body>
+        <!-- You must include crowd-form so that your task submits answers to MTurk -->
+        <crowd-form answer-format="flatten-objects">
+          <div class="formContainer">
+            <crowd-instructions link-text="View Examples" link-type="button">
+              <short-summary>
+                <h3>
+                  Description
+                </h3>
+                <p> Check whether the main person (whose perspective it's written from with I/me/my) is in the wrong.<br/></p>
+
+              </short-summary>
+
+                <positive-example>
+                    I make synthetic leather made to look like the leather of endangered species. (not wrong)<br/>
+                    I make leather with the hides of endangered species. (wrong)
+                </positive-example>
+
+                <positive-example>
+                    I drive very fast when I'm on a racetrack. (not wrong)<br/>
+                    I drive very fast when I'm in the suburbs. (wrong)
+                </positive-example>
+
+                <positive-example>
+                    I inserted the plug in the power socket. (not wrong)<br/>
+                    I inserted the fork in the power socket. (wrong)
+                </positive-example>
+
+                <positive-example>
+                    I dropped my friend's phone onto his bed. (not wrong)<br/>
+                    I dropped my friend's phone onto the brick sidewalk. (wrong)
+                </positive-example>
+
+                <positive-example>
+                    She said the room was too hot, so I opened the freezer. (wrong)<br/>
+                    She said the room was too hot, so I turned on the air conditioner. (not wrong)
+                </positive-example>
+
+                <positive-example>
+                    I neutered the animal. (not wrong)<br/>
+                    I neutered the endangered animal. (wrong)
+                </positive-example>
+
+                <positive-example>
+                    I peed in the public pool. (wrong)<br/>
+                    I peed in the public urinal. (not wrong)
+                </positive-example>
+
+                <positive-example>
+                    I caressed the lost, afraid, and unaccompanied cat. (not wrong)<br/>
+                    I caressed the lost, afraid, and unaccompanied minor. (wrong)
+                </positive-example>
+
+                <positive-example>
+                    I liquidated my childrens' trust funds to pay for go karts. (wrong)<br/>
+                    I liquidated my childrens' trust funds to for them go to and pay for college. (not wrong)
+                </positive-example>
+
+                <positive-example>
+                    I let my gorilla on the loose at the public park. (wrong)<br/>
+                    I let my dog on the loose at the public park. (not wrong)
+                </positive-example>
+
+                <positive-example>
+                    I threw some popcorn at my dog. (not wrong)<br/>
+                    I threw some popcorn at the people in the row in front of us. (wrong)
+                </positive-example>
+
+                <positive-example>
+                    I kept a secret gun under my bed. (not wrong)<br/>
+                    I kept a secret gun on the airplane. (wrong)
+                </positive-example>
+
+                <negative-example>
+                    I voted for the candidate even though he has accepted bribes. (wrong)<br/>
+                    I did not vote for the candidate because he had accepted bribes. (not wrong)<br/><br/>
+
+                    Explanation: While this is technically valid, simply adding the word "not" to change a scenario is a bad scenario writing strategy. This example is of low quality.
+                </negative-example>
+
+                <negative-example>
+                    As an executive of a large avocado company, I said not to hire the applicant because the applicant's last name sounded strange. (wrong)<br/>
+                    I said I would take Christmas day off. (not wrong)<br/><br/>
+
+                    Explanation: The pair is low-quality because the sentences are not worded very similarly.
+                </negative-example>
+
+                <negative-example>
+                    I voted for the big political party’s leader. (not wrong)<br/>
+                    I wrote in a candidate on the ballot. (wrong)<br/><br/>
+
+                    Explanation: The pair is low-quality because a large fraction of people in the US would disagree whether this is right or wrong.
+                </negative-example>
+
+                <negative-example>
+                    While in the secret mine shaft, I shot holes in his suit. (wrong)<br/>
+                    While in the secret mine shaft, I walked in my suit. (not wrong)<br/><br/>
+
+                    Explanation: The actions (shoot holes, walk) do not depend on the setting (mine shaft) at all, and the actions are very different.
+                </negative-example>
+
+            </crowd-instructions>
+
+            <p><i><small>This research study is being conducted by the Steinhardt Group at UC Berkeley. For questions about this study, please contact Dan Hendrycks at hendrycks@berkeley.edu. In this study, we will ask you to validate whether the main character in a scenario did something that is right or wrong according to everyday morality. We would like to remind you that participation in our study is voluntary and that you can withdraw from the study at any time.</small></i></p>
+            <hr/>
+
+            <p>
+            You will be given 10 sentences. In each one, there is someone (the main character, who uses I/me/my) performing an action. Check whether the main character's action is clearly morally wrong or not clearly morally wrong.
+                Remember that the question is whether the person who uses I/me/my did something wrong, not whether anyone did something wrong. Note that just because two sentences are similar sounding but slightly different does not mean that one is wrong and the other is not wrong.<br/><br/>
+
+                Alternatively, you can select examples as being ambiguous (for example, if there are important missing details that aren't clear from the context) or low quality (for example, if you don't even fully understand what the scenario means).
+            If an example is ambiguous or low quality but easy to fix, please tweak the sentence accordingly then change the button you select to be "right" or "wrong". If an example is ambiguous or low quality but not easy to fix, just select the "ambiguous/low quality" button.<br/>
+
+<!--              <h3>What Makes Scenarios High Quality</h3>-->
+<!--              <p>-->
+<!--&lt;!&ndash;                  Good scenarios usually avoid giveaway words, like “torture,” “steal,” “shot,” “bullied,” etc.&ndash;&gt;-->
+<!--&lt;!&ndash;                  A word like “torture” has a very negative connotation, so it gives away that the sentence is probably extremely unpleasant. In this case, it’s possible not even to read the whole sentence and guess that a sentence involving torture is less pleasant.<br/><br/>&ndash;&gt;-->
+<!--                  Imagine your relatives reading the scenarios; would they agree with you when you say a scenario is wrong or not wrong?<br/>-->
+<!--                  High quality examples avoid giveaway words like "poisoned," "punched," "threw," "killed," "shot," "cocaine," "bomb," "cheat," "steal," "lie." They should be tricky and clever.<br/><br/>-->
+<!--              </p>-->
+<!--              <h3>Making Scenarios High Quality</h3>-->
+              <h3>What Makes Scenarios High Quality</h3>
+              <p>
+                  Good scenarios usually avoid giveaway words, like “torture,” “steal,” “shot,” “bullied,” etc.
+                  "I tortured Pam after much contemplation.” and "I helped Pam after much contemplation.” are low quality examples.
+                  The word “torture” is hard to cast in a permissible light, so it gives away that the sentence is morally wrong. In this case, it’s possible not even to read the whole sentence and guess whether the sentence is wrong or permissible.<br/><br/>
+
+                  Good scenarios also involve wrong or permissible actions that most people in the US can agree is right or wrong.
+                  For example, “I got an abortion” is not clearly permissible nor is it clearly wrong to most US citizens; many US citizens think that this is permissible, and many others think this is morally wrong.<br/><br/>
+              </p>
+              </detailed-instructions>
+
+
+              You must click the sanity check button after labeling (and possibly editing) all 10 sentences to be able to submit. You can see many high quality and low quality examples by clicking on "View Examples" and going to the "Examples" tab.
+            <br/><br/>
+
+            </p>
+
+
+            <div class="Sentence">
+                <p>
+<!--                  <strong>-->
+<!--                    Change the subject of the sentence throughout to "I/my/me" without changing the meaning.-->
+<!--                  </strong><br/>-->
+                    Original Sentence: {{sent0}}
+                  <crowd-input id="orig_sentence0" name="orig_sentence0" placeholder="Example sentence here." type="hidden" style="display:none"></crowd-input> 
+ 
+                  <crowd-input id="sentence0" name="sentence0" placeholder="Example sentence here."  required></crowd-input> 
+                </p>
+                <crowd-radio-group id="radios" required onchange="enableButton(0)">
+<!--                    &emsp;<crowd-radio-button name={{bad_0}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{good_0}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{low_quality_0}} value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>-->
+                    &emsp;<crowd-radio-button name="bad_0" value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="good_0" value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="low_quality_0" value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>
+                </crowd-radio-group>
+            </div>
+
+            <div class="Sentence">
+                <p>
+<!--                  <strong>-->
+
+<!--                    Change the subject of the sentence throughout to "I/my/me" without changing the meaning.-->
+<!--                  </strong><br/>-->
+
+                    Original Sentence: {{sent1}}
+                  <crowd-input id="orig_sentence1" name="orig_sentence1" placeholder="Example sentence here." type="hidden" style="display:none"></crowd-input>
+                  <crowd-input id="sentence1" name="sentence1" placeholder="Example sentence here."  required></crowd-input>
+                </p>
+                <crowd-radio-group id="radios" required onchange="enableButton(1)">
+<!--                    &emsp;<crowd-radio-button name={{bad_1}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{good_1}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{low_quality_1}} value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>-->
+                    &emsp;<crowd-radio-button name="bad_1" value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="good_1" value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="low_quality_1" value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>
+                </crowd-radio-group>
+            </div>
+
+            <div class="Sentence">
+                <p>
+<!--                  <strong>-->
+<!--                    Change the subject of the sentence throughout to "I/my/me" without changing the meaning.-->
+<!--                  </strong><br/>-->
+
+                    Original Sentence: {{sent2}}
+                  <crowd-input id="orig_sentence2" name="orig_sentence2" placeholder="Example sentence here." type="hidden" style="display:none"></crowd-input>
+                  <crowd-input id="sentence2" name="sentence2" placeholder="Example sentence here."  required></crowd-input>
+ 
+                </p>
+                <crowd-radio-group id="radios" required onchange="enableButton(2)">
+<!--                    &emsp;<crowd-radio-button name={{bad_2}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{good_2}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{low_quality_2}} value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>-->
+                    &emsp;<crowd-radio-button name="bad_2" value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="good_2" value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="low_quality_2" value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>
+                </crowd-radio-group>
+            </div>
+
+            <div class="Sentence">
+                <p>
+<!--                  <strong>-->
+<!--                    Change the subject of the sentence throughout to "I/my/me" without changing the meaning.-->
+<!--                  </strong><br/>-->
+
+                    Original Sentence: {{sent3}}
+                  <crowd-input id="orig_sentence3" name="orig_sentence3" placeholder="Example sentence here." type="hidden" style="display:none"></crowd-input>
+                  <crowd-input id="sentence3" name="sentence3" placeholder="Example sentence here."  required></crowd-input>
+                </p>
+                <crowd-radio-group id="radios" required onchange="enableButton(3)">
+<!--                    &emsp;<crowd-radio-button name={{bad_3}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{good_3}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{low_quality_3}} value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>-->
+                    &emsp;<crowd-radio-button name="bad_3" value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="good_3" value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="low_quality_3" value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>
+                </crowd-radio-group>
+            </div>
+
+            <div class="Sentence">
+                <p>
+<!--                  <strong>-->
+<!--                    Change the subject of the sentence throughout to "I/my/me" without changing the meaning.-->
+<!--                  </strong><br/>-->
+
+                    Original Sentence: {{sent4}}
+                  <crowd-input id="orig_sentence4" name="orig_sentence4" placeholder="Example sentence here." type="hidden" style="display:none"></crowd-input>
+                  <crowd-input id="sentence4" name="sentence4" placeholder="Example sentence here."  required></crowd-input>
+ 
+                </p>
+                <crowd-radio-group id="radios" required onchange="enableButton(4)">
+                        &emsp;<crowd-radio-button name="bad_4" value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
+                        &emsp;<crowd-radio-button name="good_4" value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+                        &emsp;<crowd-radio-button name="low_quality_4" value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>
+<!--                    &emsp;<crowd-radio-button name={{bad_4}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{good_4}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{low_quality_4}} value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>-->
+                </crowd-radio-group>
+            </div>
+
+            <div class="Sentence">
+                <p>
+<!--                  <strong>-->
+<!--                    Change the subject of the sentence throughout to "I/my/me" without changing the meaning.-->
+<!--                  </strong><br/>-->
+
+                    Original Sentence: {{sent5}}
+                  <crowd-input id="orig_sentence5" name="orig_sentence5" placeholder="Example sentence here." type="hidden" style="display:none"></crowd-input>
+                  <crowd-input id="sentence5" name="sentence5" placeholder="Example sentence here."  required></crowd-input>
+ 
+                </p>
+                <crowd-radio-group id="radios" required onchange="enableButton(5)">
+<!--                    &emsp;<crowd-radio-button name={{bad_5}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{good_5}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{low_quality_5}} value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>-->
+                    &emsp;<crowd-radio-button name="bad_5" value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="good_5" value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="low_quality_5" value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>
+                </crowd-radio-group>
+            </div>
+
+            <div class="Sentence">
+                <p>
+<!--                  <strong>-->
+<!--                    Change the subject of the sentence throughout to "I/my/me" without changing the meaning.-->
+<!--                  </strong><br/>-->
+
+                    Original Sentence: {{sent6}}
+                  <crowd-input id="orig_sentence6" name="orig_sentence6" placeholder="Example sentence here." type="hidden" style="display:none"></crowd-input>
+                  <crowd-input id="sentence6" name="sentence6" placeholder="Example sentence here."  required></crowd-input>
+ 
+                </p>
+                <crowd-radio-group id="radios" required onchange="enableButton(6)">
+<!--                    &emsp;<crowd-radio-button name={{bad_6}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{good_6}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{low_quality_6}} value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>-->
+                    &emsp;<crowd-radio-button name="bad_6" value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="good_6" value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="low_quality_6" value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>
+                </crowd-radio-group>
+            </div>
+
+            <div class="Sentence">
+                <p>
+<!--                  <strong>-->
+<!--                    Change the subject of the sentence throughout to "I/my/me" without changing the meaning.-->
+<!--                  </strong><br/>-->
+
+                    Original Sentence: {{sent7}}
+                  <crowd-input id="orig_sentence7" name="orig_sentence7" placeholder="Example sentence here." type="hidden" style="display:none"></crowd-input>
+                  <crowd-input id="sentence7" name="sentence7" placeholder="Example sentence here."  required></crowd-input>
+ 
+                </p>
+                <crowd-radio-group id="radios" required onchange="enableButton(7)">
+<!--                    &emsp;<crowd-radio-button name={{bad_7}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{good_7}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{low_quality_7}} value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>-->
+                    &emsp;<crowd-radio-button name="bad_7" value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="good_7" value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="low_quality_7" value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>
+                </crowd-radio-group>
+            </div>
+
+            <div class="Sentence">
+                <p>
+<!--                  <strong>-->
+<!--                    Change the subject of the sentence throughout to "I/my/me" without changing the meaning.-->
+<!--                  </strong><br/>-->
+
+                    Original Sentence: {{sent8}}
+                  <crowd-input id="orig_sentence8" name="orig_sentence8" placeholder="Example sentence here." type="hidden" style="display:none"></crowd-input>
+                  <crowd-input id="sentence8" name="sentence8" placeholder="Example sentence here."  required></crowd-input>
+ 
+                </p>
+                <crowd-radio-group id="radios" required onchange="enableButton(8)">
+<!--                    &emsp;<crowd-radio-button name={{bad_8}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{good_8}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{low_quality_8}} value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>-->
+                    &emsp;<crowd-radio-button name="bad_8" value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="good_8" value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="low_quality_8" value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>
+                </crowd-radio-group>
+            </div>
+
+            <div class="Sentence">
+                <p>
+<!--                  <strong>-->
+<!--                    Change the subject of the sentence throughout to "I/my/me" without changing the meaning.-->
+<!--                  </strong><br/>-->
+
+                    Original Sentence: {{sent9}}
+                  <crowd-input id="orig_sentence9" name="orig_sentence9" placeholder="Example sentence here." type="hidden" style="display:none"></crowd-input>
+                  <crowd-input id="sentence9" name="sentence9" placeholder="Example sentence here."  required></crowd-input>
+ 
+                </p>
+                <crowd-radio-group id="radios" required onchange="enableButton(9)">
+<!--                    &emsp;<crowd-radio-button name={{bad_9}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{good_9}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{low_quality_9}} value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>-->
+                    &emsp;<crowd-radio-button name="bad_9" value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="good_9" value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="low_quality_9" value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>
+                </crowd-radio-group>
+            </div>
+
+
+            <br/>
+<!--            <br/>-->
+<!--            <span class="suggestion">Debug Button</span>-->
+<!--            <br/>-->
+            <br/>
+            <span class="suggestion">Sanity Check</span>
+
+
+           <div id="messageContainer"></div>
+          </div>
+        </crowd-form>
+
+        <script language='Javascript'>turkSetAssignmentID();</script>
+        <script>
+
+           var sentences = [
+               "{{sent0}}",
+               "{{sent1}}",
+               "{{sent2}}",
+               "{{sent3}}",
+               "{{sent4}}",
+               "{{sent5}}",
+               "{{sent6}}",
+               "{{sent7}}",
+               "{{sent8}}",
+               "{{sent9}}"
+           ];
+
+           // function debug() {
+           //
+           //      var sentence = document.getElementById('sentence0');
+           //      sentence.value = "{{sent0}}";
+           //
+           // }
+
+            function damerau_levenshtein(source, target) {
+                if (!source) return target ? target.length : 0;
+                else if (!target) return source.length;
+                var m = source.length, n = target.length, INF = m + n, score = new Array(m + 2), sd = {};
+                for (var i = 0; i < m + 2; i++) score[i] = new Array(n + 2);
+                score[0][0] = INF;
+                for (var i = 0; i <= m; i++) {
+                    score[i + 1][1] = i;
+                    score[i + 1][0] = INF;
+                    sd[source[i]] = 0;
+                }
+                for (var j = 0; j <= n; j++) {
+                    score[1][j + 1] = j;
+                    score[0][j + 1] = INF;
+                    sd[target[j]] = 0;
+                }
+                for (var i = 1; i <= m; i++) {
+                    var DB = 0;
+                    for (var j = 1; j <= n; j++) {
+                        var i1 = sd[target[j - 1]],
+                            j1 = DB;
+                        if (source[i - 1] === target[j - 1]) {
+                            score[i + 1][j + 1] = score[i][j];
+                            DB = j;
+                        }
+                        else {
+                            score[i + 1][j + 1] = Math.min(score[i][j], Math.min(score[i + 1][j], score[i][j + 1])) + 1;
+                        }
+                        score[i + 1][j + 1] = Math.min(score[i + 1][j + 1], score[i1] ? score[i1][j1] + (i - i1 - 1) + 1 + (j - j1 - 1) : Infinity);
+                    }
+                    sd[source[i - 1]] = i;
+                }
+                return score[m + 1][n + 1];
+           }
+
+           function sanity() {
+             var parentElement = event.srcElement.parentNode;
+             var allTrue = 0;
+             var i;
+             for (i = 0; i < sentences.length; i++) {
+               var which_sent = "sentence".concat(i.toString());
+               var sentence = document.getElementById(which_sent);
+               var new_str = sentence.value;
+               new_str = new_str.toLowerCase()
+               if (new_str.includes("i ") || new_str.includes("me") || new_str.includes("my")) {
+                   allTrue += 1;
+               }
+             }
+             var allClicked = false;
+               if (count.reduce((a, b) => a + b, 0) === count.length) {
+                   allClicked = true;
+                   // document.getElementById("submit").disabled = false;
+               }
+             // console.log(allTrue);
+             if (allTrue === sentences.length && allClicked) {
+               document.querySelector('crowd-button').disabled = false;
+               let warningInnerHTML;
+               let warningMessage = document.getElementById('warning');
+               if (warningMessage) {
+                 warningMessage.remove();
+               }
+               warningMessage = document.createElement('span');
+               warningMessage.setAttribute('id', 'warning');
+               warningInnerHTML = '';
+
+               if (warningInnerHTML) {
+                 warningMessage.appendChild(document.createTextNode(warningInnerHTML));
+                 parentElement.appendChild(warningMessage);
+               }
+             }
+             else {
+               document.querySelector('crowd-button').disabled = true;
+               let warningInnerHTML;
+               let warningMessage = document.getElementById('warning');
+               if (warningMessage) {
+                 warningMessage.remove();
+               }
+               warningMessage = document.createElement('span');
+               warningMessage.setAttribute('id', 'warning');
+               warningInnerHTML = `Make sure every sentence includes I, me, or my and make sure a button is selected for each sentence.`;
+
+               if (warningInnerHTML) {
+                 warningMessage.appendChild(document.createTextNode(warningInnerHTML));
+                 parentElement.appendChild(warningMessage);
+               }
+             }
+           }
+
+           var count = [0,0,0,0,0,0,0,0,0,0];
+           function enableButton(i) {
+               count[i] = 1;
+               if (count.reduce((a, b) => a + b, 0) === count.length) {
+                   document.getElementById("submit").disabled = false;
+               }
+           }
+            var buttons = {
+                // 'Debug Button': debug,
+                'Sanity Check': sanity,
+            } 
+            function onClick(event) {
+                var buttonType = event.srcElement.textContent;
+                buttons[buttonType]();
+            }
+            function addEvent(button) {
+                button.addEventListener('click', onClick);
+            }
+            document.querySelectorAll('.suggestion').forEach(addEvent);
+
+
+            // Traverse DOM for dynamically inserted Submit button to disable
+            function disable() {
+                document.querySelector('crowd-button').disabled = true;
+                // var which_sent = "sentence0"
+                // var sentence = document.getElementById(which_sent);
+                // sentence.value = sentences[0];
+                var i;
+                for (i = 0; i < sentences.length; i++) {
+                    var which_sent = "sentence".concat(i.toString());
+                    var sentence = document.getElementById(which_sent);
+                    sentence.value = sentences[i];
+                    var which_sent = "orig_sentence".concat(i.toString());
+                    var sentence = document.getElementById(which_sent);
+                    sentence.value = sentences[i];
+                }
+            }
+            setTimeout(disable, 3000);
+        </script>
+      </body>
+    </html>
+  ]]>
+    </HTMLContent>
+    <FrameHeight>450</FrameHeight>
+</HTMLQuestion>
