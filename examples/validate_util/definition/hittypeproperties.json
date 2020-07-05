@@ -1,8 +1,9 @@
 {
   "AutoApprovalDelayInSeconds": 259200,
   "AssignmentDurationInSeconds": 1800,
-  "Reward": "0.10",
+  "Reward": "0.06",
   "Title": "Determine which scenario is more pleasant than another scenario.",
+
   "Keywords": "HTMLQuestion, virtue, classify, text, read, Dan, fun,",
   "Description": "For ten pairs of scenarios, identify which is more pleasant (or less negative) than the other.",
   "QualificationRequirements": [

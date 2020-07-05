@@ -192,7 +192,7 @@
             <p>Given two scenarios, identify which is more pleasant than the other from the perspective of the main character (who uses "I"/"me"/"my").<br/></p>
 
             If it is not clear which scenario is better, select "not clear". Only select "not clear" if you don't understand one of the scenarios, or if the two scenarios are similarly enjoyable/good/pleasant.
-            Don't worry about typos, as long as you understand the scenarios. Click the "View Examples" button to see several examples.
+            Don't worry about typos, as long as you understand the scenarios. Make sure to click the "View Examples" button to see several examples.
 
             </p>
 
@@ -278,37 +278,39 @@
                 </crowd-radio-group>
             </div><br/>
 
-            <p>Scenario (a). {{ left8 }}</p>
-            <p>Scenario (b). {{ right8 }}</p>
-            <div>
-                <crowd-radio-group id="radios" required onchange="enableButton(9)">
-                    &emsp;<crowd-radio-button name={{v0_8}} value="left_better">(a) is more pleasant than (b).</crowd-radio-button>
-                    &emsp;<crowd-radio-button name={{v1_8}} value="right_better">(b) is more pleasant than (a).</crowd-radio-button><br/>
-                    &emsp;<crowd-radio-button name={{v2_8}} value="unclear">It is unclear which is better.</crowd-radio-button><br/>
-                </crowd-radio-group>
-            </div><br/>
+<!--            <p>Scenario (a). {{ left8 }}</p>-->
+<!--            <p>Scenario (b). {{ right8 }}</p>-->
+<!--            <div>-->
+<!--                <crowd-radio-group id="radios" required onchange="enableButton(9)">-->
+<!--                    &emsp;<crowd-radio-button name={{v0_8}} value="left_better">(a) is more pleasant than (b).</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{v1_8}} value="right_better">(b) is more pleasant than (a).</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{v2_8}} value="unclear">It is unclear which is better.</crowd-radio-button><br/>-->
+<!--                </crowd-radio-group>-->
+<!--            </div><br/>-->
 
-            <p>Scenario (a). {{ left9 }}</p>
-            <p>Scenario (b). {{ right9 }}</p>
-            <div>
-                <crowd-radio-group id="radios" required onchange="enableButton(10)">
-                    &emsp;<crowd-radio-button name={{v0_9}} value="left_better">(a) is more pleasant than (b).</crowd-radio-button>
-                    &emsp;<crowd-radio-button name={{v1_9}} value="right_better">(b) is more pleasant than (a).</crowd-radio-button><br/>
-                    &emsp;<crowd-radio-button name={{v2_9}} value="unclear">It is unclear which is better.</crowd-radio-button><br/>
-                </crowd-radio-group>
-            </div><br/>
+<!--            <p>Scenario (a). {{ left9 }}</p>-->
+<!--            <p>Scenario (b). {{ right9 }}</p>-->
+<!--            <div>-->
+<!--                <crowd-radio-group id="radios" required onchange="enableButton(10)">-->
+<!--                    &emsp;<crowd-radio-button name={{v0_9}} value="left_better">(a) is more pleasant than (b).</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{v1_9}} value="right_better">(b) is more pleasant than (a).</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{v2_9}} value="unclear">It is unclear which is better.</crowd-radio-button><br/>-->
+<!--                </crowd-radio-group>-->
+<!--            </div><br/>-->
 
     <crowd-button id="submit" form-action="submit" variant="primary" disabled>Submit</crowd-button>
     </crowd-form>
     </body>
 
    <script>
-       var count = [0,0,0,0,0,0,0,0,0,0,0];
+       // var count = [0,0,0,0,0,0,0,0,0,0,0];
+       var count = [0,0,0,0,0,0,0,0,0];
        function enableButton(i) {
            count[i] = 1;
-           var good = true;j
+           var good = true;
            var j;
-           for (j=1; j < 11; j++) {
+           // for (j=1; j < 11; j++) {
+           for (j=1; j < 9; j++) {
                if (count[j] != 1) {
                    good = false;
                }
