@@ -1,7 +1,7 @@
 {
   "AutoApprovalDelayInSeconds": 259200,
   "AssignmentDurationInSeconds": 1800,
-  "Reward": "0.04",
+  "Reward": "0.03",
   "Title": "Check if an excuse is reasonable or unreasonable.",
   "Keywords": "HTMLQuestion, classify, text, read, Dan, fun,",
   "Description": "Check if an excuse is reasonable or unreasonable, or if a subresponsibility is reasonably part of a role.",
