@@ -186,11 +186,11 @@
             <hr/>
 
             <p>
-            You will be given 10 sentences. In each one, there is someone (the main character, who uses I/me/my) performing an action. Check whether the main character's action is clearly morally wrong or not clearly morally wrong.
-                Remember that the question is whether the person who uses I/me/my did something wrong, not whether anyone did something wrong. Note that just because two sentences are similar sounding but slightly different does not mean that one is wrong and the other is not wrong.<br/><br/>
+            You will be given 10 sentences. In each one, there is someone (the main character, who uses I/me/my) performing an action. Check whether the main character's action is clearly wrong or not clearly wrong.
+                Remember that the question is whether the person who uses I/me/my did something wrong, not whether anyone did something wrong.<br/><br/>
 
-                Alternatively, you can select examples as being ambiguous (for example, if there are important missing details that aren't clear from the context) or low quality (for example, if you don't even fully understand what the scenario means).
-            If an example is ambiguous or low quality but easy to fix, please tweak the sentence accordingly then change the button you select to be "right" or "wrong". If an example is ambiguous or low quality but not easy to fix, just select the "ambiguous/low quality" button.<br/>
+                Alternatively, you can select examples as being ambiguous (for example, if there are important missing details that aren't clear from the context) or low quality (for example, if you don't even fully understand what the scenario means, or it isn't written in the correct format).
+            If an example is ambiguous or low quality but easy to fix, please tweak the sentence to fix it then change the button you select to be "right" or "wrong" accordingly. If an example is ambiguous or low quality but not easy to fix, just select the "ambiguous or low quality" button.<br/>
 
 <!--              <h3>What Makes Scenarios High Quality</h3>-->
 <!--              <p>-->
@@ -204,10 +204,10 @@
               <p>
                   Good scenarios usually avoid giveaway words, like “torture,” “steal,” “shot,” “bullied,” etc.
                   "I tortured Pam after much contemplation.” and "I helped Pam after much contemplation.” are low quality examples.
-                  The word “torture” is hard to cast in a permissible light, so it gives away that the sentence is morally wrong. In this case, it’s possible not even to read the whole sentence and guess whether the sentence is wrong or permissible.<br/><br/>
+                  The word “torture” is hard to cast in a permissible light, so it gives away that the sentence is wrong. In this case, it’s possible not even to read the whole sentence and guess whether the sentence is wrong or permissible.<br/><br/>
 
                   Good scenarios also involve wrong or permissible actions that most people in the US can agree is right or wrong.
-                  For example, “I got an abortion” is not clearly permissible nor is it clearly wrong to most US citizens; many US citizens think that this is permissible, and many others think this is morally wrong.<br/><br/>
+                  For example, “I got an abortion” is not clearly permissible nor is it clearly wrong to most US citizens; many US citizens think that this is permissible, and many others think this is wrong.<br/><br/>
               </p>
               </detailed-instructions>
 
@@ -229,11 +229,11 @@
                   <crowd-input id="sentence0" name="sentence0" placeholder="Example sentence here."  required></crowd-input> 
                 </p>
                 <crowd-radio-group id="radios" required onchange="enableButton(0)">
-<!--                    &emsp;<crowd-radio-button name={{bad_0}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>-->
-<!--                    &emsp;<crowd-radio-button name={{good_0}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{bad_0}} value="wrong">The main person clearly did something wrong.</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{good_0}} value="not wrong">The main person did not do anything clearly wrong.</crowd-radio-button>-->
 <!--                    &emsp;<crowd-radio-button name={{low_quality_0}} value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>-->
-                    &emsp;<crowd-radio-button name="bad_0" value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
-                    &emsp;<crowd-radio-button name="good_0" value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="bad_0" value="wrong">The main person clearly did something wrong.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="good_0" value="not wrong">The main person did not do anything clearly wrong.</crowd-radio-button>
                     &emsp;<crowd-radio-button name="low_quality_0" value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>
                 </crowd-radio-group>
             </div>
@@ -250,11 +250,11 @@
                   <crowd-input id="sentence1" name="sentence1" placeholder="Example sentence here."  required></crowd-input>
                 </p>
                 <crowd-radio-group id="radios" required onchange="enableButton(1)">
-<!--                    &emsp;<crowd-radio-button name={{bad_1}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>-->
-<!--                    &emsp;<crowd-radio-button name={{good_1}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{bad_1}} value="wrong">The main person clearly did something wrong.</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{good_1}} value="not wrong">The main person did not do anything clearly wrong.</crowd-radio-button>-->
 <!--                    &emsp;<crowd-radio-button name={{low_quality_1}} value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>-->
-                    &emsp;<crowd-radio-button name="bad_1" value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
-                    &emsp;<crowd-radio-button name="good_1" value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="bad_1" value="wrong">The main person clearly did something wrong.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="good_1" value="not wrong">The main person did not do anything clearly wrong.</crowd-radio-button>
                     &emsp;<crowd-radio-button name="low_quality_1" value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>
                 </crowd-radio-group>
             </div>
@@ -271,11 +271,11 @@
  
                 </p>
                 <crowd-radio-group id="radios" required onchange="enableButton(2)">
-<!--                    &emsp;<crowd-radio-button name={{bad_2}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>-->
-<!--                    &emsp;<crowd-radio-button name={{good_2}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{bad_2}} value="wrong">The main person clearly did something wrong.</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{good_2}} value="not wrong">The main person did not do anything clearly wrong.</crowd-radio-button>-->
 <!--                    &emsp;<crowd-radio-button name={{low_quality_2}} value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>-->
-                    &emsp;<crowd-radio-button name="bad_2" value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
-                    &emsp;<crowd-radio-button name="good_2" value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="bad_2" value="wrong">The main person clearly did something wrong.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="good_2" value="not wrong">The main person did not do anything clearly wrong.</crowd-radio-button>
                     &emsp;<crowd-radio-button name="low_quality_2" value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>
                 </crowd-radio-group>
             </div>
@@ -291,11 +291,11 @@
                   <crowd-input id="sentence3" name="sentence3" placeholder="Example sentence here."  required></crowd-input>
                 </p>
                 <crowd-radio-group id="radios" required onchange="enableButton(3)">
-<!--                    &emsp;<crowd-radio-button name={{bad_3}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>-->
-<!--                    &emsp;<crowd-radio-button name={{good_3}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{bad_3}} value="wrong">The main person clearly did something wrong.</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{good_3}} value="not wrong">The main person did not do anything clearly wrong.</crowd-radio-button>-->
 <!--                    &emsp;<crowd-radio-button name={{low_quality_3}} value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>-->
-                    &emsp;<crowd-radio-button name="bad_3" value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
-                    &emsp;<crowd-radio-button name="good_3" value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="bad_3" value="wrong">The main person clearly did something wrong.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="good_3" value="not wrong">The main person did not do anything clearly wrong.</crowd-radio-button>
                     &emsp;<crowd-radio-button name="low_quality_3" value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>
                 </crowd-radio-group>
             </div>
@@ -312,11 +312,11 @@
  
                 </p>
                 <crowd-radio-group id="radios" required onchange="enableButton(4)">
-                        &emsp;<crowd-radio-button name="bad_4" value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
-                        &emsp;<crowd-radio-button name="good_4" value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+                        &emsp;<crowd-radio-button name="bad_4" value="wrong">The main person clearly did something wrong.</crowd-radio-button><br/>
+                        &emsp;<crowd-radio-button name="good_4" value="not wrong">The main person did not do anything clearly wrong.</crowd-radio-button>
                         &emsp;<crowd-radio-button name="low_quality_4" value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>
-<!--                    &emsp;<crowd-radio-button name={{bad_4}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>-->
-<!--                    &emsp;<crowd-radio-button name={{good_4}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{bad_4}} value="wrong">The main person clearly did something wrong.</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{good_4}} value="not wrong">The main person did not do anything clearly wrong.</crowd-radio-button>-->
 <!--                    &emsp;<crowd-radio-button name={{low_quality_4}} value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>-->
                 </crowd-radio-group>
             </div>
@@ -333,11 +333,11 @@
  
                 </p>
                 <crowd-radio-group id="radios" required onchange="enableButton(5)">
-<!--                    &emsp;<crowd-radio-button name={{bad_5}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>-->
-<!--                    &emsp;<crowd-radio-button name={{good_5}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{bad_5}} value="wrong">The main person clearly did something wrong.</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{good_5}} value="not wrong">The main person did not do anything clearly wrong.</crowd-radio-button>-->
 <!--                    &emsp;<crowd-radio-button name={{low_quality_5}} value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>-->
-                    &emsp;<crowd-radio-button name="bad_5" value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
-                    &emsp;<crowd-radio-button name="good_5" value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="bad_5" value="wrong">The main person clearly did something wrong.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="good_5" value="not wrong">The main person did not do anything clearly wrong.</crowd-radio-button>
                     &emsp;<crowd-radio-button name="low_quality_5" value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>
                 </crowd-radio-group>
             </div>
@@ -354,11 +354,11 @@
  
                 </p>
                 <crowd-radio-group id="radios" required onchange="enableButton(6)">
-<!--                    &emsp;<crowd-radio-button name={{bad_6}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>-->
-<!--                    &emsp;<crowd-radio-button name={{good_6}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{bad_6}} value="wrong">The main person clearly did something wrong.</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{good_6}} value="not wrong">The main person did not do anything clearly wrong.</crowd-radio-button>-->
 <!--                    &emsp;<crowd-radio-button name={{low_quality_6}} value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>-->
-                    &emsp;<crowd-radio-button name="bad_6" value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
-                    &emsp;<crowd-radio-button name="good_6" value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="bad_6" value="wrong">The main person clearly did something wrong.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="good_6" value="not wrong">The main person did not do anything clearly wrong.</crowd-radio-button>
                     &emsp;<crowd-radio-button name="low_quality_6" value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>
                 </crowd-radio-group>
             </div>
@@ -375,11 +375,11 @@
  
                 </p>
                 <crowd-radio-group id="radios" required onchange="enableButton(7)">
-<!--                    &emsp;<crowd-radio-button name={{bad_7}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>-->
-<!--                    &emsp;<crowd-radio-button name={{good_7}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{bad_7}} value="wrong">The main person clearly did something wrong.</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{good_7}} value="not wrong">The main person did not do anything clearly wrong.</crowd-radio-button>-->
 <!--                    &emsp;<crowd-radio-button name={{low_quality_7}} value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>-->
-                    &emsp;<crowd-radio-button name="bad_7" value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
-                    &emsp;<crowd-radio-button name="good_7" value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="bad_7" value="wrong">The main person clearly did something wrong.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="good_7" value="not wrong">The main person did not do anything clearly wrong.</crowd-radio-button>
                     &emsp;<crowd-radio-button name="low_quality_7" value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>
                 </crowd-radio-group>
             </div>
@@ -396,11 +396,11 @@
  
                 </p>
                 <crowd-radio-group id="radios" required onchange="enableButton(8)">
-<!--                    &emsp;<crowd-radio-button name={{bad_8}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>-->
-<!--                    &emsp;<crowd-radio-button name={{good_8}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{bad_8}} value="wrong">The main person clearly did something wrong.</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{good_8}} value="not wrong">The main person did not do anything clearly wrong.</crowd-radio-button>-->
 <!--                    &emsp;<crowd-radio-button name={{low_quality_8}} value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>-->
-                    &emsp;<crowd-radio-button name="bad_8" value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
-                    &emsp;<crowd-radio-button name="good_8" value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="bad_8" value="wrong">The main person clearly did something wrong.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="good_8" value="not wrong">The main person did not do anything clearly wrong.</crowd-radio-button>
                     &emsp;<crowd-radio-button name="low_quality_8" value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>
                 </crowd-radio-group>
             </div>
@@ -417,11 +417,11 @@
  
                 </p>
                 <crowd-radio-group id="radios" required onchange="enableButton(9)">
-<!--                    &emsp;<crowd-radio-button name={{bad_9}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>-->
-<!--                    &emsp;<crowd-radio-button name={{good_9}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{bad_9}} value="wrong">The main person clearly did something wrong.</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{good_9}} value="not wrong">The main person did not do anything clearly wrong.</crowd-radio-button>-->
 <!--                    &emsp;<crowd-radio-button name={{low_quality_9}} value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>-->
-                    &emsp;<crowd-radio-button name="bad_9" value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
-                    &emsp;<crowd-radio-button name="good_9" value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="bad_9" value="wrong">The main person clearly did something wrong.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="good_9" value="not wrong">The main person did not do anything clearly wrong.</crowd-radio-button>
                     &emsp;<crowd-radio-button name="low_quality_9" value="low quality">This example is low quality or ambiguous and difficult to fix.</crowd-radio-button>
                 </crowd-radio-group>
             </div>

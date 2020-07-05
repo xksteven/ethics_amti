@@ -1,5 +1,6 @@
 import argparse
 import json
+import pandas as pd
 
 parser = argparse.ArgumentParser(description="Parse the tabular data from Mturk and save to csv.")
 parser.add_argument("json", type=str, help="path to json file")
@@ -12,29 +13,50 @@ with open(args.json, "r") as f:
     data = [json.loads(line.strip()) for line in tmp]
 
 output_str = []
+all_idxs = []
+all_labels = []
+all_sentences = []
 for entry in data:
-    tmp = []
-    tmp.append(entry["sentence0"])
-    tmp.append(entry["sentence1"])
-    tmp.append(entry["sentence2"])
-    tmp.append(entry["sentence3"])
-    tmp.append(entry["sentence4"])
-    tmp.append(entry["sentence5"])
-    tmp.append(entry["sentence6"])
-    tmp.append(entry["sentence7"])
-    tmp.append(entry["sentence8"])
-    tmp.append(entry["sentence9"])
-    tmp.append(entry["WorkerId"])
-    tmp.append(entry["AssignmentId"])
-    output_str.append(tmp)
+    print(entry)
+
+    idxs = []
+    for key in entry:
+        if "bad" in key:
+            idx = int(key.split("bad_")[1].split(".")[0])
+            idxs.append(idx)
+    print(idxs)
+
+    labels = []
+    for idx in idxs:
+        for beginning, ending in zip(["good", "bad", "low_quality"], ["not wrong", "wrong", "low quality"]):
+            key = "{}_{}.{}".format(beginning, idx, ending)
+            is_true = eval(entry[key].replace("true", "True").replace("false", "False"))
+
+            if "good" == beginning and is_true:
+                label = "good"
+                labels.append(label)
+            elif "bad" == beginning and is_true:
+                label = "bad"
+                labels.append(label)
+            elif "low_quality" == beginning and is_true:
+                label = "low_quality"
+                labels.append(label)
+
+    sentences = [entry["sentence{}".format(k)] for k in range(10)]
+    orig_sentences = [entry["orig_sentence{}".format(k)] for k in range(10)]
+    changed_sentence_idxs = []
+    for i in range(10):
+        if sentences[i] != orig_sentences[i]:
+            changed_sentence_idxs.append(i)
+    print("changed sentence idxs", changed_sentence_idxs)
+
+    all_idxs += idxs
+    all_labels += labels
+    all_sentences += sentences
+
+df = pd.DataFrame({"idxs": idxs, "labels": labels, "sentences": sentences})
 
 save_name = args.save_path + args.json.split("/")[-2] + ".tsv"
-# save_name = args.save_path + args.json.split(".")[0] + ".tsv"
+df.to_csv(save_name, sep="\t", header=None, index=None)
 
-print(f"save_name = {save_name}")
-with open(save_name, "w") as f:
-    for entry in output_str:
-        tmp = "\t".join(entry)
-        tmp = tmp + "\n"
-        f.write(tmp)
 
