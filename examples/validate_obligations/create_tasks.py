@@ -11,7 +11,10 @@ parser.add_argument('-s', '--skip', type=int, default=0, help='from where in the
 # parser.add_argument('--num_samples', type=int, default=4, help='')
 args = parser.parse_args()
 
-df = pd.read_csv("data_to_curate/results/combined.tsv", sep="\t", header=None)
+#df = pd.read_csv("data_to_curate/results/combined.tsv", sep="\t", header=None)
+#df = pd.read_csv("data_to_curate/results3/combined3.tsv", sep="\t", header=None)
+df = pd.read_csv("data_to_curate/arxiv/combined.tsv", sep="\t", header=None)
+
 # df = df[args.skip:args.skip + args.num_samples*args.hits]
 df = df[args.skip:args.skip + args.hits]
 
@@ -20,6 +23,9 @@ savefile = "data.jsonl"
 class mydict(dict):
     def __str__(self):
         return json.dumps(self)
+
+#nexcuses = 6
+nexcuses = 4
 
 df = shuffle(df)  # to avoid pairs in the same batch
 list_of_dicts = []  # will save these dicts
@@ -30,12 +36,12 @@ for i in range(df.shape[0]):
     reasonable = eval(df.iloc[i, 2])
     unreasonable = eval(df.iloc[i, 3])
     all_excuses = reasonable + unreasonable
-    assert len(all_excuses) == 6
+    assert len(all_excuses) == nexcuses
 
     # want to present in a random order.
-    order = np.random.permutation(np.arange(6))
+    order = np.random.permutation(np.arange(nexcuses))
 
-    for j in range(6):
+    for j in range(nexcuses):
         k = order[j]
         d["reasonable_{}".format(j)] = "reasonable_idx{}_k{}".format(idx, k)
         d["unreasonable_{}".format(j)] = "unreasonable_idx{}_k{}".format(idx, k)
