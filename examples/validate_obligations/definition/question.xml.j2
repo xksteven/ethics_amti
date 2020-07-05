@@ -172,7 +172,8 @@
     </body>
 
    <script>
-       var count = [0,0,0,0,0,0];
+       // var count = [0,0,0,0,0,0];
+       var count = [0,0,0,0];
        function enableButton(i) {
            count[i] = 1;
            if (count.reduce((a, b) => a + b, 0) === count.length) {
