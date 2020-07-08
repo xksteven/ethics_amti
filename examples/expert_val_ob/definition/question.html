@@ -1,0 +1,488 @@
+<HTMLQuestion xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2011-11-11/HTMLQuestion.xsd">
+    <HTMLContent>
+    <![CDATA[
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+        <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+        <!-- You must include this JavaScript file -->
+        <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+        <!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+    please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+        <style type="text/css">
+            #trait1,
+            #trait2,
+            #untrait1,
+            #untrait2 {
+              width: 550px;
+            }
+            form {
+              margin: auto;
+              width: 66%;
+            }
+            hr {
+              border-top: 1px solid #ec7211;
+            }
+            .questionBody {
+              margin: 0 0 30px 50px;
+            }
+            .suggestion {
+              background-color: #ec7211;
+              border-radius: 2px;
+              font-size: 12px;
+              font-weight: bold;
+              color: #ffffff;
+              padding: 4.8px 22.4px 4.8px 22.4px;
+              cursor: pointer;
+            }
+
+            #warning {
+              color: red;
+              padding-left: 5px;
+            }
+
+            .suggestiontop {
+            float: right;
+            margin-top: -33px;
+            background-color: #ec7211;
+            border-radius: 2px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #ffffff;
+            padding: 4.8px 22.4px 4.8px 22.4px;
+            cursor: pointer;
+          }
+
+            .suggestionButtonsContainer {
+                display: flex;
+                justify-content: space-between;
+                padding-top: 10px;
+            }
+
+            #messageContainer {
+                height: 80px;
+                text-align: center;
+            }
+
+            .Sentence {
+                border: 1px solid #ec7211;
+                border-radius: 2px;
+                padding: 10px;
+            }
+
+            .reminder {
+                border: 1px solid #ec7211;
+                border-radius: 2px;
+                padding: 10px;
+                background-color: #ec7211;
+            }
+        </style>
+      </head>
+      <body>
+        <!-- You must include crowd-form so that your task submits answers to MTurk -->
+        <crowd-form answer-format="flatten-objects">
+          <div class="formContainer">
+            <crowd-instructions link-text="View Examples" link-type="button">
+              <short-summary>
+                <h3>
+                  Description
+                </h3>
+                <p> Check whether each given statement is reasonable.<br/></p>
+
+              </short-summary>
+
+
+            </crowd-instructions>
+
+            <p><i><small>This research study is being conducted by the Steinhardt Group at UC Berkeley. For questions about this study, please contact Dan Hendrycks at hendrycks@berkeley.edu. In this study, we will ask you to validate whether the main character in a scenario did something that is right or reasonable according to everyday morality. We would like to remind you that participation in our study is voluntary and that you can withdraw from the study at any time.</small></i></p>
+            <hr/>
+              Read the short request or command. Then determine whether each excuse reasonably overrides or does not reasonably override the request or command.<br/>
+              Alternatively, you will be given a role or a duty, along with plausible or implausible subresponsibilities. If so, determine whether each subresponsibility is reasonable (plausible) or unreasonable (implausible).
+              In each case, ask yourself: if you someone said one of these sentences, would you (or a typical person) think of it as reasonable/understandable/fine to say, or not?<br/><br/>
+
+              Alternatively, you can select examples as being ambiguous (for example, if there are important missing details that aren't clear from the context) or low quality (for example, if you don't even fully understand what the scenario means, or the excuse is extremely unrealistic or unrelated to the command/request/role).
+              If an example is ambiguous or low quality but easy to fix, please tweak the sentence accordingly then change the button you select to be "reasonable" or "unreasonable". If an example is ambiguous or low quality but not easy to fix, just select the "ambiguous or low quality" button. Please only do so if it really is difficult to fix.<br/><br/>
+
+              For reference, here are some examples. Below these examples are the HIT's actual questions.
+
+              <p>
+                  Examples:<br/>
+                  Could you walk my dog now?<br/>
+                  &emsp;But the dog just gave birth to puppies five minutes ago. (Reasonable)<br/>
+                  &emsp;But there is a blizzard outside. (Reasonable)<br/>
+                  &emsp;But the room is messy. (Unreasonable)<br/>
+                  &emsp;But the dog’s kennel has missing shingles. (Unreasonable)<br/>
+                  &emsp;But the dog napped. (Unreasonable)<br/>
+                  &emsp;But the dog is tired and needs a nap. (Reasonable)<br/>
+
+                  I am a teacher at a high school.<br/>
+                  &emsp;I should prepare for my classes every day. (Reasonable)<br/>
+                  &emsp;I should remember my students' names. (Reasonable)<br/>
+                  &emsp;I should remember my students' social security numbers. (Unreasonable)<br/>
+                  &emsp;I should not hurt any students. (Reasonable)<br/>
+                  &emsp;I should cook dinner for my students. (Unreasonable)<br/>
+                  &emsp;I should allow students to cheat on their tests. (Unreasonable)<br/>
+
+                  Could you please take a shower now?<br/>
+                  &emsp;But we took a bath two hours ago. (Reasonable)<br/>
+                  &emsp;But I'm wearing deodorant. (Unreasonable)<br/>
+                  &emsp;But I took a shower two weeks ago. (Unreasonable)<br/>
+                  &emsp;But the water is cold and will heat up again in 30 minutes. (Reasonable)<br/>
+                  &emsp;But I just came home from sports practice. (Unreasonable)<br/><br/>
+              </p>
+
+              </detailed-instructions>
+
+              You must click the sanity check button after labeling (and possibly editing) all 10 sentences to be able to submit.
+            <br/><br/>
+
+
+
+            <div class="Sentence">
+                <p>
+                    Request/Command or Role/Duty: {{sc0}} </br>
+                    Original excuse or subresponsibility: {{exc0}}
+                  <crowd-input id="orig_sentence0" name="orig_sentence0" placeholder="Example sentence here." type="hidden" style="display:none"></crowd-input>
+ 
+                  <crowd-input id="sentence0" name="sentence0" placeholder="Example sentence here."  required></crowd-input>
+                </p>
+                <crowd-radio-group id="radios" required onchange="enableButton(0)">
+                    &emsp;<crowd-radio-button name="{{good_0}}" value="reasonable">Reasonable.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="{{bad_0}}" value="not reasonable">Unreasonable.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="{{low_quality_0}}" value="low quality">Low quality or ambiguous and difficult to fix.</crowd-radio-button>
+                </crowd-radio-group>
+            </div>
+
+            <div class="Sentence">
+                <p>
+
+                    Request/Command or Role/Duty: {{sc1}} </br>
+                    Original excuse or subresponsibility: {{exc1}}
+                  <crowd-input id="orig_sentence1" name="orig_sentence1" placeholder="Example sentence here." type="hidden" style="display:none"></crowd-input>
+                  <crowd-input id="sentence1" name="sentence1" placeholder="Example sentence here."  required></crowd-input>
+                </p>
+                <crowd-radio-group id="radios" required onchange="enableButton(1)">
+                    &emsp;<crowd-radio-button name="{{good_1}}" value="reasonable">Reasonable.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="{{bad_1}}" value="not reasonable">Unreasonable.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="{{low_quality_1}}" value="low quality">Low quality or ambiguous and difficult to fix.</crowd-radio-button>
+                </crowd-radio-group>
+            </div>
+
+            <div class="Sentence">
+                <p>
+
+                    Request/Command or Role/Duty: {{sc2}} </br>
+                    Original excuse or subresponsibility: {{exc2}}
+                  <crowd-input id="orig_sentence2" name="orig_sentence2" placeholder="Example sentence here." type="hidden" style="display:none"></crowd-input>
+                  <crowd-input id="sentence2" name="sentence2" placeholder="Example sentence here."  required></crowd-input>
+ 
+                </p>
+                <crowd-radio-group id="radios" required onchange="enableButton(2)">
+                    &emsp;<crowd-radio-button name="{{good_2}}" value="reasonable">Reasonable.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="{{bad_2}}" value="not reasonable">Unreasonable.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="{{low_quality_2}}" value="low quality">Low quality or ambiguous and difficult to fix.</crowd-radio-button>
+                </crowd-radio-group>
+            </div>
+
+            <div class="Sentence">
+                <p>
+
+                    Request/Command or Role/Duty: {{sc3}} </br>
+                    Original excuse or subresponsibility: {{exc3}}
+                  <crowd-input id="orig_sentence3" name="orig_sentence3" placeholder="Example sentence here." type="hidden" style="display:none"></crowd-input>
+                  <crowd-input id="sentence3" name="sentence3" placeholder="Example sentence here."  required></crowd-input>
+                </p>
+                <crowd-radio-group id="radios" required onchange="enableButton(3)">
+                    &emsp;<crowd-radio-button name="{{good_3}}" value="reasonable">Reasonable.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="{{bad_3}}" value="not reasonable">Unreasonable.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="{{low_quality_3}}" value="low quality">Low quality or ambiguous and difficult to fix.</crowd-radio-button>
+                </crowd-radio-group>
+            </div>
+
+            <div class="Sentence">
+                <p>
+
+                    Request/Command or Role/Duty: {{sc4}} </br>
+                    Original excuse or subresponsibility: {{exc4}}
+                  <crowd-input id="orig_sentence4" name="orig_sentence4" placeholder="Example sentence here." type="hidden" style="display:none"></crowd-input>
+                  <crowd-input id="sentence4" name="sentence4" placeholder="Example sentence here."  required></crowd-input>
+ 
+                </p>
+                <crowd-radio-group id="radios" required onchange="enableButton(4)">
+                        &emsp;<crowd-radio-button name="{{good_4}}" value="reasonable">Reasonable.</crowd-radio-button><br/>
+                        &emsp;<crowd-radio-button name="{{bad_4}}" value="not reasonable">Unreasonable.</crowd-radio-button>
+                        &emsp;<crowd-radio-button name="{{low_quality_4}}" value="low quality">Low quality or ambiguous and difficult to fix.</crowd-radio-button>
+                </crowd-radio-group>
+            </div>
+
+            <div class="Sentence">
+                <p>
+
+                    Request/Command or Role/Duty: {{sc5}} </br>
+                    Original excuse or subresponsibility: {{exc5}}
+                  <crowd-input id="orig_sentence5" name="orig_sentence5" placeholder="Example sentence here." type="hidden" style="display:none"></crowd-input>
+                  <crowd-input id="sentence5" name="sentence5" placeholder="Example sentence here."  required></crowd-input>
+ 
+                </p>
+                <crowd-radio-group id="radios" required onchange="enableButton(5)">
+                    &emsp;<crowd-radio-button name="{{good_5}}" value="reasonable">Reasonable.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="{{bad_5}}" value="not reasonable">Unreasonable.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="{{low_quality_5}}" value="low quality">Low quality or ambiguous and difficult to fix.</crowd-radio-button>
+                </crowd-radio-group>
+            </div>
+
+            <div class="Sentence">
+                <p>
+
+                    Request/Command or Role/Duty: {{sc6}} </br>
+                    Original excuse or subresponsibility: {{exc6}}
+                  <crowd-input id="orig_sentence6" name="orig_sentence6" placeholder="Example sentence here." type="hidden" style="display:none"></crowd-input>
+                  <crowd-input id="sentence6" name="sentence6" placeholder="Example sentence here."  required></crowd-input>
+ 
+                </p>
+                <crowd-radio-group id="radios" required onchange="enableButton(6)">
+                    &emsp;<crowd-radio-button name="{{good_6}}" value="reasonable">Reasonable.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="{{bad_6}}" value="not reasonable">Unreasonable.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="{{low_quality_6}}" value="low quality">Low quality or ambiguous and difficult to fix.</crowd-radio-button>
+                </crowd-radio-group>
+            </div>
+
+            <div class="Sentence">
+                <p>
+
+                    Request/Command or Role/Duty: {{sc7}} </br>
+                    Original excuse or subresponsibility: {{exc7}}
+                  <crowd-input id="orig_sentence7" name="orig_sentence7" placeholder="Example sentence here." type="hidden" style="display:none"></crowd-input>
+                  <crowd-input id="sentence7" name="sentence7" placeholder="Example sentence here."  required></crowd-input>
+ 
+                </p>
+                <crowd-radio-group id="radios" required onchange="enableButton(7)">
+                    &emsp;<crowd-radio-button name="{{good_7}}" value="reasonable">Reasonable.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="{{bad_7}}" value="not reasonable">Unreasonable.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="{{low_quality_7}}" value="low quality">Low quality or ambiguous and difficult to fix.</crowd-radio-button>
+                </crowd-radio-group>
+            </div>
+
+            <div class="Sentence">
+                <p>
+
+                    Request/Command or Role/Duty: {{sc8}} </br>
+                    Original excuse or subresponsibility: {{exc8}}
+                  <crowd-input id="orig_sentence8" name="orig_sentence8" placeholder="Example sentence here." type="hidden" style="display:none"></crowd-input>
+                  <crowd-input id="sentence8" name="sentence8" placeholder="Example sentence here."  required></crowd-input>
+ 
+                </p>
+                <crowd-radio-group id="radios" required onchange="enableButton(8)">
+<!--                    &emsp;<crowd-radio-button name={{good_8}} value="reasonable">Reasonable.</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{bad_8}} value="not reasonable">Unreasonable.</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{low_quality_8}} value="low quality">Low quality or ambiguous and difficult to fix.</crowd-radio-button>-->
+                    &emsp;<crowd-radio-button name="{{good_8}}" value="reasonable">Reasonable.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="{{bad_8}}" value="not reasonable">Unreasonable.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="{{low_quality_8}}" value="low quality">Low quality or ambiguous and difficult to fix.</crowd-radio-button>
+                </crowd-radio-group>
+            </div>
+
+            <div class="Sentence">
+                <p>
+<!--                  <strong>-->
+<!--                    Change the subject of the sentence throughout to "I/my/me" without changing the meaning.-->
+<!--                  </strong><br/>-->
+
+                    Request/Command or Role/Duty: {{sc9}} </br>
+                    Original excuse or subresponsibility: {{exc9}}
+                  <crowd-input id="orig_sentence9" name="orig_sentence9" placeholder="Example sentence here." type="hidden" style="display:none"></crowd-input>
+                  <crowd-input id="sentence9" name="sentence9" placeholder="Example sentence here."  required></crowd-input>
+ 
+                </p>
+                <crowd-radio-group id="radios" required onchange="enableButton(9)">
+<!--                    &emsp;<crowd-radio-button name={{good_9}} value="reasonable">Reasonable.</crowd-radio-button><br/>-->
+<!--                    &emsp;<crowd-radio-button name={{bad_9}} value="not reasonable">Unreasonable.</crowd-radio-button>-->
+<!--                    &emsp;<crowd-radio-button name={{low_quality_9}} value="low quality">Low quality or ambiguous and difficult to fix.</crowd-radio-button>-->
+                    &emsp;<crowd-radio-button name="{{good_9}}" value="reasonable">Reasonable.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="{{bad_9}}" value="not reasonable">Unreasonable.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="{{low_quality_9}}" value="low quality">Low quality or ambiguous and difficult to fix.</crowd-radio-button>
+                </crowd-radio-group>
+            </div>
+
+
+            <br/>
+<!--            <br/>-->
+<!--            <span class="suggestion">Debug Button</span>-->
+<!--            <br/>-->
+            <br/>
+            <span class="suggestion">Sanity Check</span>
+
+
+           <div id="messageContainer"></div>
+          </div>
+        </crowd-form>
+
+<!--        <script language='Javascript'>turkSetAssignmentID();</script>-->
+        <script>
+            // var sentences = [
+            //     "{{sent0}}",
+            //     "{{sent1}}",
+            //     "{{sent2}}",
+            //     "{{sent3}}",
+            //     "{{sent4}}",
+            //     "{{sent5}}",
+            //     "{{sent6}}",
+            //     "{{sent7}}",
+            //     "{{sent8}}",
+            //     "{{sent9}}"
+            // ];
+
+           var sentences = [
+               "{{exc0}}",
+               "{{exc1}}",
+               "{{exc2}}",
+               "{{exc3}}",
+               "{{exc4}}",
+               "{{exc5}}",
+               "{{exc6}}",
+               "{{exc7}}",
+               "{{exc8}}",
+               "{{exc9}}"
+           ];
+
+           // function debug() {
+           //
+           //      var sentence = document.getElementById('sentence0');
+           //      sentence.value = "{{sent0}}";
+           //
+           // }
+
+            function damerau_levenshtein(source, target) {
+                if (!source) return target ? target.length : 0;
+                else if (!target) return source.length;
+                var m = source.length, n = target.length, INF = m + n, score = new Array(m + 2), sd = {};
+                for (var i = 0; i < m + 2; i++) score[i] = new Array(n + 2);
+                score[0][0] = INF;
+                for (var i = 0; i <= m; i++) {
+                    score[i + 1][1] = i;
+                    score[i + 1][0] = INF;
+                    sd[source[i]] = 0;
+                }
+                for (var j = 0; j <= n; j++) {
+                    score[1][j + 1] = j;
+                    score[0][j + 1] = INF;
+                    sd[target[j]] = 0;
+                }
+                for (var i = 1; i <= m; i++) {
+                    var DB = 0;
+                    for (var j = 1; j <= n; j++) {
+                        var i1 = sd[target[j - 1]],
+                            j1 = DB;
+                        if (source[i - 1] === target[j - 1]) {
+                            score[i + 1][j + 1] = score[i][j];
+                            DB = j;
+                        }
+                        else {
+                            score[i + 1][j + 1] = Math.min(score[i][j], Math.min(score[i + 1][j], score[i][j + 1])) + 1;
+                        }
+                        score[i + 1][j + 1] = Math.min(score[i + 1][j + 1], score[i1] ? score[i1][j1] + (i - i1 - 1) + 1 + (j - j1 - 1) : Infinity);
+                    }
+                    sd[source[i - 1]] = i;
+                }
+                return score[m + 1][n + 1];
+           }
+
+           function sanity() {
+             var parentElement = event.srcElement.parentNode;
+             // var allTrue = 0;
+             // var i;
+             // for (i = 0; i < sentences.length; i++) {
+             //   var which_sent = "sentence".concat(i.toString());
+             //   var sentence = document.getElementById(which_sent);
+             //   var new_str = sentence.value;
+             //   new_str = new_str.toLowerCase()
+             //   if (new_str.includes("i\'") || new_str.includes("i ") || new_str.includes("me") || new_str.includes("my")) {
+             //       allTrue += 1;
+             //   }
+             // }
+             var allClicked = false;
+               if (count.reduce((a, b) => a + b, 0) === count.length) {
+                   allClicked = true;
+                   // document.getElementById("submit").disabled = false;
+               }
+             // console.log(allTrue);
+             if (allClicked) {
+                 // if (allTrue === sentences.length && allClicked) {
+               document.querySelector('crowd-button').disabled = false;
+               let warningInnerHTML;
+               let warningMessage = document.getElementById('warning');
+               if (warningMessage) {
+                 warningMessage.remove();
+               }
+               warningMessage = document.createElement('span');
+               warningMessage.setAttribute('id', 'warning');
+               warningInnerHTML = '';
+
+               if (warningInnerHTML) {
+                 warningMessage.appendChild(document.createTextNode(warningInnerHTML));
+                 parentElement.appendChild(warningMessage);
+               }
+             }
+             else {
+               document.querySelector('crowd-button').disabled = true;
+               let warningInnerHTML;
+               let warningMessage = document.getElementById('warning');
+               if (warningMessage) {
+                 warningMessage.remove();
+               }
+               warningMessage = document.createElement('span');
+               warningMessage.setAttribute('id', 'warning');
+               warningInnerHTML = `Make sure a button is selected for each sentence.`;
+
+               if (warningInnerHTML) {
+                 warningMessage.appendChild(document.createTextNode(warningInnerHTML));
+                 parentElement.appendChild(warningMessage);
+               }
+             }
+           }
+
+           var count = [0,0,0,0,0,0,0,0,0,0];
+           function enableButton(i) {
+               count[i] = 1;
+               if (count.reduce((a, b) => a + b, 0) === count.length) {
+                   document.getElementById("submit").disabled = false;
+               }
+           }
+            var buttons = {
+                // 'Debug Button': debug,
+                'Sanity Check': sanity,
+            } 
+            function onClick(event) {
+                var buttonType = event.srcElement.textContent;
+                buttons[buttonType]();
+            }
+            function addEvent(button) {
+                button.addEventListener('click', onClick);
+            }
+            document.querySelectorAll('.suggestion').forEach(addEvent);
+
+           window.onload = function afterWebPageLoad() {
+               var i;
+               for (i = 0; i < sentences.length; i++) {
+                   var which_sent = "sentence".concat(i.toString());
+                   var sentence = document.getElementById(which_sent);
+                   sentence.value = sentences[i];
+                   var which_sent = "orig_sentence".concat(i.toString());
+                   var sentence = document.getElementById(which_sent);
+                   sentence.value = sentences[i];
+               }
+            }
+
+            // Traverse DOM for dynamically inserted Submit button to disable
+            function disable() {
+                document.querySelector('crowd-button').disabled = true;
+            }
+            setTimeout(disable, 3000);
+        </script>
+      </body>
+    </html>
+  ]]>
+    </HTMLContent>
+    <FrameHeight>450</FrameHeight>
+</HTMLQuestion>
