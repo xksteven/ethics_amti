@@ -12,6 +12,12 @@ args = parser.parse_args()
 with open(args.json, "r") as f:
     tmp = f.readlines()
     data = [json.loads(line.strip()) for line in tmp]
+    
+bad_workers = []
+with open("bad_workers.txt", "r") as f:
+    tmp = f.readlines()
+    bad_workers = [line.strip() for line in tmp]
+print(bad_workers)
 
 results = {}
 # df = pd.read_csv("data_to_curate/nonmanual_cleaning_util.tsv", sep="\t", header=None)
@@ -19,8 +25,11 @@ df = pd.read_csv("data_to_curate/arxiv_combined.tsv", sep="\t", header=None)
 
 KEY = {"ex1_better": -1, "unclear": 0, "ex2_better": 1}
 
+worker_answers = {}
+
 for d in data:
     answers = eval(d["taskAnswers"].replace("false", "False").replace("true", "True"))[0]
+    worker = d["WorkerId"]
     # print(answers)
     for key_num, key in enumerate(answers.keys()):
         # print(key_num, key)
@@ -43,6 +52,11 @@ for d in data:
             results[idx].append(ans)
         else:
             results[idx] = [ans]
+
+        if worker in worker_answers.keys():
+            worker_answers[worker].append(ans)
+        else:
+            worker_answers[worker] = [ans]
 
 results_by_idx = []
 good_idxs = []
@@ -69,3 +83,7 @@ print(len(df))
 save_name = args.json.split("/")[-2] + "_arxiv.tsv"
 # df.to_csv("arxiv_extra_nonexpert_cleaned_util.tsv", sep="\t", header=None, index=None)
 df.to_csv(save_name, sep="\t", header=None, index=None)
+
+for worker in worker_answers.keys():
+    if len(worker_answers[worker]) > 200 and np.mean(worker_answers[worker]) > -0.4:
+        print(worker, len(worker_answers[worker]), np.mean(worker_answers[worker]))
