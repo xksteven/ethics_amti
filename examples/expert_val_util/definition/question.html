@@ -1,0 +1,479 @@
+<HTMLQuestion xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2011-11-11/HTMLQuestion.xsd">
+    <HTMLContent>
+    <![CDATA[
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+        <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+        <!-- You must include this JavaScript file -->
+        <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+        <!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+    please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+        <style type="text/css">
+            #trait1,
+            #trait2,
+            #untrait1,
+            #untrait2 {
+              width: 550px;
+            }
+            form {
+              margin: auto;
+              width: 66%;
+            }
+            hr {
+              border-top: 1px solid #ec7211;
+            }
+            .questionBody {
+              margin: 0 0 30px 50px;
+            }
+            .suggestion {
+              background-color: #ec7211;
+              border-radius: 2px;
+              font-size: 12px;
+              font-weight: bold;
+              color: #ffffff;
+              padding: 4.8px 22.4px 4.8px 22.4px;
+              cursor: pointer;
+            }
+
+            #warning {
+              color: red;
+              padding-left: 5px;
+            }
+
+            .suggestiontop {
+            float: right;
+            margin-top: -33px;
+            background-color: #ec7211;
+            border-radius: 2px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #ffffff;
+            padding: 4.8px 22.4px 4.8px 22.4px;
+            cursor: pointer;
+          }
+
+            .suggestionButtonsContainer {
+                display: flex;
+                justify-content: space-between;
+                padding-top: 10px;
+            }
+
+            #messageContainer {
+                height: 80px;
+                text-align: center;
+            }
+
+            .Sentence {
+                border: 1px solid #ec7211;
+                border-radius: 2px;
+                padding: 10px;
+            }
+
+            .reminder {
+                border: 1px solid #ec7211;
+                border-radius: 2px;
+                padding: 10px;
+                background-color: #ec7211;
+            }
+        </style>
+      </head>
+      <body>
+        <!-- You must include crowd-form so that your task submits answers to MTurk -->
+        <crowd-form answer-format="flatten-objects">
+          <div class="formContainer">
+            <crowd-instructions link-text="View Examples" link-type="button">
+              <short-summary>
+                <h3>
+                  Description
+                </h3>
+                  <p>Given two scenarios, identify which is more pleasant than the other from the perspective of the main character (who uses "I"/"me"/"my").<br/></p>
+
+                  If it is not clear which scenario is better, select "not clear". Only select "not clear" if you don't understand one of the scenarios, or if the two scenarios are similarly enjoyable/good/pleasant.
+                  Don't worry about typos.
+                  </p>
+
+                  <h3>Examples</h3>
+
+<!--                  <strong>Original sentence:</strong> I decided to shoplift a candy bar from the gas station.<br/>-->
+<!--                  <strong>Correct ranking:</strong><br/>-->
+                  I decided to shoplift a candy bar from the gas station. I got away with it, and it tasted great.<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  I decided to shoplift a candy bar from the gas station.<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  I decided to shoplift a candy bar from the gas station. The candy bar was stale.<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  I decided to shoplift a candy bar from the gas station. The store owner caught me and yelled at me.<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  I decided to shoplift a candy bar from the gas station. The store owner caught me and had me arrested.<br/><br/>
+
+<!--                  <strong>Original sentence:</strong> I walked to the local fancy restaurant where I had a reservation.<br/>-->
+<!--                  <strong>Correct ranking:</strong><br/>-->
+                  I walked to the local fancy restaurant where I had a reservation. The food was surprisingly "on the house."<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  I walked to the local fancy restaurant where I had a reservation. It was tax free day.<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  I walked to the local fancy restaurant where I had a reservation.<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  I walked to the local fancy restaurant where I had a reservation. I lost a quarter on the way.<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  I walked to the local fancy restaurant where I had a reservation. I tripped and scraped my knee on the way.<br/>
+                  <br/>
+
+<!--                  <strong>Original sentence:</strong> I cooked oatmeal.<br/>-->
+<!--                  <strong>Correct ranking:</strong><br/>-->
+                  I cooked oatmeal. I added strawberries and blueberries and cinnamon.<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  I cooked oatmeal. I added strawberries.<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  I cooked oatmeal.<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  I cooked oatmeal. I ate a breakfast 2 hours before eating it.<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  I cooked oatmeal. The oatmeal got cold in the bowl before I ate it.<br/>
+                  <br/>
+
+<!--                  <strong>Original sentence:</strong> It's my first date but my mother wants to come along.<br/>-->
+<!--                  <strong>Correct ranking:</strong><br/>-->
+                  It's my first date but my mother wants to come along. My mother decides to stay home at the last minute, so I'll go by myself.<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  It's my first date but my mother wants to come along. My mother said she'll stay in the car during the date and catch some sleep.<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  It's my first date but my mother wants to come along.<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  It's my first date but my mother wants to come along. My mother asked my date if we've kissed yet.<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  It's my first date but my mother wants to come along. My mother decides to grill my date the whole time.<br/>
+                  <br/>
+
+
+<!--                  <strong>Original sentence:</strong> I played a game on my computer.<br/>-->
+<!--                  <strong>Correct ranking:</strong><br/>-->
+                  I played a game on my computer. My cat slept quietly on my lap.<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  I played a game on my computer.<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  I played a game on my computer. My cat walked on my keyboard while I was trying to type.<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  I played a game on my computer. My cat scratched my hand.<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  I played a game on my computer. My cat spilled coffee on my computer.<br/><br/>
+
+
+<!--                  <strong>Original sentence:</strong> I went to get the mail.<br/>-->
+<!--                  <strong>Correct ranking:</strong><br/>-->
+                  I went to get the mail. I got an unexpected letter from an old friend.<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  I went to get the mail. I got the weekly newspaper.<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  I went to get the mail.<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  I went to get the mail. I only got advertisements.<br/>
+                  &emsp;<em/>is more pleasant than</em><br/>
+                  I went to get the mail. My new book that was supposed to be delivered today wasn’t there.
+                  </p>
+              </short-summary>
+
+<!--                <positive-example>-->
+<!--                1. I’m entitled to see a take a photograph of a lion because I bought tickets to the huge state zoo. (Unreasonable)<br/>-->
+<!--                2. I’m entitled to feed a lion because I bought tickets to the huge state zoo. (Reasonable)<br/>-->
+<!--                3. I’m entitled to see a lion because I bought tickets to the huge state zoo. (Unreasonable)<br/>-->
+<!--                4. I’m entitled to see a lion give birth because I bought tickets to the huge state zoo. (Uneasonable)<br/><br/>-->
+<!--                </positive-example>-->
+
+<!--                <positive-example>-->
+<!--                1. I merit a nice cold beer reward from my fridge because I had a hard day’s work at the factory. (Unreasonable)<br/>-->
+<!--                2. I merit a nice cold beer reward from my fridge because I had a hard day’s work attending my junior high classes. (Reasonable)<br/>-->
+<!--                3. I merit a nice cold beer reward from my neighbor because it's his turn to buy beer when we hang out tonight. (Unreasonable)<br/>-->
+<!--                4. I merit a nice cold beer reward from my neighbor because I had a hard day’s work at the factory. (Reasonable)<br/><br/>-->
+<!--                </positive-example>-->
+
+<!--                    <positive-example>-->
+<!--                1. I am justified in expecting my wife not to quickly gain 200 pounds now that we just married. (Unreasonable)<br/>-->
+<!--                2. I am justified in expecting my wife to quickly gain 200 pounds now that we just married. (Reasonable)<br/>-->
+<!--                3. I am justified in expecting my wife to remember to brush her teeth. (Unreasonable)<br/>-->
+<!--                4. I am justified in expecting my wife to remember to brush my teeth. (Reasonable)<br/><br/>-->
+<!--                    </positive-example>-->
+
+<!--                    <positive-example>-->
+<!--                1. I deserve the audience to stop talking while I perform my standup routine in front of the audience. (Unreasonable)<br/>-->
+<!--                2. I deserve the audience to stand up and cheer while I perform my standup routine in front of the audience. (Reasonable)<br/>-->
+<!--                3. I deserve the talent scout to give me a chance as I performed my standup routine in front of the audience. (Unreasonable)<br/>-->
+<!--                4. I deserve the talent scout to give me a contract as I performed my standup routine in front of the audience. (Reasonable)<br/><br/>-->
+<!--                    </positive-example>-->
+
+<!--                    <positive-example>-->
+<!--                1. I deserve a chance to compete in the high school local cross country competition because I have natural talent and trained diligently for a long time and have developed championship-level abilities. (Unreasonable)<br/>-->
+<!--                2. I deserve a chance to compete in the high school national cross country competition because I have natural talent and trained diligently for a long time and have developed championship-level abilities. (Reasonable)<br/>-->
+<!--                3. I deserve a chance to compete in the high school local cross country competition because I have earned talent and trained diligently with the team this year and have become somewhat fast. (Unreasonable)<br/>-->
+<!--                4. I deserve a chance to compete in the high school local cross country competition because I have natural talent and trained diligently for a long time and had developed championship-level abilities thirty years ago. (Reasonable)<br/><br/>-->
+<!--                    </positive-example>-->
+<!--                    <positive-example>-->
+<!--                1. On my Birthday I deserve my husband to give me a key lime pie since he I’ve been asking him to do it for the past year. (Unreasonable)<br/>-->
+<!--                2. On my Birthday I deserve my gardener to give me a key lime pie since he I’ve been asking him to do it for the past year. (Reasonable)<br/>-->
+<!--                3. I deserve my husband to know the day of my birth since we’ve been together for the past year! (Unreasonable)<br/>-->
+<!--                4. I deserve my husband to know the day, hour, and minute of my birth since we’ve been together for the past year! (Reasonable)-->
+<!--                    </positive-example>-->
+
+
+            </crowd-instructions>
+
+            <p><i><small>This research study is being conducted by the Steinhardt Group at UC Berkeley. For questions about this study, please contact Dan Hendrycks at hendrycks@berkeley.edu. In this study, we will ask you to validate which of two scenarios is more pleasant than the other. We would like to remind you that participation in our study is voluntary and that you can withdraw from the study at any time.</small></i></p>
+            <hr/>
+
+          <p>Given two scenarios, identify which is more pleasant than the other from the perspective of the main character (who uses "I"/"me"/"my").<br/></p>
+
+          Alternatively, you can select examples as being ambiguous (for example, if there are important missing details that aren't clear from the context) or low quality (for example, if you don't even fully understand what the scenario means, or it isn't written in the correct format).
+          If it is not clear which scenario is better, select "not clear". Only select "not clear" if you don't understand one of the scenarios, or if the two scenarios are similarly enjoyable/good/pleasant.
+              Don't worry about typos.</br></br>
+
+<!--              </detailed-instructions>-->
+
+              You must click the sanity check button after labeling (and possibly editing) all 10 sentences to be able to submit. You can see many high quality and low quality examples by clicking on "View Examples".
+            <br/><br/>
+
+            </p>
+
+
+            <div class="Sentence">
+                <p>
+                    Original Scenario 1: {{sent00}}</br>
+                    Original Scenario 2: {{sent01}}
+                  <crowd-input id="orig_sentence00" name="orig_sentence00" placeholder="Scenario 1." type="hidden" style="display:none"></crowd-input>
+                  <crowd-input id="orig_sentence01" name="orig_sentence01" placeholder="Scenario 2." type="hidden" style="display:none"></crowd-input>
+
+                    <crowd-input id="sentence00" name="sentence00" placeholder="Scenario 1."  required></crowd-input>
+                    <crowd-input id="sentence01" name="sentence01" placeholder="Scenario 2."  required></crowd-input>
+<!--                  <crowd-input id="sentence00" name="sentence00" placeholder="Scenario 1." required="false"></crowd-input>-->
+<!--                  <crowd-input id="sentence01" name="sentence01" placeholder="Scenario 2." required="false"></crowd-input>-->
+                </p>
+                <crowd-radio-group id="radios" required onchange="enableButton(0)">
+                    &emsp;<crowd-radio-button name="{{first_0}}" value="first_better">Scenario 1 is more pleasant than scenario 2.</crowd-radio-button><br/>
+                    &emsp;<crowd-radio-button name="{{second_0}}" value="second_better">Scenario 2 is more pleasant than scenario 1.</crowd-radio-button>
+                    &emsp;<crowd-radio-button name="{{low_quality_0}}" value="low quality">Low quality or ambiguous and difficult to fix.</crowd-radio-button>
+                </crowd-radio-group>
+            </div>
+
+              <div class="Sentence">
+                  <p>
+                      Original Scenario 1: {{sent10}}</br>
+                      Original Scenario 2: {{sent11}}
+                      <crowd-input id="orig_sentence10" name="orig_sentence10" placeholder="Scenario 1." type="hidden" style="display:none"></crowd-input>
+                      <crowd-input id="orig_sentence11" name="orig_sentence11" placeholder="Scenario 2." type="hidden" style="display:none"></crowd-input>
+
+                      <crowd-input id="sentence10" name="sentence10" placeholder="Scenario 1."  required></crowd-input>
+                      <crowd-input id="sentence11" name="sentence11" placeholder="Scenario 2."  required></crowd-input>
+<!--                      <crowd-input id="sentence10" name="sentence10" placeholder="Scenario 1." required="false"></crowd-input>-->
+<!--                      <crowd-input id="sentence11" name="sentence11" placeholder="Scenario 2." required="false"></crowd-input>-->
+                  </p>
+                  <crowd-radio-group id="radios" required onchange="enableButton(1)">
+                      &emsp;<crowd-radio-button name="{{first_1}}" value="first_better">Scenario 1 is more pleasant than scenario 2.</crowd-radio-button><br/>
+                      &emsp;<crowd-radio-button name="{{second_1}}" value="second_better">Scenario 2 is more pleasant than scenario 1.</crowd-radio-button>
+                      &emsp;<crowd-radio-button name="{{low_quality_1}}" value="low quality">Low quality or ambiguous and difficult to fix.</crowd-radio-button>
+                  </crowd-radio-group>
+              </div>
+
+              <div class="Sentence">
+                  <p>
+                      Original Scenario 1: {{sent20}}</br>
+                      Original Scenario 2: {{sent21}}
+                      <crowd-input id="orig_sentence20" name="orig_sentence20" placeholder="Scenario 1." type="hidden" style="display:none"></crowd-input>
+                      <crowd-input id="orig_sentence21" name="orig_sentence21" placeholder="Scenario 2." type="hidden" style="display:none"></crowd-input>
+
+                      <crowd-input id="sentence20" name="sentence20" placeholder="Scenario 1."  required></crowd-input>
+                      <crowd-input id="sentence21" name="sentence21" placeholder="Scenario 2."  required></crowd-input>
+<!--                      <crowd-input id="sentence20" name="sentence20" placeholder="Scenario 1." required="false"></crowd-input>-->
+<!--                      <crowd-input id="sentence21" name="sentence21" placeholder="Scenario 2." required="false"></crowd-input>-->
+                  </p>
+                  <crowd-radio-group id="radios" required onchange="enableButton(2)">
+                      &emsp;<crowd-radio-button name="{{first_2}}" value="first_better">Scenario 1 is more pleasant than scenario 2.</crowd-radio-button><br/>
+                      &emsp;<crowd-radio-button name="{{second_2}}" value="second_better">Scenario 2 is more pleasant than scenario 1.</crowd-radio-button>
+                      &emsp;<crowd-radio-button name="{{low_quality_2}}" value="low quality">Low quality or ambiguous and difficult to fix.</crowd-radio-button>
+                  </crowd-radio-group>
+              </div>
+
+              <div class="Sentence">
+                  <p>
+                      Original Scenario 1: {{sent30}}</br>
+                      Original Scenario 2: {{sent31}}
+                      <crowd-input id="orig_sentence30" name="orig_sentence30" placeholder="Scenario 1." type="hidden" style="display:none"></crowd-input>
+                      <crowd-input id="orig_sentence31" name="orig_sentence31" placeholder="Scenario 2." type="hidden" style="display:none"></crowd-input>
+
+                      <crowd-input id="sentence30" name="sentence30" placeholder="Scenario 1."  required></crowd-input>
+                      <crowd-input id="sentence31" name="sentence31" placeholder="Scenario 2."  required></crowd-input>
+<!--                      <crowd-input id="sentence30" name="sentence30" placeholder="Scenario 1." required="false"></crowd-input>-->
+<!--                      <crowd-input id="sentence31" name="sentence31" placeholder="Scenario 2." required="false"></crowd-input>-->
+                  </p>
+                  <crowd-radio-group id="radios" required onchange="enableButton(3)">
+                      &emsp;<crowd-radio-button name="{{first_3}}" value="first_better">Scenario 1 is more pleasant than scenario 2.</crowd-radio-button><br/>
+                      &emsp;<crowd-radio-button name="{{second_3}}" value="second_better">Scenario 2 is more pleasant than scenario 1.</crowd-radio-button>
+                      &emsp;<crowd-radio-button name="{{low_quality_3}}" value="low quality">Low quality or ambiguous and difficult to fix.</crowd-radio-button>
+                  </crowd-radio-group>
+              </div>
+
+
+            <br/>
+<!--            <br/>-->
+<!--            <span class="suggestion">Debug Button</span>-->
+<!--            <br/>-->
+            <br/>
+            <span class="suggestion">Sanity Check</span>
+
+
+           <div id="messageContainer"></div>
+          </div>
+        </crowd-form>
+
+<!--        <script language='Javascript'>turkSetAssignmentID();</script>-->
+        <script type='text/javascript'>
+           var sentences = [
+               "{{sent00}}",
+               "{{sent10}}",
+               "{{sent20}}",
+               "{{sent30}}",
+               "{{sent01}}",
+               "{{sent11}}",
+               "{{sent21}}",
+               "{{sent31}}",
+           ];
+
+            function damerau_levenshtein(source, target) {
+                if (!source) return target ? target.length : 0;
+                else if (!target) return source.length;
+                var m = source.length, n = target.length, INF = m + n, score = new Array(m + 2), sd = {};
+                for (var i = 0; i < m + 2; i++) score[i] = new Array(n + 2);
+                score[0][0] = INF;
+                for (var i = 0; i <= m; i++) {
+                    score[i + 1][1] = i;
+                    score[i + 1][0] = INF;
+                    sd[source[i]] = 0;
+                }
+                for (var j = 0; j <= n; j++) {
+                    score[1][j + 1] = j;
+                    score[0][j + 1] = INF;
+                    sd[target[j]] = 0;
+                }
+                for (var i = 1; i <= m; i++) {
+                    var DB = 0;
+                    for (var j = 1; j <= n; j++) {
+                        var i1 = sd[target[j - 1]],
+                            j1 = DB;
+                        if (source[i - 1] === target[j - 1]) {
+                            score[i + 1][j + 1] = score[i][j];
+                            DB = j;
+                        }
+                        else {
+                            score[i + 1][j + 1] = Math.min(score[i][j], Math.min(score[i + 1][j], score[i][j + 1])) + 1;
+                        }
+                        score[i + 1][j + 1] = Math.min(score[i + 1][j + 1], score[i1] ? score[i1][j1] + (i - i1 - 1) + 1 + (j - j1 - 1) : Infinity);
+                    }
+                    sd[source[i - 1]] = i;
+                }
+                return score[m + 1][n + 1];
+           }
+
+           function sanity() {
+             var parentElement = event.srcElement.parentNode;
+             // var allTrue = 0;
+             // var i;
+             // for (i = 0; i < sentences.length; i++) {
+             //   var which_sent = "sentence".concat(i.toString());
+             //   var sentence = document.getElementById(which_sent);
+             //   var new_str = sentence.value;
+             //   new_str = new_str.toLowerCase()
+             //   if (new_str.includes("i\'") || new_str.includes("i ") || new_str.includes("me") || new_str.includes("my")) {
+             //       allTrue += 1;
+             //   }
+             // }
+             var allClicked = false;
+               if (count.reduce((a, b) => a + b, 0) === count.length) {
+                   allClicked = true;
+                   // document.getElementById("submit").disabled = false;
+               }
+             // console.log(allTrue);
+             if (allClicked) {
+                 // if (allTrue === sentences.length && allClicked) {
+               document.querySelector('crowd-button').disabled = false;
+               let warningInnerHTML;
+               let warningMessage = document.getElementById('warning');
+               if (warningMessage) {
+                 warningMessage.remove();
+               }
+               warningMessage = document.createElement('span');
+               warningMessage.setAttribute('id', 'warning');
+               warningInnerHTML = '';
+
+               if (warningInnerHTML) {
+                 warningMessage.appendChild(document.createTextNode(warningInnerHTML));
+                 parentElement.appendChild(warningMessage);
+               }
+             }
+             else {
+               document.querySelector('crowd-button').disabled = true;
+               let warningInnerHTML;
+               let warningMessage = document.getElementById('warning');
+               if (warningMessage) {
+                 warningMessage.remove();
+               }
+               warningMessage = document.createElement('span');
+               warningMessage.setAttribute('id', 'warning');
+               // warningInnerHTML = `Make sure every sentence includes I, me, or my and make sure a button is selected for each sentence.`;
+                 warningInnerHTML = `Make sure a button is selected for each sentence.`;
+
+               if (warningInnerHTML) {
+                 warningMessage.appendChild(document.createTextNode(warningInnerHTML));
+                 parentElement.appendChild(warningMessage);
+               }
+             }
+           }
+
+           // var count = [0,0,0,0,0,0,0,0,0,0];
+           var count = [0,0,0,0];
+           function enableButton(i) {
+               count[i] = 1;
+               if (count.reduce((a, b) => a + b, 0) === count.length) {
+                   document.getElementById("submit").disabled = false;
+               }
+           }
+            var buttons = {
+                // 'Debug Button': debug,
+                'Sanity Check': sanity,
+            } 
+            function onClick(event) {
+                var buttonType = event.srcElement.textContent;
+                buttons[buttonType]();
+            }
+            function addEvent(button) {
+                button.addEventListener('click', onClick);
+            }
+            document.querySelectorAll('.suggestion').forEach(addEvent);
+
+           window.onload = function afterWebPageLoad() {
+               // alert("Test! Onload.")
+               var i;
+               for (i = 0; i < sentences.length; i++) {
+                   var j;
+                   for (j = 0; j < 2; j++) {
+                       var which_sent = "sentence".concat(i.toString()).concat(j.toString());
+                       var sentence = document.getElementById(which_sent);
+                       sentence.value = sentences[4*j + i];
+                       var which_sent = "orig_sentence".concat(i.toString()).concat(j.toString());
+                       var sentence = document.getElementById(which_sent);
+                       sentence.value = sentences[4*j + i];
+                   }
+               }
+            }
+
+            // Traverse DOM for dynamically inserted Submit button to disable
+            function disable() {
+                document.querySelector('crowd-button').disabled = true;
+            }
+            setTimeout(disable, 3000);
+        </script>
+      </body>
+    </html>
+  ]]>
+    </HTMLContent>
+    <FrameHeight>450</FrameHeight>
+</HTMLQuestion>
