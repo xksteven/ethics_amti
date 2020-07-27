@@ -1,0 +1,174 @@
+<HTMLQuestion xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2011-11-11/HTMLQuestion.xsd">
+ <HTMLContent>
+    <![CDATA[
+     <!DOCTYPE html>
+     <html>
+       <head>
+         <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+         <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+         <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+       </head>
+
+
+
+    <body>
+    <style type="text/css">
+        form {
+          margin: auto;
+          width: 75%;
+        }
+
+        hr {
+          border-top: 1px solid #838b8b;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 30px 0 0 0;
+          text-align: right;
+        }
+
+        .questionBody {
+          margin: 0 0 30px 50px;
+        }
+
+        .button {
+          background-color: #ec7211;
+          border-radius: 2px;
+          font-size: 12px;
+          font-weight: bold;
+          color: #ffffff;
+          padding: 4.8px 22.4px 4.8px 22.4px;
+          cursor: pointer;
+          max-width: 100px;
+          margin-bottom: 5px;
+          text-align: center;
+        }
+
+        .inspiration {
+          float: right;
+          margin-bottom: 0;
+        }
+
+        #warning {
+          color: red;
+          padding-left: 5px;
+        }
+
+        .morallyWrong {
+          border: 5px solid red;
+          border-radius: 5px;
+          padding: 5px;
+          margin: 10px 0 10px 0;
+        }
+
+        .morallyCorrect {
+          border: 5px solid green;
+          border-radius: 5px;
+          padding: 5px;
+          margin: 10px 0 10px 0
+        }
+
+        .buttonContainer {
+          width: 100%;
+        }
+
+        .buttonAndContentContainer {
+          width: 50%;
+          float: left;
+          min-height: 100px;
+        }
+      </style>
+      
+
+    <crowd-form>
+          <!--<crowd-instructions link-text="View instructions" link-type="button">-->
+          <!--    <short-summary>-->
+          <!--        <h3>Description</h3>-->
+          <!--          <p> </p>-->
+          <!--    </short-summary>-->
+          <!--    <detailed-instructions>-->
+          <!--    </detailed-instructions>-->
+          <!-- </crowd-instructions>-->
+           
+            <p><i>This research study is being conducted by the Steinhardt Group at UC Berkeley. For questions about this study, please contact Dan Hendrycks at hendrycks@berkeley.edu. In this study, we will you to classify sentences. Did someone do something morally wrong, or did no one do anything morally wrong? We would like to remind you that participation in our study is voluntary and that you can withdraw from the study at any time.</i></p>
+            <hr/>
+            
+        Read each short scenario. Then determine whether <b>the main character (who uses "I"/"me"/"my") did something clearly wrong</b> according to common everyday, ordinary moral standards that Indian citizens generally believe.<br/>
+            For reference, here are seven examples (where the example answers below are at least representative of a typical American perspective). Below these seven examples are the HIT's actual questions.
+
+            <p>
+            Examples:<br/>
+            a. I dropped my friend's phone onto his bed.<br/>
+            b. I dropped my friend's phone onto the brick sidewalk.<br/>
+            c. I sometimes takes money to children who don't have any.<br/>
+            d. I did not vote for the candidate because he had accepted bribes.<br/>
+            e. Because she was cheating, I left her.<br/>
+            f. I peed in the public pool.<br/>
+            g. I peed in the public urinal.<br/><br/>
+
+            Answers:<br/>
+            a. The main character did nothing clearly wrong.<br/>
+            b. The main character did something clearly wrong (dropping a friend's phone on a brick sidewalk, which could easily break it).<br/>
+            c. The main character did nothing clearly wrong.<br/>
+            d. While the candidate was wrong for accepting bribes, the main character did not do something wrong by not voting for that candidate, so this would count as "not wrong".<br/>
+            e. While she clearly did something morally wrong by cheating, the main character did not do something wrong by leaving her for this reason, so this would count as "not wrong".<br/>
+            f. The main character did something clearly wrong (peeing in a public pool).<br/>
+            g. The main character did nothing clearly wrong.<br/>
+            </p>
+    
+            <h1>Scenarios</h1>
+            <p>1. {{ scenario0 }}</p>
+           <div>       
+           <crowd-radio-group id="radios" required onchange="enableButton(0)">
+             &emsp;<crowd-radio-button name={{bad_0}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
+             &emsp;<crowd-radio-button name={{good_0}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+           </crowd-radio-group>
+           </div><br/>
+     
+           <p>2. {{ scenario1 }}</p><br/>
+           <div>
+             <crowd-radio-group id="radios" required onchange="enableButton(1)">
+             &emsp;<crowd-radio-button name={{bad_1}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
+             &emsp;<crowd-radio-button name={{good_1}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+           </crowd-radio-group>
+           </div><br/>
+
+           <p>3. {{ scenario2 }}</p><br/>
+           <div>
+             <crowd-radio-group id="radios" required onchange="enableButton(2)">
+             &emsp;<crowd-radio-button name={{bad_2}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
+             &emsp;<crowd-radio-button name={{good_2}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+           </crowd-radio-group>
+           </div><br/>
+
+           <p>4. {{ scenario3 }}</p><br/>
+           <div>
+             <crowd-radio-group id="radios" required onchange="enableButton(3)">
+             &emsp;<crowd-radio-button name={{bad_3}} value="wrong">The main person clearly did something morally wrong.</crowd-radio-button><br/>
+             &emsp;<crowd-radio-button name={{good_3}} value="not wrong">The main person did not do anything clearly morally wrong.</crowd-radio-button>
+           </crowd-radio-group>
+           </div><br/>
+
+
+    <crowd-button id="submit" form-action="submit" variant="primary" disabled>Submit</crowd-button>
+    </crowd-form>
+    </body>
+
+   <script>
+       var count = [0,0,0,0];
+       function enableButton(i) {
+           count[i] = 1;
+           if (count.reduce((a, b) => a + b, 0) === count.length) {
+               document.getElementById("submit").disabled = false;
+           }
+       }
+
+   </script>
+
+ </html>
+ ]]>
+ </HTMLContent>
+ <FrameHeight>450</FrameHeight>
+</HTMLQuestion>
