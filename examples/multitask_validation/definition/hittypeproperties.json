@@ -1,0 +1,28 @@
+{
+  "AutoApprovalDelayInSeconds": 259200,
+  "AssignmentDurationInSeconds": 3600,
+  "Reward": "0.20",
+  "Title": "Answer Multiple Choice Questions",
+  "Keywords": "HTMLQuestion, classify, text, read, Dan, fun,",
+  "Description": "Answer Multiple Choice Questions about a wide range of subjects.",
+  "QualificationRequirements": [
+    {
+      "QualificationTypeId": "00000000000000000071",
+      "Comparator": "In",
+      "LocaleValues": [
+        {
+          "Country": "US"
+        },
+        {
+          "Country": "CA"
+        },
+        {
+          "Country": "GB"
+        },
+        {
+          "Country": "IN"
+        }
+      ]
+    }
+   ]
+}

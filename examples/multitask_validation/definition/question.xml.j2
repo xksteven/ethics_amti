@@ -1,0 +1,160 @@
+<HTMLQuestion xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2011-11-11/HTMLQuestion.xsd">
+ <HTMLContent>
+    <![CDATA[
+     <!DOCTYPE html>
+     <html>
+       <head>
+         <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+         <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+         <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+       </head>
+
+
+
+    <body>
+    <style type="text/css">
+        form {
+          margin: auto;
+          width: 75%;
+        }
+
+        hr {
+          border-top: 1px solid #838b8b;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 30px 0 0 0;
+          text-align: right;
+        }
+
+        .questionBody {
+          margin: 0 0 30px 50px;
+        }
+
+        .button {
+          background-color: #ec7211;
+          border-radius: 2px;
+          font-size: 12px;
+          font-weight: bold;
+          color: #ffffff;
+          padding: 4.8px 22.4px 4.8px 22.4px;
+          cursor: pointer;
+          max-width: 100px;
+          margin-bottom: 5px;
+          text-align: center;
+        }
+
+        .inspiration {
+          float: right;
+          margin-bottom: 0;
+        }
+
+        #warning {
+          color: red;
+          padding-left: 5px;
+        }
+
+        .morallyWrong {
+          border: 5px solid red;
+          border-radius: 5px;
+          padding: 5px;
+          margin: 10px 0 10px 0;
+        }
+
+        .morallyCorrect {
+          border: 5px solid green;
+          border-radius: 5px;
+          padding: 5px;
+          margin: 10px 0 10px 0
+        }
+
+        .buttonContainer {
+          width: 100%;
+        }
+
+        .buttonAndContentContainer {
+          width: 50%;
+          float: left;
+          min-height: 100px;
+        }
+      </style>
+      
+
+    <crowd-form>
+          <!--<crowd-instructions link-text="View instructions" link-type="button">-->
+          <!--    <short-summary>-->
+          <!--        <h3>Description</h3>-->
+          <!--          <p> </p>-->
+          <!--    </short-summary>-->
+          <!--    <detailed-instructions>-->
+          <!--    </detailed-instructions>-->
+          <!-- </crowd-instructions>-->
+           
+            <p><i>This research study is being conducted by the Steinhardt Group at UC Berkeley. For questions about this study, please contact Dan Hendrycks at hendrycks@berkeley.edu. In this study, we will have you answer Multiple Choice Questions about a wide range of subjects to the best of your ability. We would like to remind you that participation in our study is voluntary and that you can withdraw from the study at any time.</i></p>
+            <hr/>
+            
+            Read each question. Then to the best of your ability choose the answer that you think is most likely to be correct. Some questions will be relatively easy while some will be difficult. We do not expect you to know the answer to every question, but we do expect you to answer as well as you can.
+
+            <h1>Questions</h1>
+            <p>1. {{ question0 }}</p>
+           <div>       
+           <crowd-radio-group id="radios" required onchange="enableButton(0)">
+               &emsp;<crowd-radio-button name={{button_0A}} value="true">A. {{option_0A}}</crowd-radio-button><br/>
+               &emsp;<crowd-radio-button name={{button_0B}} value="true">B. {{option_0B}}</crowd-radio-button><br/>
+               &emsp;<crowd-radio-button name={{button_0C}} value="true">C. {{option_0C}}</crowd-radio-button><br/>
+               &emsp;<crowd-radio-button name={{button_0D}} value="true">D. {{option_0D}}</crowd-radio-button><br/>
+           </crowd-radio-group>
+           </div><br/>
+
+        <p>2. {{ question1 }}</p>
+        <div>
+            <crowd-radio-group id="radios" required onchange="enableButton(1)">
+                &emsp;<crowd-radio-button name={{button_1A}} value="true">A. {{option_1A}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_1B}} value="true">B. {{option_1B}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_1C}} value="true">C. {{option_1C}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_1D}} value="true">D. {{option_1D}}</crowd-radio-button><br/>
+            </crowd-radio-group>
+        </div><br/>
+
+        <p>3. {{ question2 }}</p>
+        <div>
+            <crowd-radio-group id="radios" required onchange="enableButton(2)">
+                &emsp;<crowd-radio-button name={{button_2A}} value="true">A. {{option_2A}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_2B}} value="true">B. {{option_2B}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_2C}} value="true">C. {{option_2C}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_2D}} value="true">D. {{option_2D}}</crowd-radio-button><br/>
+            </crowd-radio-group>
+        </div><br/>
+
+        <p>4. {{ question3 }}</p>
+        <div>
+            <crowd-radio-group id="radios" required onchange="enableButton(3)">
+                &emsp;<crowd-radio-button name={{button_3A}} value="true">A. {{option_3A}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_3B}} value="true">B. {{option_3B}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_3C}} value="true">C. {{option_3C}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_3D}} value="true">D. {{option_3D}}</crowd-radio-button><br/>
+            </crowd-radio-group>
+        </div><br/>
+
+    <crowd-button id="submit" form-action="submit" variant="primary" disabled>Submit</crowd-button>
+    </crowd-form>
+    </body>
+
+   <script>
+       var count = [0,0,0,0];
+       function enableButton(i) {
+           count[i] = 1;
+           if (count.reduce((a, b) => a + b, 0) === count.length) {
+               document.getElementById("submit").disabled = false;
+           }
+       }
+
+   </script>
+
+ </html>
+ ]]>
+ </HTMLContent>
+ <FrameHeight>450</FrameHeight>
+</HTMLQuestion>
