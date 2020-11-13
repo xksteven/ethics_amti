@@ -8,7 +8,7 @@ from sklearn.utils import shuffle
 parser = argparse.ArgumentParser(description='Create tasks to validate.')
 parser.add_argument('--hits', type=int, default=500, help='how many hits to submit')
 parser.add_argument('-s', '--skip', type=int, default=0, help='from where in the dataset to submit.')
-parser.add_argument('--num_samples', type=int, default=4, help='')  # todo: change to 10
+parser.add_argument('--num_samples', type=int, default=10, help='')
 args = parser.parse_args()
 
 df = pd.read_csv("data_to_curate/test_shuffled.csv", header=None)
@@ -35,11 +35,11 @@ for i in range(df.shape[0] // args.num_samples):
         d["button_{}B".format(j)] = "button_b_idx{}".format(idx)
         d["button_{}C".format(j)] = "button_c_idx{}".format(idx)
         d["button_{}D".format(j)] = "button_d_idx{}".format(idx)
-        d["question{}".format(j)] = df.iloc[i*args.num_samples + j, 1]
-        d["option_{}A".format(j)] = df.iloc[i*args.num_samples + j, 2]
-        d["option_{}B".format(j)] = df.iloc[i*args.num_samples + j, 3]
-        d["option_{}C".format(j)] = df.iloc[i*args.num_samples + j, 4]
-        d["option_{}D".format(j)] = df.iloc[i*args.num_samples + j, 5]
+        d["question{}".format(j)] = df.iloc[i*args.num_samples + j, 1].replace("\n", "<br>")
+        d["option_{}A".format(j)] = df.iloc[i*args.num_samples + j, 2].replace("\n", "<br>")
+        d["option_{}B".format(j)] = df.iloc[i*args.num_samples + j, 3].replace("\n", "<br>")
+        d["option_{}C".format(j)] = df.iloc[i*args.num_samples + j, 4].replace("\n", "<br>")
+        d["option_{}D".format(j)] = df.iloc[i*args.num_samples + j, 5].replace("\n", "<br>")
     list_of_dicts.append(d)
 
 with open("data.jsonl", "w") as f:

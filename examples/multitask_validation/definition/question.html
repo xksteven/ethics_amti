@@ -95,7 +95,10 @@
             <p><i>This research study is being conducted by the Steinhardt Group at UC Berkeley. For questions about this study, please contact Dan Hendrycks at hendrycks@berkeley.edu. In this study, we will have you answer Multiple Choice Questions about a wide range of subjects to the best of your ability. We would like to remind you that participation in our study is voluntary and that you can withdraw from the study at any time.</i></p>
             <hr/>
             
-            Read each question. Then to the best of your ability choose the answer that you think is most likely to be correct. Some questions will be relatively easy while some will be difficult. We do not expect you to know the answer to every question, but we do expect you to answer as well as you can.
+            Read each question. Then to the best of your ability choose the answer that you think is most likely to be correct. <br>
+            To ensure that you do your best in answering these questions, we do not enable the HIT submit button for 100 seconds from the start of the HIT, and we try to ban Turkers who don't honestly attempt to answer questions. <br>
+            Some questions will be relatively easy while some will be difficult. We do not expect you to know the answer to every question, but we do expect you to answer as well as you can.<br>
+
 
             <h1>Questions</h1>
             <p>1. {{ question0 }}</p>
@@ -138,19 +141,95 @@
             </crowd-radio-group>
         </div><br/>
 
+        <p>5. {{ question4 }}</p>
+        <div>
+            <crowd-radio-group id="radios" required onchange="enableButton(4)">
+                &emsp;<crowd-radio-button name={{button_4A}} value="true">A. {{option_4A}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_4B}} value="true">B. {{option_4B}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_4C}} value="true">C. {{option_4C}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_4D}} value="true">D. {{option_4D}}</crowd-radio-button><br/>
+            </crowd-radio-group>
+        </div><br/>
+
+        <p>6. {{ question5 }}</p>
+        <div>
+            <crowd-radio-group id="radios" required onchange="enableButton(5)">
+                &emsp;<crowd-radio-button name={{button_5A}} value="true">A. {{option_5A}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_5B}} value="true">B. {{option_5B}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_5C}} value="true">C. {{option_5C}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_5D}} value="true">D. {{option_5D}}</crowd-radio-button><br/>
+            </crowd-radio-group>
+        </div><br/>
+
+        <p>7. {{ question6 }}</p>
+        <div>
+            <crowd-radio-group id="radios" required onchange="enableButton(6)">
+                &emsp;<crowd-radio-button name={{button_6A}} value="true">A. {{option_6A}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_6B}} value="true">B. {{option_6B}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_6C}} value="true">C. {{option_6C}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_6D}} value="true">D. {{option_6D}}</crowd-radio-button><br/>
+            </crowd-radio-group>
+        </div><br/>
+
+        <p>8. {{ question7 }}</p>
+        <div>
+            <crowd-radio-group id="radios" required onchange="enableButton(7)">
+                &emsp;<crowd-radio-button name={{button_7A}} value="true">A. {{option_7A}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_7B}} value="true">B. {{option_7B}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_7C}} value="true">C. {{option_7C}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_7D}} value="true">D. {{option_7D}}</crowd-radio-button><br/>
+            </crowd-radio-group>
+        </div><br/>
+
+        <p>9. {{ question8 }}</p>
+        <div>
+            <crowd-radio-group id="radios" required onchange="enableButton(8)">
+                &emsp;<crowd-radio-button name={{button_8A}} value="true">A. {{option_8A}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_8B}} value="true">B. {{option_8B}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_8C}} value="true">C. {{option_8C}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_8D}} value="true">D. {{option_8D}}</crowd-radio-button><br/>
+            </crowd-radio-group>
+        </div><br/>
+
+        <p>10. {{ question9 }}</p>
+        <div>
+            <crowd-radio-group id="radios" required onchange="enableButton(9)">
+                &emsp;<crowd-radio-button name={{button_9A}} value="true">A. {{option_9A}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_9B}} value="true">B. {{option_9B}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_9C}} value="true">C. {{option_9C}}</crowd-radio-button><br/>
+                &emsp;<crowd-radio-button name={{button_9D}} value="true">D. {{option_9D}}</crowd-radio-button><br/>
+            </crowd-radio-group>
+        </div><br/>
+
     <crowd-button id="submit" form-action="submit" variant="primary" disabled>Submit</crowd-button>
     </crowd-form>
     </body>
 
    <script>
-       var count = [0,0,0,0];
+       var count = [0,0,0,0,0,0,0,0,0,0];
+       var allCounted = false;
+       var hasWaited = false;
        function enableButton(i) {
            count[i] = 1;
            if (count.reduce((a, b) => a + b, 0) === count.length) {
-               document.getElementById("submit").disabled = false;
+               allCounted = true;
+               // document.getElementById("submit").disabled = false;
            }
        }
 
+       // Traverse DOM for dynamically inserted Submit button to disable
+       function hasWaitedTrue() {
+           hasWaited = true;
+           // document.querySelector('crowd-button').disabled = true;
+       }
+       function checkValid() {
+           if (hasWaited && allCounted) {
+               document.getElementById("submit").disabled = false;
+           }
+       }
+       // setTimeout(hasWaitedTrue, 120000);  // 2 minutes
+       setTimeout(hasWaitedTrue, 100000);  // 10 seconds per question
+       setInterval(checkValid, 100)
    </script>
 
  </html>
